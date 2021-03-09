@@ -18,7 +18,7 @@ This repository was made to create an objective comparison of multiple framework
 | License | [MIT](https://github.com/electron/electron/blob/master/LICENSE) | [MIT](https://github.com/nwjs/nw.js/blob/nw52/LICENSE) | [MIT](https://github.com/neutralinojs/neutralinojs/blob/master/LICENSE) | [MIT](https://github.com/tauri-apps/tauri/blob/dev/LICENSE) |
 | Developer Dependencies | Node.js, Electron NPM Package | Node.js, NW.JS SDK | C++ Compiler, Node.js, WebPack Bundler, WebkitGTK+ | C++ Compiler, Node.JS, Rustc, Cargo, Tauri Bundler |
 | User Dependencies | None | None | None | None |
-| Rendering Engine | Chromium | Webkit/Chromium | WebkitGTK+ | Cocoa/WebKit on macOS, gtk-webkit2 on Linux and MSHTML (IE10/11) or Webkit via Edge on Windows |
+| Engine | Chromium | Webkit/Chromium | WebkitGTK+ | Cocoa/WebKit on macOS, gtk-webkit2 on Linux and MSHTML (IE10/11) or Webkit via Edge on Windows |
 
 ## Operating systems
 
