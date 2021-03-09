@@ -2,6 +2,10 @@
 
 This repository was made to create an objective comparison of multiple framework that grant us to "transform" our web app to desktop application formats.
 
+## Table Of Content
+- [Major characteristics](#major-characteristics)
+- [Operating systems](#operating-systems)
+
 ## Major characteristics
 
 | | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Tauri](https://github.com/tauri-apps/tauri) |
