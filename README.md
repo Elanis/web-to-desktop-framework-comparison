@@ -5,6 +5,8 @@ This repository was made to create an objective comparison of multiple framework
 ## Table Of Content
 - [Major characteristics](#major-characteristics)
 - [Operating systems](#operating-systems)
+- [Benchmarks](#benchmarks)
+  * [01 - Empty app](#01-empty-app)
 
 ## Major characteristics
 
@@ -22,7 +24,7 @@ This repository was made to create an objective comparison of multiple framework
 
 ## Operating systems
 
-|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
+|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Developement Environment** | Windows | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | | MacOS | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
@@ -33,6 +35,23 @@ This repository was made to create an objective comparison of multiple framework
 | | Android | ❌ | ❌ | Soon | ❌ | ❌ |
 | | IOS | ❌ | ❌ | Soon | ❌ | ❌ |
 
+## Benchmarks
+
+### 01 - Empty app
+
+See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-framework-comparison/benchmark/01-empty-app) folder.
+
+|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Build size:** | Windows | ? | ? | ? | ? | ? |
+| | MacOS | ? | ? | ? | ? | ? |
+| | Linux | ? | ? | ? | ? | ? |
+| **Memory Usage:** | Windows | ~55MB | ? | ? | ? | ? |
+| | MacOS | ? | ? | ? | ? | ? |
+| | Linux | ? | ? | ? | ? | ? |
+| **Start duration:** | Windows | ~75ms (i5-8400) | ? | ? | ? | ? |
+| | MacOS | ? | ? | ? | ? | ? |
+| | Linux | ? | ? | ? | ? | ? |
 
 TODO:
 - WebGL Support
