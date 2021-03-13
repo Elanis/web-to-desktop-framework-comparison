@@ -1,5 +1,5 @@
 {
-  "name": "01-empty-app-electron",
+  "name": "02-empty-app-headless",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",

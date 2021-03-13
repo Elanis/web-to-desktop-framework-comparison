@@ -22,6 +22,29 @@
 
 		AVG (Both) 	55.6 => 52.4 	76.3ms
 
+	nw.js 0.52.0
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
+
+		RUN			MEM				START TIME      
+		1			71 MB			19ms
+		2			70 MB			19ms
+		3			72 MB			19ms
+		4			71 MB			21ms
+		5			71 MB			20ms
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			61 MB			-
+		2			66 MB			-
+		3			67 MB			-
+		4			63 MB			-
+		5			63 MB			-
+
+		AVG (Both) 	67.5			19.6ms
+
+
 
 02-empty-app-headless
 
