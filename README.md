@@ -49,10 +49,10 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | **Build size:** | Windows | ? | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Memory Usage:** | Windows | ~55 then ~52MB | ~67 MB | ? | ? | ? |
+| **Memory Usage:** | Windows | ~55MB then ~52MB | ~67MB | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Start duration:** | Windows | ~76ms | ~19ms | ? | ? | ? |
+| **Start duration:** | Windows | ~76ms | ~20ms | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
 
@@ -65,10 +65,10 @@ See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to
 | **Build size:** | Windows | ? | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Memory Usage:** | Windows | ~54 then ~51MB | ? | ? | ? | ? |
+| **Memory Usage:** | Windows | ~54MB then ~51MB | ~69MB | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Start duration:** | Windows | ~72ms | ? | ? | ? | ? |
+| **Start duration:** | Windows | ~72ms | ~20ms | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
 

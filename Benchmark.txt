@@ -69,3 +69,25 @@
 		5			54 then 51 MB	75ms
 
 		AVG (Both) 	54.8 => 51.7	72.1ms
+
+	nw.js 0.52.0
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
+
+		RUN			MEM				START TIME      
+		1			77 MB			21ms
+		2			71 MB			20ms
+		3			72 MB			19ms
+		4			71 MB			21ms
+		5			72 MB			20ms
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			68 MB			-
+		2			65 MB			-
+		3			65 MB			-
+		4			64 MB			-
+		5			64 MB			-
+
+		AVG (Both) 	68.9			20.2ms
