@@ -49,7 +49,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | **Build size:** | Windows | ? | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Memory Usage:** | Windows | ~55 => 52MB | ? | ? | ? | ? |
+| **Memory Usage:** | Windows | ~55 then ~52MB | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
 | **Start duration:** | Windows | ~76ms | ? | ? | ? | ? |
@@ -65,13 +65,15 @@ See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to
 | **Build size:** | Windows | ? | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Memory Usage:** | Windows | ~54 => 51MB | ? | ? | ? | ? |
+| **Memory Usage:** | Windows | ~54 then ~51MB | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
 | **Start duration:** | Windows | ~72ms | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
 
+
+## Future content
 
 TODO:
 - WebGL Support
