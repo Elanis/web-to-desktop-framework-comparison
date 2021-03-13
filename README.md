@@ -46,10 +46,10 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | **Build size:** | Windows | ? | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Memory Usage:** | Windows | ~55MB | ? | ? | ? | ? |
+| **Memory Usage:** | Windows | ~55 => 52MB | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Start duration:** | Windows | ~75ms (i5-8400) | ? | ? | ? | ? |
+| **Start duration:** | Windows | ~76ms (i5-8400 / SSD 970 EVO PLUS) | ? | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
 
