@@ -46,9 +46,11 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size:** | Windows | ? | ? | ? | ? | ? |
-| | MacOS | ? | ? | ? | ? | ? |
-| | Linux | ? | ? | ? | ? | ? |
+| **Build size:** | Windows (x64) | 175MB | 249MB | ? | ? | ? |
+| | Windows (x86) | 156MB | 223MB | ? | ? | ? |
+| | MacOS | ? | 254MB | ? | ? | ? |
+| | Linux (x64) | 184MB | 313MB | ? | ? | ? |
+| | Linux (x86) | 162MB | 314MB | ? | ? | ? |
 | **Memory Usage:** | Windows | ~55MB then ~52MB | ~67MB | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
@@ -62,9 +64,11 @@ See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size:** | Windows | ? | ? | ? | ? | ? |
-| | MacOS | ? | ? | ? | ? | ? |
-| | Linux | ? | ? | ? | ? | ? |
+| **Build size:** | Windows (x64) | 175MB | 249MB | ? | ? | ? |
+| | Windows (x86) | 156MB | 223MB | ? | ? | ? |
+| | MacOS | ? | 254MB | ? | ? | ? |
+| | Linux (x64) | 184MB | 313MB | ? | ? | ? |
+| | Linux (x86) | 168MB | 314MB | ? | ? | ? |
 | **Memory Usage:** | Windows | ~54MB then ~51MB | ~69MB | ? | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
