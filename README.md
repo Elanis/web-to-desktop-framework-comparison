@@ -6,8 +6,8 @@ This repository was made to create an objective comparison of multiple framework
 - [Major characteristics](#major-characteristics)
 - [Operating systems](#operating-systems)
 - [Benchmarks](#benchmarks)
-  * [01 - Empty app](#01-empty-app)
-  * [02 - Empty app (Headless)](#02-empty-app-headless)
+  * [01 - Empty app](#01---empty-app)
+  * [02 - Empty app (Headless)](#02---empty-app-headless)
 
 ## Major characteristics
 
@@ -38,11 +38,11 @@ This repository was made to create an objective comparison of multiple framework
 
 ## Benchmarks
 
-**See [Benchmark.txt](https://github.com/Elanis/web-to-desktop-framework-comparison/Benchmark.txt) to get more informations about following data.**
+**See [Benchmark.txt](https://github.com/Elanis/web-to-desktop-framework-comparison/blob/main/Benchmark.txt) to get more informations about following data.**
 
 ### 01 - Empty app
 
-See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-framework-comparison/benchmark/01-empty-app) folder.
+See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-framework-comparison/tree/main/benchmark/01-empty-app/) folder.
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -58,7 +58,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 ### 02 - Empty app (Headless)
 
-See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to-desktop-framework-comparison/benchmark/02-empty-app-headless) folder.
+See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to-desktop-framework-comparison/tree/main/benchmark/02-empty-app-headless) folder.
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
