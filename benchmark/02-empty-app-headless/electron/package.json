@@ -1,0 +1,16 @@
+{
+  "name": "01-empty-app-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . 02-empty-app-headless-electron"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.0",
+    "electron-packager": "^15.2.0"
+  }
+}

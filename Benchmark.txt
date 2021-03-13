@@ -1,23 +1,48 @@
 01-empty-app
 
-	electron
+	electron 10.1.0
 
 		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
-		RUN		MEM				START TIME      
-		1		56 then 53 MB	107ms
-		2		56 then 53 MB	69ms
-		3		56 then 53 MB	72ms
-		4		55 then 52 MB	85ms
-		5		55 then 52 MB	74ms
+		RUN			MEM				START TIME      
+		1			56 then 53 MB	107ms
+		2			56 then 53 MB	69ms
+		3			56 then 53 MB	72ms
+		4			55 then 52 MB	85ms
+		5			55 then 52 MB	74ms
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built with electron-packager
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built with electron-packager 15.1.0
 
-		RUN		MEM				START TIME      
-		1		56 then 54 MB	74ms
-		2		54 then 51 MB	68ms
-		3		56 then 52 MB 	70ms
-		4		56 then 52 MB	75ms
-		5		56 then 52 MB	69ms
+		RUN			MEM				START TIME      
+		1			56 then 54 MB	74ms
+		2			54 then 51 MB	68ms
+		3			56 then 52 MB 	70ms
+		4			56 then 52 MB	75ms
+		5			56 then 52 MB	69ms
 
-		AVG 	55.6 => 52.4 	76.3ms
+		AVG (Both) 	55.6 => 52.4 	76.3ms
+
+
+02-empty-app-headless
+
+	electron 10.1.0
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
+
+		RUN			MEM				START TIME      
+		1			57 then 54 MB	77ms
+		2			55 then 52 MB	69ms
+		3			56 then 52 MB	64ms
+		4			55 then 52 MB	67ms
+		5			55 then 52 MB	71ms
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built with electron-packager 15.1.0
+
+		RUN			MEM				START TIME      
+		1			54 then 51 MB	82ms
+		2			54 then 51 MB	67ms
+		3			54 then 51 MB	74ms
+		4			54 then 51 MB	75ms
+		5			54 then 51 MB	75ms
+
+		AVG (Both) 	54.8 => 51.7	72.1ms
