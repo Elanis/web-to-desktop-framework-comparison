@@ -17,7 +17,9 @@ This repository was made to create an objective comparison of multiple framework
 | **Forks** | 12k | 4k | 0.3k | 0.2k | 0.2k | 16.5k |
 | **Creation date** | 2013 | 2011 | 2017 | 2019 | 2018 | 2018 |
 | **Last Update** | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 |
-| **Framework Language** | C++ | C++ | Rust | C++ | C++ | Dart |
+| **Framework Language** | C++, JavaScript, Objective-C, Python | C++ | Rust | C++ | C++ | C, C++, Dart |
+| **Usage Language - Back** | JS/C++ | JS/C++ | Rust | JS/C++ | JS/C++ | Dart |
+| **Usage Language - Front** | HTML/CSS/JS | HTML/CSS/JS | HTML/CSS/JS | HTML/CSS/JS | HTML/CSS/JS | Dart |
 | **License** | [MIT](https://github.com/electron/electron/blob/master/LICENSE) | [MIT](https://github.com/nwjs/nw.js/blob/nw52/LICENSE) | [MIT](https://github.com/tauri-apps/tauri/blob/dev/LICENSE) | [MIT](https://github.com/nodegui/nodegui/blob/master/LICENSE) | [MIT](https://github.com/neutralinojs/neutralinojs/blob/master/LICENSE) | [BSD 3-Clause](https://github.com/flutter/flutter/blob/master/LICENSE) |
 | **Developer Dependencies** | [Node.js, Electron NPM Package](https://www.electronjs.org/docs/tutorial/quick-start#prerequisites) | [Node.js, NW.JS SDK](https://nwjs.readthedocs.io/en/latest/For%20Users/Getting%20Started/) | [C++ Compiler, Node.js, Rustc, Cargo, Tauri Bundler](https://tauri.studio/en/docs/getting-started/intro/#setting-up-your-environment) | [Cmake, make, Node.js, NodeGUI NPM Package](https://docs.nodegui.org/docs/guides/getting-started/#developer-environment) | [Node.js, Neu NPM Package](https://neutralino.js.org/docs/#/gettingstarted/quickstart) | [Flutter SDK, Visual Studio 2019 / Clang](https://flutter.dev/desktop#requirements) |
 | **User Dependencies** | None | None | None | None | None | None |
