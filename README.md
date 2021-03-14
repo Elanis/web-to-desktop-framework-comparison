@@ -11,30 +11,31 @@ This repository was made to create an objective comparison of multiple framework
 
 ## Major characteristics
 
-| | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| Github stars | 91k | 38k | 13k | 6k | 3k |
-| Forks | 12k | 4k | 0.3k | 0.2k | 0.2k |
-| Creation date | 2013 | 2011 | 2017 | 2019 | 2018 |
-| Last Update | 2021 | 2021 | 2021 | 2021 | 2021 |
-| Framework Language | C++ | C++ | Rust | C++ | C++ |
-| License | [MIT](https://github.com/electron/electron/blob/master/LICENSE) | [MIT](https://github.com/nwjs/nw.js/blob/nw52/LICENSE) | [MIT](https://github.com/tauri-apps/tauri/blob/dev/LICENSE) | [MIT](https://github.com/nodegui/nodegui/blob/master/LICENSE) | [MIT](https://github.com/neutralinojs/neutralinojs/blob/master/LICENSE) |
-| Developer Dependencies | Node.js, Electron NPM Package | Node.js, NW.JS SDK | C++ Compiler, Node.JS, Rustc, Cargo, Tauri Bundler | Cmake, make, Node.JS, NodeGUI NPM Package | C++ Compiler, Node.js, WebPack Bundler, WebkitGTK+ |
-| User Dependencies | None | None | None | None | None |
-| Engine | Chromium | Webkit/Chromium | Cocoa/WebKit on macOS, gtk-webkit2 on Linux and MSHTML (IE10/11) or Webkit via Edge on Windows | Qt | WebkitGTK+ |
+| | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Github stars** | 91k | 38k | 13k | 6k | 3k | 116k |
+| **Forks** | 12k | 4k | 0.3k | 0.2k | 0.2k | 16.5k |
+| **Creation date** | 2013 | 2011 | 2017 | 2019 | 2018 | 2018 |
+| **Last Update** | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 |
+| **Framework Language** | C++ | C++ | Rust | C++ | C++ | Dart |
+| **License** | [MIT](https://github.com/electron/electron/blob/master/LICENSE) | [MIT](https://github.com/nwjs/nw.js/blob/nw52/LICENSE) | [MIT](https://github.com/tauri-apps/tauri/blob/dev/LICENSE) | [MIT](https://github.com/nodegui/nodegui/blob/master/LICENSE) | [MIT](https://github.com/neutralinojs/neutralinojs/blob/master/LICENSE) | [BSD 3-Clause](https://github.com/flutter/flutter/blob/master/LICENSE) |
+| **Developer Dependencies** | [Node.js, Electron NPM Package](https://www.electronjs.org/docs/tutorial/quick-start#prerequisites) | Node.js, NW.JS SDK | [C++ Compiler, Node.JS, Rustc, Cargo, Tauri Bundler](https://docs.nodegui.org/docs/guides/getting-started/#developer-environment) | [Cmake, make, Node.JS, NodeGUI NPM Package](https://docs.nodegui.org/docs/guides/getting-started/#developer-environment) | [C++ Compiler, Node.js, WebPack Bundler, WebkitGTK+](https://flutter.dev/desktop#requirements) | [Flutter SDK, Visual Studio 2019 / Clang](https://flutter.dev/desktop#requirements) |
+| **User Dependencies** | None | None | None | None | None | None |
+| **Engine** | Chromium | Webkit/Chromium | Cocoa/WebKit on macOS, gtk-webkit2 on Linux and MSHTML (IE10/11) or Webkit via Edge on Windows | Qt | WebkitGTK+ | Flutter engine |
 
 ## Operating systems
 
-|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Developement Environment** | Windows | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | MacOS | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | Linux | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| **Target Environment** | Windows | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | MacOS | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | Linux | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | Android | ❌ | ❌ | Soon | ❌ | ❌ |
-| | IOS | ❌ | ❌ | Soon | ❌ | ❌ |
+|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Developement Environment** | ***Windows*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***MacOS*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***Linux*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| **Target Environment** | ***Windows*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***MacOS*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***Linux*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***Android*** | ❌ | ❌ | Soon | ❌ | ❌ | ✔️ |
+| | ***iOS*** | ❌ | ❌ | Soon | ❌ | ❌ | ✔️ |
+| | ***Web*** | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️ |
 
 ## Benchmarks
 
@@ -44,39 +45,39 @@ This repository was made to create an objective comparison of multiple framework
 
 See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-framework-comparison/tree/main/benchmark/01-empty-app/) folder.
 
-|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size:** | Windows (x64) | 175MB | 249MB | 453MB | ? | ? |
-| | Windows (x86) | 156MB | 223MB | ? | ? | ? |
-| | MacOS | ? | 254MB | ? | ? | ? |
-| | Linux (x64) | 184MB | 313MB | ? | ? | ? |
-| | Linux (x86) | 162MB | 314MB | ? | ? | ? |
-| **Memory Usage:** | Windows | ~55MB then ~52MB | ~67MB | ~2.9MB | ? | ? |
-| | MacOS | ? | ? | ? | ? | ? |
-| | Linux | ? | ? | ? | ? | ? |
-| **Start duration:** | Windows | ~76ms | ~20ms | ~366ms | ? | ? |
-| | MacOS | ? | ? | ? | ? | ? |
-| | Linux | ? | ? | ? | ? | ? |
+|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 453MB | ? | ? | ? |
+| | ***Windows (x86)*** | 156MB | 223MB | ? | ? | ? | ? |
+| | ***MacOS*** | ? | 254MB | ? | ? | ? | ? |
+| | ***Linux (x64)*** | 184MB | 313MB | ? | ? | ? | ? |
+| | ***Linux (x86)*** | 162MB | 314MB | ? | ? | ? | ? |
+| **Memory Usage** | ***Windows*** | ≈55MB then ≈52MB | ≈67MB | ≈2.9MB | ? | ? | ? |
+| | ***MacOS*** | ? | ? | ? | ? | ? | ? |
+| | ***Linux*** | ? | ? | ? | ? | ? | ? |
+| **Start duration** | ***Windows*** | ≈76ms | ≈20ms | ≈366ms | ? | ? | ? |
+| | ***MacOS*** | ? | ? | ? | ? | ? | ? |
+| | ***Linux*** | ? | ? | ? | ? | ? | ? |
 
 ### 02 - Empty app (Headless)
 
 See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to-desktop-framework-comparison/tree/main/benchmark/02-empty-app-headless) folder.
 
-|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size:** | Windows (x64) | 175MB | 249MB | N/A<sup>1</sup> | ? | ? |
-| | Windows (x86) | 156MB | 223MB | N/A<sup>1</sup> | ? | ? |
-| | MacOS | ? | 254MB | N/A<sup>1</sup> | ? | ? |
-| | Linux (x64) | 184MB | 313MB | N/A<sup>1</sup> | ? | ? |
-| | Linux (x86) | 168MB | 314MB | N/A<sup>1</sup> | ? | ? |
-| **Memory Usage:** | Windows | ~54MB then ~51MB | ~69MB | N/A<sup>1</sup> | ? | ? |
-| | MacOS | ? | ? | N/A<sup>1</sup> | ? | ? |
-| | Linux | ? | ? | N/A<sup>1</sup>| ? | ? |
-| **Start duration:** | Windows | ~72ms | ~20ms | N/A<sup>1</sup> | ? | ? |
-| | MacOS | ? | ? | N/A<sup>1</sup> | ? | ? |
-| | Linux | ? | ? | N/A<sup>1</sup> | ? | ? |
+| | |  [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Build size** | ***Windows (x64)*** | 175MB | 249MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| | ***Windows (x86)*** | 156MB | 223MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| | ***MacOS*** | ? | 254MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| | ***Linux (x64)*** | 184MB | 313MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| | ***Linux (x86)*** | 168MB | 314MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| **Memory Usage** | ***Windows*** | ≈54MB then ≈51MB | ≈69MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| | ***MacOS*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| | ***Linux*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| **Start duration** | ***Windows*** | ≈72ms | ≈20ms | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| | ***MacOS*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| | ***Linux*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
 
-<sup>1</sup>: Frameless mode not supported yet by Tauri
+**<sup>1</sup>**: Frameless mode not supported yet
 
 ## Future content
 
