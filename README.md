@@ -64,18 +64,19 @@ See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size:** | Windows (x64) | 175MB | 249MB | ? | ? | ? |
-| | Windows (x86) | 156MB | 223MB | ? | ? | ? |
-| | MacOS | ? | 254MB | ? | ? | ? |
-| | Linux (x64) | 184MB | 313MB | ? | ? | ? |
-| | Linux (x86) | 168MB | 314MB | ? | ? | ? |
-| **Memory Usage:** | Windows | ~54MB then ~51MB | ~69MB | ? | ? | ? |
-| | MacOS | ? | ? | ? | ? | ? |
-| | Linux | ? | ? | ? | ? | ? |
-| **Start duration:** | Windows | ~72ms | ~20ms | ? | ? | ? |
-| | MacOS | ? | ? | ? | ? | ? |
-| | Linux | ? | ? | ? | ? | ? |
+| **Build size:** | Windows (x64) | 175MB | 249MB | N/A<sup>1</sup> | ? | ? |
+| | Windows (x86) | 156MB | 223MB | N/A<sup>1</sup> | ? | ? |
+| | MacOS | ? | 254MB | N/A<sup>1</sup> | ? | ? |
+| | Linux (x64) | 184MB | 313MB | N/A<sup>1</sup> | ? | ? |
+| | Linux (x86) | 168MB | 314MB | N/A<sup>1</sup> | ? | ? |
+| **Memory Usage:** | Windows | ~54MB then ~51MB | ~69MB | N/A<sup>1</sup> | ? | ? |
+| | MacOS | ? | ? | N/A<sup>1</sup> | ? | ? |
+| | Linux | ? | ? | N/A<sup>1</sup>| ? | ? |
+| **Start duration:** | Windows | ~72ms | ~20ms | N/A<sup>1</sup> | ? | ? |
+| | MacOS | ? | ? | N/A<sup>1</sup> | ? | ? |
+| | Linux | ? | ? | N/A<sup>1</sup> | ? | ? |
 
+<sup>1</sup>: Frameless mode not supported yet by Tauri
 
 ## Future content
 
