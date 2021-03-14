@@ -66,6 +66,29 @@
 
 		AVG (Both) 	2.9MB			366.1ms
 
+	flutter 2.0.2
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Debug version (flutter run --trace-startup --profile)
+
+		RUN			MEM				START TIME      
+		1			37.7MB			5ms
+		2			35.1MB			6ms
+		3			36.4MB			5ms
+		4			36.0MB			5ms
+		5			35.7MB			7ms
+
+		AVG 		36.2MB			5.6ms
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			23.7MB			-
+		2			24.1MB			-
+		3			23.4MB			-
+		4			23.7MB			-
+		5			23.5MB			-
+
+		AVG 		23.7MB			/
 
 
 02-empty-app-headless

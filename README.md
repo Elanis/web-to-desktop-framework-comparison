@@ -47,15 +47,15 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 453MB | ? | ? | ? |
-| | ***Windows (x86)*** | 156MB | 223MB | ? | ? | ? | ? |
+| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 453MB | ? | ? | 18MB |
+| | ***Windows (x86)*** | 156MB | 223MB | ? | ? | ? | 18MB |
 | | ***MacOS*** | ? | 254MB | ? | ? | ? | ? |
 | | ***Linux (x64)*** | 184MB | 313MB | ? | ? | ? | ? |
 | | ***Linux (x86)*** | 162MB | 314MB | ? | ? | ? | ? |
-| **Memory Usage** | ***Windows*** | ≈55MB then ≈52MB | ≈67MB | ≈2.9MB | ? | ? | ? |
+| **Memory Usage** | ***Windows*** | ≈55MB then ≈52MB | ≈67MB | ≈2.9MB | ? | ? | ≈36.2MB (Debug) / ≈23.7MB (Release) |
 | | ***MacOS*** | ? | ? | ? | ? | ? | ? |
 | | ***Linux*** | ? | ? | ? | ? | ? | ? |
-| **Start duration** | ***Windows*** | ≈76ms | ≈20ms | ≈366ms | ? | ? | ? |
+| **Start duration** | ***Windows*** | ≈76ms | ≈20ms | ≈366ms | ? | ? | ≈5.6ms |
 | | ***MacOS*** | ? | ? | ? | ? | ? | ? |
 | | ***Linux*** | ? | ? | ? | ? | ? | ? |
 
