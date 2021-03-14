@@ -46,15 +46,15 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size:** | Windows (x64) | 175MB | 249MB | ? | ? | ? |
+| **Build size:** | Windows (x64) | 175MB | 249MB | 453MB | ? | ? |
 | | Windows (x86) | 156MB | 223MB | ? | ? | ? |
 | | MacOS | ? | 254MB | ? | ? | ? |
 | | Linux (x64) | 184MB | 313MB | ? | ? | ? |
 | | Linux (x86) | 162MB | 314MB | ? | ? | ? |
-| **Memory Usage:** | Windows | ~55MB then ~52MB | ~67MB | ? | ? | ? |
+| **Memory Usage:** | Windows | ~55MB then ~52MB | ~67MB | ~2.9MB | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
-| **Start duration:** | Windows | ~76ms | ~20ms | ? | ? | ? |
+| **Start duration:** | Windows | ~76ms | ~20ms | ~366ms | ? | ? |
 | | MacOS | ? | ? | ? | ? | ? |
 | | Linux | ? | ? | ? | ? | ? |
 
@@ -84,3 +84,8 @@ TODO:
 - Build constraints
 - Source code protection
 - Modules support (npm, native, etc.)
+
+Benchmarks ideas:
+ - BabylonJS scene
+ - spreadsheet
+ - IDE

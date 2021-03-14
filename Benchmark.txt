@@ -44,6 +44,28 @@
 
 		AVG (Both) 	67.5			19.6ms
 
+	tauri crate-v0.11.1 npmn-v0.14.1
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
+
+		RUN			MEM				START TIME      
+		1			2.9MB			351ms
+		2			2.9MB			370ms
+		3			2.9MB			342ms
+		4			2.8MB			380ms
+		5			3.1MB			366ms
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			2.9MB			416ms
+		2			2.9MB			340ms
+		3			2.9MB			372ms
+		4			2.9MB			360ms
+		5			2.9MB			364ms
+
+		AVG (Both) 	2.9MB			366.1ms
+
 
 
 02-empty-app-headless

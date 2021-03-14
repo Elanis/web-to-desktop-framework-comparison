@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "tauri dev",
+    "build": "tauri build",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "tauri": "^0.14.1"
+  }
+}
