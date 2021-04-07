@@ -114,6 +114,30 @@
 
 		AVG 		44 => 39MB 		-
 
+	neutralinojs 2.0.0
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Debug version
+
+		RUN			MEM				START TIME      
+		1			2.7MB			-
+		2			2.7MB			-
+		3			2.8MB			-
+		4			2.7MB			-
+		5			2.7MB			-
+
+		AVG 		2.7MB			/
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			2.7MB			-
+		2			2.8MB			-
+		3			2.7MB			-
+		4			2.7MB			-
+		5			2.8MB			-
+
+		AVG 		2.7MB			/
+
 
 02-empty-app-headless
 
@@ -184,3 +208,27 @@
 		5			44 then 39MB 	-
 
 		AVG 		44 => 39 MB     /
+
+	neutralinojs 2.0.0
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Debug version
+
+		RUN			MEM				START TIME      
+		1			2.8MB			-
+		2			2.7MB			-
+		3			2.7MB			-
+		4			2.8MB			-
+		5			2.7MB			-
+
+		AVG 		2.7MB			/
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			2.8MB			-
+		2			2.7MB			-
+		3			2.7MB			-
+		4			2.8MB			-
+		5			2.7MB			-
+
+		AVG 		2.7MB			/
