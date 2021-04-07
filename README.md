@@ -49,12 +49,12 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 453MB | 83.6MB | ? | 18MB |
-| | ***Windows (x86)*** | 156MB | 223MB | ? | 83.6MB | ? | 18MB |
-| | ***MacOS*** | ? | 254MB | ? | ? | ? | ? |
-| | ***Linux (x64)*** | 184MB | 313MB | ? | ? | ? | ? |
-| | ***Linux (x86)*** | 162MB | 314MB | ? | ? | ? | ? |
-| **Memory Usage** | ***Windows*** | ≈55MB then ≈52MB | ≈67MB | ≈2.9MB | ≈44MB then ≈39MB | ? | ≈36.2MB (Debug) / ≈23.7MB (Release) |
+| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 453MB | 83.6MB | 2MB | 18MB |
+| | ***Windows (x86)*** | 156MB | 223MB | ? | 83.6MB | 2MB | 18MB |
+| | ***MacOS*** | ? | 254MB | ? | ? | 2MB | ? |
+| | ***Linux (x64)*** | 184MB | 313MB | ? | ? | 2MB | ? |
+| | ***Linux (x86)*** | 162MB | 314MB | ? | ? | 2MB | ? |
+| **Memory Usage** | ***Windows*** | ≈55MB then ≈52MB | ≈67MB | ≈2.9MB | ≈44MB then ≈39MB | ≈2.7MB | ≈36.2MB (Debug) / ≈23.7MB (Release) |
 | | ***MacOS*** | ? | ? | ? | ? | ? | ? |
 | | ***Linux*** | ? | ? | ? | ? | ? | ? |
 | **Start duration** | ***Windows*** | ≈76ms | ≈20ms | ≈366ms | ≈103ms (Debug) | ? | ≈5.6ms |
@@ -67,12 +67,12 @@ See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to
 
 | | |  [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 175MB | 249MB | N/A<sup>1</sup> | 83.6MB | ? | N/A<sup>1</sup> |
-| | ***Windows (x86)*** | 156MB | 223MB | N/A<sup>1</sup> | 83.6MB | ? | N/A<sup>1</sup> |
+| **Build size** | ***Windows (x64)*** | 175MB | 249MB | N/A<sup>1</sup> | 83.6MB | 2MB | N/A<sup>1</sup> |
+| | ***Windows (x86)*** | 156MB | 223MB | N/A<sup>1</sup> | 83.6MB | 2MB | N/A<sup>1</sup> |
 | | ***MacOS*** | ? | 254MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
-| | ***Linux (x64)*** | 184MB | 313MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
-| | ***Linux (x86)*** | 168MB | 314MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
-| **Memory Usage** | ***Windows*** | ≈54MB then ≈51MB | ≈69MB | N/A<sup>1</sup> | ≈44MB then ≈39MB | ? | N/A<sup>1</sup> |
+| | ***Linux (x64)*** | 184MB | 313MB | N/A<sup>1</sup> | ? | 2MB | N/A<sup>1</sup> |
+| | ***Linux (x86)*** | 168MB | 314MB | N/A<sup>1</sup> | ? | 2MB | N/A<sup>1</sup> |
+| **Memory Usage** | ***Windows*** | ≈54MB then ≈51MB | ≈69MB | N/A<sup>1</sup> | ≈44MB then ≈39MB | ≈2.7MB | N/A<sup>1</sup> |
 | | ***MacOS*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
 | | ***Linux*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
 | **Start duration** | ***Windows*** | ≈72ms | ≈20ms | N/A<sup>1</sup> | ≈105ms (Debug) | ? | N/A<sup>1</sup> |
