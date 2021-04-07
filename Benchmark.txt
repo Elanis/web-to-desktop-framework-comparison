@@ -160,3 +160,27 @@
 		5			64 MB			-
 
 		AVG (Both) 	68.9			20.2ms
+
+	nodegui 0.30.1
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Debug version
+
+		RUN			MEM				START TIME      
+		1			48 then 43MB 	105ms
+		2			49 then 44MB 	103ms
+		3			49 then 44MB 	104ms
+		4			49 then 43MB 	108ms
+		5			49 then 43MB 	103ms
+
+		AVG 		49 => 43MB		104.6ms
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			44 then 39MB 	-
+		2			43 then 39MB 	-
+		3			44 then 39MB 	-
+		4			44 then 39MB 	-
+		5			44 then 39MB 	-
+
+		AVG 		44 => 39 MB     /
