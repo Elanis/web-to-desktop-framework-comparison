@@ -90,6 +90,30 @@
 
 		AVG 		23.7MB			/
 
+	nodegui 0.30.1
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Debug version
+
+		RUN			MEM				START TIME      
+		1			49 then 43MB 	102ms
+		2			49 then 43MB 	101ms
+		3			49 then 43MB 	104ms
+		4			48 then 43MB 	106ms
+		5			49 then 43MB 	104ms
+
+		AVG 		49 => 43MB 	103.4ms
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			44 then 39MB 	-
+		2			44 then 39MB 	-
+		3			44 then 39MB 	-
+		4			43 then 39MB 	-
+		5			44 then 39MB 	-
+
+		AVG 		44 => 39MB 		-
+
 
 02-empty-app-headless
 
