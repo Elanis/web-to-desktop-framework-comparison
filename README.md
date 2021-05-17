@@ -13,8 +13,8 @@ This repository was made to create an objective comparison of multiple framework
 
 | | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 91k | 38k | 13k | 6k | 3k | 116k |
-| **Forks** | 12k | 4k | 0.3k | 0.2k | 0.2k | 16.5k |
+| **Github stars** | 92k | 38k | 17k | 7k | 4k | 120k |
+| **Forks** | 12k | 4k | 0.3k | 0.2k | 0.2k | 17k |
 | **Creation date** | 2013 | 2011 | 2017 | 2019 | 2018 | 2018 |
 | **Last Update** | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 |
 | **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | C, C++, Dart |
