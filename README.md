@@ -89,6 +89,7 @@ TODO:
 - Build constraints
 - Source code protection
 - Modules support (npm, native, etc.)
+- .Net MAUI
 
 Benchmarks ideas:
  - BabylonJS scene
