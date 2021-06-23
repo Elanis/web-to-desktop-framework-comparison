@@ -44,27 +44,27 @@
 
 		AVG (Both) 	67.5			19.6ms
 
-	tauri crate-v0.11.1 npmn-v0.14.1
+	tauri 1.0.0-beta.1
 
 		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
-		1			2.9MB			351ms
-		2			2.9MB			370ms
-		3			2.9MB			342ms
-		4			2.8MB			380ms
-		5			3.1MB			366ms
+		1			57.9MB			1077ms
+		2			58.5MB			1067ms
+		3			57.8MB			1070ms
+		4			58.1MB			1066ms
+		5			58.1MB			1104ms
 
 		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
 
 		RUN			MEM				START TIME      
-		1			2.9MB			416ms
-		2			2.9MB			340ms
-		3			2.9MB			372ms
-		4			2.9MB			360ms
-		5			2.9MB			364ms
+		1			57.2MB			1107ms
+		2			57.8MB			1279ms
+		3			56.7MB			1146ms
+		4			57.7MB			1266ms
+		5			56.8MB			1110ms
 
-		AVG (Both) 	2.9MB			366.1ms
+		AVG (Both) 	57.7MB			1129ms
 
 	flutter 2.0.2
 
