@@ -26,7 +26,7 @@ This repository was made to create an objective comparison of multiple framework
 | **npm/yarn module support** | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
 | **Engine** | Chromium | Webkit, Chromium | Cocoa/WebKit on macOS, gtk-webkit2 on Linux and MSHTML (IE10/11) or Webkit via Edge on Windows | Qt | WebkitGTK+ | Flutter engine |
 
-## Operating systems
+## Operating systems support
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -36,9 +36,12 @@ This repository was made to create an objective comparison of multiple framework
 | **Target Environment** | ***Windows*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | | ***MacOS*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | | ***Linux*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | ***Android*** | ❌ | ❌ | Soon | ❌ | ❌ | ✔️ |
-| | ***iOS*** | ❌ | ❌ | Soon | ❌ | ❌ | ✔️ |
-| | ***Web*** | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️ |
+| | ***Android*** | ❌ | ❌ | Soon<sup>1</sup> | ❌ | ❌ | ✔️ |
+| | ***iOS*** | ❌ | ❌ | In progress<sup>1</sup> | ❌ | ❌ | ✔️ |
+| | ***Web*** | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ |
+
+**<sup>1</sup>**: https://github.com/tauri-apps/tauri#platforms  
+**<sup>2</sup>**: Uses [modes](https://neutralino.js.org/docs/developer-environment/modes/) to generate web apps  
 
 ## Benchmarks
 
