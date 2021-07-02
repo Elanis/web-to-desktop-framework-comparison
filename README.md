@@ -71,17 +71,17 @@ See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to
 
 | | |  [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 175MB | 249MB | N/A<sup>1</sup> | 83.6MB | 2MB | N/A<sup>1</sup> |
-| | ***Windows (x86)*** | 156MB | 223MB | N/A<sup>1</sup> | 83.6MB | 2MB | N/A<sup>1</sup> |
-| | ***MacOS*** | ? | 254MB | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
-| | ***Linux (x64)*** | 184MB | 313MB | N/A<sup>1</sup> | ? | 2MB | N/A<sup>1</sup> |
-| | ***Linux (x86)*** | 168MB | 314MB | N/A<sup>1</sup> | ? | 2MB | N/A<sup>1</sup> |
-| **Memory Usage** | ***Windows*** | ≈54MB then ≈51MB | ≈69MB | N/A<sup>1</sup> | ≈44MB then ≈39MB | ≈2.7MB | N/A<sup>1</sup> |
-| | ***MacOS*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
-| | ***Linux*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
-| **Start duration** | ***Windows*** | ≈72ms | ≈20ms | N/A<sup>1</sup> | ≈105ms (Debug) | ? | N/A<sup>1</sup> |
-| | ***MacOS*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
-| | ***Linux*** | ? | ? | N/A<sup>1</sup> | ? | ? | N/A<sup>1</sup> |
+| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 8.9MB | 83.6MB | 2MB | N/A<sup>1</sup> |
+| | ***Windows (x86)*** | 156MB | 223MB | ? | 83.6MB | 2MB | N/A<sup>1</sup> |
+| | ***MacOS*** | ? | 254MB | ? | ? | ? | N/A<sup>1</sup> |
+| | ***Linux (x64)*** | 184MB | 313MB | ? | ? | 2MB | N/A<sup>1</sup> |
+| | ***Linux (x86)*** | 168MB | 314MB | ? | ? | 2MB | N/A<sup>1</sup> |
+| **Memory Usage** | ***Windows*** | ≈54MB then ≈51MB | ≈69MB | ≈57.6MB | ≈44MB then ≈39MB | ≈2.7MB | N/A<sup>1</sup> |
+| | ***MacOS*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***Linux*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
+| **Start duration** | ***Windows*** | ≈72ms | ≈20ms | ≈1044ms | ≈105ms (Debug) | ? | N/A<sup>1</sup> |
+| | ***MacOS*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***Linux*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
 
 **<sup>1</sup>**: Frameless mode not supported yet
 
