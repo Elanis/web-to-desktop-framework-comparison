@@ -53,7 +53,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 453MB | 83.6MB | 2MB | 18MB |
+| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 8.9MB | 83.6MB | 2MB | 18MB |
 | | ***Windows (x86)*** | 156MB | 223MB | ? | 83.6MB | 2MB | 18MB |
 | | ***MacOS*** | ? | 254MB | ? | ? | 2MB | ? |
 | | ***Linux (x64)*** | 184MB | 313MB | ? | ? | 2MB | ? |
