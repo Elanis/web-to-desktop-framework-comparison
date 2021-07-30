@@ -11,34 +11,35 @@ This repository was made to create an objective comparison of multiple framework
 
 ## Major characteristics
 
-| | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 94k | 38k | 18k | 7k | 4k | 123k |
-| **Forks** | 13k | 4k | 0.4k | 0.2k | 0.2k | 18k |
-| **Creation date** | 2013 | 2011 | 2017 | 2019 | 2018 | 2018 |
-| **Last Update** | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 |
-| **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | C, C++, Dart |
-| **Usage Language - Back** | JS, C++ | JS, C++ | Rust | JS, C++ | JS, C++ | Dart |
-| **Usage Language - Front** | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | Dart |
-| **License** | [MIT](https://github.com/electron/electron/blob/master/LICENSE) | [MIT](https://github.com/nwjs/nw.js/blob/nw52/LICENSE) | [MIT](https://github.com/tauri-apps/tauri/blob/dev/LICENSE) | [MIT](https://github.com/nodegui/nodegui/blob/master/LICENSE) | [MIT](https://github.com/neutralinojs/neutralinojs/blob/master/LICENSE) | [BSD 3-Clause](https://github.com/flutter/flutter/blob/master/LICENSE) |
-| **Developer Dependencies** | [Node.js, Electron NPM Package](https://www.electronjs.org/docs/tutorial/quick-start#prerequisites) | [Node.js, NW.JS SDK](https://nwjs.readthedocs.io/en/latest/For%20Users/Getting%20Started/) | [C++ Compiler, Node.js, Rustc, Cargo, Tauri Bundler](https://tauri.studio/en/docs/getting-started/intro/#setting-up-your-environment) | [Cmake, make, Node.js, NodeGUI NPM Package](https://docs.nodegui.org/docs/guides/getting-started/#developer-environment) | [Node.js, Neu NPM Package](https://neutralino.js.org/docs/#/gettingstarted/quickstart) | [Flutter SDK, Visual Studio 2019 / Clang](https://flutter.dev/desktop#requirements) |
-| **User Dependencies** | None | None | None | None | None | None |
-| **npm/yarn module support** | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
-| **Engine** | Chromium | Webkit, Chromium | WRY (WebKitGTK for Linux, WebKit for MacOS, Webview2 for Windows) | Qt | WebkitGTK+ | Flutter engine |
+| | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Github stars** | 94k | 38k | 18k | 7k | 4k | 123k | 11k |
+| **Forks** | 13k | 4k | 0.4k | 0.2k | 0.2k | 18k | 0.5k |
+| **Creation date** | 2013 | 2011 | 2017 | 2019 | 2018 | 2018 | 2020 |
+| **Last Update** | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 |
+| **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | C, C++, Dart | C# |
+| **Usage Language - Back** | JS, C++ | JS, C++ | Rust | JS, C++ | JS, C++ | Dart | C# |
+| **Usage Language - Front** | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | Dart | C# |
+| **License** | [MIT](https://github.com/electron/electron/blob/master/LICENSE) | [MIT](https://github.com/nwjs/nw.js/blob/nw52/LICENSE) | [MIT](https://github.com/tauri-apps/tauri/blob/dev/LICENSE) | [MIT](https://github.com/nodegui/nodegui/blob/master/LICENSE) | [MIT](https://github.com/neutralinojs/neutralinojs/blob/master/LICENSE) | [BSD 3-Clause](https://github.com/flutter/flutter/blob/master/LICENSE) | [MIT](https://github.com/dotnet/maui/blob/main/LICENSE) |
+| **Developer Dependencies** | [Node.js, Electron NPM Package](https://www.electronjs.org/docs/tutorial/quick-start#prerequisites) | [Node.js, NW.JS SDK](https://nwjs.readthedocs.io/en/latest/For%20Users/Getting%20Started/) | [C++ Compiler, Node.js, Rustc, Cargo, Tauri Bundler](https://tauri.studio/en/docs/getting-started/intro/#setting-up-your-environment) | [Cmake, make, Node.js, NodeGUI NPM Package](https://docs.nodegui.org/docs/guides/getting-started/#developer-environment) | [Node.js, Neu NPM Package](https://neutralino.js.org/docs/#/gettingstarted/quickstart) | [Flutter SDK, Visual Studio 2019 / Clang](https://flutter.dev/desktop#requirements) | [.Net SDK, Visual Studio (optionnal), WebView2 (optionnal), Xcode (optionnal)](https://github.com/dotnet/maui/wiki/Getting-Started) |
+| **User Dependencies** | None | None | None | None | None | None | None |
+| **npm/yarn module support** | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Engine** | Chromium | Webkit, Chromium | WRY (WebKitGTK for Linux, WebKit for MacOS, Webview2 for Windows) | Qt | WebkitGTK+ | Flutter engine | .NET MAUI |
 
 ## Operating systems support
 
-|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Developement Environment** | ***Windows*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | ***MacOS*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | ***Linux*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| **Target Environment** | ***Windows*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | ***MacOS*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | ***Linux*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| | ***Android*** | ❌ | ❌ | Soon<sup>1</sup> | ❌ | ❌ | ✔️ |
-| | ***iOS*** | ❌ | ❌ | In progress<sup>1</sup> | ❌ | ❌ | ✔️ |
-| | ***Web*** | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ |
+|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Developement Environment** | ***Windows*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***MacOS*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***Linux*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| **Target Environment** | ***Windows*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***MacOS*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| | ***Linux*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | Soon |
+| | ***Android*** | ❌ | ❌ | Soon<sup>1</sup> | ❌ | ❌ | ✔️ | ✔️ |
+| | ***iOS*** | ❌ | ❌ | In progress<sup>1</sup> | ❌ | ❌ | ✔️ | ✔️ |
+| | ***tvOS*** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️ |
+| | ***Web*** | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ | ❌ |
 
 **<sup>1</sup>**: https://github.com/tauri-apps/tauri#platforms  
 **<sup>2</sup>**: Uses [modes](https://neutralino.js.org/docs/developer-environment/modes/) to generate web apps  
@@ -51,19 +52,19 @@ This repository was made to create an objective comparison of multiple framework
 
 See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-framework-comparison/tree/main/benchmark/01-empty-app/) folder.
 
-|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 8.9MB | 83.6MB | 2MB | 18MB |
-| | ***Windows (x86)*** | 156MB | 223MB | ? | 83.6MB | 2MB | 18MB |
-| | ***MacOS*** | ? | 254MB | ? | ? | 2MB | ? |
-| | ***Linux (x64)*** | 184MB | 313MB | ? | ? | 2MB | ? |
-| | ***Linux (x86)*** | 162MB | 314MB | ? | ? | 2MB | ? |
-| **Memory Usage** | ***Windows*** | ≈55MB then ≈52MB | ≈67MB | ≈57.7MB | ≈44MB then ≈39MB | ≈2.7MB | ≈36.2MB (Debug) / ≈23.7MB (Release) |
-| | ***MacOS*** | ? | ? | ? | ? | ? | ? |
-| | ***Linux*** | ? | ? | ? | ? | ? | ? |
-| **Start duration** | ***Windows*** | ≈76ms | ≈20ms | ≈1129ms | ≈103ms (Debug) | ? | ≈5.6ms |
-| | ***MacOS*** | ? | ? | ? | ? | ? | ? |
-| | ***Linux*** | ? | ? | ? | ? | ? | ? |
+|  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Build size** | ***Windows (x64)*** | 175MB | 249MB | 8.9MB | 83.6MB | 2MB | 18MB | 108MB |
+| | ***Windows (x86)*** | 156MB | 223MB | ? | 83.6MB | 2MB | 18MB | ? |
+| | ***MacOS*** | ? | 254MB | ? | ? | 2MB | ? | ? |
+| | ***Linux (x64)*** | 184MB | 313MB | ? | ? | 2MB | ? | ? |
+| | ***Linux (x86)*** | 162MB | 314MB | ? | ? | 2MB | ? | ? |
+| **Memory Usage** | ***Windows*** | ≈55MB then ≈52MB | ≈67MB | ≈57.7MB | ≈44MB then ≈39MB | ≈2.7MB | ≈36.2MB (Debug) / ≈23.7MB (Release) | ≈61.6MB (Debug) / ≈60.4MB (Release) |
+| | ***MacOS*** | ? | ? | ? | ? | ? | ? | ? |
+| | ***Linux*** | ? | ? | ? | ? | ? | ? | ? |
+| **Start duration** | ***Windows*** | ≈76ms | ≈20ms | ≈1129ms | ≈103ms (Debug) | ? | ≈5.6ms | ? |
+| | ***MacOS*** | ? | ? | ? | ? | ? | ? | ? |
+| | ***Linux*** | ? | ? | ? | ? | ? | ? | ? |
 
 ### 02 - Empty app (Headless)
 
@@ -92,7 +93,6 @@ TODO:
 - Build constraints
 - Source code protection
 - Modules support (npm, native, etc.)
-- .Net MAUI
 
 Benchmarks ideas:
  - BabylonJS scene

@@ -138,6 +138,30 @@
 
 		AVG 		2.7MB			/
 
+	maui 6.0.100-preview.6.21355.2
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Debug version
+
+		RUN			MEM				START TIME      
+		1			61.5MB			-
+		2			61.1MB			-
+		3			61.5MB			-
+		4			61.8MB			-
+		5			61.9MB			-
+
+		AVG 		61.6MB			/
+
+		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			60.1MB			-
+		2			60.2MB			-
+		3			60.5MB			-
+		4			60.3MB			-
+		5			60.8MB			-
+
+		AVG 		60.4MB			/
+
 
 02-empty-app-headless
 
