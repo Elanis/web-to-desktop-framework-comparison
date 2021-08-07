@@ -5,26 +5,26 @@
 		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
-		1			59 MB 			125ms
-		2			58 MB 			123ms
-		3			58 MB 			134ms
-		4			60 MB 			122ms
-		5			59 MB 			123ms
+		1			59MB 			125ms
+		2			58MB 			123ms
+		3			58MB 			134ms
+		4			60MB 			122ms
+		5			59MB 			123ms
 
 		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Built with electron-packager 15.3.0
 
 		RUN			MEM				START TIME      
-		1			57 MB 			168ms
-		2			59 MB 			119ms
-		3			57 MB 			122ms
-		4			58 MB 			131ms
-		5			58 MB 			139ms
+		1			57MB 			168ms
+		2			59MB 			119ms
+		3			57MB 			122ms
+		4			58MB 			131ms
+		5			58MB 			139ms
 
-		AVG (Both) 	58.3 MB 		130.6ms
+		AVG (Both) 	58.3MB 		130.6ms
 
 	nw.js 0.55.0
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
 		1			68MB			21ms
@@ -33,7 +33,7 @@
 		4			67MB			22ms
 		5			67MB			21ms
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Built version
 
 		RUN			MEM				START TIME      
 		1			62MB 			-
@@ -45,27 +45,27 @@
 		AVG			66.8MB (Debug)  21.2ms (Debug)  
 					62.2MB (Build)  -
 
-	tauri 1.0.0-beta.1
+	@tauri-apps/cli 1.0.0-beta.6, @tauri-apps/api 1.0.0-beta.5, 
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
-
-		RUN			MEM				START TIME      
-		1			57.9MB			1077ms
-		2			58.5MB			1067ms
-		3			57.8MB			1070ms
-		4			58.1MB			1066ms
-		5			58.1MB			1104ms
-
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
-		1			57.2MB			1107ms
-		2			57.8MB			1279ms
-		3			56.7MB			1146ms
-		4			57.7MB			1266ms
-		5			56.8MB			1110ms
+		1			59MB 			121ms
+		2			60MB 			106ms
+		3			60MB 			121ms
+		4			60MB 			146ms
+		5			60MB 			112ms
 
-		AVG (Both) 	57.7MB			1129ms
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			58MB 			-
+		2			60MB 			-
+		3			59MB 			-
+		4			59MB 			-
+		5			59MB 			-
+
+		AVG (Both) 	59MB 			121ms
 
 	flutter 2.0.2
 
@@ -190,7 +190,7 @@
 
 	nw.js 0.55.0
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
 		1			68MB			21ms
@@ -199,7 +199,7 @@
 		4			67MB			22ms
 		5			67MB			21ms
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Built version
 
 		RUN			MEM				START TIME      
 		1			62MB 			-
@@ -211,27 +211,27 @@
 		AVG			66.8MB (Debug)  21.2ms (Debug)  
 					62.2MB (Build)  -
 
-	tauri 1.0.0-beta.1
+	@tauri-apps/cli 1.0.0-beta.6, @tauri-apps/api 1.0.0-beta.5, 
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
-
-		RUN			MEM				START TIME      
-		1			58.6MB			1084ms
-		2			58.4MB 			1066ms
-		3			58.0MB 			1107ms
-		4			58.5MB 			1093ms
-		5			57.7MB 			1089ms
-
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
-		1			56.7MB			-
-		2			56.4MB 			-
-		3			57.8MB 			-
-		4			57.0MB 			-
-		5			57.3MB 			-
+		1			59MB 			121ms
+		2			60MB 			106ms
+		3			60MB 			121ms
+		4			60MB 			146ms
+		5			60MB 			112ms
 
-		AVG (Both) 	57.6MB			1044ms 			
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Built version
+
+		RUN			MEM				START TIME      
+		1			58MB 			-
+		2			60MB 			-
+		3			59MB 			-
+		4			59MB 			-
+		5			59MB 			-
+
+		AVG (Both) 	59MB 			121ms		
 
 	nodegui 0.30.1
 
@@ -255,7 +255,7 @@
 		4			44 then 39MB 	-
 		5			44 then 39MB 	-
 
-		AVG 		44 => 39 MB     /
+		AVG 		44 => 39MB     /
 
 	neutralinojs 2.0.0
 
