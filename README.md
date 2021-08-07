@@ -36,7 +36,7 @@ This repository was made to create an objective comparison of multiple framework
 | **Target Environment** | ***Windows*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | | ***MacOS*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | | ***Linux*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | Soon |
-| | ***Android*** | ❌ | ❌ | Soon<sup>1</sup> | ❌ | ❌ | ✔️ | ✔️ |
+| | ***Android*** | ❌ | [Requested](https://github.com/nwjs/nw.js/issues/94) | Soon<sup>1</sup> | ❌ | ❌ | ✔️ | ✔️ |
 | | ***iOS*** | ❌ | ❌ | In progress<sup>1</sup> | ❌ | ❌ | ✔️ | ✔️ |
 | | ***tvOS*** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️ |
 | | ***Web*** | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ | ❌ |
@@ -54,32 +54,32 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 180MB | 249MB | 8.9MB | 83.6MB | 2MB | 18MB | 108MB |
-| | ***Windows (x86)*** | 160MB | 223MB | ? | 83.6MB | 2MB | 18MB | ? |
-| | ***Windows (ARM64)*** | 193MB | ? | ? | ? | ? | ? | ? |
-| | ***MacOS*** | ? | 254MB | ? | ? | 2MB | ? | ? |
-| | ***Linux (x64)*** | 181MB | 313MB | ? | ? | 2MB | ? | ? |
-| | ***Linux (x86)*** | 171MB | 314MB | ? | ? | 2MB | ? | ? |
-| | ***Linux (ARM64)*** | 196MB | ? | ? | ? | ? | ? | ? |
-| | ***Linux (ARMv7l)*** | 128MB | ? | ? | ? | ? | ? | ? |
-| | ***Android*** | - | ? | ? | ? | ? | ? | ? |
-| | ***iOS*** | - | ? | ? | ? | ? | ? | ? |
-| | ***tvOS*** | - | ? | ? | ? | ? | ? | ? |
-| | ***Web*** | - | ? | ? | ? | ? | ? | ? |
-| **Memory Usage** | ***Windows*** | ≈58MB | ≈67MB | ≈57.7MB | ≈44MB then ≈39MB | ≈2.7MB | ≈36.2MB (Debug) / ≈23.7MB (Release) | ≈61.6MB (Debug) / ≈60.4MB (Release) |
+| **Build size** | ***Windows (x64)*** | 180MB | 264MB | 8.9MB | 83.6MB | 2MB | 18MB | 108MB |
+| | ***Windows (x86)*** | 160MB | 237MB | ? | 83.6MB | 2MB | 18MB | ? |
+| | ***Windows (ARM64)*** | 193MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
+| | ***MacOS*** | ? | 265MB | ? | ? | 2MB | ? | ? |
+| | ***Linux (x64)*** | 181MB | 328MB | ? | ? | 2MB | ? | ? |
+| | ***Linux (x86)*** | 171MB | 329MB | ? | ? | 2MB | ? | ? |
+| | ***Linux (ARM64)*** | 196MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
+| | ***Linux (ARMv7l)*** | 128MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
+| | ***Android*** | - | - | ? | ? | ? | ? | ? |
+| | ***iOS*** | - | - | ? | ? | ? | ? | ? |
+| | ***tvOS*** | - | - | ? | ? | ? | ? | ? |
+| | ***Web*** | - | - | ? | ? | ? | ? | ? |
+| **Memory Usage** | ***Windows*** | ≈58MB | ≈67MB (Debug) / ≈63MB (Release) | ≈57.7MB | ≈44MB then ≈39MB | ≈2.7MB | ≈36.2MB (Debug) / ≈23.7MB (Release) | ≈61.6MB (Debug) / ≈60.4MB (Release) |
 | | ***MacOS*** | ? | ? | ? | ? | ? | ? | ? |
 | | ***Linux*** | ? | ? | ? | ? | ? | ? | ? |
-| | ***Android*** | - | ? | ? | ? | ? | ? | ? |
-| | ***iOS*** | - | ? | ? | ? | ? | ? | ? |
-| | ***tvOS*** | - | ? | ? | ? | ? | ? | ? |
-| | ***Web*** | - | ? | ? | ? | ? | ? | ? |
-| **Start duration** | ***Windows*** | ≈131ms | ≈20ms | ≈1129ms | ≈103ms (Debug) | ? | ≈5.6ms | ? |
+| | ***Android*** | - | - | ? | ? | ? | ? | ? |
+| | ***iOS*** | - | - | ? | ? | ? | ? | ? |
+| | ***tvOS*** | - | - | ? | ? | ? | ? | ? |
+| | ***Web*** | - | - | ? | ? | ? | ? | ? |
+| **Start duration** | ***Windows*** | ≈131ms | ≈21ms (Debug) | ≈1129ms | ≈103ms (Debug) | ? | ≈5.6ms | ? |
 | | ***MacOS*** | ? | ? | ? | ? | ? | ? | ? |
 | | ***Linux*** | ? | ? | ? | ? | ? | ? | ? |
-| | ***Android*** | - | ? | ? | ? | ? | ? | ? |
-| | ***iOS*** | - | ? | ? | ? | ? | ? | ? |
-| | ***tvOS*** | - | ? | ? | ? | ? | ? | ? |
-| | ***Web*** | - | ? | ? | ? | ? | ? | ? |
+| | ***Android*** | - | - | ? | ? | ? | ? | ? |
+| | ***iOS*** | - | - | ? | ? | ? | ? | ? |
+| | ***tvOS*** | - | - | ? | ? | ? | ? | ? |
+| | ***Web*** | - | - | ? | ? | ? | ? | ? |
 
 ### 02 - Empty app (Headless)
 
@@ -87,32 +87,32 @@ See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to
 
 | | |  [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 180MB | 249MB | 8.9MB | 83.6MB | 2MB | N/A<sup>1</sup> |
-| | ***Windows (x86)*** | 160MB | 223MB | ? | 83.6MB | 2MB | N/A<sup>1</sup> |
-| | ***Windows (ARM64)*** | 193MB | ? | ? | ? | ? | ? | ? |
-| | ***MacOS*** | ? | 254MB | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Linux (x64)*** | 181MB | 313MB | ? | ? | 2MB | N/A<sup>1</sup> |
-| | ***Linux (x86)*** | 171MB | 314MB | ? | ? | 2MB | N/A<sup>1</sup> |
-| | ***Linux (ARM64)*** | 196MB | ? | ? | ? | ? | ? | ? |
-| | ***Linux (ARMv7l)*** | 128MB | ? | ? | ? | ? | ? | ? |
-| | ***Android*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***iOS*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***tvOS*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Web*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| **Memory Usage** | ***Windows*** | ≈57MB | ≈69MB | ≈57.6MB | ≈44MB then ≈39MB | ≈2.7MB | N/A<sup>1</sup> |
+| **Build size** | ***Windows (x64)*** | 180MB | 264MB | 8.9MB | 83.6MB | 2MB | N/A<sup>1</sup> |
+| | ***Windows (x86)*** | 160MB | 237MB | ? | 83.6MB | 2MB | N/A<sup>1</sup> |
+| | ***Windows (ARM64)*** | 193MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
+| | ***MacOS*** | ? | 265MB | ? | ? | ? | N/A<sup>1</sup> |
+| | ***Linux (x64)*** | 181MB | 328MB | ? | ? | 2MB | N/A<sup>1</sup> |
+| | ***Linux (x86)*** | 171MB | 329MB | ? | ? | 2MB | N/A<sup>1</sup> |
+| | ***Linux (ARM64)*** | 196MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
+| | ***Linux (ARMv7l)*** | 128MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
+| | ***Android*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***iOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***tvOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***Web*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| **Memory Usage** | ***Windows*** | ≈57MB | ≈67MB (Debug) / ≈63MB (Release) | ≈57.6MB | ≈44MB then ≈39MB | ≈2.7MB | N/A<sup>1</sup> |
 | | ***MacOS*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
 | | ***Linux*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Android*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***iOS*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***tvOS*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Web*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| **Start duration** | ***Windows*** | ≈123ms | ≈20ms | ≈1044ms | ≈105ms (Debug) | ? | N/A<sup>1</sup> |
+| | ***Android*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***iOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***tvOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***Web*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| **Start duration** | ***Windows*** | ≈123ms | ≈21ms (Debug) | ≈1044ms | ≈105ms (Debug) | ? | N/A<sup>1</sup> |
 | | ***MacOS*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
 | | ***Linux*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Android*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***iOS*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***tvOS*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Web*** | - | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***Android*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***iOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***tvOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
+| | ***Web*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
 
 **<sup>1</sup>**: Frameless mode not supported yet
 
