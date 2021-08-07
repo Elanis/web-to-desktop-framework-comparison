@@ -6,13 +6,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build-webpack": "webpack --mode production",
-    "build": "npm run build-webpack && npx nodegui-packer --pack ./dist",
+    "build": "webpack --mode production",
     "start": "webpack && qode ./dist/index.js",
     "debug": "webpack && qode --inspect ./dist/index.js"
   },
   "dependencies": {
-    "@nodegui/nodegui": "^0.30.1"
+    "@nodegui/nodegui": "^0.33.1"
   },
   "devDependencies": {
     "@nodegui/packer": "^1.4.1",
