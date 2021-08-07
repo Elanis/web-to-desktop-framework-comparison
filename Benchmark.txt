@@ -22,27 +22,28 @@
 
 		AVG (Both) 	58.3 MB 		130.6ms
 
-	nw.js 0.52.0
+	nw.js 0.55.0
 
 		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
-		1			71 MB			19ms
-		2			70 MB			19ms
-		3			72 MB			19ms
-		4			71 MB			21ms
-		5			71 MB			20ms
+		1			68MB			21ms
+		2			66MB			21ms
+		3			66MB			21ms
+		4			67MB			22ms
+		5			67MB			21ms
 
 		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
 
 		RUN			MEM				START TIME      
-		1			61 MB			-
-		2			66 MB			-
-		3			67 MB			-
-		4			63 MB			-
-		5			63 MB			-
+		1			62MB 			-
+		2			62MB 			-
+		3			61MB 			-
+		4			63MB 			-
+		5			63MB 			-
 
-		AVG (Both) 	67.5			19.6ms
+		AVG			66.8MB (Debug)  21.2ms (Debug)  
+					62.2MB (Build)  -
 
 	tauri 1.0.0-beta.1
 
@@ -187,27 +188,28 @@
 
 		AVG (Both) 	56.5MB 			122.5ms
 
-	nw.js 0.52.0
+	nw.js 0.55.0
 
 		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
-		1			77 MB			21ms
-		2			71 MB			20ms
-		3			72 MB			19ms
-		4			71 MB			21ms
-		5			72 MB			20ms
+		1			68MB			21ms
+		2			66MB			21ms
+		3			66MB			21ms
+		4			67MB			22ms
+		5			67MB			21ms
 
 		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built version
 
 		RUN			MEM				START TIME      
-		1			68 MB			-
-		2			65 MB			-
-		3			65 MB			-
-		4			64 MB			-
-		5			64 MB			-
+		1			62MB 			-
+		2			62MB 			-
+		3			61MB 			-
+		4			63MB 			-
+		5			63MB 			-
 
-		AVG (Both) 	68.9			20.2ms
+		AVG			66.8MB (Debug)  21.2ms (Debug)  
+					62.2MB (Build)  -
 
 	tauri 1.0.0-beta.1
 
