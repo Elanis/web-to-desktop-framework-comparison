@@ -30,10 +30,10 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.30.1":
-  version "0.30.3"
-  resolved "https://registry.yarnpkg.com/@nodegui/nodegui/-/nodegui-0.30.3.tgz#e5537f96516f5c137a8dc8f4cc3edd475a9a6de7"
-  integrity sha512-fhMf6/tqO80VDc8AalJRQB2aesDLms0tWx+Rqs3Nm9C46l9xvVpNbfq7BxdPlotqajCWFbUKU7VC3xLvHLz8OA==
+"@nodegui/nodegui@^0.33.1":
+  version "0.33.3"
+  resolved "https://registry.yarnpkg.com/@nodegui/nodegui/-/nodegui-0.33.3.tgz#038ae04bef726350e4afc1e01dbf62db0aaea561"
+  integrity sha512-J/y61LfRxBgNOo817btQFv1AG7a6RofCMwR2jRCNXTfuw10wDz6hjKNzigvelr77gAhCFTvnFB4vMbvROFiF8w==
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
     "@nodegui/qode" "^2.1.0"
@@ -1642,9 +1642,9 @@ postcss-nodegui-autoprefixer@0.0.7:
     postcss "^7.0.17"
 
 postcss@^7.0.17:
-  version "7.0.35"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
-  integrity sha512-3QT8bBJeX/S5zKTTjTCIjRF3If4avAT6kqxcASlTWEtAFCb9NH0OUxNDfgZSWdP5fJnBYCMEWkIFfWeugjzYMg==
+  version "7.0.36"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.36.tgz#056f8cffa939662a8f5905950c07d5285644dfcb"
+  integrity sha512-BebJSIUMwJHRH0HAQoxN4u1CN86glsrwsW0q7T+/m44eXOUAxSNdHRkNZPYz5vVUbg17hFgOQDE7fZk7li3pZw==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
