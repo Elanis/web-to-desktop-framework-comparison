@@ -1,26 +1,26 @@
 01-empty-app
 
-	electron 10.1.0
+	electron 13.1.8
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
-
-		RUN			MEM				START TIME      
-		1			56 then 53 MB	107ms
-		2			56 then 53 MB	69ms
-		3			56 then 53 MB	72ms
-		4			55 then 52 MB	85ms
-		5			55 then 52 MB	74ms
-
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built with electron-packager 15.1.0
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
-		1			56 then 54 MB	74ms
-		2			54 then 51 MB	68ms
-		3			56 then 52 MB 	70ms
-		4			56 then 52 MB	75ms
-		5			56 then 52 MB	69ms
+		1			59 MB 			125ms
+		2			58 MB 			123ms
+		3			58 MB 			134ms
+		4			60 MB 			122ms
+		5			59 MB 			123ms
 
-		AVG (Both) 	55.6 => 52.4 	76.3ms
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Built with electron-packager 15.3.0
+
+		RUN			MEM				START TIME      
+		1			57 MB 			168ms
+		2			59 MB 			119ms
+		3			57 MB 			122ms
+		4			58 MB 			131ms
+		5			58 MB 			139ms
+
+		AVG (Both) 	58.3 MB 		130.6ms
 
 	nw.js 0.52.0
 
@@ -165,27 +165,27 @@
 
 02-empty-app-headless
 
-	electron 10.1.0
+	electron 13.1.8
 
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Not built version
-
-		RUN			MEM				START TIME      
-		1			57 then 54 MB	77ms
-		2			55 then 52 MB	69ms
-		3			56 then 52 MB	64ms
-		4			55 then 52 MB	67ms
-		5			55 then 52 MB	71ms
-
-		Windows 10 (i5-8400 / SSD 970 EVO PLUS) - Built with electron-packager 15.1.0
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Not built version
 
 		RUN			MEM				START TIME      
-		1			54 then 51 MB	82ms
-		2			54 then 51 MB	67ms
-		3			54 then 51 MB	74ms
-		4			54 then 51 MB	75ms
-		5			54 then 51 MB	75ms
+		1			58MB			117ms
+		2			55MB 			127ms
+		3			56MB 			116ms
+		4			56MB 			122ms
+		5			58MB			128ms
 
-		AVG (Both) 	54.8 => 51.7	72.1ms
+		Windows 10 19042 (i5-8400 / SSD 970 EVO PLUS) - Built with electron-packager 15.3.0
+
+		RUN			MEM				START TIME      
+		1			56MB 			139ms
+		2			57MB 			128ms
+		3			55MB 			121ms
+		4			57MB 			110ms
+		5			57MB 			117ms
+
+		AVG (Both) 	56.5MB 			122.5ms
 
 	nw.js 0.52.0
 
