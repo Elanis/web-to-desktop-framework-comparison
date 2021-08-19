@@ -58,7 +58,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | | ***Windows (x86)*** | 160MB | 237MB | ? | 83.6MB | 2MB | 18MB | ? |
 | | ***Windows (ARM64)*** | 193MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
 | | ***MacOS*** | ? | 265MB | ? | ? | 2MB | ? | ? |
-| | ***Linux (x64)*** | 181MB | 328MB | 5.8MB | ? | 2MB | ? | ? |
+| | ***Linux (x64)*** | 181MB | 328MB | 5.8MB | ? | 2MB | 56.8MB | ? |
 | | ***Linux (x86)*** | 171MB | 329MB | ? | ? | 2MB | ? | ? |
 | | ***Linux (ARM64)*** | 196MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
 | | ***Linux (ARMv7l)*** | 128MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
