@@ -42,7 +42,7 @@ This repository was made to create an objective comparison of multiple framework
 | | ***Web*** | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ | ❌ |
 
 **<sup>1</sup>**: https://github.com/tauri-apps/tauri#platforms  
-**<sup>2</sup>**: Uses [modes](https://neutralino.js.org/docs/developer-environment/modes/) to generate web apps  
+**<sup>2</sup>**: Uses [modes](https://neutralino.js.org/docs/configuration/modes/) to generate web apps  
 
 ## Benchmarks
 
