@@ -85,34 +85,34 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to-desktop-framework-comparison/tree/main/benchmark/02-empty-app-headless) folder.
 
-| | |  [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Build size** | ***Windows (x64)*** | 180MB | 264MB | 2.6MB | 83.6MB | 2MB | N/A<sup>1</sup> |
-| | ***Windows (x86)*** | 160MB | 237MB | ? | 83.6MB | 2MB | N/A<sup>1</sup> |
-| | ***Windows (ARM64)*** | 193MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
-| | ***MacOS*** | ? | 265MB | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Linux (x64)*** | 181MB | 328MB | 5.8MB | ? | 2MB | N/A<sup>1</sup> |
-| | ***Linux (x86)*** | 171MB | 329MB | ? | ? | 2MB | N/A<sup>1</sup> |
-| | ***Linux (ARM64)*** | 196MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
-| | ***Linux (ARMv7l)*** | 128MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
-| | ***Android*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***iOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***tvOS*** | - | - | - | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Web*** | - | - | - | ? | ? | ? | N/A<sup>1</sup> |
-| **Memory Usage** | ***Windows*** | ≈57MB | ≈67MB (Debug) / ≈63MB (Release) | ≈59MB | ≈44MB then ≈39MB | ≈2.7MB | N/A<sup>1</sup> |
-| | ***MacOS*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Linux*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Android*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***iOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***tvOS*** | - | - | - | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Web*** | - | - | - | ? | ? | ? | N/A<sup>1</sup> |
-| **Start duration** | ***Windows*** | ≈123ms | ≈21ms (Debug) | ≈121ms | ≈105ms (Debug) | ? | N/A<sup>1</sup> |
-| | ***MacOS*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Linux*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Android*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***iOS*** | - | - | ? | ? | ? | ? | N/A<sup>1</sup> |
-| | ***tvOS*** | - | - | - | ? | ? | ? | N/A<sup>1</sup> |
-| | ***Web*** | - | - | - | ? | ? | ? | N/A<sup>1</sup> |
+| | |  [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Build size** | ***Windows (x64)*** | 180MB | 264MB | 2.6MB | 83.6MB | 2MB | N/A<sup>1</sup> | 108MB |
+| | ***Windows (x86)*** | 160MB | 237MB | ? | 83.6MB | 2MB | N/A<sup>1</sup> | ? |
+| | ***Windows (ARM64)*** | 193MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***MacOS*** | ? | 265MB | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Linux (x64)*** | 181MB | 328MB | 5.8MB | ? | 2MB | N/A<sup>1</sup> | ? |
+| | ***Linux (x86)*** | 171MB | 329MB | ? | ? | 2MB | N/A<sup>1</sup> | ? |
+| | ***Linux (ARM64)*** | 196MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Linux (ARMv7l)*** | 128MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Android*** | - | - | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***iOS*** | - | - | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***tvOS*** | - | - | - | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Web*** | - | - | - | ? | ? | N/A<sup>1</sup> | ? |
+| **Memory Usage** | ***Windows*** | ≈57MB | ≈67MB (Debug) / ≈63MB (Release) | ≈59MB | ≈44MB then ≈39MB | ≈2.7MB | N/A<sup>1</sup> | ≈61.6MB (Debug) / ≈60.4MB (Release) |
+| | ***MacOS*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Linux*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Android*** | - | - | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***iOS*** | - | - | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***tvOS*** | - | - | - | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Web*** | - | - | - | ? | ? | N/A<sup>1</sup> | ? |
+| **Start duration** | ***Windows*** | ≈123ms | ≈21ms (Debug) | ≈121ms | ≈105ms (Debug) | ? | N/A<sup>1</sup> | ? |
+| | ***MacOS*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Linux*** | ? | ? | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Android*** | - | - | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***iOS*** | - | - | ? | ? | ? | N/A<sup>1</sup> | ? |
+| | ***tvOS*** | - | - | - | ? | ? | N/A<sup>1</sup> | ? |
+| | ***Web*** | - | - | - | ? | ? | N/A<sup>1</sup> | ? |
 
 **<sup>1</sup>**: Frameless mode not supported yet
 
