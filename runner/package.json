@@ -4,7 +4,7 @@
   "description": "",
   "main": "runner.js",
   "scripts": {
-    "start": "node runner.js",
+    "start": "node runner.js && node writer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

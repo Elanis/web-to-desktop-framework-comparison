@@ -5,27 +5,18 @@ import pidtree from 'pidtree';
 import os from 'os';
 import systeminformation from 'systeminformation';
 
+import {
+	ITERATIONS_PER_PROCESS,
+	DEFAULT_TIMEOUT,
+	DEFAULT_DEBUG,
+	processes,
+} from './config.js';
+
 let customLog = console.log;
-
-/**
- * Config
- */
-const ITERATIONS_PER_PROCESS = 10;
-const DEFAULT_TIMEOUT = 10;
-const DEFAULT_DEBUG = false;
-const processes = [
-	{
-		path: '../benchmark/01-empty-app/electron',
-		exe: 'npm start',
-		packageJsonVersionsNeeded: ['electron', 'electron-packager'],
-	}
-];
-
 
 /**
  * Methods
  */
-
 async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT, debug=DEFAULT_DEBUG) {
 	return new Promise((resolve, reject) => {
 		const memUsageHistory = [];
@@ -47,7 +38,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			const lines = data.split('\n');
 			const starTimeLine = lines.find((elt) => elt.includes('Starting time:'));
 			if(starTimeLine) {
-				startTime = starTimeLine.replace('Starting time:', '').trim();
+				startTime = parseInt(starTimeLine.replace('Starting time:', '').trim().replace('ms', ''), 10);
 			}
 		});
 
@@ -147,14 +138,14 @@ function getPackageJsonVersions(path, packageJsonVersionsNeeded) {
 }
 
 async function writeDataToJsonFile(benchmarkData) {
-	const data = JSON.parse(fs.readFileSync('data.json'));
+	const data = JSON.parse(fs.readFileSync('benchmarks.json'));
 
 	data[os.platform + '-' + os.arch()] = {
 		systemInformations: await getSystemData(),
 		benchmarkData
 	};
 
-	fs.writeFileSync('data.json', JSON.stringify(data, null, 4));
+	fs.writeFileSync('benchmarks.json', JSON.stringify(data, null, 4));
 }
 
 /**
