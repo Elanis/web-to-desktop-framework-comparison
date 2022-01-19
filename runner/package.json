@@ -1,0 +1,17 @@
+{
+  "name": "runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "runner.js",
+  "scripts": {
+    "start": "node runner.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "pidusage": "^3.0.0",
+    "systeminformation": "^5.10.5"
+  }
+}
