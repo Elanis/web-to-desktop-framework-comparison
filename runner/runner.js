@@ -1,4 +1,5 @@
 import { execSync, exec } from 'child_process';
+import fs from 'fs';
 import pidusage from 'pidusage';
 import os from 'os';
 import systeminformation from 'systeminformation';
@@ -15,6 +16,7 @@ const processes = [
 	{
 		path: '../benchmark/01-empty-app/electron',
 		exe: 'npm start',
+		packageJsonVersionsNeeded: ['electron', 'electron-packager'],
 	}
 ];
 
@@ -121,6 +123,24 @@ async function getSystemData() {
 	};
 }
 
+function getPackageJsonVersions(path, packageJsonVersionsNeeded) {
+	if(!packageJsonVersionsNeeded) {
+		return {};
+	}
+
+	const packageJsonObj = JSON.parse(fs.readFileSync(path + '/package.json', 'utf-8'));
+	const versions = {};
+	for(const packageName of packageJsonVersionsNeeded) {
+		if(packageJsonObj.dependencies && packageJsonObj.dependencies[packageName]) {
+			versions[packageName] = packageJsonObj.dependencies[packageName];
+		} else if(packageJsonObj.devDependencies && packageJsonObj.devDependencies[packageName]) {
+			versions[packageName] = packageJsonObj.devDependencies[packageName];
+		}
+	}
+
+	return versions;
+}
+
 /**
  * Run
  */
@@ -128,8 +148,11 @@ async function getSystemData() {
 	let processId = 0;
 	const benchmarkData = {};
 
-	for(const { path, exe } of processes) {
-		benchmarkData[path] = [];
+	for(const { path, exe, packageJsonVersionsNeeded } of processes) {
+		benchmarkData[path] = {
+			versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
+			benchmarks: [],
+		};
 
 		for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
 			customLog = (...args) => console.log('[Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
@@ -140,7 +163,7 @@ async function getSystemData() {
 
 			customLog(path, exe, '\n', processMemoryUsage(res));
 
-			benchmarkData[path].push({
+			benchmarkData[path].benchmarks.push({
 				memoryUsage: processMemoryUsage(res),
 				startTime: res.startTime
 			});
