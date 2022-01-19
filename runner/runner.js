@@ -1,6 +1,7 @@
 import { execSync, exec } from 'child_process';
 import fs from 'fs';
 import pidusage from 'pidusage';
+import pidtree from 'pidtree';
 import os from 'os';
 import systeminformation from 'systeminformation';
 
@@ -66,16 +67,20 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		});
 
 		// Save stats
-		const pushStats = () => {
-			pidusage(childProcess.pid, function (err, stats) {
-				if(debug) {
-					customLog(processExe, stats);
-				}
+		const pushStats = async() => {
+			try {
+				pidusage([childProcess.pid, ...(await pidtree(childProcess.pid))], function (err, stats) {
+					if(debug) {
+						customLog(processExe, stats);
+					}
 
-				if(stats) {
-					memUsageHistory.push(stats.memory);
-				}
-			});
+					if(stats) {
+						memUsageHistory.push(Math.max(...Object.values(stats).map((elt) => elt.memory)));
+					}
+				});
+			} catch(e) {
+
+			}
 		};
 
 		pushStats();
