@@ -9,7 +9,7 @@ let customLog = console.log;
 /**
  * Config
  */
-const ITERATIONS_PER_PROCESS = 2;
+const ITERATIONS_PER_PROCESS = 10;
 const DEFAULT_TIMEOUT = 10;
 const DEFAULT_DEBUG = false;
 const processes = [
@@ -141,6 +141,17 @@ function getPackageJsonVersions(path, packageJsonVersionsNeeded) {
 	return versions;
 }
 
+async function writeDataToJsonFile(benchmarkData) {
+	const data = JSON.parse(fs.readFileSync('data.json'));
+
+	data[os.platform + '-' + os.arch()] = {
+		systemInformations: await getSystemData(),
+		benchmarkData
+	};
+
+	fs.writeFileSync('data.json', JSON.stringify(data, null, 4));
+}
+
 /**
  * Run
  */
@@ -174,4 +185,6 @@ function getPackageJsonVersions(path, packageJsonVersionsNeeded) {
 	console.log('System:', await getSystemData());
 
 	console.log('Raw benchmark Data:', JSON.stringify(benchmarkData, null, 4));
+
+	writeDataToJsonFile(benchmarkData);
 })();
