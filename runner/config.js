@@ -92,6 +92,21 @@ export const architectures = [
 	},
 ];
 
+export const requestedArchitectures = {
+	'win32-arm64': {
+		'nw.js': 'https://github.com/nwjs/nw.js/issues/7599',
+	},
+	'linux-arm': {
+		'nw.js': 'https://github.com/nwjs/nw.js/issues/1151',
+	},
+	'linux-arm64': {
+		'nw.js': 'https://github.com/nwjs/nw.js/issues/1151',
+	},
+	'android': {
+		'nw.js': 'https://github.com/nwjs/nw.js/issues/94',
+	},
+};
+
 const processesTmp = [];
 for(const app of apps) {
 	for(const libraryName in libraries) {

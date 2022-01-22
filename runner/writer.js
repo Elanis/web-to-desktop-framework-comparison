@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import { apps, architectures, libraries } from './config.js';
+import { apps, architectures, libraries, requestedArchitectures } from './config.js';
 
 const data = JSON.parse(fs.readFileSync('benchmarks.json', 'utf8'));
 
@@ -111,6 +111,8 @@ for(const app of apps) {
 		for(const libraryId in libraries) {
 			if(stats[libraryId]) {
 				fileStr += ` ${getUnitFromMemory(stats[libraryId])} |`;
+			} else if(requestedArchitectures[architecture] && requestedArchitectures[architecture][libraryId]) {
+				fileStr += ` [Requested](${requestedArchitectures[architecture][libraryId]}) |`;
 			} else {
 				fileStr += ' ? |';
 			}
