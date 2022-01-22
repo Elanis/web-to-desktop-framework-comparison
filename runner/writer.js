@@ -84,8 +84,8 @@ function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat
 	for(const libraryId in libraries) {
 		if(stats[libraryId]) {
 			output += ` ${formatStat(stats[libraryId])} |`;
-		} else if(requestedArchitectures[architecture] && requestedArchitectures[architecture][libraryId]) {
-			output += ` [Requested](${requestedArchitectures[architecture][libraryId]}) |`;
+		} else if(requestedArchitectures[architecture.id] && requestedArchitectures[architecture.id][libraryId]) {
+			output += ` [Requested](${requestedArchitectures[architecture.id][libraryId]}) |`;
 		} else {
 			output += ' ? |';
 		}
