@@ -25,7 +25,9 @@ function getMemoryStats(app, architecture) {
 			continue;
 		}
 
-		stats[libraryId] = benchmarkData.benchmarks.map((elt) => elt.memoryUsage.avg).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length;
+		stats[libraryId] = Math.floor(
+			benchmarkData.benchmarks.map((elt) => elt.memoryUsage.avg).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
+		);
 
 	}
 
@@ -46,7 +48,9 @@ function getStartTimeStats(app, architecture) {
 			continue;
 		}
 
-		stats[libraryId] = benchmarkData.benchmarks.map((elt) => elt.startTime).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length;
+		stats[libraryId] = Math.floor(
+			benchmarkData.benchmarks.map((elt) => elt.startTime).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
+		);
 
 	}
 	return stats;
