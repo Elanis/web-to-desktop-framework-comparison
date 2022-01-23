@@ -5,7 +5,7 @@
             "os": "Microsoft Windows 11 Famille 10.0.22000"
         },
         "benchmarkData": {
-            "../benchmark/01-empty-app/electron": {
+            "../benchmark/01-empty-app/electron/Debug": {
                 "versions": {
                     "electron": "^13.3.0",
                     "electron-packager": "^15.3.0"
@@ -233,7 +233,221 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/01-empty-app/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 57000000,
+                            "max": 59000000,
+                            "med": 0,
+                            "avg": 58000000,
+                            "history": []
+                        },
+                        "startTime": 131
+                    }
+                ],
+                "buildSize": 180000000
+            },
+            "../benchmark/01-empty-app/nw.js/Debug": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 66000000,
+                            "max": 68000000,
+                            "med": 0,
+                            "avg": 67000000,
+                            "history": []
+                        },
+                        "startTime": 21
+                    }
+                ]
+            },
+            "../benchmark/01-empty-app/nw.js/Release": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 61000000,
+                            "max": 63000000,
+                            "med": 0,
+                            "avg": 62000000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 264000000
+            },
+            "../benchmark/01-empty-app/tauri/Debug": {
+                "versions": {
+                    "@tauri-apps/cli": "1.0.0-beta.6",
+                    "@tauri-apps/api": "1.0.0-beta.5"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 59000000,
+                            "max": 60000000,
+                            "med": 0,
+                            "avg": 60000000,
+                            "history": []
+                        },
+                        "startTime": 121
+                    }
+                ]
+            },
+            "../benchmark/01-empty-app/tauri/Release": {
+                "versions": {
+                    "@tauri-apps/cli": "1.0.0-beta.6",
+                    "@tauri-apps/api": "1.0.0-beta.5"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 58000000,
+                            "max": 60000000,
+                            "med": 0,
+                            "avg": 59000000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 2600000
+            },
+            "../benchmark/01-empty-app/nodegui/Debug": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 43000000,
+                            "max": 49000000,
+                            "med": 0,
+                            "avg": 46000000,
+                            "history": []
+                        },
+                        "startTime": 103
+                    }
+                ]
+            },
+            "../benchmark/01-empty-app/nodegui/Release": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 39000000,
+                            "max": 44000000,
+                            "med": 0,
+                            "avg": 42500000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 83600000
+            },
+            "../benchmark/01-empty-app/neutralinojs/Debug": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 2700000,
+                            "max": 2800000,
+                            "med": 0,
+                            "avg": 2700000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ]
+            },
+            "../benchmark/01-empty-app/neutralinojs/Release": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 2700000,
+                            "max": 2800000,
+                            "med": 0,
+                            "avg": 2700000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 2000000
+            },
+            "../benchmark/01-empty-app/flutter/Debug": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 35100000,
+                            "max": 37700000,
+                            "med": 0,
+                            "avg": 36200000,
+                            "history": []
+                        },
+                        "startTime": 6
+                    }
+                ]
+            },
+            "../benchmark/01-empty-app/flutter/Release": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 23400000,
+                            "max": 24100000,
+                            "med": 0,
+                            "avg": 23700000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 18000000
+            },
+            "../benchmark/01-empty-app/DotnetMaui/Debug": {
+                "versions": {
+                    "dotnet": "6.0.100-preview.6.21355.2"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 61100000,
+                            "max": 61900000,
+                            "med": 0,
+                            "avg": 61600000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ]
+            },
+            "../benchmark/01-empty-app/DotnetMaui/Release": {
+                "versions": {
+                    "dotnet": "6.0.100-preview.6.21355.2"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 60100000,
+                            "max": 60800000,
+                            "med": 0,
+                            "avg": 60400000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 108000000
+            },
+            "../benchmark/02-empty-app-headless/electron/Debug": {
                 "versions": {
                     "electron": "^13.3.0",
                     "electron-packager": "^15.3.0"
@@ -460,6 +674,273 @@
                         "startTime": 89
                     }
                 ]
+            },
+
+            "../benchmark/02-empty-app-headless/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 57000000,
+                            "max": 59000000,
+                            "med": 0,
+                            "avg": 58000000,
+                            "history": []
+                        },
+                        "startTime": 131
+                    }
+                ],
+                "buildSize": 180000000
+            },
+            "../benchmark/02-empty-app-headless/nw.js/Debug": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 66000000,
+                            "max": 68000000,
+                            "med": 0,
+                            "avg": 67000000,
+                            "history": []
+                        },
+                        "startTime": 21
+                    }
+                ]
+            },
+            "../benchmark/02-empty-app-headless/nw.js/Release": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 61000000,
+                            "max": 63000000,
+                            "med": 0,
+                            "avg": 62000000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 264000000
+            },
+            "../benchmark/02-empty-app-headless/tauri/Debug": {
+                "versions": {
+                    "@tauri-apps/cli": "1.0.0-beta.6",
+                    "@tauri-apps/api": "1.0.0-beta.5"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 59000000,
+                            "max": 60000000,
+                            "med": 0,
+                            "avg": 60000000,
+                            "history": []
+                        },
+                        "startTime": 121
+                    }
+                ]
+            },
+            "../benchmark/02-empty-app-headless/tauri/Release": {
+                "versions": {
+                    "@tauri-apps/cli": "1.0.0-beta.6",
+                    "@tauri-apps/api": "1.0.0-beta.5"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 58000000,
+                            "max": 60000000,
+                            "med": 0,
+                            "avg": 59000000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 2600000
+            },
+            "../benchmark/02-empty-app-headless/nodegui/Debug": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 43000000,
+                            "max": 49000000,
+                            "med": 0,
+                            "avg": 46000000,
+                            "history": []
+                        },
+                        "startTime": 103
+                    }
+                ]
+            },
+            "../benchmark/02-empty-app-headless/nodegui/Release": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 39000000,
+                            "max": 44000000,
+                            "med": 0,
+                            "avg": 42500000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 83600000
+            },
+            "../benchmark/02-empty-app-headless/neutralinojs/Debug": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 2700000,
+                            "max": 2800000,
+                            "med": 0,
+                            "avg": 2700000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ]
+            },
+            "../benchmark/02-empty-app-headless/neutralinojs/Release": {
+                "versions": {},
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 2700000,
+                            "max": 2800000,
+                            "med": 0,
+                            "avg": 2700000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 2000000
+            },
+            "../benchmark/02-empty-app-headless/DotnetMaui/Debug": {
+                "versions": {
+                    "dotnet": "6.0.100-preview.6.21355.2"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 61100000,
+                            "max": 61900000,
+                            "med": 0,
+                            "avg": 61600000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ]
+            },
+            "../benchmark/02-empty-app-headless/DotnetMaui/Release": {
+                "versions": {
+                    "dotnet": "6.0.100-preview.6.21355.2"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 60100000,
+                            "max": 60800000,
+                            "med": 0,
+                            "avg": 60400000,
+                            "history": []
+                        },
+                        "startTime": -1
+                    }
+                ],
+                "buildSize": 108000000
+            }
+        }
+    },
+    "win32-x32": {
+        "systemInformations": {},
+        "benchmarkData": {
+            "../benchmark/01-empty-app/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 160000000
+            },
+            "../benchmark/01-empty-app/nw.js/Release": {
+                "versions": {},
+                "buildSize": 237000000
+            },
+            "../benchmark/01-empty-app/nodegui/Release": {
+                "versions": {},
+                "buildSize": 83600000
+            },
+            "../benchmark/01-empty-app/neutralinojs/Release": {
+                "versions": {},
+                "buildSize": 2000000
+            },
+            "../benchmark/01-empty-app/flutter/Release": {
+                "versions": {},
+                "buildSize": 18000000
+            },
+            "../benchmark/02-empty-app-headless/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 160000000
+            },
+            "../benchmark/02-empty-app-headless/nw.js/Release": {
+                "versions": {},
+                "buildSize": 237000000
+            },
+            "../benchmark/02-empty-app-headless/nodegui/Release": {
+                "versions": {},
+                "buildSize": 83600000
+            },
+            "../benchmark/02-empty-app-headless/neutralinojs/Release": {
+                "versions": {},
+                "buildSize": 2000000
+            }
+        }
+    },
+    "win32-arm64": {
+        "systemInformations": {},
+        "benchmarkData": {
+            "../benchmark/01-empty-app/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 193000000
+            },
+            "../benchmark/02-empty-app-headless/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 193000000
+            }
+        }
+    },
+    "darwin-x64": {
+        "systemInformations": {},
+        "benchmarkData": {
+            "../benchmark/01-empty-app/nw.js/Release": {
+                "versions": {},
+                "buildSize": 265000000
+            },
+            "../benchmark/01-empty-app/neutralinojs/Release": {
+                "versions": {},
+                "buildSize": 2000000
+            },
+            "../benchmark/02-empty-app-headless/nw.js/Release": {
+                "versions": {},
+                "buildSize": 265000000
+            },
+            "../benchmark/02-empty-app-headless/neutralinojs/Release": {
+                "versions": {},
+                "buildSize": 2000000
             }
         }
     },
@@ -469,7 +950,7 @@
             "os": "Debian GNU/Linux 10"
         },
         "benchmarkData": {
-            "../benchmark/01-empty-app/electron": {
+            "../benchmark/01-empty-app/electron/Debug": {
                 "versions": {
                     "electron": "^13.3.0",
                     "electron-packager": "^15.3.0"
@@ -477,227 +958,484 @@
                 "benchmarks": [
                     {
                         "memoryUsage": {
-                            "min": 35082240,
-                            "max": 50442240,
-                            "med": 50442240,
-                            "avg": 48145501.09090909,
+                            "min": 30375936,
+                            "max": 117387264,
+                            "med": 117387264,
+                            "avg": 101438929.45454545,
                             "history": [
-                                35082240,
-                                45490176,
-                                45490176,
-                                50442240,
-                                50442240,
-                                50442240,
-                                50442240,
-                                50442240,
-                                50442240,
-                                50442240,
-                                50442240
+                                117284864,
+                                117387264,
+                                117387264,
+                                117387264,
+                                117387264,
+                                117387264,
+                                117387264,
+                                117387264,
+                                30375936,
+                                50888704,
+                                95567872
                             ]
                         },
-                        "startTime": 100
+                        "startTime": 659
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 9641984,
+                            "max": 117571584,
+                            "med": 116731904,
+                            "avg": 106762240,
+                            "history": [
+                                113500160,
+                                116609024,
+                                116711424,
+                                116711424,
+                                116711424,
+                                116731904,
+                                116731904,
+                                116731904,
+                                116731904,
+                                117571584,
+                                9641984
+                            ]
+                        },
+                        "startTime": 144
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 16453632,
+                            "max": 117104640,
+                            "med": 117104640,
+                            "avg": 107463028.36363636,
+                            "history": [
+                                113205248,
+                                116043776,
+                                116666368,
+                                117100544,
+                                117100544,
+                                117104640,
+                                117104640,
+                                117104640,
+                                117104640,
+                                117104640,
+                                16453632
+                            ]
+                        },
+                        "startTime": 177
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 11747328,
+                            "max": 119091200,
+                            "med": 118927360,
+                            "avg": 109105896.72727273,
+                            "history": [
+                                11747328,
+                                118120448,
+                                118534144,
+                                118927360,
+                                118927360,
+                                118927360,
+                                118972416,
+                                118972416,
+                                118972416,
+                                118972416,
+                                119091200
+                            ]
+                        },
+                        "startTime": 162
                     },
                     {
                         "memoryUsage": {
                             "min": 3551232,
-                            "max": 51392512,
-                            "med": 51392512,
-                            "avg": 46112023.27272727,
+                            "max": 117219328,
+                            "med": 117190656,
+                            "avg": 106729472,
                             "history": [
-                                3551232,
-                                46223360,
-                                46317568,
-                                51392512,
-                                51392512,
-                                51392512,
-                                51392512,
-                                51392512,
-                                51392512,
-                                51392512,
-                                51392512
+                                116252672,
+                                117059584,
+                                117059584,
+                                117059584,
+                                117059584,
+                                117190656,
+                                117190656,
+                                117190656,
+                                117190656,
+                                117219328,
+                                3551232
                             ]
                         },
-                        "startTime": 119
+                        "startTime": 152
                     },
                     {
                         "memoryUsage": {
-                            "min": 9621504,
-                            "max": 51179520,
-                            "med": 51179520,
-                            "avg": 46507101.09090909,
+                            "min": 11575296,
+                            "max": 117284864,
+                            "med": 116338688,
+                            "avg": 106891450.18181819,
                             "history": [
-                                46260224,
-                                46260224,
-                                51179520,
-                                51179520,
-                                51179520,
-                                51179520,
-                                51179520,
-                                51179520,
-                                51179520,
-                                51179520,
-                                9621504
+                                11575296,
+                                116183040,
+                                116334592,
+                                116334592,
+                                116334592,
+                                116338688,
+                                116355072,
+                                116355072,
+                                116355072,
+                                116355072,
+                                117284864
                             ]
                         },
-                        "startTime": 106
+                        "startTime": 123
                     },
                     {
                         "memoryUsage": {
-                            "min": 11759616,
-                            "max": 51077120,
-                            "med": 51077120,
-                            "avg": 46604288,
+                            "min": 18292736,
+                            "max": 117194752,
+                            "med": 116813824,
+                            "avg": 107813050.18181819,
                             "history": [
-                                11759616,
-                                46133248,
-                                46137344,
-                                51077120,
-                                51077120,
-                                51077120,
-                                51077120,
-                                51077120,
-                                51077120,
-                                51077120,
-                                51077120
+                                116211712,
+                                116674560,
+                                116768768,
+                                116772864,
+                                116772864,
+                                116813824,
+                                116813824,
+                                116813824,
+                                116813824,
+                                117194752,
+                                18292736
                             ]
                         },
-                        "startTime": 101
+                        "startTime": 124
                     },
                     {
                         "memoryUsage": {
-                            "min": 6844416,
-                            "max": 50655232,
-                            "med": 50655232,
-                            "avg": 45759022.54545455,
+                            "min": 9748480,
+                            "max": 116826112,
+                            "med": 116789248,
+                            "avg": 106622603.63636364,
                             "history": [
-                                45600768,
-                                45662208,
-                                50655232,
-                                50655232,
-                                50655232,
-                                50655232,
-                                50655232,
-                                50655232,
-                                50655232,
-                                50655232,
-                                6844416
+                                112893952,
+                                115843072,
+                                116764672,
+                                116789248,
+                                116789248,
+                                116789248,
+                                116789248,
+                                116789248,
+                                116826112,
+                                116826112,
+                                9748480
                             ]
                         },
-                        "startTime": 92
+                        "startTime": 95
                     },
                     {
                         "memoryUsage": {
-                            "min": 11612160,
-                            "max": 50565120,
-                            "med": 50565120,
-                            "avg": 46118353.45454545,
+                            "min": 18579456,
+                            "max": 117854208,
+                            "med": 117485568,
+                            "avg": 108443834.18181819,
                             "history": [
-                                11612160,
-                                45584384,
-                                45584384,
-                                50565120,
-                                50565120,
-                                50565120,
-                                50565120,
-                                50565120,
-                                50565120,
-                                50565120,
-                                50565120
+                                116871168,
+                                117288960,
+                                117448704,
+                                117448704,
+                                117448704,
+                                117485568,
+                                117485568,
+                                117485568,
+                                117485568,
+                                117854208,
+                                18579456
                             ]
                         },
-                        "startTime": 94
+                        "startTime": 137
                     },
                     {
                         "memoryUsage": {
-                            "min": 37261312,
-                            "max": 50855936,
-                            "med": 50855936,
-                            "avg": 48759528.72727273,
+                            "min": 16257024,
+                            "max": 117776384,
+                            "med": 117170176,
+                            "avg": 107994391.27272727,
                             "history": [
-                                37261312,
-                                46104576,
-                                46141440,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936
+                                116940800,
+                                117067776,
+                                117071872,
+                                117071872,
+                                117071872,
+                                117170176,
+                                117170176,
+                                117170176,
+                                117170176,
+                                117776384,
+                                16257024
                             ]
                         },
-                        "startTime": 120
-                    },
-                    {
-                        "memoryUsage": {
-                            "min": 11759616,
-                            "max": 53116928,
-                            "med": 53116928,
-                            "avg": 48471691.63636363,
-                            "history": [
-                                11759616,
-                                48242688,
-                                48250880,
-                                53116928,
-                                53116928,
-                                53116928,
-                                53116928,
-                                53116928,
-                                53116928,
-                                53116928,
-                                53116928
-                            ]
-                        },
-                        "startTime": 99
-                    },
-                    {
-                        "memoryUsage": {
-                            "min": 11759616,
-                            "max": 52793344,
-                            "med": 52793344,
-                            "avg": 48144011.63636363,
-                            "history": [
-                                11759616,
-                                47734784,
-                                47742976,
-                                52793344,
-                                52793344,
-                                52793344,
-                                52793344,
-                                52793344,
-                                52793344,
-                                52793344,
-                                52793344
-                            ]
-                        },
-                        "startTime": 101
-                    },
-                    {
-                        "memoryUsage": {
-                            "min": 16543744,
-                            "max": 53010432,
-                            "med": 53010432,
-                            "avg": 48792669.09090909,
-                            "history": [
-                                16543744,
-                                48041984,
-                                48050176,
-                                53010432,
-                                53010432,
-                                53010432,
-                                53010432,
-                                53010432,
-                                53010432,
-                                53010432,
-                                53010432
-                            ]
-                        },
-                        "startTime": 91
+                        "startTime": 127
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/01-empty-app/electron/Release": {
+                "versions": {
+                    "electron": "^13.3.0",
+                    "electron-packager": "^15.3.0"
+                },
+                "benchmarks": [],
+                "buildSize": 181000000
+            },
+            "../benchmark/01-empty-app/nw.js/Debug": {
+                "versions": {
+                    "nwjs-builder-phoenix": "^1.15.0"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 18464768,
+                            "max": 75927552,
+                            "med": 60915712,
+                            "avg": 57961006.54545455,
+                            "history": [
+                                18464768,
+                                50876416,
+                                50876416,
+                                53710848,
+                                57073664,
+                                60915712,
+                                62771200,
+                                65470464,
+                                69255168,
+                                72228864,
+                                75927552
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 18317312,
+                            "max": 70844416,
+                            "med": 56799232,
+                            "avg": 55879866.18181818,
+                            "history": [
+                                18317312,
+                                50896896,
+                                50896896,
+                                51081216,
+                                53280768,
+                                56799232,
+                                62193664,
+                                64626688,
+                                66789376,
+                                68952064,
+                                70844416
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 16261120,
+                            "max": 66420736,
+                            "med": 56545280,
+                            "avg": 54623883.63636363,
+                            "history": [
+                                16261120,
+                                50896896,
+                                50896896,
+                                50896896,
+                                53796864,
+                                56545280,
+                                62373888,
+                                63176704,
+                                64798720,
+                                64798720,
+                                66420736
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 18251776,
+                            "max": 64090112,
+                            "med": 55177216,
+                            "avg": 54015441.45454545,
+                            "history": [
+                                18251776,
+                                51068928,
+                                51068928,
+                                51068928,
+                                53239808,
+                                55177216,
+                                59277312,
+                                63016960,
+                                63819776,
+                                64090112,
+                                64090112
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 14385152,
+                            "max": 61267968,
+                            "med": 54480896,
+                            "avg": 52289536,
+                            "history": [
+                                14385152,
+                                50634752,
+                                50634752,
+                                50634752,
+                                52068352,
+                                54480896,
+                                57274368,
+                                61267968,
+                                61267968,
+                                61267968,
+                                61267968
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 9809920,
+                            "max": 62148608,
+                            "med": 62148608,
+                            "avg": 53821440,
+                            "history": [
+                                50696192,
+                                50696192,
+                                53424128,
+                                56430592,
+                                60235776,
+                                62148608,
+                                62148608,
+                                62148608,
+                                62148608,
+                                62148608,
+                                9809920
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 14438400,
+                            "max": 63369216,
+                            "med": 56684544,
+                            "avg": 53637492.36363637,
+                            "history": [
+                                14438400,
+                                50425856,
+                                50425856,
+                                50425856,
+                                52379648,
+                                56684544,
+                                62296064,
+                                63098880,
+                                63098880,
+                                63369216,
+                                63369216
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 14528512,
+                            "max": 61992960,
+                            "med": 55848960,
+                            "avg": 52868189.09090909,
+                            "history": [
+                                14528512,
+                                50995200,
+                                50995200,
+                                50995200,
+                                53374976,
+                                55848960,
+                                59273216,
+                                61181952,
+                                61181952,
+                                61181952,
+                                61992960
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 18358272,
+                            "max": 76025856,
+                            "med": 56741888,
+                            "avg": 56763857.45454545,
+                            "history": [
+                                18358272,
+                                50044928,
+                                50044928,
+                                51036160,
+                                54538240,
+                                56741888,
+                                60092416,
+                                64847872,
+                                69443584,
+                                73228288,
+                                76025856
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 18296832,
+                            "max": 63766528,
+                            "med": 55795712,
+                            "avg": 53809524.36363637,
+                            "history": [
+                                18296832,
+                                50864128,
+                                50864128,
+                                50864128,
+                                53858304,
+                                55795712,
+                                59285504,
+                                62541824,
+                                62541824,
+                                63225856,
+                                63766528
+                            ]
+                        },
+                        "startTime": "?"
+                    }
+                ]
+            },
+            "../benchmark/01-empty-app/nw.js/Release": {
+                "versions": {
+                    "nwjs-builder-phoenix": "^1.15.0"
+                },
+                "benchmarks": [],
+                "buildSize": 328000000
+            },
+            "../benchmark/01-empty-app/tauri/Release": {
+                "versions": {},
+                "benchmarks": [],
+                "buildSize": 5800000
+            },
+            "../benchmark/01-empty-app/neutralinojs/Release": {
+                "versions": {},
+                "benchmarks": [],
+                "buildSize": 2000000
+            },
+            "../benchmark/01-empty-app/flutter/Release": {
+                "versions": {},
+                "benchmarks": [],
+                "buildSize": 56800000
+            },
+            "../benchmark/02-empty-app-headless/electron/Debug": {
                 "versions": {
                     "electron": "^13.3.0",
                     "electron-packager": "^15.3.0"
@@ -705,225 +1443,551 @@
                 "benchmarks": [
                     {
                         "memoryUsage": {
-                            "min": 21049344,
-                            "max": 51216384,
-                            "med": 51216384,
-                            "avg": 47539293.09090909,
+                            "min": 18841600,
+                            "max": 121663488,
+                            "med": 50642944,
+                            "avg": 75242402.9090909,
                             "history": [
-                                21049344,
-                                46075904,
-                                46075904,
-                                51216384,
-                                51216384,
-                                51216384,
-                                51216384,
-                                51216384,
-                                51216384,
-                                51216384,
-                                51216384
+                                103530496,
+                                121352192,
+                                121352192,
+                                121663488,
+                                18841600,
+                                50642944,
+                                50642944,
+                                50642944,
+                                50642944,
+                                60354560,
+                                78000128
                             ]
                         },
-                        "startTime": 108
+                        "startTime": 1838
                     },
                     {
                         "memoryUsage": {
-                            "min": 757760,
-                            "max": 56889344,
-                            "med": 56889344,
-                            "avg": 50914397.09090909,
+                            "min": 3551232,
+                            "max": 115847168,
+                            "med": 115847168,
+                            "avg": 99353320.72727273,
                             "history": [
-                                52092928,
-                                52092928,
-                                56889344,
-                                56889344,
-                                56889344,
-                                56889344,
-                                56889344,
-                                56889344,
-                                56889344,
-                                56889344,
-                                757760
+                                111415296,
+                                115728384,
+                                115822592,
+                                115822592,
+                                115826688,
+                                115847168,
+                                115847168,
+                                115847168,
+                                115847168,
+                                3551232,
+                                51331072
                             ]
                         },
-                        "startTime": 86
+                        "startTime": 280
                     },
                     {
                         "memoryUsage": {
-                            "min": 11698176,
-                            "max": 50864128,
-                            "med": 50864128,
-                            "avg": 46349591.27272727,
+                            "min": 19058688,
+                            "max": 116600832,
+                            "med": 116600832,
+                            "avg": 107098484.36363636,
                             "history": [
-                                11698176,
-                                45604864,
-                                45629440,
-                                50864128,
-                                50864128,
-                                50864128,
-                                50864128,
-                                50864128,
-                                50864128,
-                                50864128,
-                                50864128
+                                110501888,
+                                115826688,
+                                116563968,
+                                116563968,
+                                116563968,
+                                116600832,
+                                116600832,
+                                116600832,
+                                116600832,
+                                116600832,
+                                19058688
                             ]
                         },
-                        "startTime": 89
+                        "startTime": 169
                     },
                     {
                         "memoryUsage": {
-                            "min": 9793536,
-                            "max": 57565184,
-                            "med": 57565184,
-                            "avg": 52287674.18181818,
+                            "min": 19746816,
+                            "max": 117272576,
+                            "med": 117256192,
+                            "avg": 108134027.63636364,
                             "history": [
-                                52424704,
-                                52424704,
-                                57565184,
-                                57565184,
-                                57565184,
-                                57565184,
-                                57565184,
-                                57565184,
-                                57565184,
-                                57565184,
-                                9793536
+                                115888128,
+                                116813824,
+                                116887552,
+                                116912128,
+                                116912128,
+                                117256192,
+                                117256192,
+                                117256192,
+                                117272576,
+                                117272576,
+                                19746816
                             ]
                         },
-                        "startTime": 104
+                        "startTime": 141
                     },
                     {
                         "memoryUsage": {
-                            "min": 16166912,
-                            "max": 51093504,
-                            "med": 51093504,
-                            "avg": 46990429.09090909,
+                            "min": 19824640,
+                            "max": 116219904,
+                            "med": 116011008,
+                            "avg": 107206097.45454545,
                             "history": [
-                                16166912,
-                                45989888,
-                                45989888,
-                                51093504,
-                                51093504,
-                                51093504,
-                                51093504,
-                                51093504,
-                                51093504,
-                                51093504,
-                                51093504
+                                115273728,
+                                115970048,
+                                115978240,
+                                115978240,
+                                115978240,
+                                116011008,
+                                116011008,
+                                116011008,
+                                116011008,
+                                116219904,
+                                19824640
                             ]
                         },
-                        "startTime": 80
+                        "startTime": 112
                     },
                     {
                         "memoryUsage": {
-                            "min": 14417920,
-                            "max": 51052544,
-                            "med": 51052544,
-                            "avg": 46809088,
+                            "min": 22241280,
+                            "max": 116510720,
+                            "med": 116477952,
+                            "avg": 107759429.81818181,
                             "history": [
-                                14417920,
-                                46030848,
-                                46030848,
-                                51052544,
-                                51052544,
-                                51052544,
-                                51052544,
-                                51052544,
-                                51052544,
-                                51052544,
-                                51052544
+                                115175424,
+                                116142080,
+                                116318208,
+                                116477952,
+                                116477952,
+                                116477952,
+                                116510720,
+                                116510720,
+                                116510720,
+                                116510720,
+                                22241280
                             ]
                         },
-                        "startTime": 71
+                        "startTime": 146
                     },
                     {
                         "memoryUsage": {
-                            "min": 9711616,
-                            "max": 50855936,
-                            "med": 50855936,
-                            "avg": 46209210.18181818,
+                            "min": 20217856,
+                            "max": 118226944,
+                            "med": 118214656,
+                            "avg": 109207179.63636364,
                             "history": [
-                                45871104,
-                                45871104,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                50855936,
-                                9711616
+                                117256192,
+                                118112256,
+                                118190080,
+                                118190080,
+                                118190080,
+                                118214656,
+                                118226944,
+                                118226944,
+                                118226944,
+                                118226944,
+                                20217856
                             ]
                         },
-                        "startTime": 94
+                        "startTime": 78
                     },
                     {
                         "memoryUsage": {
-                            "min": 18362368,
-                            "max": 51519488,
-                            "med": 51519488,
-                            "avg": 47573178.18181818,
+                            "min": 20312064,
+                            "max": 115523584,
+                            "med": 114741248,
+                            "avg": 106187310.54545455,
                             "history": [
-                                18362368,
-                                46391296,
-                                46395392,
-                                51519488,
-                                51519488,
-                                51519488,
-                                51519488,
-                                51519488,
-                                51519488,
-                                51519488,
-                                51519488
+                                114565120,
+                                114569216,
+                                114708480,
+                                114708480,
+                                114708480,
+                                114741248,
+                                114741248,
+                                114741248,
+                                114741248,
+                                115523584,
+                                20312064
                             ]
                         },
-                        "startTime": 79
+                        "startTime": 126
                     },
                     {
                         "memoryUsage": {
-                            "min": 11644928,
-                            "max": 53276672,
-                            "med": 53276672,
-                            "avg": 48557335.27272727,
+                            "min": 21823488,
+                            "max": 116424704,
+                            "med": 115580928,
+                            "avg": 106828893.0909091,
                             "history": [
-                                11644928,
-                                48054272,
-                                48218112,
-                                53276672,
-                                53276672,
-                                53276672,
-                                53276672,
-                                53276672,
-                                53276672,
-                                53276672,
-                                53276672
+                                112398336,
+                                115453952,
+                                115564544,
+                                115564544,
+                                115564544,
+                                115580928,
+                                115580928,
+                                115580928,
+                                115580928,
+                                116424704,
+                                21823488
                             ]
                         },
-                        "startTime": 83
+                        "startTime": 130
                     },
                     {
                         "memoryUsage": {
-                            "min": 11702272,
-                            "max": 53096448,
-                            "med": 53096448,
-                            "avg": 48467223.27272727,
+                            "min": 20303872,
+                            "max": 115871744,
+                            "med": 115843072,
+                            "avg": 107003904,
                             "history": [
-                                11702272,
-                                48332800,
-                                48332800,
-                                53096448,
-                                53096448,
-                                53096448,
-                                53096448,
-                                53096448,
-                                53096448,
-                                53096448,
-                                53096448
+                                114561024,
+                                115503104,
+                                115658752,
+                                115843072,
+                                115843072,
+                                115843072,
+                                115871744,
+                                115871744,
+                                115871744,
+                                115871744,
+                                20303872
                             ]
                         },
-                        "startTime": 86
+                        "startTime": 69
                     }
                 ]
+            },
+            "../benchmark/02-empty-app-headless/electron/Release": {
+                "versions": {
+                    "electron": "^13.3.0",
+                    "electron-packager": "^15.3.0"
+                },
+                "benchmarks": [],
+                "buildSize": 181000000
+            },
+            "../benchmark/02-empty-app-headless/nw.js/Debug": {
+                "versions": {
+                    "nwjs-builder-phoenix": "^1.15.0"
+                },
+                "benchmarks": [
+                    {
+                        "memoryUsage": {
+                            "min": 22429696,
+                            "max": 62803968,
+                            "med": 52822016,
+                            "avg": 51887755.63636363,
+                            "history": [
+                                22429696,
+                                51183616,
+                                51183616,
+                                51183616,
+                                51183616,
+                                52822016,
+                                53411840,
+                                54751232,
+                                57815040,
+                                61997056,
+                                62803968
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 23597056,
+                            "max": 62955520,
+                            "med": 56352768,
+                            "avg": 54651810.90909091,
+                            "history": [
+                                23597056,
+                                53125120,
+                                53125120,
+                                53125120,
+                                54149120,
+                                56352768,
+                                59047936,
+                                60526592,
+                                62210048,
+                                62955520,
+                                62955520
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 16228352,
+                            "max": 64466944,
+                            "med": 53813248,
+                            "avg": 52568436.36363637,
+                            "history": [
+                                16228352,
+                                51040256,
+                                51040256,
+                                51040256,
+                                51609600,
+                                53813248,
+                                54353920,
+                                57618432,
+                                62844928,
+                                64196608,
+                                64466944
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 712704,
+                            "max": 65511424,
+                            "med": 56201216,
+                            "avg": 52216180.36363637,
+                            "history": [
+                                52944896,
+                                52944896,
+                                52944896,
+                                52944896,
+                                54263808,
+                                56201216,
+                                59166720,
+                                61231104,
+                                65511424,
+                                65511424,
+                                712704
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 31723520,
+                            "max": 60403712,
+                            "med": 50925568,
+                            "avg": 51701573.81818182,
+                            "history": [
+                                31723520,
+                                50925568,
+                                50925568,
+                                50925568,
+                                50925568,
+                                50925568,
+                                51564544,
+                                53497856,
+                                56496128,
+                                60403712,
+                                60403712
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 16773120,
+                            "max": 62418944,
+                            "med": 56774656,
+                            "avg": 53524293.81818182,
+                            "history": [
+                                16773120,
+                                51240960,
+                                51240960,
+                                51240960,
+                                54034432,
+                                56774656,
+                                59740160,
+                                60465152,
+                                62418944,
+                                62418944,
+                                62418944
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 18497536,
+                            "max": 62124032,
+                            "med": 54435840,
+                            "avg": 52434757.81818182,
+                            "history": [
+                                18497536,
+                                50122752,
+                                50122752,
+                                50122752,
+                                52670464,
+                                54435840,
+                                56303616,
+                                59731968,
+                                61325312,
+                                61325312,
+                                62124032
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 21790720,
+                            "max": 64888832,
+                            "med": 56901632,
+                            "avg": 54280564.36363637,
+                            "history": [
+                                21790720,
+                                50655232,
+                                50655232,
+                                50655232,
+                                54702080,
+                                56901632,
+                                57442304,
+                                61349888,
+                                63696896,
+                                64348160,
+                                64888832
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 21037056,
+                            "max": 63021056,
+                            "med": 54218752,
+                            "avg": 52412416,
+                            "history": [
+                                21037056,
+                                51318784,
+                                51318784,
+                                51318784,
+                                51318784,
+                                54218752,
+                                55025664,
+                                57233408,
+                                60362752,
+                                60362752,
+                                63021056
+                            ]
+                        },
+                        "startTime": "?"
+                    },
+                    {
+                        "memoryUsage": {
+                            "min": 22343680,
+                            "max": 62636032,
+                            "med": 54550528,
+                            "avg": 52564712.72727273,
+                            "history": [
+                                22343680,
+                                50679808,
+                                50679808,
+                                50679808,
+                                51593216,
+                                54550528,
+                                56217600,
+                                56758272,
+                                59707392,
+                                62365696,
+                                62636032
+                            ]
+                        },
+                        "startTime": "?"
+                    }
+                ]
+            },
+            "../benchmark/02-empty-app-headless/nw.js/Release": {
+                "versions": {
+                    "nwjs-builder-phoenix": "^1.15.0"
+                },
+                "benchmarks": [],
+                "buildSize": 328000000
+            },
+            "../benchmark/02-empty-app-headless/Release": {
+                "versions": {
+                    "nwjs-builder-phoenix": "^1.15.0"
+                },
+                "benchmarks": [],
+                "buildSize": 328000000
+            },
+            "../benchmark/02-empty-app-headless/tauri/Release": {
+                "versions": {},
+                "benchmarks": [],
+                "buildSize": 5800000
+            },
+            "../benchmark/02-empty-app-headless/neutralinojs/Release": {
+                "versions": {},
+                "benchmarks": [],
+                "buildSize": 2000000
+            }
+        }
+    },
+    "linux-x32": {
+        "systemInformations": {},
+        "benchmarkData": {
+            "../benchmark/01-empty-app/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 171000000
+            },
+            "../benchmark/01-empty-app/nw.js/Release": {
+                "versions": {},
+                "buildSize": 329000000
+            },
+            "../benchmark/01-empty-app/neutralinojs/Release": {
+                "versions": {},
+                "buildSize": 2000000
+            },
+            "../benchmark/02-empty-app-headless/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 171000000
+            },
+            "../benchmark/02-empty-app-headless/nw.js/Release": {
+                "versions": {},
+                "buildSize": 329000000
+            },
+            "../benchmark/02-empty-app-headless/neutralinojs/Release": {
+                "versions": {},
+                "buildSize": 2000000
+            }
+        }
+    },
+    "linux-arm64": {
+        "systemInformations": {},
+        "benchmarkData": {
+            "../benchmark/01-empty-app/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 196000000
+            },
+            "../benchmark/02-empty-app-headless/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 196000000
+            }
+        }
+    },
+    "linux-arm": {
+        "systemInformations": {},
+        "benchmarkData": {
+            "../benchmark/01-empty-app/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 128000000
+            },
+            "../benchmark/02-empty-app-headless/electron/Release": {
+                "versions": {
+                    "electron": "^13.1.8"
+                },
+                "buildSize": 128000000
             }
         }
     }

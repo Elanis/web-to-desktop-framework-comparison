@@ -8,7 +8,25 @@ const data = JSON.parse(fs.readFileSync('benchmarks.json', 'utf8'));
  * Stats
  */
 function getBuildStats(app, architecture) {
-	return {};
+	if(!data[architecture]) {
+		return {};
+	}
+
+	const stats = {};
+
+	for(const libraryId in libraries) {
+		for(const context of ['Debug', 'Release']) {
+			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
+
+			if(!benchmarkData || !benchmarkData.buildSize) {
+				continue;
+			}
+
+			stats[libraryId + '/' + context] = benchmarkData.buildSize;
+		}
+	}
+
+	return stats;
 }
 
 function getMemoryStats(app, architecture) {
@@ -19,16 +37,17 @@ function getMemoryStats(app, architecture) {
 	const stats = {};
 
 	for(const libraryId in libraries) {
-		const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}`];
+		for(const context of ['Debug', 'Release']) {
+			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
 
-		if(!benchmarkData) {
-			continue;
+			if(!benchmarkData || !benchmarkData.benchmarks) {
+				continue;
+			}
+
+			stats[libraryId + '/' + context] = Math.floor(
+				benchmarkData.benchmarks.map((elt) => elt.memoryUsage.avg).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
+			);
 		}
-
-		stats[libraryId] = Math.floor(
-			benchmarkData.benchmarks.map((elt) => elt.memoryUsage.avg).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
-		);
-
 	}
 
 	return stats;
@@ -42,16 +61,17 @@ function getStartTimeStats(app, architecture) {
 	const stats = {};
 
 	for(const libraryId in libraries) {
-		const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}`];
+		for(const context of ['Debug', 'Release']) {
+			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
 
-		if(!benchmarkData) {
-			continue;
+			if(!benchmarkData || !benchmarkData.benchmarks) {
+				continue;
+			}
+
+			stats[libraryId + '/' + context] = Math.floor(
+				benchmarkData.benchmarks.map((elt) => elt.startTime).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
+			);
 		}
-
-		stats[libraryId] = Math.floor(
-			benchmarkData.benchmarks.map((elt) => elt.startTime).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
-		);
-
 	}
 	return stats;
 }
@@ -71,7 +91,15 @@ function getUnitFromMemory(data) {
 	return `≈${Math.floor(data)}${unit[id]}`;
 }
 
-function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat) {
+function formatTime(time) {
+	if(time < 0) {
+		return 'N/A';
+	}
+
+	return `≈${time}ms`;
+}
+
+function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat, showReleaseTag=true) {
 	let output = '';
 
 	const stats = getStats(app, architecture.id);
@@ -82,8 +110,29 @@ function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat
 	output += '|' + firstCell + '| ***' + architecture.name + '*** |';
 
 	for(const libraryId in libraries) {
-		if(stats[libraryId]) {
-			output += ` ${formatStat(stats[libraryId])} |`;
+		if(stats[libraryId + '/Debug'] || stats[libraryId + '/Release']) {
+			let debug = stats[libraryId + '/Debug'];
+			if(debug && debug !== 'N/A') {
+				debug = `${formatStat(stats[libraryId + '/Debug'])} (Debug)`;
+			}
+
+			let release = stats[libraryId + '/Release'];
+			if((release && release !== 'N/A') && showReleaseTag) {
+				release = `${formatStat(stats[libraryId + '/Release'])} (Release)`;
+			} else if(release && release !== 'N/A') {
+				release = `${formatStat(stats[libraryId + '/Release'])}`;
+			}
+
+			let result = '';
+			if(debug && release) {
+				result = ` ${debug} => ${release} |`;
+			} else if(debug) {
+				result = ` ${debug} |`;
+			} else if(release) {
+				result = ` ${release} |`;
+			}
+
+			output += result;
 		} else if(requestedArchitectures[architecture.id] && requestedArchitectures[architecture.id][libraryId]) {
 			output += ` [Requested](${requestedArchitectures[architecture.id][libraryId]}) |`;
 		} else {
@@ -123,7 +172,7 @@ for(const app of apps) {
 	 */
 	let firstCell = ' **Build size** ';
 	for(const architecture of architectures) {
-		const line = getMarkdownTableLine(app, architecture, firstCell, getBuildStats, getUnitFromMemory);
+		const line = getMarkdownTableLine(app, architecture, firstCell, getBuildStats, getUnitFromMemory, false);
 		if(line) {
 			fileStr += line;
 			firstCell = ' ';
@@ -147,7 +196,7 @@ for(const app of apps) {
 	 */
 	firstCell = ' **Start duration** ';
 	for(const architecture of architectures) {
-		const line = getMarkdownTableLine(app, architecture, firstCell, getStartTimeStats, (value) => ` ≈${value}ms |`);
+		const line = getMarkdownTableLine(app, architecture, firstCell, getStartTimeStats, formatTime);
 		if(line) {
 			fileStr += line;
 			firstCell = ' ';

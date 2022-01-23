@@ -43,6 +43,10 @@ export const libraries = {
 
 export const architectures = [
 	{
+		id: 'win32-x64',
+		name: 'Windows (x64)',
+	},
+	{
 		id: 'win32-x32',
 		name: 'Windows (x86)',
 	},
@@ -51,20 +55,16 @@ export const architectures = [
 		name: 'Windows (ARM64)',
 	},
 	{
-		id: 'win32-x64',
-		name: 'Windows (x64)',
-	},
-	{
-		id: 'darwin-',
+		id: 'darwin-x64',
 		name: 'MacOS',
-	},
-	{
-		id: 'linux-x32',
-		name: 'Linux (x86)'
 	},
 	{
 		id: 'linux-x64',
 		name: 'Linux (x64)'
+	},
+	{
+		id: 'linux-x32',
+		name: 'Linux (x86)'
 	},
 	{
 		id: 'linux-arm',

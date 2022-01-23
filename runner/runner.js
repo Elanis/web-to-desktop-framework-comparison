@@ -170,7 +170,7 @@ async function writeDataToJsonFile(benchmarkData) {
 
 			customLog(path, exe, '\n', processMemoryUsage(res));
 
-			benchmarkData[path].benchmarks.push({
+			benchmarkData[path + '/Debug'].benchmarks.push({
 				memoryUsage: processMemoryUsage(res),
 				startTime: res.startTime
 			});
