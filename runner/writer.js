@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import { apps, architectures, libraries, requestedArchitectures } from './config.js';
+import { apps, architectures, customMessages, libraries, requestedArchitectures } from './config.js';
 
 const data = JSON.parse(fs.readFileSync('benchmarks.json', 'utf8'));
 
@@ -110,6 +110,11 @@ function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat
 	output += '|' + firstCell + '| ***' + architecture.name + '*** |';
 
 	for(const libraryId in libraries) {
+		if(customMessages[app] && customMessages[app][libraryId]) {
+			output += ` N/A<sup>${customMessages[app][libraryId].key}</sup>|`;
+			continue;
+		}
+
 		if(stats[libraryId + '/Debug'] || stats[libraryId + '/Release']) {
 			let debug = stats[libraryId + '/Debug'];
 			if(debug && debug !== 'N/A') {
@@ -201,6 +206,16 @@ for(const app of apps) {
 			fileStr += line;
 			firstCell = ' ';
 		}
+	}
+
+	if(customMessages[app]) {
+		fileStr += '\n';
+		for(const libraryId in customMessages[app]) {
+			for(const message in customMessages[app][libraryId]) {
+				fileStr += `**<sup>${customMessages[app][libraryId].key}</sup>**: ${customMessages[app][libraryId].value}`;
+			}
+		}
+		fileStr += '\n\n';
 	}
 }
 

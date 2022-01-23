@@ -107,6 +107,15 @@ export const requestedArchitectures = {
 	},
 };
 
+export const customMessages = {
+	'02-empty-app-headless': {
+		'flutter': {
+			key: 1,
+			value: 'Frameless mode not supported yet'
+		}
+	}
+};
+
 const processesTmp = [];
 for(const app of apps) {
 	for(const libraryName in libraries) {
