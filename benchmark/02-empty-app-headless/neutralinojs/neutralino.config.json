@@ -1,30 +1,69 @@
 {
   "applicationId": "js.neutralino.sample",
-  "port": 0,
+  "version": "1.0.0",
   "defaultMode": "window",
-  "url": "/resources/",
-  "nativeBlockList": [],
+  "port": 0,
+  "documentRoot": "/resources/",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "tokenSecurity": "one-time",
+  "logging": {
+    "enabled": true,
+    "writeToLogFile": true
+  },
+  "nativeAllowList": [
+    "app.*",
+    "os.*"
+  ],
   "globalVariables": {
-    "TEST": "Test Value"
+    "TEST1": "Hello",
+    "TEST2": [
+      2,
+      4,
+      5
+    ],
+    "TEST3": {
+      "value1": 10,
+      "value2": {}
+    }
   },
   "modes": {
     "window": {
       "title": "neutralinojs",
       "width": 800,
       "height": 500,
+      "minWidth": 400,
+      "minHeight": 200,
       "fullScreen": false,
       "alwaysOnTop": false,
       "icon": "/resources/icons/appIcon.png",
-      "enableInspector": false,
+      "enableInspector": true,
       "borderless": true,
-      "maximize": false
+      "maximize": false,
+      "hidden": false,
+      "resizable": true,
+      "exitProcessOnClose": false
     },
-    "browser": {},
-    "cloud": {}
+    "browser": {
+      "globalVariables": {
+        "TEST": "Test value browser"
+      },
+      "nativeBlockList": [
+        "filesystem.*"
+      ]
+    },
+    "cloud": {
+      "url": "/resources/#cloud",
+      "nativeAllowList": [
+        "app.*"
+      ]
+    }
   },
   "cli": {
     "binaryName": "neutralinojs",
     "resourcesPath": "/resources/",
+    "extensionsPath": "/extensions/",
     "clientLibrary": "/resources/js/neutralino.js",
     "binaryVersion": "2.4.0",
     "clientVersion": "1.0.0"
