@@ -39,7 +39,7 @@ This repository was made to create an objective comparison of multiple framework
 | | ***Android*** | ❌ | [Requested](https://github.com/nwjs/nw.js/issues/94) | Soon<sup>1</sup> | ❌ | ❌ | ✔️ | ✔️ |
 | | ***iOS*** | ❌ | ❌ | In progress<sup>1</sup> | ❌ | ❌ | ✔️ | ✔️ |
 | | ***tvOS*** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️ |
-| | ***Web*** | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ | ❌ |
+| | ***Web*** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️<sup>2</sup> | ✔️ | ❌ |
 
 **<sup>1</sup>**: https://github.com/tauri-apps/tauri#platforms  
 **<sup>2</sup>**: Uses [modes](https://neutralino.js.org/docs/configuration/modes/) to generate web apps  
