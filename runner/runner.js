@@ -84,14 +84,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				});
 				clearInterval(interval);
 
-				if (os.platform() === 'win32') { // childProcess.platform was undefined for me, but this works
-					if(debug) {
-						customLog(`taskkill /F /T /PID ${childProcess.pid}`);
-					}
-					execSync(`taskkill /F /T /PID ${childProcess.pid}`); // windows specific
-				} else {
-					childProcess.kill();
-				}
+				childProcess.kill();
 			}
 
 			pushStats();
