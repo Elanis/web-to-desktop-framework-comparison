@@ -1,0 +1,45 @@
+name: macOS
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on:
+      - macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.2.0
+        with:
+          node-version: 18
+
+      - name: Install runner tools
+        run: |
+          cd runner/
+          npm i
+
+      - name: Prepare environments
+        run: |
+          cd runner/
+          bash preprocess.sh
+
+      - name: Run apps
+        run: |
+          cd runner/
+          node runner.js
+
+      - name: Update README
+        run: |
+          cd runner/
+          node writer.js
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update benchmark
+          file_pattern: runner/benchmarks.json README.md

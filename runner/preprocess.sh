@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-for app in "$(pwd)/../benchmark"/*/; do
-	for lib in "$app"/*/; do
+for app in "$(dirname $PWD/$0)/../benchmark"/*/; do
+	for lib in "$app"*/; do
 		echo -e "Pre-processing $lib"
 		cd "$lib"
 
