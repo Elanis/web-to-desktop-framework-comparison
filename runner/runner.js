@@ -144,6 +144,7 @@ async function writeDataToJsonFile(benchmarkData) {
 
 	console.log('Writing to benchmark.json ... Done !');
 
+	process.exit();
 }
 
 /**
@@ -178,9 +179,7 @@ async function writeDataToJsonFile(benchmarkData) {
 
 	console.log('System:', await getSystemData());
 
-	console.log('Raw benchmark Data:', JSON.stringify(benchmarkData, null, 4));
+	//console.log('Raw benchmark Data:', JSON.stringify(benchmarkData, null, 4));
 
 	writeDataToJsonFile(benchmarkData);
-
-	process.exit();
 })();
