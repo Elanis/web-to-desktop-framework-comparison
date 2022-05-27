@@ -38,6 +38,9 @@ jobs:
           cd runner/
           node writer.js
 
+      - name: Git status
+        run: git status
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

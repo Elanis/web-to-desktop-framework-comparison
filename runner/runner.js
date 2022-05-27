@@ -131,6 +131,8 @@ function getPackageJsonVersions(path, packageJsonVersionsNeeded) {
 }
 
 async function writeDataToJsonFile(benchmarkData) {
+	console.log('Writing to benchmark.json ...');
+
 	const data = JSON.parse(fs.readFileSync('benchmarks.json'));
 
 	data[os.platform + '-' + os.arch()] = {
@@ -139,6 +141,9 @@ async function writeDataToJsonFile(benchmarkData) {
 	};
 
 	fs.writeFileSync('benchmarks.json', JSON.stringify(data, null, 4));
+
+	console.log('Writing to benchmark.json ... Done !');
+
 }
 
 /**
