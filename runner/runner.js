@@ -176,4 +176,6 @@ async function writeDataToJsonFile(benchmarkData) {
 	console.log('Raw benchmark Data:', JSON.stringify(benchmarkData, null, 4));
 
 	writeDataToJsonFile(benchmarkData);
+
+	process.exit();
 })();
