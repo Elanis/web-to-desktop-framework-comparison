@@ -1,4 +1,4 @@
-name: macOS
+name: Runner
 
 on:
   push:
