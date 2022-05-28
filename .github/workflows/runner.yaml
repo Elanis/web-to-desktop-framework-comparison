@@ -20,6 +20,19 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install dependencies
+        run: sudo apt install -y mesa-common-dev libglu1-mesa-dev
+
+      - name:  Install
+        run:   |
+               if [ "$RUNNER_OS" == "Linux" ]; then
+                    sudo apt install -y libxshmfence1 libglu1 libnss3 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libasound2 # Electron
+                    sudo apt install -y mesa-common-dev libglu1-mesa-dev # NodeGUI
+               else
+                    echo "Nothing to install on $RUNNER_OS"
+               fi
+        shell: bash
+
       - name: Install runner tools
         run: |
           cd runner/
