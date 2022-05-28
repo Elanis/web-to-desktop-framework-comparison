@@ -155,6 +155,10 @@ async function writeDataToJsonFile(benchmarkData) {
 	const benchmarkData = {};
 
 	for(const { path, exe, packageJsonVersionsNeeded } of processes) {
+		if(exe === 'TODO') {
+			continue;
+		}
+
 		benchmarkData[path + '/Debug'] = {
 			versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
 			benchmarks: [],
