@@ -66,7 +66,10 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 					}
 
 					if(stats) {
-						memUsageHistory.push(Math.max(...Object.values(stats).map((elt) => elt.memory)));
+						const max = Math.max(0, ...Object.values(stats).filter((elt) => elt !== null && elt.memory).map((elt) => elt.memory));
+						if(max > 0) {
+							memUsageHistory.push(max);
+						}
 					}
 				});
 			} catch(e) {
