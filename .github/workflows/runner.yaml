@@ -22,9 +22,6 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: sudo apt install -y mesa-common-dev libglu1-mesa-dev
-
       - name:  Install
         run:   |
                if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
