@@ -175,6 +175,7 @@ async function writeDataToJsonFile(benchmarkData) {
 			const res = await getMemoryUsageHistoryOfProcess(path, exe);
 
 			customLog(path, exe, '\n', processMemoryUsage(res));
+			customLog(path, exe, '\n', 'Start time:', res.startTime);
 
 			benchmarkData[path + '/Debug'].benchmarks.push({
 				memoryUsage: processMemoryUsage(res),
