@@ -7,7 +7,7 @@ const data = JSON.parse(fs.readFileSync('benchmarks.json', 'utf8'));
 /**
  * Stats
  */
-function getBuildStats(app, architecture) {
+function getBuildSizeStats(app, architecture) {
 	if(!data[architecture]) {
 		return {};
 	}
@@ -15,15 +15,33 @@ function getBuildStats(app, architecture) {
 	const stats = {};
 
 	for(const libraryId in libraries) {
-		for(const context of ['Debug', 'Release']) {
-			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
+		const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}`];
 
-			if(!benchmarkData || !benchmarkData.buildSize) {
-				continue;
-			}
-
-			stats[libraryId + '/' + context] = benchmarkData.buildSize;
+		if(!benchmarkData || !benchmarkData.buildSize) {
+			continue;
 		}
+
+		stats[libraryId + '/Release'] = benchmarkData.buildSize;
+	}
+
+	return stats;
+}
+
+function getBuildTimeStats(app, architecture) {
+	if(!data[architecture]) {
+		return {};
+	}
+
+	const stats = {};
+
+	for(const libraryId in libraries) {
+		const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}`];
+
+		if(!benchmarkData || !benchmarkData.buildTime) {
+			continue;
+		}
+
+		stats[libraryId + '/Release'] = Math.round(benchmarkData.buildTime);
 	}
 
 	return stats;
@@ -177,7 +195,19 @@ for(const app of apps) {
 	 */
 	let firstCell = ' **Build size** ';
 	for(const architecture of architectures) {
-		const line = getMarkdownTableLine(app, architecture, firstCell, getBuildStats, getUnitFromMemory, false);
+		const line = getMarkdownTableLine(app, architecture, firstCell, getBuildSizeStats, getUnitFromMemory, false);
+		if(line) {
+			fileStr += line;
+			firstCell = ' ';
+		}
+	}
+
+	/**
+	 * BUILD TIME
+	 */
+	firstCell = ' **Build time** ';
+	for(const architecture of architectures) {
+		const line = getMarkdownTableLine(app, architecture, firstCell, getBuildTimeStats, formatTime, false);
 		if(line) {
 			fileStr += line;
 			firstCell = ' ';

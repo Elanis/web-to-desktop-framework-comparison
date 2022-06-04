@@ -264,17 +264,18 @@ async function setBuildSize(processPath, platformArch, buildSize) {
 			benchmarks: [],
 		};
 
-		benchmarkData[path] = {
-			buildTime: buildData.time,
-		};
+		benchmarkData[path] = {};
 
 		let buildPath = build.folders[getCurrentPlatformArch()];
+		let amount = 0;
 		for(const platformArch in build.folders) {
 			const folder = path + '/' + build.folders[platformArch].path.replace('APPNAME', app);
 
 			if(!fs.existsSync(folder)) {
 				continue;
 			}
+
+			amount++;
 
 			const buildSize = await dirSize(folder);
 
@@ -284,6 +285,8 @@ async function setBuildSize(processPath, platformArch, buildSize) {
 
 			setBuildSize(path, platformArch, buildSize);
 		}
+
+		benchmarkData[path].buildTime = buildData.time / amount;
 
 		if(buildPath) {
 			const releasePath = path + '/' + buildPath.path.replace('APPNAME', app);
