@@ -1,5 +1,7 @@
 import { execSync, exec } from 'child_process';
 import fs from 'fs';
+import path from 'path';
+import { readdir, stat } from 'fs/promises';
 import pidusage from 'pidusage';
 import pidtree from 'pidtree';
 import os from 'os';
@@ -17,6 +19,48 @@ let customLog = console.log;
 /**
  * Methods
  */
+async function dirSize(directory) {
+  const files = await readdir(directory);
+  const stats = files.map(file => stat(path.join(directory, file)));
+
+  return (await Promise.all(stats)).reduce((accumulator, { size }) => accumulator + size, 0);
+}
+
+async function execBuildProcess(processPath, processExe, debug=DEFAULT_DEBUG) {
+	return new Promise((resolve, reject) => {
+		const startTime = performance.now();
+
+		// Spawn process
+		const childProcess = exec(processExe, {
+			cwd: processPath,
+			shell: true,
+			detached: true,
+		});
+
+		childProcess.stdout.on('data', (data) => {
+			if(debug) {
+				customLog(`stdout: ${data}`);
+			}
+		});
+
+		childProcess.stderr.on('data', (data) => {
+			if(debug) {
+				console.error(`stderr: ${data}`);
+			}
+		});
+
+		childProcess.on('close', (code) => {
+			if(debug) {
+				customLog(`child process exited with code ${code}`);
+			}
+
+			resolve({
+				time: performance.now() - startTime
+			});
+		});
+	});
+}
+
 async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT, debug=DEFAULT_DEBUG) {
 	return new Promise((resolve, reject) => {
 		const memUsageHistory = [];
@@ -115,12 +159,12 @@ async function getSystemData() {
 	};
 }
 
-function getPackageJsonVersions(path, packageJsonVersionsNeeded) {
+function getPackageJsonVersions(appPath, packageJsonVersionsNeeded) {
 	if(!packageJsonVersionsNeeded) {
 		return {};
 	}
 
-	const packageJsonObj = JSON.parse(fs.readFileSync(path + '/package.json', 'utf-8'));
+	const packageJsonObj = JSON.parse(fs.readFileSync(appPath + '/package.json', 'utf-8'));
 	const versions = {};
 	for(const packageName of packageJsonVersionsNeeded) {
 		if(packageJsonObj.dependencies && packageJsonObj.dependencies[packageName]) {
@@ -133,12 +177,16 @@ function getPackageJsonVersions(path, packageJsonVersionsNeeded) {
 	return versions;
 }
 
+function getCurrentPlatformArch() {
+	return os.platform + '-' + os.arch();
+}
+
 async function writeDataToJsonFile(benchmarkData) {
 	console.log('Writing to benchmark.json ...');
 
 	const data = JSON.parse(fs.readFileSync('benchmarks.json'));
 
-	data[os.platform + '-' + os.arch()] = {
+	data[getCurrentPlatformArch()] = {
 		systemInformations: await getSystemData(),
 		benchmarkData
 	};
@@ -150,6 +198,30 @@ async function writeDataToJsonFile(benchmarkData) {
 	process.exit();
 }
 
+async function setBuildSize(processPath, platformArch, buildSize) {
+	console.log('Writing buildSize to benchmark.json ...');
+
+	const data = JSON.parse(fs.readFileSync('benchmarks.json'));
+
+	if(!data[platformArch]) {
+		data[platformArch] = {};
+	}
+
+	if(!data[platformArch].benchmarkData) {
+		data[platformArch].benchmarkData = {};
+	}
+
+	if(!data[platformArch].benchmarkData[processPath]) {
+		data[platformArch].benchmarkData[processPath] = {};
+	}
+
+	data[platformArch].benchmarkData[processPath].buildSize = buildSize;
+
+	fs.writeFileSync('benchmarks.json', JSON.stringify(data, null, 4));
+
+	console.log('Writing buildSize to benchmark.json ... Done !');
+}
+
 /**
  * Run
  */
@@ -157,18 +229,19 @@ async function writeDataToJsonFile(benchmarkData) {
 	let processId = 0;
 	const benchmarkData = {};
 
-	for(const { path, exe, packageJsonVersionsNeeded } of processes) {
+	for(const { app, path, exe, packageJsonVersionsNeeded, build } of processes) {
 		if(exe === 'TODO') {
 			continue;
 		}
 
+		// Debug
 		benchmarkData[path + '/Debug'] = {
 			versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
 			benchmarks: [],
 		};
 
 		for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
-			customLog = (...args) => console.log('[Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
+			customLog = (...args) => console.log('[Debug] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
 
 			customLog('Processing', path, exe);
 
@@ -182,6 +255,57 @@ async function writeDataToJsonFile(benchmarkData) {
 				startTime: res.startTime
 			});
 		}
+
+		// Release
+		const buildData = await execBuildProcess(path, build.cmd);
+
+		benchmarkData[path + '/Release'] = {
+			versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
+			benchmarks: [],
+		};
+
+		benchmarkData[path] = {
+			buildTime: buildData.time,
+		};
+
+		let buildPath = build.folders[getCurrentPlatformArch()];
+		for(const platformArch in build.folders) {
+			const folder = path + '/' + build.folders[platformArch].path.replace('APPNAME', app);
+
+			if(!fs.existsSync(folder)) {
+				continue;
+			}
+
+			const buildSize = await dirSize(folder);
+
+			if(platformArch === getCurrentPlatformArch()) {
+				benchmarkData[path].buildSize = buildSize
+			}
+
+			setBuildSize(path, platformArch, buildSize);
+		}
+
+		if(buildPath) {
+			const releasePath = path + '/' + buildPath.path.replace('APPNAME', app);
+			const releaseExe = buildPath.exe.replace('APPNAME', app);
+
+			for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
+				customLog = (...args) => console.log('[Release] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
+
+				customLog('Processing', releasePath, releaseExe);
+
+				const res = await getMemoryUsageHistoryOfProcess(releasePath, releaseExe);
+
+				customLog(releasePath, releaseExe, '\n', processMemoryUsage(res));
+				customLog(releasePath, releaseExe, '\n', 'Start time:', res.startTime);
+
+				benchmarkData[path + '/Release'].benchmarks.push({
+					memoryUsage: processMemoryUsage(res),
+					startTime: res.startTime
+				});
+			}
+		}
+
 		processId++;
 	}
 

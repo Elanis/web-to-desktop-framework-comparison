@@ -5,6 +5,55 @@ export const libraries = {
 		name: 'Electron',
 		packageJsonVersionsNeeded: ['electron', 'electron-packager'],
 		url: 'https://github.com/electron/electron',
+		build: {
+			cmd: 'npm run build',
+			folders: {
+				'linux-arm64': {
+					path: 'build/APPNAME-linux-arm64',
+					exe: 'APPNAME'
+				},
+				'linux-armv7l': {
+					path: 'build/APPNAME-linux-arm',
+					exe: 'APPNAME'
+				},
+				'linux-ia32': {
+					path: 'build/APPNAME-linux-x32',
+					exe: 'APPNAME'
+				},
+				'linux-x64': {
+					path: 'build/APPNAME-linux-x64',
+					exe: 'APPNAME'
+				},
+				'win32-arm64': {
+					path: 'build/APPNAME-win32-arm64',
+					exe: 'APPNAME'
+				},
+				'win32-ia32': {
+					path: 'build/APPNAME-win32-ia32',
+					exe: 'APPNAME'
+				},
+				'win32-x64': {
+					path: 'build/APPNAME-win32-x64',
+					exe: 'APPNAME'
+				},
+				'darwin-x64': {
+					path: 'build/APPNAME-darwin-x64',
+					exe: 'APPNAME'
+				},
+				'darwin-arm64': {
+					path: 'build/APPNAME-darwin-arm64',
+					exe: 'APPNAME'
+				},
+				'mas-x64': {
+					path: 'build/APPNAME-mas-x64',
+					exe: 'APPNAME'
+				},
+				'mas-arm64': {
+					path: 'build/APPNAME-mas-arm64',
+					exe: 'APPNAME'
+				}			
+			}
+		}
 	},
 	'nw.js': {
 		exe: 'npm start',
@@ -56,7 +105,19 @@ export const architectures = [
 	},
 	{
 		id: 'darwin-x64',
-		name: 'MacOS',
+		name: 'MacOS (Darwin x64)',
+	},
+	{
+		id: 'darwin-arm64',
+		name: 'MacOS (Darwin arm64)',
+	},
+	{
+		id: 'mas-x64',
+		name: 'MacOS (Mac App Store x64)',
+	},
+	{
+		id: 'mas-arm64',
+		name: 'MacOS (Mac App Store arm64)',
 	},
 	{
 		id: 'linux-x64',
@@ -120,9 +181,11 @@ const processesTmp = [];
 for(const app of apps) {
 	for(const libraryName in libraries) {
 		processesTmp.push({
+			app,
 			path: `../benchmark/${app}/${libraryName}`,
 			exe: libraries[libraryName].exe,
 			packageJsonVersionsNeeded: libraries[libraryName].packageJsonVersionsNeeded,
+			build: libraries[libraryName].build
 		});
 	}
 }
