@@ -29,6 +29,14 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
+      # Setup Java environment in order to build the Android app.
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+
+      # Setup the flutter environment.
+      - uses: subosito/flutter-action@v2
+
       - name:  Install
         run:   |
                if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then

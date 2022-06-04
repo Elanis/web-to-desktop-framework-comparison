@@ -30,7 +30,7 @@ export const libraries = {
 		url: 'https://github.com/neutralinojs/neutralinojs',
 	},
 	'flutter': {
-		exe: 'TODO',
+		exe: 'flutter run lib/main.dart',
 		name: 'Flutter',
 		url: 'https://github.com/flutter/flutter',
 	},
