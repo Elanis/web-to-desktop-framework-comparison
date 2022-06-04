@@ -60,6 +60,31 @@ export const libraries = {
 		name: 'NW.JS',
 		packageJsonVersionsNeeded: ['nwjs-builder-phoenix'],
 		url: 'https://github.com/nwjs/nw.js',
+		build: {
+			cmd: 'npm run build',
+			folders: {
+				'win32-ia32': {
+					path: 'dist/APPNAME-1.0.0-win-x86',
+					exe: 'APPNAME'
+				},
+				'win32-x64': {
+					path: 'dist/APPNAME-1.0.0-win-x64',
+					exe: 'APPNAME'
+				},
+				'linux-ia32': {
+					path: 'build/APPNAME-1.0.0-linux-x86',
+					exe: 'APPNAME'
+				},
+				'linux-x64': {
+					path: 'build/APPNAME-1.0.0-linux-x64',
+					exe: 'APPNAME'
+				},
+				'darwin-x64': {
+					path: 'build/APPNAME-1.0.0-mac-x64',
+					exe: 'APPNAME'
+				},
+			}
+		}
 	},
 	'tauri': {
 		exe: 'npm start',
