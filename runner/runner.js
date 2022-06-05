@@ -257,55 +257,57 @@ async function setBuildSize(processPath, platformArch, buildSize) {
 		}
 
 		// Release
-		const buildData = await execBuildProcess(path, build.cmd);
+		if(build) {
+			const buildData = await execBuildProcess(path, build.cmd);
 
-		benchmarkData[path + '/Release'] = {
-			versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
-			benchmarks: [],
-		};
+			benchmarkData[path + '/Release'] = {
+				versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
+				benchmarks: [],
+			};
 
-		benchmarkData[path] = {};
+			benchmarkData[path] = {};
 
-		let buildPath = build.folders[getCurrentPlatformArch()];
-		let amount = 0;
-		for(const platformArch in build.folders) {
-			const folder = path + '/' + build.folders[platformArch].path.replace('APPNAME', app);
+			let buildPath = build.folders[getCurrentPlatformArch()];
+			let amount = 0;
+			for(const platformArch in build.folders) {
+				const folder = path + '/' + build.folders[platformArch].path.replace('APPNAME', app);
 
-			if(!fs.existsSync(folder)) {
-				continue;
+				if(!fs.existsSync(folder)) {
+					continue;
+				}
+
+				amount++;
+
+				const buildSize = await dirSize(folder);
+
+				if(platformArch === getCurrentPlatformArch()) {
+					benchmarkData[path].buildSize = buildSize
+				}
+
+				setBuildSize(path, platformArch, buildSize);
 			}
 
-			amount++;
+			benchmarkData[path].buildTime = buildData.time / amount;
 
-			const buildSize = await dirSize(folder);
+			if(buildPath) {
+				const releasePath = path + '/' + buildPath.path.replace('APPNAME', app);
+				const releaseExe = buildPath.exe.replace('APPNAME', app);
 
-			if(platformArch === getCurrentPlatformArch()) {
-				benchmarkData[path].buildSize = buildSize
-			}
+				for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
+					customLog = (...args) => console.log('[Release] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
 
-			setBuildSize(path, platformArch, buildSize);
-		}
+					customLog('Processing', releasePath, releaseExe);
 
-		benchmarkData[path].buildTime = buildData.time / amount;
+					const res = await getMemoryUsageHistoryOfProcess(releasePath, releaseExe);
 
-		if(buildPath) {
-			const releasePath = path + '/' + buildPath.path.replace('APPNAME', app);
-			const releaseExe = buildPath.exe.replace('APPNAME', app);
+					customLog(releasePath, releaseExe, '\n', processMemoryUsage(res));
+					customLog(releasePath, releaseExe, '\n', 'Start time:', res.startTime);
 
-			for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
-				customLog = (...args) => console.log('[Release] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
-
-				customLog('Processing', releasePath, releaseExe);
-
-				const res = await getMemoryUsageHistoryOfProcess(releasePath, releaseExe);
-
-				customLog(releasePath, releaseExe, '\n', processMemoryUsage(res));
-				customLog(releasePath, releaseExe, '\n', 'Start time:', res.startTime);
-
-				benchmarkData[path + '/Release'].benchmarks.push({
-					memoryUsage: processMemoryUsage(res),
-					startTime: res.startTime
-				});
+					benchmarkData[path + '/Release'].benchmarks.push({
+						memoryUsage: processMemoryUsage(res),
+						startTime: res.startTime
+					});
+				}
 			}
 		}
 
