@@ -269,19 +269,20 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 			};
 
 			let buildPath = build.folders[getCurrentPlatformArch()];
-			let amount = 0;
-			for(const platformArch in build.folders) {
-				const folder = path + '/' + build.folders[platformArch].path.replace('APPNAME', app);
+			const existingFolders = build.folders
+				.map((platformArch) => path + '/' + build.folders[platformArch].path.replace('APPNAME', app))
+				.filter((folder) => {
+					if(!fs.existsSync(folder)) {
+						console.log(`Warning: ${folder} doesn't exists !`)
+						return false;
+					}
 
-				if(!fs.existsSync(folder)) {
-					console.log(`Warning: ${folder} doesn't exists !`)
-					continue;
-				}
+					return true;
+				});
 
-				amount++;
-
+			for(const folder in existingFolders) {
 				const buildSize = await dirSize(folder);
-				setBuildData(path, platformArch, buildSize, buildData.time / amount);
+				setBuildData(path, platformArch, buildSize, buildData.time / existingFolders.length);
 			}
 
 			if(buildPath) {
