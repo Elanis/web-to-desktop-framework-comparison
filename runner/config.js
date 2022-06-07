@@ -1,4 +1,4 @@
-export const apps = ['01-empty-app', '02-empty-app-headless'];
+export const apps = ['01-empty-app'/*, '02-empty-app-headless'*/];
 export const libraries = {
 	'electron': {
 		exe: 'npm start',
@@ -55,7 +55,7 @@ export const libraries = {
 			}
 		}
 	},
-	'nw.js': {
+	/*'nw.js': {
 		exe: 'npm start',
 		name: 'NW.JS',
 		packageJsonVersionsNeeded: ['nwjs-builder-phoenix'],
@@ -112,7 +112,7 @@ export const libraries = {
 		exe: 'dotnet run',
 		name: '.Net MAUI',
 		url: 'https://github.com/dotnet/maui',
-	},
+	},*/
 };
 
 export const architectures = [
@@ -216,6 +216,6 @@ for(const app of apps) {
 }
 export const processes = processesTmp;
 
-export const ITERATIONS_PER_PROCESS = 10;
+export const ITERATIONS_PER_PROCESS = 1;
 export const DEFAULT_TIMEOUT = 10;
-export const DEFAULT_DEBUG = false;
+export const DEFAULT_DEBUG = true;
