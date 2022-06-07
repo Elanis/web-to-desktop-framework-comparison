@@ -218,4 +218,7 @@ export const processes = processesTmp;
 
 export const ITERATIONS_PER_PROCESS = 1;
 export const DEFAULT_TIMEOUT = 10;
-export const DEFAULT_DEBUG = true;
+
+export const DEBUG_STDOUT = true;
+export const DEBUG_STDERR = true;
+export const DEBUG_PIDUSAGE = false;

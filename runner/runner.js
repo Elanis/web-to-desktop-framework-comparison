@@ -10,7 +10,9 @@ import systeminformation from 'systeminformation';
 import {
 	ITERATIONS_PER_PROCESS,
 	DEFAULT_TIMEOUT,
-	DEFAULT_DEBUG,
+	DEBUG_STDOUT,
+	DEBUG_STDERR,
+	DEBUG_PIDUSAGE,
 	processes,
 } from './config.js';
 
@@ -26,7 +28,7 @@ async function dirSize(directory) {
   return (await Promise.all(stats)).reduce((accumulator, { size }) => accumulator + size, 0);
 }
 
-async function execBuildProcess(processPath, processExe, debug=DEFAULT_DEBUG) {
+async function execBuildProcess(processPath, processExe) {
 	return new Promise((resolve, reject) => {
 		const startTime = performance.now();
 
@@ -38,19 +40,19 @@ async function execBuildProcess(processPath, processExe, debug=DEFAULT_DEBUG) {
 		});
 
 		childProcess.stdout.on('data', (data) => {
-			if(debug) {
+			if(DEBUG_STDOUT) {
 				customLog(`stdout: ${data}`);
 			}
 		});
 
 		childProcess.stderr.on('data', (data) => {
-			if(debug) {
+			if(DEBUG_STDERR) {
 				console.error(`stderr: ${data}`);
 			}
 		});
 
 		childProcess.on('close', (code) => {
-			if(debug) {
+			if(DEBUG_STDOUT || DEBUG_STDERR) {
 				customLog(`child process exited with code ${code}`);
 			}
 
@@ -61,7 +63,7 @@ async function execBuildProcess(processPath, processExe, debug=DEFAULT_DEBUG) {
 	});
 }
 
-async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT, debug=DEFAULT_DEBUG) {
+async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT) {
 	return new Promise((resolve, reject) => {
 		const memUsageHistory = [];
 		let startTime = '?';
@@ -75,7 +77,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		});
 
 		childProcess.stdout.on('data', (data) => {
-			if(debug) {
+			if(DEBUG_STDOUT) {
 				customLog(`stdout: ${data}`);
 			}
 
@@ -87,14 +89,14 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		});
 
 		childProcess.stderr.on('data', (data) => {
-			if(debug) {
+			if(DEBUG_STDERR) {
 				console.error(`stderr: ${data}`);
 			}
 
 		});
 
 		childProcess.on('close', (code) => {
-			if(debug) {
+			if(DEBUG_STDOUT || DEBUG_STDERR) {
 				customLog(`child process exited with code ${code}`);
 			}
 
@@ -105,7 +107,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		const pushStats = async() => {
 			try {
 				pidusage([childProcess.pid, ...(await pidtree(childProcess.pid))], function (err, stats) {
-					if(debug) {
+					if(DEBUG_PIDUSAGE) {
 						customLog(processExe, stats);
 					}
 
