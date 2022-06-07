@@ -61,13 +61,13 @@ jobs:
 
       - name: Run apps
         run: |
+          cd runner/
           if [ "$RUNNER_OS" == "Linux" ]; then
-            cd runner/
             xvfb-run --auto-servernum node runner.js
           else
-            cd runner/
             node runner.js
           fi
+        shell: bash
 
       - name: Update README
         run: |
