@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron --enable-logging .",
     "build-windows": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=win32 --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
     "build-linux": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=linux --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
     "build-darwin": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=darwin --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
