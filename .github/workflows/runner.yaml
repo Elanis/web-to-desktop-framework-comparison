@@ -38,9 +38,9 @@ jobs:
 
       - name:  Install
         run:   |
-               if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
+               if [ "$RUNNER_OS" == "Linux" ]; then
                     sudo apt update
-                    sudo apt-get install xvfb # X Server
+                    sudo apt install -y xvfb # X Server
                     sudo apt install -y libxshmfence1 libglu1 libnss3 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libasound2 # Electron
                     sudo apt install -y libwebkit2gtk-4.0-37 libstdc++6 # NeutralinoJS
                     sudo apt install -y pkg-config build-essential cmake make mesa-common-dev libglu1-mesa-dev # NodeGUI

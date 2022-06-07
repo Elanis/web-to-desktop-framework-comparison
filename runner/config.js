@@ -6,7 +6,7 @@ export const libraries = {
 		packageJsonVersionsNeeded: ['electron', 'electron-packager'],
 		url: 'https://github.com/electron/electron',
 		build: {
-			cmd: 'npm run build',
+			cmd: 'npm run build-ci',
 			folders: {
 				'linux-arm64': {
 					path: 'build/APPNAME-linux-arm64',

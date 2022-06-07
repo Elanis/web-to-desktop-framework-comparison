@@ -7,9 +7,9 @@
     "start": "electron --enable-logging .",
     "build-windows": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=win32 --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
     "build-linux": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=linux --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
-    "build-darwin": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=darwin --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
-    "build-mas": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=mas --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
-    "build": "npm run build-windows && npm run build-linux && npm run build-darwin && npm run build-mas"
+    "build-mac": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=darwin,mas --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
+    "build": "npm run build-windows && npm run build-linux && npm run build-mac",
+    "build-ci": "if [ \"$RUNNER_OS\" = \"Linux\" ] ; then npm run build-linux ; elif [ \"$RUNNER_OS\" = \"Windows\" ] ; then npm run build-windows ; elif [ \"$RUNNER_OS\" = \"macOS\" ] ; then npm run build-mac ; fi"
   },
   "author": "",
   "license": "ISC",
