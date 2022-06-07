@@ -274,6 +274,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 				const folder = path + '/' + build.folders[platformArch].path.replace('APPNAME', app);
 
 				if(!fs.existsSync(folder)) {
+					console.log(`Warning: ${folder} doesn't exists !`)
 					continue;
 				}
 

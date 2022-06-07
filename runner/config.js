@@ -12,12 +12,12 @@ export const libraries = {
 					path: 'build/APPNAME-linux-arm64',
 					exe: './APPNAME'
 				},
-				'linux-armv7l': {
-					path: 'build/APPNAME-linux-arm',
+				'linux-arm': {
+					path: 'build/APPNAME-linux-armv7l',
 					exe: './APPNAME'
 				},
-				'linux-ia32': {
-					path: 'build/APPNAME-linux-x32',
+				'linux-x32': {
+					path: 'build/APPNAME-linux-ia32',
 					exe: './APPNAME'
 				},
 				'linux-x64': {
