@@ -10,47 +10,47 @@ export const libraries = {
 			folders: {
 				'linux-arm64': {
 					path: 'build/APPNAME-linux-arm64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'linux-armv7l': {
 					path: 'build/APPNAME-linux-arm',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'linux-ia32': {
 					path: 'build/APPNAME-linux-x32',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'linux-x64': {
 					path: 'build/APPNAME-linux-x64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'win32-arm64': {
 					path: 'build/APPNAME-win32-arm64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'win32-ia32': {
 					path: 'build/APPNAME-win32-ia32',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'win32-x64': {
 					path: 'build/APPNAME-win32-x64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'darwin-x64': {
 					path: 'build/APPNAME-darwin-x64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'darwin-arm64': {
 					path: 'build/APPNAME-darwin-arm64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'mas-x64': {
 					path: 'build/APPNAME-mas-x64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'mas-arm64': {
 					path: 'build/APPNAME-mas-arm64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				}			
 			}
 		}
@@ -65,23 +65,23 @@ export const libraries = {
 			folders: {
 				'win32-ia32': {
 					path: 'dist/APPNAME-1.0.0-win-x86',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'win32-x64': {
 					path: 'dist/APPNAME-1.0.0-win-x64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'linux-ia32': {
 					path: 'build/APPNAME-1.0.0-linux-x86',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'linux-x64': {
 					path: 'build/APPNAME-1.0.0-linux-x64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 				'darwin-x64': {
 					path: 'build/APPNAME-1.0.0-mac-x64',
-					exe: 'APPNAME'
+					exe: './APPNAME'
 				},
 			}
 		}

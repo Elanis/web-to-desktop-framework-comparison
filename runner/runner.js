@@ -198,7 +198,7 @@ async function writeDataToJsonFile(benchmarkData) {
 	process.exit();
 }
 
-async function setBuildSize(processPath, platformArch, buildSize) {
+async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 	console.log('Writing buildSize to benchmark.json ...');
 
 	const data = JSON.parse(fs.readFileSync('benchmarks.json'));
@@ -216,6 +216,7 @@ async function setBuildSize(processPath, platformArch, buildSize) {
 	}
 
 	data[platformArch].benchmarkData[processPath].buildSize = buildSize;
+	data[platformArch].benchmarkData[processPath].buildTime = buildTime;
 
 	fs.writeFileSync('benchmarks.json', JSON.stringify(data, null, 4));
 
@@ -265,8 +266,6 @@ async function setBuildSize(processPath, platformArch, buildSize) {
 				benchmarks: [],
 			};
 
-			benchmarkData[path] = {};
-
 			let buildPath = build.folders[getCurrentPlatformArch()];
 			let amount = 0;
 			for(const platformArch in build.folders) {
@@ -279,15 +278,8 @@ async function setBuildSize(processPath, platformArch, buildSize) {
 				amount++;
 
 				const buildSize = await dirSize(folder);
-
-				if(platformArch === getCurrentPlatformArch()) {
-					benchmarkData[path].buildSize = buildSize
-				}
-
-				setBuildSize(path, platformArch, buildSize);
+				setBuildData(path, platformArch, buildSize, buildData.time / amount);
 			}
-
-			benchmarkData[path].buildTime = buildData.time / amount;
 
 			if(buildPath) {
 				const releasePath = path + '/' + buildPath.path.replace('APPNAME', app);
