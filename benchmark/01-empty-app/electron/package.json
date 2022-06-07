@@ -9,7 +9,7 @@
     "build-linux": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=linux --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
     "build-mac": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=darwin,mas --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
     "build": "npm run build-windows && npm run build-linux && npm run build-mac",
-    "build-ci": "if [ \"$RUNNER_OS\" = \"Linux\" ] ; then npm run build-linux ; elif [ \"$RUNNER_OS\" = \"Windows\" ] ; then npm run build-windows ; elif [ \"$RUNNER_OS\" = \"macOS\" ] ; then npm run build-mac ; fi"
+    "build-ci": "sh -c 'if [ \"$RUNNER_OS\" = \"Linux\" ] ; then npm run build-linux ; elif [ \"$RUNNER_OS\" = \"Windows\" ] ; then npm run build-windows ; elif [ \"$RUNNER_OS\" = \"macOS\" ] ; then npm run build-mac ; fi'"
   },
   "author": "",
   "license": "ISC",
