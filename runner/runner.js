@@ -285,6 +285,9 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 				const buildTime = buildData.time / existingFolders.length;
 				
 				if(platformArch === getCurrentPlatformArch()) {
+					if(!benchmarkData[path]) {
+						benchmarkData[path] = {};
+					}
 					benchmarkData[path].buildSize = buildSize;
 					benchmarkData[path].buildTime = buildTime;
 				} else {
