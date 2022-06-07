@@ -69,6 +69,11 @@ jobs:
           fi
         shell: bash
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: benchmark/01-empty-app/electron/
+
       - name: Update README
         run: |
           cd runner/
