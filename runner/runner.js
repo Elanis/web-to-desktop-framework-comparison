@@ -121,7 +121,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 					}
 
 					if(stats) {
-						const max = Math.max(0, ...Object.values(stats).filter((elt) => elt !== null && elt.memory).map((elt) => elt.memory));
+						const max = Math.max(0, ...Object.values(stats).filter((elt) => elt !== null && typeof elt !== 'undefined' && elt.memory).map((elt) => elt.memory));
 						if(max > 0) {
 							memUsageHistory.push(max);
 						}
