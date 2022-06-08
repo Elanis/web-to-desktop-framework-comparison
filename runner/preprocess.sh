@@ -9,7 +9,6 @@ for app in "$(dirname $PWD/$0)/../benchmark"/*/; do
 		if [ -f "$lib/package.json" ] | [ -f "$lib/package-lock.json" ]; then
 			echo "Detected npm files, installing dependencies ..."
 			npm ci
-			break;
 		fi
 
 		if [ -f "$lib/*.sln" ]; then

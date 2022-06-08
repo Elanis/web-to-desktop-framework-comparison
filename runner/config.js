@@ -1,4 +1,4 @@
-export const apps = ['01-empty-app'/*, '02-empty-app-headless'*/];
+export const apps = ['01-empty-app', '02-empty-app-headless'];
 export const libraries = {
 	'electron': {
 		exe: 'npm start',
@@ -86,7 +86,7 @@ export const libraries = {
 			}
 		}
 	},
-	/*'tauri': {
+	'tauri': {
 		exe: 'npm start',
 		name: 'Tauri',
 		packageJsonVersionsNeeded: ['@tauri-apps/cli', '@tauri-apps/api'],
@@ -112,7 +112,7 @@ export const libraries = {
 		exe: 'dotnet run',
 		name: '.Net MAUI',
 		url: 'https://github.com/dotnet/maui',
-	},*/
+	},
 };
 
 export const architectures = [
@@ -216,7 +216,7 @@ for(const app of apps) {
 }
 export const processes = processesTmp;
 
-export const ITERATIONS_PER_PROCESS = 1;
+export const ITERATIONS_PER_PROCESS = 10;
 export const DEFAULT_TIMEOUT = 10;
 
 export const DEBUG_STDOUT = true;
