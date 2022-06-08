@@ -38,19 +38,19 @@ export const libraries = {
 				},
 				'darwin-x64': {
 					path: 'build/APPNAME-darwin-x64',
-					exe: './APPNAME.app'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME'
 				},
 				'darwin-arm64': {
 					path: 'build/APPNAME-darwin-arm64',
-					exe: './APPNAME.app'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME'
 				},
 				'mas-x64': {
 					path: 'build/APPNAME-mas-x64',
-					exe: './APPNAME.app'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME'
 				},
 				'mas-arm64': {
 					path: 'build/APPNAME-mas-arm64',
-					exe: './APPNAME.app'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME'
 				}			
 			}
 		}
