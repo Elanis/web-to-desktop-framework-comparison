@@ -72,15 +72,15 @@ export const libraries = {
 					exe: 'APPNAME.exe'
 				},
 				'linux-ia32': {
-					path: 'build/APPNAME-1.0.0-linux-x86',
+					path: 'dist/APPNAME-1.0.0-linux-x86',
 					exe: './APPNAME'
 				},
 				'linux-x64': {
-					path: 'build/APPNAME-1.0.0-linux-x64',
+					path: 'dist/APPNAME-1.0.0-linux-x64',
 					exe: './APPNAME'
 				},
 				'darwin-x64': {
-					path: 'build/APPNAME-1.0.0-mac-x64',
+					path: 'dist/APPNAME-1.0.0-mac-x64',
 					exe: './APPNAME.app/Contents/MacOS/APPNAME'
 				},
 			}
