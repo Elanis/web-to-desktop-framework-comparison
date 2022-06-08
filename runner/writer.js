@@ -168,6 +168,23 @@ function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat
 	return output;
 }
 
+function generateHeader(addSeparator = false) {
+	fileStr = '|  |  |';
+	let headerSeparator = '|:---:|:---:|';
+	for(const libraryId in libraries) {
+		fileStr += ` [${libraries[libraryId].name}](${libraries[libraryId].url}) |`;
+		headerSeparator += ':---:|';
+	}
+
+	fileStr += '\n';
+
+	if(addSeparator) {
+		fileStr += headerSeparator + '\n';
+	}
+
+	return fileStr;
+}
+
 /**
  * Run
  */
@@ -182,13 +199,7 @@ for(const app of apps) {
 	/**
 	 * HEADER
 	 */
-	fileStr += '|  |  |';
-	let headerSeparator = '|:---:|:---:|';
-	for(const libraryId in libraries) {
-		fileStr += ` [${libraries[libraryId].name}](${libraries[libraryId].url}) |`;
-		headerSeparator += ':---:|';
-	}
-	fileStr += '\n' + headerSeparator + '\n';
+	fileStr += generateHeader(true);
 
 	/**
 	 * BUILD SIZE
@@ -202,6 +213,8 @@ for(const app of apps) {
 		}
 	}
 
+	fileStr += generateHeader();
+
 	/**
 	 * BUILD TIME
 	 */
@@ -214,6 +227,8 @@ for(const app of apps) {
 		}
 	}
 
+	fileStr += generateHeader();
+
 	/**
 	 * MEMORY USAGE
 	 */
@@ -225,6 +240,8 @@ for(const app of apps) {
 			firstCell = ' ';
 		}
 	}
+
+	fileStr += generateHeader();
 
 	/**
 	 * START DURATION
