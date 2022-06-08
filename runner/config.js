@@ -26,31 +26,31 @@ export const libraries = {
 				},
 				'win32-arm64': {
 					path: 'build/APPNAME-win32-arm64',
-					exe: './APPNAME'
+					exe: 'APPNAME.exe'
 				},
 				'win32-ia32': {
 					path: 'build/APPNAME-win32-ia32',
-					exe: './APPNAME'
+					exe: 'APPNAME.exe'
 				},
 				'win32-x64': {
 					path: 'build/APPNAME-win32-x64',
-					exe: './APPNAME'
+					exe: 'APPNAME.exe'
 				},
 				'darwin-x64': {
 					path: 'build/APPNAME-darwin-x64',
-					exe: './APPNAME'
+					exe: './APPNAME.app'
 				},
 				'darwin-arm64': {
 					path: 'build/APPNAME-darwin-arm64',
-					exe: './APPNAME'
+					exe: './APPNAME.app'
 				},
 				'mas-x64': {
 					path: 'build/APPNAME-mas-x64',
-					exe: './APPNAME'
+					exe: './APPNAME.app'
 				},
 				'mas-arm64': {
 					path: 'build/APPNAME-mas-arm64',
-					exe: './APPNAME'
+					exe: './APPNAME.app'
 				}			
 			}
 		}
