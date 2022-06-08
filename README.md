@@ -60,8 +60,8 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | | ***Windows (ARM64)*** | ≈202MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
 | | ***MacOS (Darwin x64)*** | ≈323MB | ≈465MB | ? | ? | ? | ? | ? |
 | | ***MacOS (Darwin arm64)*** | ≈328MB | ? | ? | ? | ? | ? | ? |
-| | ***MacOS (Mac App Store x64)*** | ≈320MB | ? | ? | ? | ? | ? | ? |
-| | ***MacOS (Mac App Store arm64)*** | ≈325MB | ? | ? | ? | ? | ? | ? |
+| | ***MacOS (MAS x64)*** | ≈320MB | ? | ? | ? | ? | ? | ? |
+| | ***MacOS (MAS arm64)*** | ≈325MB | ? | ? | ? | ? | ? | ? |
 | | ***Linux (x64)*** | ≈190MB | ≈355MB | ? | ? | ? | ? | ? |
 | | ***Linux (x86)*** | ≈179MB | ≈356MB | ? | ? | ? | ? | ? |
 | | ***Linux (ARMv7l)*** | ≈135MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
@@ -71,8 +71,8 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | | ***Windows (ARM64)*** | ≈3522ms | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
 | | ***MacOS (Darwin x64)*** | ≈3669ms | ≈30397ms | ? | ? | ? | ? | ? |
 | | ***MacOS (Darwin arm64)*** | ≈3669ms | ? | ? | ? | ? | ? | ? |
-| | ***MacOS (Mac App Store x64)*** | ≈3669ms | ? | ? | ? | ? | ? | ? |
-| | ***MacOS (Mac App Store arm64)*** | ≈3669ms | ? | ? | ? | ? | ? | ? |
+| | ***MacOS (MAS x64)*** | ≈3669ms | ? | ? | ? | ? | ? | ? |
+| | ***MacOS (MAS arm64)*** | ≈3669ms | ? | ? | ? | ? | ? | ? |
 | | ***Linux (x64)*** | ≈2368ms | ≈30397ms | ? | ? | ? | ? | ? |
 | | ***Linux (x86)*** | ≈2368ms | ≈30397ms | ? | ? | ? | ? | ? |
 | | ***Linux (ARMv7l)*** | ≈2368ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
@@ -95,8 +95,8 @@ See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to
 | | ***Windows (ARM64)*** | ≈202MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | N/A<sup>1</sup>| ? |
 | | ***MacOS (Darwin x64)*** | ≈323MB | ≈465MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | | ***MacOS (Darwin arm64)*** | ≈328MB | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
-| | ***MacOS (Mac App Store x64)*** | ≈320MB | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
-| | ***MacOS (Mac App Store arm64)*** | ≈325MB | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
+| | ***MacOS (MAS x64)*** | ≈320MB | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
+| | ***MacOS (MAS arm64)*** | ≈325MB | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
 | | ***Linux (x64)*** | ≈190MB | ≈355MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | | ***Linux (x86)*** | ≈179MB | ≈356MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | | ***Linux (ARMv7l)*** | ≈135MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
