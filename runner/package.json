@@ -1,0 +1,18 @@
+{
+  "name": "runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "runner.js",
+  "scripts": {
+    "start": "bash preprocess.sh && node runner.js && node writer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "pidtree": "^0.5.0",
+    "pidusage": "^3.0.0",
+    "systeminformation": "^5.10.5"
+  }
+}
