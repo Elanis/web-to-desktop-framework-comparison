@@ -28,7 +28,7 @@ export const libraries = {
 					path: 'build/APPNAME-win32-arm64',
 					exe: 'APPNAME.exe'
 				},
-				'win32-ia32': {
+				'win32-x32': {
 					path: 'build/APPNAME-win32-ia32',
 					exe: 'APPNAME.exe'
 				},
@@ -63,7 +63,7 @@ export const libraries = {
 		build: {
 			cmd: 'npm run build',
 			folders: {
-				'win32-ia32': {
+				'win32-x32': {
 					path: 'dist/APPNAME-1.0.0-win-x86',
 					exe: 'APPNAME.exe'
 				},
@@ -71,7 +71,7 @@ export const libraries = {
 					path: 'dist/APPNAME-1.0.0-win-x64',
 					exe: 'APPNAME.exe'
 				},
-				'linux-ia32': {
+				'linux-x32': {
 					path: 'dist/APPNAME-1.0.0-linux-x86',
 					exe: './APPNAME'
 				},
