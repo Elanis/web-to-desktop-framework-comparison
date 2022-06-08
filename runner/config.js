@@ -130,11 +130,11 @@ export const architectures = [
 	},
 	{
 		id: 'darwin-x64',
-		name: 'MacOS (Darwin x64)',
+		name: 'MacOS (x64)',
 	},
 	{
 		id: 'darwin-arm64',
-		name: 'MacOS (Darwin arm64)',
+		name: 'MacOS (arm64)',
 	},
 	/*{
 		id: 'mas-x64',
