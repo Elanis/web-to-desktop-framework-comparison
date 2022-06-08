@@ -24,13 +24,15 @@ let customLog = console.log;
 async function dirSize(directory) {
   const files = await readdir(directory);
   const stats = files.map(async file => {
-  	if(fs.lstatSync(dirPath).isDirectory()) {
-  		return await dirSize(directory);
+  	const currentItem = path.join(directory, file);
+
+  	if(fs.lstatSync(currentItem).isDirectory()) {
+  		return await dirSize(currentItem);
   	} else {
-  		const fileStats = await stat(path.join(directory, file));
+  		const fileStats = await stat(currentItem);
   		return fileStats.size;
   	}
-  } 
+  }); 
 
   return (await Promise.all(stats)).reduce((accumulator, size) => accumulator + size, 0);
 }
