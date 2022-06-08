@@ -136,14 +136,14 @@ export const architectures = [
 		id: 'darwin-arm64',
 		name: 'MacOS (Darwin arm64)',
 	},
-	{
+	/*{
 		id: 'mas-x64',
-		name: 'MacOS (Mac App Store x64)',
+		name: 'MacOS (MAS x64)',
 	},
 	{
 		id: 'mas-arm64',
-		name: 'MacOS (Mac App Store arm64)',
-	},
+		name: 'MacOS (MAS arm64)',
+	},*/
 	{
 		id: 'linux-x64',
 		name: 'Linux (x64)'
