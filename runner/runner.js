@@ -22,11 +22,16 @@ let customLog = console.log;
  * Methods
  */
 async function dirSize(directory) {
+	if(!fs.lstatSync(currentItem).isDirectory()) {
+		const fileStats = await stat(currentItem);
+		return fileStats.size;
+	}
+
 	const files = await readdir(directory);
 	const stats = files.map(async file => {
-	const currentItem = path.join(directory, file);
+		const currentItem = path.join(directory, file);
 
-	if(fs.lstatSync(currentItem).isDirectory()) {
+		if(fs.lstatSync(currentItem).isDirectory()) {
 			return await dirSize(currentItem);
 		} else {
 			const fileStats = await stat(currentItem);

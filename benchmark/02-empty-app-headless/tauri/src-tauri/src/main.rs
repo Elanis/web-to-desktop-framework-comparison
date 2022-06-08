@@ -17,7 +17,7 @@ fn main() {
 
       // listen to the `event-name` (emitted on the `main` window)
       main_window.listen("load", move |_event| {
-        println!("Loaded in {}ms", now.elapsed().as_millis());
+        println!("Starting time: {}ms", now.elapsed().as_millis());
       });
       Ok(())
     })

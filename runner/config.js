@@ -91,6 +91,21 @@ export const libraries = {
 		name: 'Tauri',
 		packageJsonVersionsNeeded: ['@tauri-apps/cli', '@tauri-apps/api'],
 		url: 'https://github.com/tauri-apps/tauri',
+		build: {
+			cmd: 'npm run build',
+			folders: {
+				'win32-x64': {
+					exe: 'src-tauri/target/release/APPNAME.exe'
+				},
+				'linux-x64': {
+					exe: './src-tauri/target/release/APPNAME'
+				},
+				'darwin-x64': {
+					path: 'src-tauri/target/release/APPNAME.app/',
+					exe: './Contents/MacOS/APPNAME'
+				},
+			}
+		}
 	},
 	'nodegui': {
 		exe: 'npm start',

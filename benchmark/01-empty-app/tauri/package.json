@@ -1,15 +1,14 @@
 {
-  "name": "hello-world",
-  "version": "1.0.0",
+  "name": "01-empty-app",
   "scripts": {
     "tauri": "tauri",
     "start": "tauri dev",
     "build": "tauri build"
   },
-  "devDependencies": {
-    "@tauri-apps/cli": "^1.0.0-beta.6"
-  },
   "dependencies": {
-    "@tauri-apps/api": "^1.0.0-beta.5"
+    "@tauri-apps/api": "^1.0.0-rc.6"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0-rc.13"
   }
 }
