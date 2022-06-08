@@ -159,7 +159,13 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				});
 				clearInterval(interval);
 
-				killAll(childProcess.pid)
+				if(childProcess.exitCode === null && !done) {
+					killAll(childProcess.pid);
+				} else {
+					try {
+						killAll(childProcess.pid);
+					} catch {}
+				}
 			}
 
 			pushStats();
