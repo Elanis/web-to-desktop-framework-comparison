@@ -270,7 +270,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 
 			let buildPath = build.folders[getCurrentPlatformArch()];
 			const existingFolders = Object.keys(build.folders)
-				.map((platformArch) => ({ platformArch, folder: path + '/' + build.folders[platformArch].path.replace('APPNAME', app) }))
+				.map((platformArch) => ({ platformArch, folder: path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app) }))
 				.filter(({platformArch, folder}) => {
 					if(!fs.existsSync(folder)) {
 						console.log(`Warning: ${folder} doesn't exists !`)
@@ -296,8 +296,8 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 			}
 
 			if(buildPath) {
-				const releasePath = path + '/' + buildPath.path.replace('APPNAME', app);
-				const releaseExe = buildPath.exe.replace('APPNAME', app);
+				const releasePath = path + '/' + buildPath.path.replaceAll('APPNAME', app);
+				const releaseExe = buildPath.exe.replaceAll('APPNAME', app);
 
 				for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
 					customLog = (...args) => console.log('[Release] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);

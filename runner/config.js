@@ -55,7 +55,7 @@ export const libraries = {
 			}
 		}
 	},
-	/*'nw.js': {
+	'nw.js': {
 		exe: 'npm start',
 		name: 'NW.JS',
 		packageJsonVersionsNeeded: ['nwjs-builder-phoenix'],
@@ -65,11 +65,11 @@ export const libraries = {
 			folders: {
 				'win32-ia32': {
 					path: 'dist/APPNAME-1.0.0-win-x86',
-					exe: './APPNAME'
+					exe: 'APPNAME.exe'
 				},
 				'win32-x64': {
 					path: 'dist/APPNAME-1.0.0-win-x64',
-					exe: './APPNAME'
+					exe: 'APPNAME.exe'
 				},
 				'linux-ia32': {
 					path: 'build/APPNAME-1.0.0-linux-x86',
@@ -81,12 +81,12 @@ export const libraries = {
 				},
 				'darwin-x64': {
 					path: 'build/APPNAME-1.0.0-mac-x64',
-					exe: './APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME'
 				},
 			}
 		}
 	},
-	'tauri': {
+	/*'tauri': {
 		exe: 'npm start',
 		name: 'Tauri',
 		packageJsonVersionsNeeded: ['@tauri-apps/cli', '@tauri-apps/api'],
