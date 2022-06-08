@@ -71,8 +71,8 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
-          path: benchmark/01-empty-app/electron/
+          name: "electron-$RUNNER_OS"
+          path: benchmark/01-empty-app/electron/build/
 
       - name: Update README
         run: |
