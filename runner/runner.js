@@ -22,19 +22,19 @@ let customLog = console.log;
  * Methods
  */
 async function dirSize(directory) {
-  const files = await readdir(directory);
-  const stats = files.map(async file => {
-  	const currentItem = path.join(directory, file);
+	const files = await readdir(directory);
+	const stats = files.map(async file => {
+	const currentItem = path.join(directory, file);
 
-  	if(fs.lstatSync(currentItem).isDirectory()) {
-  		return await dirSize(currentItem);
-  	} else {
-  		const fileStats = await stat(currentItem);
-  		return fileStats.size;
-  	}
-  }); 
+	if(fs.lstatSync(currentItem).isDirectory()) {
+			return await dirSize(currentItem);
+		} else {
+			const fileStats = await stat(currentItem);
+			return fileStats.size;
+		}
+	});
 
-  return (await Promise.all(stats)).reduce((accumulator, size) => accumulator + size, 0);
+	return (await Promise.all(stats)).reduce((accumulator, size) => accumulator + size, 0);
 }
 
 async function execBuildProcess(processPath, processExe) {
@@ -70,6 +70,23 @@ async function execBuildProcess(processPath, processExe) {
 			});
 		});
 	});
+}
+
+export function killAll(pid, signal='SIGTERM'){
+	if(process.platform == "win32"){
+		exec(`taskkill /PID ${pid} /T /F`, (error, stdout, stderr)=>{
+			console.log("taskkill stdout: " + stdout)
+			console.log("taskkill stderr: " + stderr)
+			if(error){
+				console.log("error: " + error.message)
+			}
+		})
+	}
+	else{
+		// see https://nodejs.org/api/child_process.html#child_process_options_detached
+		// If pid is less than -1, then sig is sent to every process in the process group whose ID is -pid.
+		process.kill(pid, signal)
+	}
 }
 
 async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT) {
@@ -142,7 +159,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				});
 				clearInterval(interval);
 
-				childProcess.kill();
+				killAll(childProcess.pid)
 			}
 
 			pushStats();
