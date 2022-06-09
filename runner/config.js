@@ -95,9 +95,11 @@ export const libraries = {
 			cmd: 'npm run build',
 			folders: {
 				'win32-x64': {
+					path: '',
 					exe: 'src-tauri/target/release/APPNAME.exe'
 				},
 				'linux-x64': {
+					path: '',
 					exe: './src-tauri/target/release/APPNAME'
 				},
 				'darwin-x64': {

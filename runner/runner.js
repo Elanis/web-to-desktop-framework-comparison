@@ -22,7 +22,7 @@ let customLog = console.log;
  * Methods
  */
 async function dirSize(directory) {
-	if(!fs.lstatSync(currentItem).isDirectory()) {
+	if(!fs.lstatSync(directory).isDirectory()) {
 		const fileStats = await stat(currentItem);
 		return fileStats.size;
 	}
@@ -307,8 +307,8 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 
 			let buildPath = build.folders[getCurrentPlatformArch()];
 			const existingFolders = Object.keys(build.folders)
-				.map((platformArch) => ({ platformArch, folder: path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app) }))
-				.filter(({platformArch, folder}) => {
+				.map((platformArch) => ({ platformArch, folder: path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app), exe: build.folders[platformArch].exe }))
+				.filter(({folder}) => {
 					if(!fs.existsSync(folder)) {
 						console.log(`Warning: ${folder} doesn't exists !`)
 						return false;
@@ -317,8 +317,8 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 					return true;
 				});
 
-			for(const {platformArch, folder} of existingFolders) {
-				const buildSize = await dirSize(folder);
+			for(const {platformArch, folder, exe} of existingFolders) {
+				const buildSize = await dirSize(folder || exe);
 				const buildTime = buildData.time / existingFolders.length;
 				
 				if(platformArch === getCurrentPlatformArch()) {
