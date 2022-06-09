@@ -96,15 +96,18 @@ export const libraries = {
 			folders: {
 				'win32-x64': {
 					path: '',
-					exe: 'src-tauri/target/release/APPNAME.exe'
+					exe: 'src-tauri/target/release/APPNAME.exe',
+					currentOnly: true
 				},
 				'linux-x64': {
 					path: '',
-					exe: './src-tauri/target/release/APPNAME'
+					exe: './src-tauri/target/release/APPNAME',
+					currentOnly: true
 				},
 				'darwin-x64': {
 					path: 'src-tauri/target/release/APPNAME.app/',
-					exe: './Contents/MacOS/APPNAME'
+					exe: './Contents/MacOS/APPNAME',
+					currentOnly: true
 				},
 			}
 		}

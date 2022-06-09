@@ -308,9 +308,14 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 			let buildPath = build.folders[getCurrentPlatformArch()];
 			const existingFolders = Object.keys(build.folders)
 				.map((platformArch) => ({ platformArch, folder: path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app), exe: build.folders[platformArch].exe }))
-				.filter(({folder}) => {
+				.filter(({platformArch, folder}) => {
 					if(!fs.existsSync(folder)) {
 						console.log(`Warning: ${folder} doesn't exists !`)
+						return false;
+					}
+
+					// This parameter is used if multiple architecture build in the same folder
+					if(build.folders[platformArch].currentOnly) {
 						return false;
 					}
 
