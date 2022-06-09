@@ -5,16 +5,16 @@
   "main": "main.js",
   "scripts": {
     "start": "electron --enable-logging .",
-    "build-windows": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=win32 --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
-    "build-linux": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=linux --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
-    "build-mac": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=darwin,mas --arch=ia32,x64,armv7l,arm64,mips64el --out=build/",
+    "build-windows": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=win32 --arch=ia32,x64,arm64 --out=build/",
+    "build-linux": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=linux --arch=x64,armv7l,arm64 --out=build/",
+    "build-mac": "electron-packager . 01-empty-app --ignore=node_module --overwrite --platform=darwin,mas --arch=x64,arm64 --out=build/",
     "build": "npm run build-windows && npm run build-linux && npm run build-mac",
     "build-ci": "sh -c 'if [ \"$RUNNER_OS\" = \"Linux\" ] ; then npm run build-linux ; elif [ \"$RUNNER_OS\" = \"Windows\" ] ; then npm run build-windows ; elif [ \"$RUNNER_OS\" = \"macOS\" ] ; then npm run build-mac ; fi'"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^13.6.6",
-    "electron-packager": "^15.3.0"
+    "electron": "^19.0.4",
+    "electron-packager": "^15.5.1"
   }
 }
