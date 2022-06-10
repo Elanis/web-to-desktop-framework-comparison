@@ -127,18 +127,18 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		let resetTimeoutId = -1;
 		childProcess.stderr.on('data', (data) => {
 			if(DEBUG_STDERR) {
-				console.error(`stderr: ${data}`);
+				console.error(`[ERROR] stderr: ${data}`);
 			}
 
 			// Remove ANSI codes to match string only
 			const cleanData = data.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '');
 
 			// Cargo/Rust compatibility
-			if(time >= 0 && cleanData.trim().startsWith('Compiling ') || cleanData.trim().startsWith('Fetch ') || cleanData.trim().startsWith('Building ') || cleanData.trim().startsWith('Updating crates.io index')) {
+			if(cleanData.trim().startsWith('Compiling ') || cleanData.trim().startsWith('Fetch ') || cleanData.trim().startsWith('Building ') || cleanData.trim().startsWith('Blocking ') || cleanData.trim().startsWith('Updating crates.io index')) {
 				console.log(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
 				time = -1;
 
-				for(let i = 0; i < resetTimeoutId; i++) { clearTimeout(i); }
+				for(let i = 0; i <= resetTimeoutId; i++) { clearTimeout(i); }
 				resetTimeoutId = setTimeout(() => {
 					if(time < 0) { // Unlock cargo/rust
 						time = 0;
