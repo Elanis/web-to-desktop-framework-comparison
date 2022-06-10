@@ -117,7 +117,7 @@ function formatTime(time) {
 	return `≈${time}ms`;
 }
 
-function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat, showReleaseTag=true) {
+function getMarkdownTableLine(app, architecture, getStats, formatStat, showReleaseTag=true) {
 	let output = '';
 
 	const stats = getStats(app, architecture.id);
@@ -125,7 +125,7 @@ function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat
 		return;
 	}
 
-	output += '|' + firstCell + '| ***' + architecture.name + '*** |';
+	output += '| ***' + architecture.name + '*** |';
 
 	for(const libraryId in libraries) {
 		if(customMessages[app] && customMessages[app][libraryId]) {
@@ -168,19 +168,16 @@ function getMarkdownTableLine(app, architecture, firstCell, getStats, formatStat
 	return output;
 }
 
-function generateHeader(addSeparator = false) {
-	fileStr = '|  |  |';
-	let headerSeparator = '|:---:|:---:|';
+function generateHeader() {
+	fileStr = '\n\n|  |';
+	let headerSeparator = '|:---:|';
 	for(const libraryId in libraries) {
 		fileStr += ` [${libraries[libraryId].name}](${libraries[libraryId].url}) |`;
 		headerSeparator += ':---:|';
 	}
 
 	fileStr += '\n';
-
-	if(addSeparator) {
-		fileStr += headerSeparator + '\n';
-	}
+	fileStr += headerSeparator + '\n';
 
 	return fileStr;
 }
@@ -197,70 +194,57 @@ for(const app of apps) {
 	fileStr += '\n\n';
 
 	/**
-	 * HEADER
-	 */
-	fileStr += generateHeader(true);
-
-	/**
 	 * BUILD SIZE
 	 */
-	let firstCell = ' **Build size** ';
+	fileStr += '\n### Build size  ';
+	fileStr += generateHeader();
 	for(const architecture of architectures) {
-		const line = getMarkdownTableLine(app, architecture, firstCell, getBuildSizeStats, getUnitFromMemory, false);
+		const line = getMarkdownTableLine(app, architecture, getBuildSizeStats, getUnitFromMemory, false);
 		if(line) {
 			fileStr += line;
-			firstCell = ' ';
 		}
 	}
-
-	fileStr += generateHeader();
 
 	/**
 	 * BUILD TIME
 	 */
-	firstCell = ' **Build time** ';
+	fileStr += '\n### Build time  ';
+	fileStr += generateHeader();
 	for(const architecture of architectures) {
-		const line = getMarkdownTableLine(app, architecture, firstCell, getBuildTimeStats, formatTime, false);
+		const line = getMarkdownTableLine(app, architecture, getBuildTimeStats, formatTime, false);
 		if(line) {
 			fileStr += line;
-			firstCell = ' ';
 		}
 	}
-
-	fileStr += generateHeader();
 
 	/**
 	 * MEMORY USAGE
 	 */
-	firstCell = ' **Memory Usage** ';
+	fileStr += '\n### Memory Usage  ';
+	fileStr += generateHeader();
 	for(const architecture of architectures) {
-		const line = getMarkdownTableLine(app, architecture, firstCell, getMemoryStats, getUnitFromMemory);
+		const line = getMarkdownTableLine(app, architecture, getMemoryStats, getUnitFromMemory);
 		if(line) {
 			fileStr += line;
-			firstCell = ' ';
 		}
 	}
-
-	fileStr += generateHeader();
 
 	/**
 	 * START DURATION
 	 */
-	firstCell = ' **Start duration** ';
+	fileStr += '\n### Start duration  ';
+	fileStr += generateHeader();
 	for(const architecture of architectures) {
-		const line = getMarkdownTableLine(app, architecture, firstCell, getStartTimeStats, formatTime);
+		const line = getMarkdownTableLine(app, architecture, getStartTimeStats, formatTime);
 		if(line) {
 			fileStr += line;
-			firstCell = ' ';
 		}
 	}
 
 	if(customMessages[app]) {
 		fileStr += '\n';
 		for(const libraryId in customMessages[app]) {
-			for(const message in customMessages[app][libraryId]) {
-				fileStr += `**<sup>${customMessages[app][libraryId].key}</sup>**: ${customMessages[app][libraryId].value}`;
-			}
+			fileStr += `**<sup>${customMessages[app][libraryId].key}</sup>**: ${customMessages[app][libraryId].value}`;
 		}
 		fileStr += '\n\n';
 	}
