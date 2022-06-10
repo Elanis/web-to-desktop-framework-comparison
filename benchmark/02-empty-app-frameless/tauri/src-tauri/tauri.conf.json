@@ -1,6 +1,6 @@
 {
   "package": {
-    "productName": "02-empty-app-headless",
+    "productName": "02-empty-app-frameless",
     "version": "0.1.0"
   },
   "build": {

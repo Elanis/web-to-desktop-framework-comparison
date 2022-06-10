@@ -5,7 +5,7 @@
                 "buildSize": 209699840,
                 "buildTime": 2940.0159913333287
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 209699892,
                 "buildTime": 1880.4575103332754
             }
@@ -17,7 +17,7 @@
                 "buildSize": 145829036,
                 "buildTime": 2940.0159913333287
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 145829088,
                 "buildTime": 1880.4575103332754
             }
@@ -33,11 +33,11 @@
                 "buildSize": 421502401,
                 "buildTime": 22945.758848999998
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 179658185,
                 "buildTime": 1871.0208997500013
             },
-            "../benchmark/02-empty-app-headless/nw.js": {
+            "../benchmark/02-empty-app-frameless/nw.js": {
                 "buildSize": 421502453,
                 "buildTime": 33100.073990599994
             }
@@ -49,7 +49,7 @@
                 "buildSize": 285341186,
                 "buildTime": 22945.758848999998
             },
-            "../benchmark/02-empty-app-headless/nw.js": {
+            "../benchmark/02-empty-app-frameless/nw.js": {
                 "buildSize": 285341186,
                 "buildTime": 33100.073990599994
             },
@@ -57,7 +57,7 @@
                 "buildSize": 180483918,
                 "buildTime": 3852.8993666666406
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 180483971,
                 "buildTime": 3056.9826666666195
             }
@@ -1827,7 +1827,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron/Debug": {
+            "../benchmark/02-empty-app-frameless/electron/Debug": {
                 "versions": {
                     "electron": "^19.0.4",
                     "electron-packager": "^15.5.1"
@@ -2062,7 +2062,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron/Release": {
+            "../benchmark/02-empty-app-frameless/electron/Release": {
                 "versions": {
                     "electron": "^19.0.4",
                     "electron-packager": "^15.5.1"
@@ -2300,11 +2300,11 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 202090139,
                 "buildTime": 3056.9826666666195
             },
-            "../benchmark/02-empty-app-headless/nw.js/Debug": {
+            "../benchmark/02-empty-app-frameless/nw.js/Debug": {
                 "versions": {
                     "nwjs-builder-phoenix": "^1.15.0"
                 },
@@ -2538,7 +2538,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nw.js/Release": {
+            "../benchmark/02-empty-app-frameless/nw.js/Release": {
                 "versions": {
                     "nwjs-builder-phoenix": "^1.15.0"
                 },
@@ -2714,11 +2714,11 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nw.js": {
+            "../benchmark/02-empty-app-frameless/nw.js": {
                 "buildSize": 314290378,
                 "buildTime": 33100.073990599994
             },
-            "../benchmark/02-empty-app-headless/tauri/Debug": {
+            "../benchmark/02-empty-app-frameless/tauri/Debug": {
                 "versions": {
                     "@tauri-apps/cli": "^1.0.0-beta.6",
                     "@tauri-apps/api": "^1.0.0-beta.5"
@@ -2951,7 +2951,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nodegui/Debug": {
+            "../benchmark/02-empty-app-frameless/nodegui/Debug": {
                 "versions": {
                     "@nodegui/nodegui": "^0.33.1",
                     "@nodegui/packer": "^1.4.1"
@@ -3130,7 +3130,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/neutralinojs/Debug": {
+            "../benchmark/02-empty-app-frameless/neutralinojs/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -3256,7 +3256,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/flutter/Debug": {
+            "../benchmark/02-empty-app-frameless/flutter/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -3351,7 +3351,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/DotnetMaui/Debug": {
+            "../benchmark/02-empty-app-frameless/DotnetMaui/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -5251,7 +5251,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron/Debug": {
+            "../benchmark/02-empty-app-frameless/electron/Debug": {
                 "versions": {
                     "electron": "^19.0.4",
                     "electron-packager": "^15.5.1"
@@ -5489,7 +5489,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron/Release": {
+            "../benchmark/02-empty-app-frameless/electron/Release": {
                 "versions": {
                     "electron": "^19.0.4",
                     "electron-packager": "^15.5.1"
@@ -5727,11 +5727,11 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 331634849,
                 "buildTime": 1876.3622717499966
             },
-            "../benchmark/02-empty-app-headless/nw.js/Debug": {
+            "../benchmark/02-empty-app-frameless/nw.js/Debug": {
                 "versions": {
                     "nwjs-builder-phoenix": "^1.15.0"
                 },
@@ -5868,7 +5868,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nw.js/Release": {
+            "../benchmark/02-empty-app-frameless/nw.js/Release": {
                 "versions": {
                     "nwjs-builder-phoenix": "^1.15.0"
                 },
@@ -6104,11 +6104,11 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nw.js": {
+            "../benchmark/02-empty-app-frameless/nw.js": {
                 "buildSize": 483160059,
                 "buildTime": 33100.073990599994
             },
-            "../benchmark/02-empty-app-headless/tauri/Debug": {
+            "../benchmark/02-empty-app-frameless/tauri/Debug": {
                 "versions": {
                     "@tauri-apps/cli": "^1.0.0-beta.6",
                     "@tauri-apps/api": "^1.0.0-beta.5"
@@ -6336,7 +6336,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nodegui/Debug": {
+            "../benchmark/02-empty-app-frameless/nodegui/Debug": {
                 "versions": {
                     "@nodegui/nodegui": "^0.33.1",
                     "@nodegui/packer": "^1.4.1"
@@ -6531,7 +6531,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/neutralinojs/Debug": {
+            "../benchmark/02-empty-app-frameless/neutralinojs/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -6657,7 +6657,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/flutter/Debug": {
+            "../benchmark/02-empty-app-frameless/flutter/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -6752,7 +6752,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/DotnetMaui/Debug": {
+            "../benchmark/02-empty-app-frameless/DotnetMaui/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -8635,7 +8635,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron/Debug": {
+            "../benchmark/02-empty-app-frameless/electron/Debug": {
                 "versions": {
                     "electron": "^19.0.4",
                     "electron-packager": "^15.5.1"
@@ -8863,7 +8863,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron/Release": {
+            "../benchmark/02-empty-app-frameless/electron/Release": {
                 "versions": {
                     "electron": "^19.0.4",
                     "electron-packager": "^15.5.1"
@@ -9091,11 +9091,11 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 204164052,
                 "buildTime": 1880.4575103332754
             },
-            "../benchmark/02-empty-app-headless/nw.js/Debug": {
+            "../benchmark/02-empty-app-frameless/nw.js/Debug": {
                 "versions": {
                     "nwjs-builder-phoenix": "^1.15.0"
                 },
@@ -9268,7 +9268,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nw.js/Release": {
+            "../benchmark/02-empty-app-frameless/nw.js/Release": {
                 "versions": {
                     "nwjs-builder-phoenix": "^1.15.0"
                 },
@@ -9495,11 +9495,11 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nw.js": {
+            "../benchmark/02-empty-app-frameless/nw.js": {
                 "buildSize": 421887029,
                 "buildTime": 33100.073990599994
             },
-            "../benchmark/02-empty-app-headless/tauri/Debug": {
+            "../benchmark/02-empty-app-frameless/tauri/Debug": {
                 "versions": {
                     "@tauri-apps/cli": "^1.0.0-beta.6",
                     "@tauri-apps/api": "^1.0.0-beta.5"
@@ -9727,7 +9727,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/nodegui/Debug": {
+            "../benchmark/02-empty-app-frameless/nodegui/Debug": {
                 "versions": {
                     "@nodegui/nodegui": "^0.33.1",
                     "@nodegui/packer": "^1.4.1"
@@ -9909,7 +9909,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/neutralinojs/Debug": {
+            "../benchmark/02-empty-app-frameless/neutralinojs/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -10034,7 +10034,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/flutter/Debug": {
+            "../benchmark/02-empty-app-frameless/flutter/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -10129,7 +10129,7 @@
                     }
                 ]
             },
-            "../benchmark/02-empty-app-headless/DotnetMaui/Debug": {
+            "../benchmark/02-empty-app-frameless/DotnetMaui/Debug": {
                 "versions": {},
                 "benchmarks": [
                     {
@@ -10262,7 +10262,7 @@
                 "buildSize": 202896718,
                 "buildTime": 3852.8993666666406
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 202896771,
                 "buildTime": 3056.9826666666195
             }
@@ -10274,7 +10274,7 @@
                 "buildSize": 316752097,
                 "buildTime": 4558.133477249998
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 316752329,
                 "buildTime": 1876.3622717499966
             }
@@ -10286,7 +10286,7 @@
                 "buildSize": 328597114,
                 "buildTime": 4558.133477249998
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 328597373,
                 "buildTime": 1876.3622717499966
             }
@@ -10298,7 +10298,7 @@
                 "buildSize": 313910370,
                 "buildTime": 4558.133477249998
             },
-            "../benchmark/02-empty-app-headless/electron": {
+            "../benchmark/02-empty-app-frameless/electron": {
                 "buildSize": 313910629,
                 "buildTime": 1876.3622717499966
             }
