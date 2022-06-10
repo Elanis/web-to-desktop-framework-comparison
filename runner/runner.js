@@ -96,9 +96,10 @@ export function killAll(pid, signal='SIGTERM'){
 
 async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT) {
 	return new Promise((resolve, reject) => {
-		const memUsageHistory = [];
+		let memUsageHistory = [];
 		let startTime = '?';
 		let done = false;
+		let time = 0;
 
 		// Spawn process
 		const childProcess = exec(processExe, {
@@ -116,6 +117,10 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			const starTimeLine = lines.find((elt) => elt.includes('Starting time:'));
 			if(starTimeLine) {
 				startTime = parseInt(starTimeLine.replace('Starting time:', '').trim().replace('ms', ''), 10);
+				if(time < 0) { // Unlock cargo/rust
+					time = 0;
+					memUsageHistory = [];
+				}
 			}
 		});
 
@@ -124,6 +129,18 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				console.error(`stderr: ${data}`);
 			}
 
+			// Cargo/Rust compatibility
+			if(time >= 0 && data.trim().startsWith('Compiling ') || data.trim().startsWith('Fetch ') || data.trim().startsWith('Building ') || data.trim().startsWith('Updating crates.io index')) {
+				customLog(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
+				time = -1;
+
+				setTimeout(() => {
+					if(time < 0) { // Unlock cargo/rust
+						time = 0;
+						memUsageHistory = [];
+					}
+				}, 120*1000); // Unlock if going for more than 2 minutes
+			}
 		});
 
 		childProcess.on('close', (code) => {
@@ -155,7 +172,6 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		};
 
 		pushStats();
-		let time = 0;
 		const interval = setInterval(() => {
 			if(time++ === timeout || childProcess.exitCode !== null || done) {
 				resolve({
