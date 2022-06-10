@@ -16,10 +16,6 @@ export const libraries = {
 					path: 'build/APPNAME-linux-armv7l',
 					exe: './APPNAME'
 				},
-				'linux-x32': {
-					path: 'build/APPNAME-linux-ia32',
-					exe: './APPNAME'
-				},
 				'linux-x64': {
 					path: 'build/APPNAME-linux-x64',
 					exe: './APPNAME'
