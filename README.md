@@ -101,9 +101,9 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | ***MacOS (x64)*** | ≈300ms (Debug) => ≈587ms (Release) | ? | ? | ? | ? | ? | ? |
 | ***Linux (x64)*** | ≈109ms (Debug) => ≈101ms (Release) | ? | ? | ? | ? | ? | ? |
 
-# 02-empty-app-headless
+# 02-empty-app-frameless
 
-See source in [benchmark/02-empty-app-headless](https://github.com/Elanis/web-to-desktop-framework-comparison/tree/main/benchmark/02-empty-app-headless/) folder.
+See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-to-desktop-framework-comparison/tree/main/benchmark/02-empty-app-frameless/) folder.
 
 
 ### Build size  

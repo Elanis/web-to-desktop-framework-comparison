@@ -1,4 +1,4 @@
-export const apps = ['01-empty-app', '02-empty-app-headless'];
+export const apps = ['01-empty-app', '02-empty-app-frameless'];
 export const libraries = {
 	'electron': {
 		exe: 'npm start',
@@ -190,7 +190,7 @@ export const requestedArchitectures = {
 };
 
 export const customMessages = {
-	'02-empty-app-headless': {
+	'02-empty-app-frameless': {
 		'flutter': {
 			key: 1,
 			value: 'Frameless mode not supported yet'
