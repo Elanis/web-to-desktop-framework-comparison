@@ -124,6 +124,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			}
 		});
 
+		let resetTimeout = -1;
 		childProcess.stderr.on('data', (data) => {
 			if(DEBUG_STDERR) {
 				console.error(`stderr: ${data}`);
@@ -137,7 +138,8 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				console.log(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
 				time = -1;
 
-				setTimeout(() => {
+				clearTimeout(resetTimeout);
+				resetTimeout = setTimeout(() => {
 					if(time < 0) { // Unlock cargo/rust
 						time = 0;
 						memUsageHistory = [];
