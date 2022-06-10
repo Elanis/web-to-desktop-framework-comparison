@@ -129,9 +129,12 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				console.error(`stderr: ${data}`);
 			}
 
+			// Remove ANSI codes to match string only
+			const cleanData = data.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '');
+
 			// Cargo/Rust compatibility
-			if(time >= 0 && data.trim().startsWith('Compiling ') || data.trim().startsWith('Fetch ') || data.trim().startsWith('Building ') || data.trim().startsWith('Updating crates.io index')) {
-				customLog(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
+			if(time >= 0 && cleanData.trim().startsWith('Compiling ') || cleanData.trim().startsWith('Fetch ') || cleanData.trim().startsWith('Building ') || cleanData.trim().startsWith('Updating crates.io index')) {
+				console.log(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
 				time = -1;
 
 				setTimeout(() => {
