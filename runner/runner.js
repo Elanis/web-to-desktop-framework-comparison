@@ -178,6 +178,10 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 
 		pushStats();
 		const interval = setInterval(() => {
+			if(time < 0) {
+				return;
+			}
+
 			if(time++ === timeout || childProcess.exitCode !== null || done) {
 				resolve({
 					memoryUsage: memUsageHistory,
