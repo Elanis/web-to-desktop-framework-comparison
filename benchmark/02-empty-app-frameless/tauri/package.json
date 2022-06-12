@@ -1,5 +1,5 @@
 {
-  "name": "02-empty-app-headless",
+  "name": "02-empty-app-frameless",
   "scripts": {
     "tauri": "tauri",
     "start": "tauri dev",
