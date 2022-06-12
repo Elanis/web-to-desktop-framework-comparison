@@ -22,11 +22,16 @@ let customLog = console.log;
  * Methods
  */
 async function dirSize(directory) {
+	if(!fs.lstatSync(directory).isDirectory()) {
+		const fileStats = await stat(currentItem);
+		return fileStats.size;
+	}
+
 	const files = await readdir(directory);
 	const stats = files.map(async file => {
-	const currentItem = path.join(directory, file);
+		const currentItem = path.join(directory, file);
 
-	if(fs.lstatSync(currentItem).isDirectory()) {
+		if(fs.lstatSync(currentItem).isDirectory()) {
 			return await dirSize(currentItem);
 		} else {
 			const fileStats = await stat(currentItem);
@@ -91,9 +96,10 @@ export function killAll(pid, signal='SIGTERM'){
 
 async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT) {
 	return new Promise((resolve, reject) => {
-		const memUsageHistory = [];
+		let memUsageHistory = [];
 		let startTime = '?';
 		let done = false;
+		let time = 0;
 
 		// Spawn process
 		const childProcess = exec(processExe, {
@@ -111,14 +117,35 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			const starTimeLine = lines.find((elt) => elt.includes('Starting time:'));
 			if(starTimeLine) {
 				startTime = parseInt(starTimeLine.replace('Starting time:', '').trim().replace('ms', ''), 10);
+				if(time < 0) { // Unlock cargo/rust
+					time = 0;
+					memUsageHistory = [];
+				}
 			}
 		});
 
+		let resetTimeoutId = -1;
 		childProcess.stderr.on('data', (data) => {
 			if(DEBUG_STDERR) {
-				console.error(`stderr: ${data}`);
+				console.error(`[ERROR] stderr: ${data}`);
 			}
 
+			// Remove ANSI codes to match string only
+			const cleanData = data.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '');
+
+			// Cargo/Rust compatibility
+			if(cleanData.trim().startsWith('Compiling ') || cleanData.trim().startsWith('Fetch ') || cleanData.trim().startsWith('Building ') || cleanData.trim().startsWith('Blocking ') || cleanData.trim().startsWith('Updating crates.io index')) {
+				console.log(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
+				time = -1;
+
+				for(let i = 0; i <= resetTimeoutId; i++) { clearTimeout(i); }
+				resetTimeoutId = setTimeout(() => {
+					if(time < 0) { // Unlock cargo/rust
+						time = 0;
+						memUsageHistory = [];
+					}
+				}, 120*1000); // Unlock if going for more than 2 minutes
+			}
 		});
 
 		childProcess.on('close', (code) => {
@@ -150,8 +177,11 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		};
 
 		pushStats();
-		let time = 0;
 		const interval = setInterval(() => {
+			if(time < 0) {
+				return;
+			}
+
 			if(time++ === timeout || childProcess.exitCode !== null || done) {
 				resolve({
 					memoryUsage: memUsageHistory,
@@ -302,18 +332,23 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 
 			let buildPath = build.folders[getCurrentPlatformArch()];
 			const existingFolders = Object.keys(build.folders)
-				.map((platformArch) => ({ platformArch, folder: path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app) }))
+				.map((platformArch) => ({ platformArch, folder: path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app), exe: build.folders[platformArch].exe }))
 				.filter(({platformArch, folder}) => {
 					if(!fs.existsSync(folder)) {
 						console.log(`Warning: ${folder} doesn't exists !`)
 						return false;
 					}
 
+					// This parameter is used if multiple architecture build in the same folder
+					if(build.folders[platformArch].currentOnly) {
+						return false;
+					}
+
 					return true;
 				});
 
-			for(const {platformArch, folder} of existingFolders) {
-				const buildSize = await dirSize(folder);
+			for(const {platformArch, folder, exe} of existingFolders) {
+				const buildSize = await dirSize(folder || exe);
 				const buildTime = buildData.time / existingFolders.length;
 				
 				if(platformArch === getCurrentPlatformArch()) {
