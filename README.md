@@ -67,7 +67,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | ***MacOS (x64)*** | ≈331MB | ≈483MB | ? | ? | ? | ? | ? |
 | ***MacOS (arm64)*** | ≈316MB | ? | ? | ? | ? | ? | ? |
 | ***Linux (x64)*** | ≈204MB | ≈421MB | ? | ? | ? | ? | ? |
-| ***Linux (x86)*** | ≈179MB | ≈421MB | ? | ? | ? | ? | ? |
+| ***Linux (x86)*** | ? | ≈421MB | ? | ? | ? | ? | ? |
 | ***Linux (ARMv7l)*** | ≈145MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
 | ***Linux (ARM64)*** | ≈209MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
 
@@ -81,7 +81,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | ***MacOS (x64)*** | ≈2970ms | ≈26252ms | ? | ? | ? | ? | ? |
 | ***MacOS (arm64)*** | ≈2970ms | ? | ? | ? | ? | ? | ? |
 | ***Linux (x64)*** | ≈2246ms | ≈26252ms | ? | ? | ? | ? | ? |
-| ***Linux (x86)*** | ≈2368ms | ≈26252ms | ? | ? | ? | ? | ? |
+| ***Linux (x86)*** | ? | ≈26252ms | ? | ? | ? | ? | ? |
 | ***Linux (ARMv7l)*** | ≈2246ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
 | ***Linux (ARM64)*** | ≈2246ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
 
@@ -116,7 +116,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 | ***MacOS (x64)*** | ≈331MB | ≈483MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***MacOS (arm64)*** | ≈316MB | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Linux (x64)*** | ≈204MB | ≈421MB | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (x86)*** | ≈179MB | ≈421MB | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (x86)*** | ? | ≈421MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Linux (ARMv7l)*** | ≈145MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Linux (ARM64)*** | ≈209MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
 
@@ -130,7 +130,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 | ***MacOS (x64)*** | ≈2987ms | ≈33683ms | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***MacOS (arm64)*** | ≈2987ms | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Linux (x64)*** | ≈2173ms | ≈33683ms | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (x86)*** | ≈1871ms | ≈33683ms | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (x86)*** | ? | ≈33683ms | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Linux (ARMv7l)*** | ≈2173ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Linux (ARM64)*** | ≈2173ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
 
