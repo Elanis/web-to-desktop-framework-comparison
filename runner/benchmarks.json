@@ -25,17 +25,9 @@
     },
     "linux-x32": {
         "benchmarkData": {
-            "../benchmark/01-empty-app/electron": {
-                "buildSize": 179658133,
-                "buildTime": 2367.581076500006
-            },
             "../benchmark/01-empty-app/nw.js": {
                 "buildSize": 421502401,
                 "buildTime": 26251.70497360001
-            },
-            "../benchmark/02-empty-app-frameless/electron": {
-                "buildSize": 179658185,
-                "buildTime": 1871.0208997500013
             },
             "../benchmark/02-empty-app-frameless/nw.js": {
                 "buildSize": 421502456,
