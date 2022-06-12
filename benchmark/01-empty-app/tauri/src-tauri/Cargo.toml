@@ -2,31 +2,33 @@
 name = "app"
 version = "0.1.0"
 description = "A Tauri App"
-authors = [ "you" ]
+authors = ["you"]
 license = ""
 repository = ""
 default-run = "app"
-edition = "2018"
-build = "src/build.rs"
+edition = "2021"
+rust-version = "1.57"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "1.0.0-beta.0" }
+tauri-build = { version = "1.0.0-rc.12", features = [] }
 
 [dependencies]
 serde_json = "1.0"
-serde = { version = "1.0", features = [ "derive" ] }
-
-  [dependencies.tauri]
-  version = "1.0.0-beta"
-features = ["api-all"]
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.0.0-rc.14", features = ["api-all"] }
 
 [features]
+# by default Tauri runs in production mode
+# when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
 default = [ "custom-protocol" ]
+# this feature is used used for production builds where `devPath` points to the filesystem
+# DO NOT remove this
 custom-protocol = [ "tauri/custom-protocol" ]
 
 [profile.release]
-panic = "abort"
-codegen-units = 1
-lto = true
-incremental = false
-opt-level = "s"
+panic = "abort" # Strip expensive panic clean-up logic
+codegen-units = 1 # Compile crates one after another so the compiler can optimize better
+lto = true # Enables link to optimizations
+opt-level = "s" # Optimize for binary size

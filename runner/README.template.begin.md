@@ -7,7 +7,7 @@ This repository was made to create an objective comparison of multiple framework
 - [Operating systems](#operating-systems)
 - [Benchmarks](#benchmarks)
   * [01 - Empty app](#01---empty-app)
-  * [02 - Empty app (Headless)](#02---empty-app-headless)
+  * [02 - Empty app (Frameless)](#02---empty-app-frameless)
 
 ## Major characteristics
 
