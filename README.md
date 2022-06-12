@@ -75,15 +75,15 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈3853ms | ≈32965ms | ? | ? | ? | ? | ? |
-| ***Windows (x86)*** | ≈3853ms | ≈32965ms | ? | ? | ? | ? | ? |
+| ***Windows (x64)*** | ≈3853ms | ≈33870ms | ? | ? | ? | ? | ? |
+| ***Windows (x86)*** | ≈3853ms | ≈33870ms | ? | ? | ? | ? | ? |
 | ***Windows (ARM64)*** | ≈3853ms | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
-| ***MacOS (x64)*** | ≈4558ms | ≈32965ms | ? | ? | ? | ? | ? |
+| ***MacOS (x64)*** | ≈4558ms | ≈33870ms | ? | ? | ? | ? | ? |
 | ***MacOS (arm64)*** | ≈4558ms | ? | ? | ? | ? | ? | ? |
-| ***Linux (x64)*** | ≈2217ms | ≈32965ms | ? | ? | ? | ? | ? |
-| ***Linux (x86)*** | ≈2368ms | ≈32965ms | ? | ? | ? | ? | ? |
-| ***Linux (ARMv7l)*** | ≈2217ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
-| ***Linux (ARM64)*** | ≈2217ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
+| ***Linux (x64)*** | ≈2246ms | ≈33870ms | ? | ? | ? | ? | ? |
+| ***Linux (x86)*** | ≈2368ms | ≈33870ms | ? | ? | ? | ? | ? |
+| ***Linux (ARMv7l)*** | ≈2246ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
+| ***Linux (ARM64)*** | ≈2246ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
 
 ### Memory Usage  
 
@@ -91,7 +91,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈66MB (Debug) => ≈79MB (Release) | ≈82MB (Debug) => ≈44MB (Release) | ≈49MB (Debug) | ≈117MB (Debug) | ≈38MB (Debug) | ≈264MB (Debug) | ≈3MB (Debug) |
 | ***MacOS (x64)*** | ≈65MB (Debug) => ≈61MB (Release) | ≈45MB (Debug) => ≈75MB (Release) | ≈59MB (Debug) | ≈146MB (Debug) | ≈40MB (Debug) | ≈144MB (Debug) | ≈25MB (Debug) |
-| ***Linux (x64)*** | ≈115MB (Debug) => ≈110MB (Release) | ≈79MB (Debug) => ≈53MB (Release) | ≈166MB (Debug) => ≈153MB (Release) | ≈144MB (Debug) | ≈29MB (Debug) | ≈424MB (Debug) | ≈8MB (Debug) |
+| ***Linux (x64)*** | ≈115MB (Debug) => ≈110MB (Release) | ≈83MB (Debug) => ≈54MB (Release) | ≈164MB (Debug) => ≈153MB (Release) | ≈137MB (Debug) | ≈28MB (Debug) | ≈420MB (Debug) | ≈7MB (Debug) |
 
 ### Start duration  
 
@@ -99,7 +99,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈154ms (Debug) => ≈95ms (Release) | ? | ? | ? | ? | ? | ? |
 | ***MacOS (x64)*** | ≈300ms (Debug) => ≈587ms (Release) | ? | ? | ? | ? | ? | ? |
-| ***Linux (x64)*** | ≈103ms (Debug) => ≈91ms (Release) | ? | ≈311ms (Debug) => ≈188ms (Release) | ? | ? | ? | ? |
+| ***Linux (x64)*** | ≈152ms (Debug) => ≈100ms (Release) | ? | ≈347ms (Debug) => ≈194ms (Release) | ? | ? | ? | ? |
 
 # 02-empty-app-frameless
 
