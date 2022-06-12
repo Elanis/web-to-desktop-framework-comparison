@@ -218,8 +218,15 @@ export const customMessages = {
 	}
 };
 
+console.log('process.argv', process.argv)
+console.log('process.argv[2]', process.argv[2])
+
 const processesTmp = [];
 for(const app of apps) {
+	if(app !== process.argv[2]) {
+		continue;
+	}
+
 	for(const libraryName in libraries) {
 		processesTmp.push({
 			app,
