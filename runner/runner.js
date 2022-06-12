@@ -292,7 +292,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
  */
 (async() => {
 	let processId = 0;
-	const benchmarkData = {};
+	const benchmarkData = JSON.parse(fs.readFileSync('benchmarks.json'))[getCurrentPlatformArch()].benchmarkData;
 
 	for(const { app, path, exe, packageJsonVersionsNeeded, build } of processes) {
 		if(exe === 'TODO') {
