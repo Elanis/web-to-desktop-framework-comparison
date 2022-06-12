@@ -13,6 +13,7 @@ jobs:
       max-parallel: 1
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        app: [01-empty-app, 02-empty-app-frameless]
   
     runs-on: ${{ matrix.os }}
 
@@ -65,23 +66,17 @@ jobs:
       - name: Prepare environments
         run: |
           cd runner/
-          bash preprocess.sh
+          bash preprocess.sh ${{ matrix.app }}
 
       - name: Run apps
         run: |
           cd runner/
           if [ "$RUNNER_OS" == "Linux" ]; then
-            xvfb-run --auto-servernum node runner.js
+            xvfb-run --auto-servernum node runner.js ${{ matrix.app }}
           else
-            node runner.js
+            node runner.js ${{ matrix.app }}
           fi
         shell: bash
-
-      - name: Git clean
-        run: |
-          cd benchmark/
-          git config core.longpaths true
-          git clean -xdf
 
       - name: Update README
         run: |
@@ -91,5 +86,5 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update benchmark
+          commit_message: Update benchmark for ${{ matrix.app }} on ${{ matrix.os }}
           file_pattern: runner/benchmarks.json README.md
