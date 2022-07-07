@@ -185,7 +185,32 @@ function generateHeader() {
 /**
  * Run
  */
-let fileStr = fs.readFileSync('README.template.begin.md');
+let fileStr = '';
+let fileBegin = fs.readFileSync('README.template.begin.md', 'utf8');
+const stats = JSON.parse(fs.readFileSync('stats.json', 'utf8'));
+
+for(const line of fileBegin.split('\n')) {
+	if(line.startsWith('| **Github stars** |')) {
+		fileStr += '| **Github stars** ';
+		for(let libraryId in libraries) {
+			fileStr += `| ${Math.round(stats[libraryId].stars / 100) / 10 }k `
+		}
+		fileStr += '|\n';
+		continue;
+	}
+
+	if(line.startsWith('| **Forks** |')) {
+		fileStr += '| **Forks** ';
+		for(let libraryId in libraries) {
+			fileStr += `| ${Math.round(stats[libraryId].forks / 100) / 10 }k `
+		}
+		fileStr += '|\n';
+		continue;
+	}
+
+	fileStr += line + '\n';
+}
+
 for(const app of apps) {
 	fileStr += '\n';
 	fileStr += '# ' + app + '\n';

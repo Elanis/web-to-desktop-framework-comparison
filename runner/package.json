@@ -11,6 +11,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "node-fetch": "^3.2.6",
     "pidtree": "^0.5.0",
     "pidusage": "^3.0.0",
     "systeminformation": "^5.10.5"
