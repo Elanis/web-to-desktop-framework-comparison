@@ -1,0 +1,38 @@
+name: Stars & Fork
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Git pull # Needed for sequential run
+        run: git pull
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.2.0
+        with:
+          node-version: 18
+
+      - name: Run apps
+        run: |
+          cd runner/
+          node stats.js
+        shell: bash
+
+      - name: Update README
+        run: |
+          cd runner/
+          node writer.js
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update stars & Fork
+          file_pattern: runner/stats.json README.md
