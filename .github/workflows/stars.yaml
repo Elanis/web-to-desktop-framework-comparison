@@ -3,7 +3,7 @@ name: Stars & Fork
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -24,6 +24,7 @@ jobs:
       - name: Run apps
         run: |
           cd runner/
+          npm ci
           node stats.js
         shell: bash
 
