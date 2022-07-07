@@ -13,8 +13,8 @@ This repository was made to create an objective comparison of multiple framework
 
 | | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 102k | 39k | 37k | 8k | 6k | 139k | 15k |
-| **Forks** | 14k | 4k | 0.9k | 0.2k | 0.2k | 22k | 0.9k |
+| **Github stars** | 102.4k | 39k | 46k | 7.7k | 5.8k | 142.5k | 16.1k |
+| **Forks** | 13.7k | 4k | 1.1k | 0.2k | 0.3k | 22.6k | 1k |
 | **Creation date** | 2013 | 2011 | 2019 | 2019 | 2018 | 2018 | 2020 |
 | **Last Update** | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 |
 | **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | C, C++, Dart | C# |
@@ -50,6 +50,7 @@ This repository was made to create an objective comparison of multiple framework
 **See [benchmarks.json](https://github.com/Elanis/web-to-desktop-framework-comparison/blob/main/runner/benchmarks.json) to get more informations about following data.**
 
 *Note:* These benchmarks are done on Github CI, there are measures to have measurements more accurates (e.g. multiple runs), but it will never exactly be accurate, as it totally depends on system load and resources. You should read these tables as comparision between frameworks on a same OS/Arch/App with a margin of error.
+
 
 
 # 01-empty-app
