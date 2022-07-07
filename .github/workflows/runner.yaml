@@ -1,7 +1,6 @@
 name: Runner
 
 on:
-  push:
   pull_request:
 
 env:
