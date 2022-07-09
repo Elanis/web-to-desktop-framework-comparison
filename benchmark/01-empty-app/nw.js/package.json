@@ -11,6 +11,6 @@
     "nwjs-builder-phoenix": "^1.15.0"
   },
   "build": {
-    "nwVersion": "0.65.0"
+    "nwVersion": "0.66.0"
   }
 }
