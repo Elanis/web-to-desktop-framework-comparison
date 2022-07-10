@@ -23,7 +23,7 @@ let customLog = console.log;
  */
 async function dirSize(directory) {
 	if(!fs.lstatSync(directory).isDirectory()) {
-		const fileStats = await stat(currentItem);
+		const fileStats = await stat(directory);
 		return fileStats.size;
 	}
 
@@ -264,6 +264,11 @@ async function writeDataToJsonFile(benchmarkData) {
 
 async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 	console.log('Writing buildSize to benchmark.json ...');
+	console.log('processPath:', processPath);
+	console.log('platformArch:', platformArch);
+	console.log('buildSize:', buildSize);
+	console.log('buildTime:', buildTime);
+	console.log('--------------');
 
 	const data = JSON.parse(fs.readFileSync('benchmarks.json'));
 
@@ -323,7 +328,11 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 
 		// Release
 		if(build) {
+			customLog = (...args) => console.log('[Build] [Process #' + processId.toString().padStart(3, '0') + ']', ...args);
+
 			const buildData = await execBuildProcess(path, build.cmd);
+
+			customLog(buildData.time);
 
 			benchmarkData[path + '/Release'] = {
 				versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
@@ -332,15 +341,27 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 
 			let buildPath = build.folders[getCurrentPlatformArch()];
 			const existingFolders = Object.keys(build.folders)
-				.map((platformArch) => ({ platformArch, folder: path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app), exe: build.folders[platformArch].exe }))
-				.filter(({platformArch, folder}) => {
-					if(!fs.existsSync(folder)) {
+				.map((platformArch) => {
+					let folder = '';
+					let exe = '';
+
+					if(build.folders[platformArch].path !== '') {
+						folder = path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app);
+						exe = build.folders[platformArch].exe.replaceAll('APPNAME', app);
+					} else {
+						folder = null;
+						exe = path + '/' + build.folders[platformArch].exe.replaceAll('APPNAME', app);
+					}
+
+					return { platformArch, folder, exe };
+				}).filter(({platformArch, folder}) => {
+					if(folder !== null && !fs.existsSync(folder)) {
 						console.log(`Warning: ${folder} doesn't exists !`)
 						return false;
 					}
 
 					// This parameter is used if multiple architecture build in the same folder
-					if(build.folders[platformArch].currentOnly) {
+					if(build.folders[platformArch].currentOnly && platformArch !== getCurrentPlatformArch()) {
 						return false;
 					}
 
@@ -357,14 +378,23 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 					}
 					benchmarkData[path].buildSize = buildSize;
 					benchmarkData[path].buildTime = buildTime;
+
+					console.log('Current platform data, buildSize:', buildSize, ', buildTime:', buildTime);
 				} else {
 					setBuildData(path, platformArch, buildSize, buildData.time / existingFolders.length);
 				}
 			}
 
 			if(buildPath) {
-				const releasePath = path + '/' + buildPath.path.replaceAll('APPNAME', app);
-				const releaseExe = buildPath.exe.replaceAll('APPNAME', app);
+				let releasePath = path + '/' + buildPath.path.replaceAll('APPNAME', app);
+				let releaseExe = buildPath.exe.replaceAll('APPNAME', app);
+
+				if(buildPath.path === '') {
+					const parts = releaseExe.split('/');
+					releaseExe = parts[parts.length - 1];
+					parts.pop();
+					releasePath = path + '/' + parts.join('/');
+				}
 
 				for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
 					customLog = (...args) => console.log('[Release] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
