@@ -114,10 +114,10 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 | ***Windows (x64)*** | ≈202MB | ≈317MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Windows (x86)*** | ≈180MB | ≈288MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Windows (ARM64)*** | ≈202MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***MacOS (x64)*** | ≈331MB | ≈488MB | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***MacOS (x64)*** | ≈331MB | ≈492MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***MacOS (arm64)*** | ≈316MB | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (x64)*** | ≈204MB | ≈423MB | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (x86)*** | ? | ≈421MB | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (x64)*** | ≈204MB | ≈427MB | ≈6MB | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (x86)*** | ? | ≈424MB | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Linux (ARMv7l)*** | ≈145MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Linux (ARM64)*** | ≈209MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
 
@@ -125,15 +125,15 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈4539ms | ≈12386ms | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Windows (x86)*** | ≈4539ms | ≈12386ms | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***Windows (x64)*** | ≈4539ms | ≈7735ms | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***Windows (x86)*** | ≈4539ms | ≈7735ms | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***Windows (ARM64)*** | ≈4539ms | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***MacOS (x64)*** | ≈3269ms | ≈12386ms | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***MacOS (x64)*** | ≈3269ms | ≈7735ms | ? | ? | ? | N/A<sup>1</sup>| ? |
 | ***MacOS (arm64)*** | ≈3269ms | ? | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (x64)*** | ≈3867ms | ≈12386ms | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (x86)*** | ? | ≈12386ms | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (ARMv7l)*** | ≈2173ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (ARM64)*** | ≈2173ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (x64)*** | ≈2788ms | ≈7735ms | ≈589563ms | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (x86)*** | ? | ≈7735ms | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (ARMv7l)*** | ≈2788ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (ARM64)*** | ≈2788ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | N/A<sup>1</sup>| ? |
 
 ### Memory Usage  
 
@@ -141,7 +141,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈102MB (Debug) | ≈69MB (Debug) => ≈56MB (Release) | ≈43MB (Debug) | ≈120MB (Debug) | ≈37MB (Debug) | N/A<sup>1</sup>| ≈2MB (Debug) |
 | ***MacOS (x64)*** | ≈65MB (Debug) => ≈63MB (Release) | ≈44MB (Debug) => ≈76MB (Release) | ≈57MB (Debug) | ≈135MB (Debug) | ≈23MB (Debug) | N/A<sup>1</sup>| ≈18MB (Debug) |
-| ***Linux (x64)*** | ≈113MB (Debug) => ≈107MB (Release) | ≈74MB (Debug) => ≈53MB (Release) | ≈167MB (Debug) => ≈155MB (Release) | ≈151MB (Debug) | ≈29MB (Debug) | N/A<sup>1</sup>| ≈7MB (Debug) |
+| ***Linux (x64)*** | ≈113MB (Debug) => ≈108MB (Release) | ≈99MB (Debug) => ≈53MB (Release) | ≈164MB (Debug) => ≈154MB (Release) | ≈135MB (Debug) | ≈29MB (Debug) | N/A<sup>1</sup>| ≈8MB (Debug) |
 
 ### Start duration  
 
@@ -149,7 +149,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈123ms (Debug) | ? | ≈72ms (Debug) | ? | ? | N/A<sup>1</sup>| ? |
 | ***MacOS (x64)*** | ≈246ms (Debug) => ≈218ms (Release) | ? | ≈360ms (Debug) | ? | ? | N/A<sup>1</sup>| ? |
-| ***Linux (x64)*** | ≈86ms (Debug) => ≈80ms (Release) | ? | ≈265ms (Debug) => ≈166ms (Release) | ? | ? | N/A<sup>1</sup>| ? |
+| ***Linux (x64)*** | ≈116ms (Debug) => ≈101ms (Release) | ? | ≈335ms (Debug) => ≈217ms (Release) | ? | ? | N/A<sup>1</sup>| ? |
 
 **<sup>1</sup>**: Frameless mode not supported yet
 
