@@ -389,7 +389,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 				let releasePath = path + '/' + buildPath.path.replaceAll('APPNAME', app);
 				let releaseExe = buildPath.exe.replaceAll('APPNAME', app);
 
-				if(buildPath.path === '') {
+				if(buildPath.path === '' && os.platform() === 'win32') {
 					const parts = releaseExe.split('/');
 					releaseExe = parts[parts.length - 1];
 					parts.pop();
