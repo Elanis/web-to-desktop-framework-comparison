@@ -101,7 +101,7 @@ export const libraries = {
 					currentOnly: true
 				},
 				'darwin-x64': {
-					path: 'src-tauri/target/release/APPNAME.app/',
+					path: 'src-tauri/target/release/bundle/macos/APPNAME.app/',
 					exe: './Contents/MacOS/APPNAME',
 					currentOnly: true
 				},
