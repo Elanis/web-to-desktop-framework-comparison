@@ -118,7 +118,7 @@ export const libraries = {
 		exe: 'npx @neutralinojs/neu run',
 		name: 'Neutralino',
 		url: 'https://github.com/neutralinojs/neutralinojs',
-		buid: {
+		build: {
 			cmd: 'npx @neutralinojs/neu build --release',
 			folders: { // TODO: count "resources.neu" as well
 				'linux-arm64': {
