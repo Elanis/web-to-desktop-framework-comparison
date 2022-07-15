@@ -22,6 +22,10 @@ let customLog = console.log;
  * Methods
  */
 async function dirSize(directory) {
+	if(!fs.existsSync(directory)) {
+		return null;
+	}
+
 	if(!fs.lstatSync(directory).isDirectory()) {
 		const fileStats = await stat(directory);
 		return fileStats.size;
@@ -371,6 +375,10 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 			for(const {platformArch, folder, exe} of existingFolders) {
 				const buildSize = await dirSize(folder || exe);
 				const buildTime = buildData.time / existingFolders.length;
+
+				if(buildSize === null) {
+					continue;
+				}
 				
 				if(platformArch === getCurrentPlatformArch()) {
 					if(!benchmarkData[path]) {
