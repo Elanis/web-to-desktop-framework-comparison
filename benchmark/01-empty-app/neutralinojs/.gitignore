@@ -4,9 +4,6 @@
 # Neutralinojs binaries and builds
 /dist
 
-# Neutralinojs client (minified)
-neutralino.js
-
 # Neutralinojs related files
 .storage
 *.log
