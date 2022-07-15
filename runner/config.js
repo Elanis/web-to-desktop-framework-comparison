@@ -120,7 +120,7 @@ export const libraries = {
 		url: 'https://github.com/neutralinojs/neutralinojs',
 		build: {
 			cmd: 'npm_config_yes=true npx @neutralinojs/neu build --release',
-			folders: { // TODO: count "resources.neu" as well
+			folders: { // TODO: count "resources.neu" size as well
 				'linux-arm64': {
 					path: '',
 					exe: 'dist/APPNAME/APPNAME-linux_arm64'
@@ -135,7 +135,7 @@ export const libraries = {
 				},
 				'win32-x64': {
 					path: '',
-					exe: 'dist/APPNAME/APPNAME-win_x64', // TODO: count dll
+					exe: 'dist/APPNAME/APPNAME-win_x64.exe', // TODO: count dll size
 				},
 			}
 		}
