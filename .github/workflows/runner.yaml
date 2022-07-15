@@ -8,6 +8,7 @@ on:
 
 env:
   RUST_BACKTRACE: 1
+  npm_config_yes: true
 
 jobs:
   build:

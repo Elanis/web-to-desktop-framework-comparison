@@ -115,11 +115,11 @@ export const libraries = {
 		url: 'https://github.com/nodegui/nodegui',
 	},
 	'neutralinojs': {
-		exe: 'npm_config_yes=true npx @neutralinojs/neu run',
+		exe: 'npx @neutralinojs/neu run',
 		name: 'Neutralino',
 		url: 'https://github.com/neutralinojs/neutralinojs',
 		build: {
-			cmd: 'npm_config_yes=true npx @neutralinojs/neu build --release',
+			cmd: 'npx @neutralinojs/neu build --release',
 			folders: { // TODO: count "resources.neu" size as well
 				'linux-arm64': {
 					path: '',
