@@ -14,7 +14,8 @@
   },
   "nativeAllowList": [
     "app.*",
-    "os.*"
+    "os.*",
+    "debug.log"
   ],
   "globalVariables": {
     "TEST1": "Hello",
@@ -30,7 +31,7 @@
   },
   "modes": {
     "window": {
-      "title": "neutralinojs",
+      "title": "02-empty-app-frameless",
       "width": 800,
       "height": 500,
       "minWidth": 400,
@@ -58,14 +59,23 @@
       "nativeAllowList": [
         "app.*"
       ]
+    },
+    "chrome": {
+      "width": 800,
+      "height": 500,
+      "args": "--user-agent=\"Neutralinojs chrome mode\"",
+      "nativeBlockList": [
+        "filesystem.*",
+        "os.*"
+      ]
     }
   },
   "cli": {
-    "binaryName": "neutralinojs",
+    "binaryName": "02-empty-app-frameless",
     "resourcesPath": "/resources/",
     "extensionsPath": "/extensions/",
     "clientLibrary": "/resources/js/neutralino.js",
-    "binaryVersion": "2.4.0",
-    "clientVersion": "1.0.0"
+    "binaryVersion": "4.6.0",
+    "clientVersion": "3.5.0"
   }
 }

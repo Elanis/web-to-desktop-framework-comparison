@@ -1,10 +1,17 @@
 # neutralinojs-minimal
-The simplest template for a Neutralinojs app. It's possible to use your favorite frontend framework using the following steps.
 
-- Create a new project using your favorite frontend framework. (Eg: `ng new --directory .`)
-- Make the frontend framework's build path and Neutralino config's `url`, `resourcesPath` the same.
-- Build with the correct base href.
+The default template for a Neutralinojs app. It's possible to use your favorite frontend framework by using [these steps](https://neutralino.js.org/docs/how-to/use-a-frontend-library).
 
-# Icon credits
+## Contributors
+
+<a href="https://github.com/neutralinojs/neutralinojs-minimal/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=neutralinojs/neutralinojs-minimal" />
+</a>
+
+## License
+
+[MIT](LICENSE)
+
+## Icon credits
 
 - `trayIcon.png` - Made by [Freepik](https://www.freepik.com) and downloaded from [Flaticon](https://www.flaticon.com)
