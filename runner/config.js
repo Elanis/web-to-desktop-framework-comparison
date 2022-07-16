@@ -115,9 +115,30 @@ export const libraries = {
 		url: 'https://github.com/nodegui/nodegui',
 	},
 	'neutralinojs': {
-		exe: 'npm start',
+		exe: 'npx @neutralinojs/neu run',
 		name: 'Neutralino',
 		url: 'https://github.com/neutralinojs/neutralinojs',
+		build: {
+			cmd: 'npx @neutralinojs/neu build --release',
+			folders: { // TODO: count "resources.neu" size as well
+				'linux-arm64': {
+					path: '',
+					exe: 'dist/APPNAME/APPNAME-linux_arm64'
+				},
+				'linux-x64': {
+					path: '',
+					exe: 'dist/APPNAME/APPNAME-linux_x64'
+				},
+				'darwin-x64': {
+					path: '',
+					exe: 'dist/APPNAME/APPNAME-mac_x64'
+				},
+				'win32-x64': {
+					path: '',
+					exe: 'dist/APPNAME/APPNAME-win_x64.exe', // TODO: count dll size
+				},
+			}
+		}
 	},
 	'flutter': {
 		exe: 'flutter run lib/main.dart',
