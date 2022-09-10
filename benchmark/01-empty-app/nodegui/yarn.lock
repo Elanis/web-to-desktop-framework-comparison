@@ -50,7 +50,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@nodegui/artifact-installer@^1.0.0", "@nodegui/artifact-installer@^1.1.0":
+"@nodegui/artifact-installer@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@nodegui/artifact-installer/-/artifact-installer-1.1.0.tgz"
   dependencies:
@@ -74,14 +74,14 @@
     node-addon-api "^3.1.0"
     postcss-nodegui-autoprefixer "0.0.7"
 
-"@nodegui/packer@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.npmjs.org/@nodegui/packer/-/packer-1.4.1.tgz"
+"@nodegui/packer@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@nodegui/packer/-/packer-1.5.0.tgz#4d81f744fe0b8a57f9bc9eb359f9f9c5bd60c192"
   dependencies:
-    "@nodegui/artifact-installer" "^1.0.0"
+    "@nodegui/artifact-installer" "^1.1.0"
     commander "^4.0.1"
-    fs-extra "^8.1.0"
-    plist "^3.0.1"
+    fs-extra "^10.0.0"
+    plist "^3.0.4"
 
 "@nodegui/qode@^2.1.0":
   version "2.1.1"
@@ -710,19 +710,19 @@ follow-redirects@^1.14.0:
   version "1.14.8"
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.8.tgz"
 
+fs-extra@^10.0.0:
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
+
 fs-extra@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-5.0.0.tgz"
   dependencies:
     graceful-fs "^4.1.2"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
-
-fs-extra@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-8.1.0.tgz"
-  dependencies:
-    graceful-fs "^4.2.0"
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
@@ -939,6 +939,14 @@ json5@^2.1.2:
 jsonfile@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/jsonfile/-/jsonfile-4.0.0.tgz"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
+jsonfile@^6.0.1:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.1.0.tgz#bc55b2634793c679ec6403094eb13698a6ec0aae"
+  dependencies:
+    universalify "^2.0.0"
   optionalDependencies:
     graceful-fs "^4.1.6"
 
@@ -1252,12 +1260,12 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
-plist@^3.0.1:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/plist/-/plist-3.0.5.tgz#2cbeb52d10e3cdccccf0c11a63a85d830970a987"
+plist@^3.0.4:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/plist/-/plist-3.0.6.tgz#7cfb68a856a7834bca6dbfe3218eb9c7740145d3"
   dependencies:
     base64-js "^1.5.1"
-    xmlbuilder "^9.0.7"
+    xmlbuilder "^15.1.1"
 
 postcss-nodegui-autoprefixer@0.0.7:
   version "0.0.7"
@@ -1575,6 +1583,10 @@ universalify@^0.1.0:
   version "0.1.2"
   resolved "https://registry.npmjs.org/universalify/-/universalify-0.1.2.tgz"
 
+universalify@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
+
 unzipper@^0.8.13:
   version "0.8.14"
   resolved "https://registry.npmjs.org/unzipper/-/unzipper-0.8.14.tgz"
@@ -1714,9 +1726,9 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"
 
-xmlbuilder@^9.0.7:
-  version "9.0.7"
-  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-9.0.7.tgz#132ee63d2ec5565c557e20f4c22df9aca686b10d"
+xmlbuilder@^15.1.1:
+  version "15.1.1"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-15.1.1.tgz#9dcdce49eea66d8d10b42cae94a79c3c8d0c2ec5"
 
 y18n@^3.2.0:
   version "3.2.2"
