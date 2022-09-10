@@ -235,6 +235,10 @@ export const customMessages = {
 		'flutter': {
 			key: 1,
 			value: 'Frameless mode not supported yet'
+		},
+		'DotnetMaui': {
+			key: 2,
+			value: 'Frameless mode not working'
 		}
 	}
 };
