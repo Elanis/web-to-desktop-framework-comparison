@@ -60,19 +60,21 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.33.1":
-  version "0.33.3"
-  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.33.3.tgz"
+"@nodegui/nodegui@^0.57.1":
+  version "0.57.1"
+  resolved "https://registry.yarnpkg.com/@nodegui/nodegui/-/nodegui-0.57.1.tgz#dcab2a3c9beeb744669c87f18809f03b44074dfd"
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
-    "@nodegui/qode" "^2.1.0"
-    cmake-js "^6.1.0"
+    "@nodegui/qode" "^16.4.3"
+    cmake-js "^6.2.1"
     cross-env "^7.0.3"
-    cuid "^2.1.6"
+    cuid "^2.1.8"
     manage-path "^2.0.0"
-    memoize-one "^5.1.1"
-    node-addon-api "^3.1.0"
+    memoize-one "^5.2.1"
+    node-addon-api "^4.0.0"
+    postcss "^7.0.17"
     postcss-nodegui-autoprefixer "0.0.7"
+    tar "^6.0.1"
 
 "@nodegui/packer@^1.4.1":
   version "1.4.1"
@@ -83,15 +85,15 @@
     fs-extra "^8.1.0"
     plist "^3.0.1"
 
-"@nodegui/qode@^2.1.0":
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/@nodegui/qode/-/qode-2.1.1.tgz"
+"@nodegui/qode@^16.4.3":
+  version "16.4.3"
+  resolved "https://registry.yarnpkg.com/@nodegui/qode/-/qode-16.4.3.tgz#ddae8f683ef958676b0a4d69e972f471d6bfd359"
   dependencies:
-    env-paths "^2.2.0"
-    make-dir "^3.0.2"
+    env-paths "^2.2.1"
+    make-dir "^3.1.0"
     node-fetch "^2.6.1"
     progress "^2.0.3"
-    tar "^6.0.1"
+    tar "^6.1.6"
 
 "@types/eslint-scope@^3.7.0":
   version "3.7.1"
@@ -379,6 +381,10 @@ binary@~0.3.0:
     buffers "~0.1.1"
     chainsaw "~0.1.0"
 
+bluebird@^3:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
+
 bluebird@~3.4.1:
   version "3.4.7"
   resolved "https://registry.npmjs.org/bluebird/-/bluebird-3.4.7.tgz"
@@ -478,11 +484,12 @@ clone-deep@^4.0.1:
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
 
-cmake-js@^6.1.0:
-  version "6.2.1"
-  resolved "https://registry.npmjs.org/cmake-js/-/cmake-js-6.2.1.tgz"
+cmake-js@^6.2.1:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/cmake-js/-/cmake-js-6.3.2.tgz#4ee827bea99205e1bfda86f5883994873af357b6"
   dependencies:
     axios "^0.21.1"
+    bluebird "^3"
     debug "^4"
     fs-extra "^5.0.0"
     is-iojs "^1.0.1"
@@ -550,9 +557,9 @@ cross-spawn@^7.0.1, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-cuid@^2.1.6:
+cuid@^2.1.8:
   version "2.1.8"
-  resolved "https://registry.npmjs.org/cuid/-/cuid-2.1.8.tgz"
+  resolved "https://registry.yarnpkg.com/cuid/-/cuid-2.1.8.tgz#cbb88f954171e0d5747606c0139fb65c5101eac0"
 
 debug@^4:
   version "4.3.2"
@@ -613,7 +620,7 @@ enhanced-resolve@^5.8.0:
     graceful-fs "^4.2.4"
     tapable "^2.2.0"
 
-env-paths@^2.2.0:
+env-paths@^2.2.0, env-paths@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/env-paths/-/env-paths-2.2.1.tgz"
 
@@ -1004,7 +1011,7 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-make-dir@^3.0.0, make-dir@^3.0.2:
+make-dir@^3.0.0, make-dir@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/make-dir/-/make-dir-3.1.0.tgz"
   dependencies:
@@ -1014,9 +1021,9 @@ manage-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/manage-path/-/manage-path-2.0.0.tgz"
 
-memoize-one@^5.1.1:
+memoize-one@^5.2.1:
   version "5.2.1"
-  resolved "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
 
 memory-fs@^0.5.0:
   version "0.5.0"
@@ -1116,9 +1123,9 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
 
-node-addon-api@^3.1.0:
-  version "3.2.1"
-  resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-3.2.1.tgz"
+node-addon-api@^4.0.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-4.3.0.tgz#52a1a0b475193e0928e98e0426a0d1254782b77f"
 
 node-fetch@^2.6.0, node-fetch@^2.6.1:
   version "2.6.7"
@@ -1512,7 +1519,7 @@ tar@^4:
     safe-buffer "^5.2.1"
     yallist "^3.1.1"
 
-tar@^6.0.1:
+tar@^6.0.1, tar@^6.1.6:
   version "6.1.11"
   resolved "https://registry.npmjs.org/tar/-/tar-6.1.11.tgz"
   dependencies:
