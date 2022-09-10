@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "DotnetMaui.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}
