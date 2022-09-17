@@ -269,7 +269,7 @@ for(const app of apps) {
 	if(customMessages[app]) {
 		fileStr += '\n';
 		for(const libraryId in customMessages[app]) {
-			fileStr += `**<sup>${customMessages[app][libraryId].key}</sup>**: ${customMessages[app][libraryId].value}`;
+			fileStr += `**<sup>${customMessages[app][libraryId].key}</sup>**: ${customMessages[app][libraryId].value}  \n`;
 		}
 		fileStr += '\n\n';
 	}

@@ -13,8 +13,8 @@ This repository was made to create an objective comparison of multiple framework
 
 | | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) |  [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 103.6k | 39.1k | 49.9k | 7.9k | 6k | 144.8k | 16.9k |
-| **Forks** | 13.8k | 4k | 1.3k | 0.2k | 0.3k | 23.2k | 1k |
+| **Github stars** | 103.7k | 39.1k | 50.3k | 7.9k | 6k | 145k | 17k |
+| **Forks** | 13.9k | 4k | 1.3k | 0.2k | 0.3k | 23.2k | 1k |
 | **Creation date** | 2013 | 2011 | 2019 | 2019 | 2018 | 2018 | 2020 |
 | **Last Update** | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 |
 | **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | C, C++, Dart | C# |
@@ -151,7 +151,9 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 | ***MacOS (x64)*** | ≈240ms (Debug) | ? | ≈444ms (Debug) => ≈250ms (Release) | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***Linux (x64)*** | ≈146ms (Debug) => ≈97ms (Release) | ? | ≈317ms (Debug) => ≈211ms (Release) | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
-**<sup>1</sup>**: Frameless mode not supported yet**<sup>2</sup>**: Frameless mode not working
+**<sup>1</sup>**: Frameless mode not supported yet  
+**<sup>2</sup>**: Frameless mode not working  
+
 
 
 ## Future content
