@@ -113,6 +113,23 @@ export const libraries = {
 		name: 'NodeGui',
 		packageJsonVersionsNeeded: ['@nodegui/nodegui', '@nodegui/packer'],
 		url: 'https://github.com/nodegui/nodegui',
+		build: {
+			cmd: 'npm run build',
+			folders: {
+				'win32-x64': {
+					path: 'deploy/linux/build/MyAppName',
+					exe: 'Application-x86_64.AppImage',
+					currentOnly: true,
+					doNotRun: true,
+				},
+				'linux-x64': {
+					path: 'deploy/linux/build/MyAppName',
+					exe: '',
+					currentOnly: true,
+					doNotRun: true,
+				}
+			}
+		}
 	},
 	'neutralinojs': {
 		exe: 'npx @neutralinojs/neu run',

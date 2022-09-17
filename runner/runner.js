@@ -393,7 +393,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 				}
 			}
 
-			if(buildPath) {
+			if(buildPath && !buildPath.doNotRun) {
 				let releasePath = path + '/' + buildPath.path.replaceAll('APPNAME', app);
 				let releaseExe = buildPath.exe.replaceAll('APPNAME', app);
 

@@ -1,7 +1,7 @@
 import { QMainWindow, QWidget, WidgetEventTypes, QLabel, FlexLayout, QPushButton, QIcon } from '@nodegui/nodegui';
 import logo from '../assets/logox200.png';
 
-const start = Date.now();
+const initialDate = Date.now();
 
 const win = new QMainWindow();
 win.setWindowTitle("Hello World");
@@ -10,6 +10,9 @@ const centralWidget = new QWidget();
 centralWidget.setObjectName("myroot");
 const rootLayout = new FlexLayout();
 centralWidget.setLayout(rootLayout);
+
+/*
+Disable the following additions to the window while nodegui hasn't fixed crash after some installations ...
 
 const label = new QLabel();
 label.setObjectName("mylabel");
@@ -26,7 +29,7 @@ label2.setInlineStyle(`
 
 rootLayout.addWidget(label);
 rootLayout.addWidget(button);
-rootLayout.addWidget(label2);
+rootLayout.addWidget(label2);*/
 win.setCentralWidget(centralWidget);
 win.setStyleSheet(
   `
@@ -45,7 +48,7 @@ win.setStyleSheet(
 );
 win.show();
 win.addEventListener(WidgetEventTypes.WindowActivate, () => {
-  console.log((Date.now() - start) + 'ms');
+  console.log('Starting time: ' + (Date.now() - initialDate) + 'ms');
 });
 
 (global as any).win = win;
