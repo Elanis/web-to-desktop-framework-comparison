@@ -1,6 +1,6 @@
 export const apps = ['01-empty-app', '02-empty-app-frameless'];
 export const libraries = {
-	/*'electron': {
+	'electron': {
 		exe: 'npm start',
 		name: 'Electron',
 		packageJsonVersionsNeeded: ['electron', 'electron-packager'],
@@ -107,7 +107,7 @@ export const libraries = {
 				},
 			}
 		}
-	},*/
+	},
 	'nodegui': {
 		exe: 'npm start',
 		name: 'NodeGui',
@@ -131,7 +131,7 @@ export const libraries = {
 			}
 		}
 	},
-	/*'neutralinojs': {
+	'neutralinojs': {
 		exe: 'npx @neutralinojs/neu run',
 		name: 'Neutralino',
 		url: 'https://github.com/neutralinojs/neutralinojs',
@@ -166,7 +166,7 @@ export const libraries = {
 		exe: 'dotnet run',
 		name: '.Net MAUI',
 		url: 'https://github.com/dotnet/maui',
-	},*/
+	},
 };
 
 export const architectures = [
