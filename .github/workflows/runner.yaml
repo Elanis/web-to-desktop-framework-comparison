@@ -33,7 +33,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.4.1
         with:
-          node-version: 18
+          node-version: 16 # Warning: nodegui doesn't support node 18 yet
 
       - uses: actions/setup-dotnet@v2
         with:
@@ -56,7 +56,7 @@ jobs:
                     sudo apt install -y libxshmfence1 libglu1 libnss3 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libasound2 # Electron
                     sudo apt install -y libwebkit2gtk-4.0-dev build-essential curl wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev # Tauri
                     sudo apt install -y libwebkit2gtk-4.0-dev libstdc++6 # NeutralinoJS
-                    sudo apt install -y pkg-config build-essential cmake make mesa-common-dev libglu1-mesa-dev file # NodeGUI
+                    sudo apt install -y pkg-config build-essential cmake make mesa-common-dev libglu1-mesa-dev file libqt5core5a libqt5dbus5 libqt5gui5 libqt5network5 libqt5printsupport5 libqt5svg5 libqt5widgets5 # NodeGUI
                else
                     echo "Nothing to install on $RUNNER_OS"
                fi
@@ -76,7 +76,7 @@ jobs:
         run: |
           cd runner/
           if [ "$RUNNER_OS" == "Linux" ]; then
-            xvfb-run --auto-servernum node runner.js ${{ matrix.app }}
+            LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/runner/work/web-to-desktop-framework-comparison/web-to-desktop-framework-comparison/benchmark/01-empty-app/nodegui/node_modules/@nodegui/nodegui/miniqt/5.15.2/gcc_64/lib/" xvfb-run --auto-servernum node runner.js ${{ matrix.app }}
           else
             node runner.js ${{ matrix.app }}
           fi
