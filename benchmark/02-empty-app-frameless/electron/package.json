@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^20.1.4",
+    "electron": "^20.2.0",
     "electron-packager": "^16.0.0"
   }
 }
