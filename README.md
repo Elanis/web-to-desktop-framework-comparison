@@ -65,10 +65,10 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | ***Windows (x64)*** | ≈223MB | ≈317MB | ≈3MB | ≈171MB | ≈2MB | ? | ? |
 | ***Windows (x86)*** | ≈200MB | ≈288MB | ? | ? | ? | ? | ? |
 | ***Windows (ARM64)*** | ≈222MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
-| ***MacOS (x64)*** | ≈355MB | ≈488MB | ≈6MB | ? | ≈1MB | ? | ? |
+| ***MacOS (x64)*** | ≈355MB | ≈492MB | ≈6MB | ? | ≈1MB | ? | ? |
 | ***MacOS (arm64)*** | ≈339MB | ? | ? | ? | ? | ? | ? |
-| ***Linux (x64)*** | ≈226MB | ≈423MB | ≈6MB | ≈236MB | ≈1MB | ? | ? |
-| ***Linux (x86)*** | ? | ≈421MB | ? | ? | ? | ? | ? |
+| ***Linux (x64)*** | ≈226MB | ≈427MB | ≈6MB | ≈236MB | ≈1MB | ? | ? |
+| ***Linux (x86)*** | ? | ≈424MB | ? | ? | ? | ? | ? |
 | ***Linux (ARMv7l)*** | ≈165MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
 | ***Linux (ARM64)*** | ≈230MB | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈1MB | ? | ? |
 
@@ -76,15 +76,15 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈10661ms | ≈24713ms | ≈486791ms | ≈17533ms | ≈708ms | ? | ? |
-| ***Windows (x86)*** | ≈10661ms | ≈24713ms | ? | ? | ? | ? | ? |
+| ***Windows (x64)*** | ≈10661ms | ≈20336ms | ≈486791ms | ≈17533ms | ≈707ms | ? | ? |
+| ***Windows (x86)*** | ≈10661ms | ≈20336ms | ? | ? | ? | ? | ? |
 | ***Windows (ARM64)*** | ≈10661ms | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? |
-| ***MacOS (x64)*** | ≈4683ms | ≈24713ms | ≈561797ms | ? | ≈708ms | ? | ? |
+| ***MacOS (x64)*** | ≈4683ms | ≈20336ms | ≈561797ms | ? | ≈707ms | ? | ? |
 | ***MacOS (arm64)*** | ≈4683ms | ? | ? | ? | ? | ? | ? |
-| ***Linux (x64)*** | ≈2312ms | ≈24713ms | ≈439006ms | ≈45301ms | ≈708ms | ? | ? |
-| ***Linux (x86)*** | ? | ≈24713ms | ? | ? | ? | ? | ? |
+| ***Linux (x64)*** | ≈2312ms | ≈20336ms | ≈585686ms | ≈55424ms | ≈707ms | ? | ? |
+| ***Linux (x86)*** | ? | ≈20336ms | ? | ? | ? | ? | ? |
 | ***Linux (ARMv7l)*** | ≈2312ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? |
-| ***Linux (ARM64)*** | ≈2312ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈708ms | ? | ? |
+| ***Linux (ARM64)*** | ≈2312ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈707ms | ? | ? |
 
 ### Memory Usage  
 
@@ -92,7 +92,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈65MB (Debug) => ≈79MB (Release) | ≈77MB (Debug) => ≈50MB (Release) | ≈43MB (Debug) => ≈24MB (Release) | ≈121MB (Debug) | ≈54MB (Debug) | ≈295MB (Debug) | ≈2MB (Debug) |
 | ***MacOS (x64)*** | ≈64MB (Debug) | ≈40MB (Debug) => ≈75MB (Release) | ≈48MB (Debug) => ≈29MB (Release) | ≈108MB (Debug) | ≈71MB (Debug) => ≈27MB (Release) | ≈145MB (Debug) | ≈25MB (Debug) |
-| ***Linux (x64)*** | ≈115MB (Debug) => ≈110MB (Release) | ≈83MB (Debug) => ≈53MB (Release) | ≈160MB (Debug) => ≈156MB (Release) | ≈152MB (Debug) | ≈168MB (Debug) => ≈176MB (Release) | ≈397MB (Debug) | ≈12MB (Debug) |
+| ***Linux (x64)*** | ≈116MB (Debug) | ≈66MB (Debug) => ≈52MB (Release) | ≈153MB (Debug) => ≈157MB (Release) | ≈148MB (Debug) | ≈165MB (Debug) => ≈175MB (Release) | ≈276MB (Debug) | ≈11MB (Debug) |
 
 ### Start duration  
 
@@ -100,7 +100,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈174ms (Debug) => ≈140ms (Release) | ? | ≈97ms (Debug) => ≈109ms (Release) | ? | ? | ? | ? |
 | ***MacOS (x64)*** | ≈220ms (Debug) | ? | ≈610ms (Debug) => ≈556ms (Release) | ? | ? | ? | ? |
-| ***Linux (x64)*** | ≈99ms (Debug) => ≈96ms (Release) | ? | ≈227ms (Debug) => ≈201ms (Release) | ? | ? | ? | ? |
+| ***Linux (x64)*** | ≈144ms (Debug) | ? | ≈312ms (Debug) => ≈264ms (Release) | ? | ? | ? | ? |
 
 # 02-empty-app-frameless
 
