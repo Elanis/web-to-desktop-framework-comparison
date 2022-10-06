@@ -29,10 +29,6 @@ updates:
     directory: "benchmark/01-empty-app/tauri/src-tauri"
     schedule:
       interval: weekly
-  - package-ecosystem: "nuget"
-    directory: "benchmark/02-empty-app-frameless/DotnetMaui"
-    schedule:
-      interval: "weekly"
   - package-ecosystem: npm
     directory: "benchmark/02-empty-app-frameless/electron"
     schedule:
