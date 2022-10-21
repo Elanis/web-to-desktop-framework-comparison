@@ -16,7 +16,7 @@ This repository was made to create an objective comparison of multiple framework
 | **Github stars** | 104.2k | 39.2k | 53k | 8k | 6.1k | 145.9k | 17.3k |
 | **Forks** | 14k | 4k | 1.4k | 0.2k | 0.3k | 23.6k | 1.1k |
 | **Creation date** | 2013 | 2011 | 2019 | 2019 | 2018 | 2018 | 2020 |
-| **Last Update** | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 |
+| **Last Update** | 2022 | 2022 | 2022 | 2022 | 2022 | 2022 | 2022 |
 | **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | C, C++, Dart | C# |
 | **Usage Language - Back** | JS, C++ | JS, C++ | Rust | JS, C++ | JS, C++ | Dart | C# |
 | **Usage Language - Front** | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | Dart | C# |
