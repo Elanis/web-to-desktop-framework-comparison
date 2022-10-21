@@ -20,7 +20,7 @@ jobs:
         run: git pull
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.5.0
+        uses: actions/setup-node@v3.5.1
         with:
           node-version: 18
 
