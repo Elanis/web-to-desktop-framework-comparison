@@ -163,7 +163,7 @@ export const libraries = {
 		url: 'https://github.com/flutter/flutter',
 	},
 	'DotnetMaui': {
-		exe: 'dotnet run',
+		exe: 'dotnet run --project DotnetMaui/DotnetMaui.csproj',
 		name: '.Net MAUI',
 		url: 'https://github.com/dotnet/maui',
 	},
