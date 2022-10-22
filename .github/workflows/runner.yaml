@@ -41,7 +41,7 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Setup MAUI
-        run: dotnet workload install maui
+        run: if [ "$RUNNER_OS" != "Linux" ]; then dotnet workload install maui; fi
 
       # Setup Java environment in order to build the Android app.
       - uses: actions/setup-java@v3
