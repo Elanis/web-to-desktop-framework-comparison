@@ -52,6 +52,8 @@ jobs:
       # Setup the flutter environment.
       - uses: subosito/flutter-action@v2
 
+      - uses: seanmiddleditch/gha-setup-ninja@master
+
       - name:  Install
         run:   |
                if [ "$RUNNER_OS" == "Linux" ]; then
