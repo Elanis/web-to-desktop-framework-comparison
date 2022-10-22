@@ -10,43 +10,43 @@ export const libraries = {
 			folders: {
 				'linux-arm64': {
 					path: 'build/APPNAME-linux-arm64',
-					exe: './APPNAME'
+					exe: './APPNAME --disable-gpu'
 				},
 				'linux-arm': {
 					path: 'build/APPNAME-linux-armv7l',
-					exe: './APPNAME'
+					exe: './APPNAME --disable-gpu'
 				},
 				'linux-x64': {
 					path: 'build/APPNAME-linux-x64',
-					exe: './APPNAME'
+					exe: './APPNAME --disable-gpu'
 				},
 				'win32-arm64': {
 					path: 'build/APPNAME-win32-arm64',
-					exe: 'APPNAME.exe'
+					exe: 'APPNAME.exe --disable-gpu'
 				},
 				'win32-x32': {
 					path: 'build/APPNAME-win32-ia32',
-					exe: 'APPNAME.exe'
+					exe: 'APPNAME.exe --disable-gpu'
 				},
 				'win32-x64': {
 					path: 'build/APPNAME-win32-x64',
-					exe: 'APPNAME.exe'
+					exe: 'APPNAME.exe --disable-gpu'
 				},
 				'darwin-x64': {
 					path: 'build/APPNAME-darwin-x64',
-					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME --disable-gpu'
 				},
 				'darwin-arm64': {
 					path: 'build/APPNAME-darwin-arm64',
-					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME --disable-gpu'
 				},
 				'mas-x64': {
 					path: 'build/APPNAME-mas-x64',
-					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME --disable-gpu'
 				},
 				'mas-arm64': {
 					path: 'build/APPNAME-mas-arm64',
-					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME --disable-gpu'
 				}			
 			}
 		}
