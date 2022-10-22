@@ -106,6 +106,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		let time = 0;
 
 		// Spawn process
+		const startTimestamp = performance.now();
 		const childProcess = exec(processExe, {
 			cwd: processPath,
 			shell: true,
@@ -118,9 +119,9 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			}
 
 			const lines = data.split('\n');
-			const starTimeLine = lines.find((elt) => elt.includes('Starting time:'));
+			const starTimeLine = lines.find((elt) => elt.includes('App started and loaded !'));
 			if(starTimeLine) {
-				startTime = parseInt(starTimeLine.replace('Starting time:', '').trim().replace('ms', ''), 10);
+				startTime = performance.now() - startTimestamp;
 				if(time < 0) { // Unlock cargo/rust
 					time = 0;
 					memUsageHistory = [];
@@ -149,6 +150,17 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 						memUsageHistory = [];
 					}
 				}, 120*1000); // Unlock if going for more than 2 minutes
+			}
+
+			// If started event if logged to stderr
+			const lines = cleanData.split('\n');
+			const starTimeLine = lines.find((elt) => elt.includes('App started and loaded !'));
+			if(starTimeLine) {
+				startTime = performance.now() - startTimestamp;
+				if(time < 0) { // Unlock cargo/rust
+					time = 0;
+					memUsageHistory = [];
+				}
 			}
 		});
 
