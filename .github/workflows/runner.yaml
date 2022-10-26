@@ -34,6 +34,8 @@ jobs:
         uses: actions/setup-node@v3.5.1
         with:
           node-version: 16 # Warning: nodegui doesn't support node 18 yet
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
 
       # Setup dotnet env
       - uses: actions/setup-dotnet@v3
