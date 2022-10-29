@@ -1,4 +1,4 @@
-import { execSync, exec } from 'child_process';
+import { exec, spawn } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { readdir, stat } from 'fs/promises';
@@ -51,7 +51,7 @@ async function execBuildProcess(processPath, processExe) {
 		const startTime = performance.now();
 
 		// Spawn process
-		const childProcess = exec(processExe, {
+		const childProcess = spawn(processExe, {
 			cwd: processPath,
 			shell: true,
 			detached: true,
@@ -94,7 +94,11 @@ export function killAll(pid, signal='SIGTERM'){
 	else{
 		// see https://nodejs.org/api/child_process.html#child_process_options_detached
 		// If pid is less than -1, then sig is sent to every process in the process group whose ID is -pid.
-		process.kill(pid, signal)
+		try {
+			process.kill(-pid, signal);
+		} catch {
+			process.kill(pid, signal);
+		}
 	}
 }
 
