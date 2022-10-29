@@ -158,7 +158,8 @@ export const libraries = {
 		}
 	},
 	'flutter': {
-		exe: 'flutter run lib/main.dart',
+		preRunStep: 'flutter clean',
+		exe: 'flutter run --verbose lib/main.dart',
 		name: 'Flutter',
 		url: 'https://github.com/flutter/flutter',
 	},
