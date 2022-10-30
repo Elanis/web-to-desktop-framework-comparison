@@ -270,6 +270,10 @@ for(const app of apps) {
 	}
 
 	for(const libraryName in libraries) {
+		if(customMessages[app] && customMessages[app][libraryName]) {
+			continue;
+		}
+
 		processesTmp.push({
 			app,
 			path: `../benchmark/${app}/${libraryName}`,
