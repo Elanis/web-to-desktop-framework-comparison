@@ -327,7 +327,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 	let processId = 0;
 	const benchmarkData = JSON.parse(fs.readFileSync('benchmarks.json'))[getCurrentPlatformArch()].benchmarkData;
 
-	for(const { app, path, exe, preRunStep, packageJsonVersionsNeeded, build } of processes) {
+	for(const { app, path, exe, packageJsonVersionsNeeded, build } of processes) {
 		if(exe === 'TODO') {
 			continue;
 		}
@@ -342,19 +342,6 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 			customLog = (...args) => console.log('[Debug] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
 
 			customLog('Processing', path, exe);
-
-			if(preRunStep) {
-				await new Promise((resolve, _reject) => {
-					const childProcess = exec(preRunStep);
-					childProcess.on('close', (code) => {
-						if(DEBUG_STDOUT || DEBUG_STDERR) {
-							customLog(`Cleaning process: done !`);
-						}
-
-						resolve();
-					});
-				});
-			}
 
 			const res = await getMemoryUsageHistoryOfProcess(path, exe);
 
