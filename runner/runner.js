@@ -122,6 +122,10 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				customLog(`stdout: ${data}`);
 			}
 
+			if(data instanceof Buffer) {
+				data = data.toString('utf8');
+			}
+
 			const lines = data.split('\n');
 			const starTimeLine = lines.find((elt) => elt.includes('App started and loaded !'));
 			if(starTimeLine) {
@@ -137,6 +141,10 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		childProcess.stderr.on('data', (data) => {
 			if(DEBUG_STDERR) {
 				console.error(`[ERROR] stderr: ${data}`);
+			}
+
+			if(data instanceof Buffer) {
+				data = data.toString('utf8');
 			}
 
 			// Remove ANSI codes to match string only
