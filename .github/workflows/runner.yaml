@@ -45,6 +45,7 @@ jobs:
 
       - name: Setup MAUI
         run: if [ "$RUNNER_OS" != "Linux" ]; then dotnet workload install maui; fi
+        shell: bash
 
       # Setup Java environment in order to build the Android app.
       - uses: actions/setup-java@v3
