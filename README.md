@@ -98,9 +98,9 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈170ms (Debug) | ? | ≈127ms (Debug) => ≈85ms (Release) | ? | ? | ? | ? |
-| ***MacOS (x64)*** | ≈263ms (Debug) => ≈344ms (Release) | ? | ≈848ms (Debug) => ≈467ms (Release) | ? | ? | ? | ? |
-| ***Linux (x64)*** | ≈105ms (Debug) => ≈92ms (Release) | ? | ≈223ms (Debug) => ≈201ms (Release) | ? | ? | ? | ? |
+| ***Windows (x64)*** | ≈88ms (Debug) | ? | ≈124ms (Debug) => ≈77ms (Release) | ≈52ms (Debug) | ? | ? | ? |
+| ***MacOS (x64)*** | ≈263ms (Debug) => ≈364ms (Release) | ? | ≈785ms (Debug) => ≈458ms (Release) | ? | ? | ? | ? |
+| ***Linux (x64)*** | ≈89ms (Debug) => ≈91ms (Release) | ? | ≈203ms (Debug) => ≈201ms (Release) | ? | ? | ? | ? |
 
 # 02-empty-app-frameless
 
@@ -147,9 +147,9 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈145ms (Debug) => ≈109ms (Release) | ? | ≈133ms (Debug) => ≈86ms (Release) | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***MacOS (x64)*** | ≈451ms (Debug) => ≈370ms (Release) | ? | ≈698ms (Debug) => ≈269ms (Release) | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x64)*** | ≈97ms (Debug) => ≈87ms (Release) | ? | ≈211ms (Debug) => ≈197ms (Release) | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Windows (x64)*** | ≈81ms (Debug) => ≈81ms (Release) | ? | ≈129ms (Debug) => ≈62ms (Release) | ≈25ms (Debug) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***MacOS (x64)*** | ≈323ms (Debug) => ≈387ms (Release) | ? | ≈647ms (Debug) => ≈270ms (Release) | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈91ms (Debug) => ≈85ms (Release) | ? | ≈199ms (Debug) => ≈196ms (Release) | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 **<sup>1</sup>**: Frameless mode not supported yet  
 **<sup>2</sup>**: Frameless mode not working  

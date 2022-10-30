@@ -88,7 +88,7 @@ function getStartTimeStats(app, architecture) {
 
 			const startTimes = benchmarkData.benchmarks.map((elt) => elt.startTime).filter(x => typeof x === 'number').sort();
 			if(startTimes.length > 0) {
-				stats[libraryId + '/' + context] = startTimes[Math.floor(startTimes.length / 2)];
+				stats[libraryId + '/' + context] = Math.round(startTimes[Math.floor(startTimes.length / 2)]);
 			} else{
 				stats[libraryId + '/' + context] = 0;
 			}
