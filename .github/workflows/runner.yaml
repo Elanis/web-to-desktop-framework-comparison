@@ -9,6 +9,7 @@ on:
 env:
   RUST_BACKTRACE: 1
   npm_config_yes: true
+  USE_HARD_LINKS: false # Prevent electron-builder from crashing
 
 jobs:
   build:
