@@ -86,9 +86,12 @@ function getStartTimeStats(app, architecture) {
 				continue;
 			}
 
-			stats[libraryId + '/' + context] = Math.floor(
-				benchmarkData.benchmarks.map((elt) => elt.startTime).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
-			);
+			const startTimes = benchmarkData.benchmarks.map((elt) => elt.startTime).filter(x => typeof x === 'number').sort();
+			if(startTimes.length > 0) {
+				stats[libraryId + '/' + context] = Math.round(startTimes[Math.floor(startTimes.length / 2)]);
+			} else{
+				stats[libraryId + '/' + context] = 0;
+			}
 		}
 	}
 	return stats;

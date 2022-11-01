@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
+
+  WidgetsBinding.instance
+          .addPostFrameCallback((_) => print('App started and loaded !'));
 }
 
 class MyApp extends StatelessWidget {

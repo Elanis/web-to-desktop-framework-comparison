@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "main": "index.html",
   "node-main": "main.js",
+  "chromium-args": "--enable-logging=stderr",
   "scripts": {
-    "start": "run --x86 --mirror https://dl.nwjs.io/ .",
+    "start": "run --x64 --mirror https://dl.nwjs.io/ .",
     "build": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ ."
   },
   "devDependencies": {
     "nwjs-builder-phoenix": "^1.15.0"
   },
   "build": {
-    "nwVersion": "0.66.0"
+    "nwVersion": "0.69.1"
   },
   "window": {
     "frame": false
