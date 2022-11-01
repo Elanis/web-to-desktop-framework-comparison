@@ -19,10 +19,10 @@ export const libraries = {
 					path: '',
 					exe: 'dist/APPNAME/APPNAME-mac_x64'
 				},
-				'win32-x64': {
+				/*'win32-x64': {
 					path: '',
 					exe: 'dist/APPNAME/APPNAME-win_x64.exe', // TODO: count dll size
-				},
+				},*/
 			}
 		}
 	},
