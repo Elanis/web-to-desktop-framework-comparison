@@ -11,15 +11,16 @@ let data = {};
 		const res = await fetch('https://api.github.com/repos/' + repo);
 		const json = await res.json();
 
-		data[libraryName] ={
+		const updateDate = new Date(json.updated_at);
+
+		data[libraryName] = {
 			stars: json.stargazers_count,
 			forks: json.forks_count,
+			lastUpdate: (updateDate.getMonth() + 1) + '/' + updateDate.getFullYear()
 		};
 
-		console.log({
-			stars: json.stargazers_count,
-			forks: json.forks_count,
-		});
+		console.log(libraryName);
+		console.log(data[libraryName]);
 	}
 
 	fs.writeFileSync('stats.json', JSON.stringify(data));

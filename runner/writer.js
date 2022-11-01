@@ -211,6 +211,15 @@ for(const line of fileBegin.split('\n')) {
 		continue;
 	}
 
+	if(line.startsWith('| **Last Update** |')) {
+		fileStr += '| **Last Update** ';
+		for(let libraryId in libraries) {
+			fileStr += `| ${stats[libraryId].lastUpdate} `
+		}
+		fileStr += '|\n';
+		continue;
+	}
+
 	fileStr += line + '\n';
 }
 
