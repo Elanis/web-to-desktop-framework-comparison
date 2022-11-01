@@ -11,7 +11,7 @@ let data = {};
 		const res = await fetch('https://api.github.com/repos/' + repo);
 		const json = await res.json();
 
-		const updateDate = new Date(json.updated_at);
+		const updateDate = new Date(json.pushed_at);
 
 		data[libraryName] = {
 			stars: json.stargazers_count,
