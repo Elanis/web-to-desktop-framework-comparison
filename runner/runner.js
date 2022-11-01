@@ -1,4 +1,4 @@
-import { execSync, exec } from 'child_process';
+import { exec, spawn } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { readdir, stat } from 'fs/promises';
@@ -51,7 +51,7 @@ async function execBuildProcess(processPath, processExe) {
 		const startTime = performance.now();
 
 		// Spawn process
-		const childProcess = exec(processExe, {
+		const childProcess = spawn(processExe, {
 			cwd: processPath,
 			shell: true,
 			detached: true,
@@ -94,7 +94,11 @@ export function killAll(pid, signal='SIGTERM'){
 	else{
 		// see https://nodejs.org/api/child_process.html#child_process_options_detached
 		// If pid is less than -1, then sig is sent to every process in the process group whose ID is -pid.
-		process.kill(pid, signal)
+		try {
+			process.kill(-pid, signal);
+		} catch {
+			process.kill(pid, signal);
+		}
 	}
 }
 
@@ -106,7 +110,8 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		let time = 0;
 
 		// Spawn process
-		const childProcess = exec(processExe, {
+		const startTimestamp = performance.now();
+		const childProcess = spawn(processExe, {
 			cwd: processPath,
 			shell: true,
 			detached: true,
@@ -117,10 +122,14 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				customLog(`stdout: ${data}`);
 			}
 
+			if(data instanceof Buffer) {
+				data = data.toString('utf8');
+			}
+
 			const lines = data.split('\n');
-			const starTimeLine = lines.find((elt) => elt.includes('Starting time:'));
+			const starTimeLine = lines.find((elt) => elt.includes('App started and loaded !'));
 			if(starTimeLine) {
-				startTime = parseInt(starTimeLine.replace('Starting time:', '').trim().replace('ms', ''), 10);
+				startTime = performance.now() - startTimestamp;
 				if(time < 0) { // Unlock cargo/rust
 					time = 0;
 					memUsageHistory = [];
@@ -132,6 +141,10 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		childProcess.stderr.on('data', (data) => {
 			if(DEBUG_STDERR) {
 				console.error(`[ERROR] stderr: ${data}`);
+			}
+
+			if(data instanceof Buffer) {
+				data = data.toString('utf8');
 			}
 
 			// Remove ANSI codes to match string only
@@ -149,6 +162,17 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 						memUsageHistory = [];
 					}
 				}, 120*1000); // Unlock if going for more than 2 minutes
+			}
+
+			// If started event if logged to stderr
+			const lines = cleanData.split('\n');
+			const starTimeLine = lines.find((elt) => elt.includes('App started and loaded !'));
+			if(starTimeLine) {
+				startTime = performance.now() - startTimestamp;
+				if(time < 0) { // Unlock cargo/rust
+					time = 0;
+					memUsageHistory = [];
+				}
 			}
 		});
 

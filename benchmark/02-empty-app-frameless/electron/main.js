@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron');
-const initialDate = Date.now();
 
 async function createWindow () {
 	const win = new BrowserWindow({
@@ -13,7 +12,7 @@ async function createWindow () {
 
 	win.loadFile('index.html');
 
-	console.log('Starting time: ' + (Date.now() - initialDate) + 'ms');
+	console.log('App started and loaded !');
 }
 
 app.whenReady().then(createWindow);

@@ -10,43 +10,43 @@ export const libraries = {
 			folders: {
 				'linux-arm64': {
 					path: 'build/APPNAME-linux-arm64',
-					exe: './APPNAME'
+					exe: './APPNAME --disable-gpu'
 				},
 				'linux-arm': {
 					path: 'build/APPNAME-linux-armv7l',
-					exe: './APPNAME'
+					exe: './APPNAME --disable-gpu'
 				},
 				'linux-x64': {
 					path: 'build/APPNAME-linux-x64',
-					exe: './APPNAME'
+					exe: './APPNAME --disable-gpu'
 				},
 				'win32-arm64': {
 					path: 'build/APPNAME-win32-arm64',
-					exe: 'APPNAME.exe'
+					exe: 'APPNAME.exe --disable-gpu'
 				},
 				'win32-x32': {
 					path: 'build/APPNAME-win32-ia32',
-					exe: 'APPNAME.exe'
+					exe: 'APPNAME.exe --disable-gpu'
 				},
 				'win32-x64': {
 					path: 'build/APPNAME-win32-x64',
-					exe: 'APPNAME.exe'
+					exe: 'APPNAME.exe --disable-gpu'
 				},
 				'darwin-x64': {
 					path: 'build/APPNAME-darwin-x64',
-					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME --disable-gpu'
 				},
 				'darwin-arm64': {
 					path: 'build/APPNAME-darwin-arm64',
-					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME --disable-gpu'
 				},
 				'mas-x64': {
 					path: 'build/APPNAME-mas-x64',
-					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME --disable-gpu'
 				},
 				'mas-arm64': {
 					path: 'build/APPNAME-mas-arm64',
-					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+					exe: './APPNAME.app/Contents/MacOS/APPNAME --disable-gpu'
 				}			
 			}
 		}
@@ -150,20 +150,20 @@ export const libraries = {
 					path: '',
 					exe: 'dist/APPNAME/APPNAME-mac_x64'
 				},
-				'win32-x64': {
+				/*'win32-x64': {
 					path: '',
 					exe: 'dist/APPNAME/APPNAME-win_x64.exe', // TODO: count dll size
-				},
+				},*/
 			}
 		}
 	},
 	'flutter': {
-		exe: 'flutter run lib/main.dart',
+		exe: 'flutter run --verbose lib/main.dart',
 		name: 'Flutter',
 		url: 'https://github.com/flutter/flutter',
 	},
 	'DotnetMaui': {
-		exe: 'dotnet run',
+		exe: 'dotnet run --project DotnetMaui/DotnetMaui.csproj',
 		name: '.Net MAUI',
 		url: 'https://github.com/dotnet/maui',
 	},
@@ -248,6 +248,12 @@ export const requestedArchitectures = {
 };
 
 export const customMessages = {
+	'01-empty-app': {
+		'DotnetMaui': {
+			key: 1,
+			value: 'Benchmark WIP'
+		}
+	},
 	'02-empty-app-frameless': {
 		'flutter': {
 			key: 1,
@@ -270,6 +276,10 @@ for(const app of apps) {
 	}
 
 	for(const libraryName in libraries) {
+		if(customMessages[app] && customMessages[app][libraryName]) {
+			continue;
+		}
+
 		processesTmp.push({
 			app,
 			path: `../benchmark/${app}/${libraryName}`,

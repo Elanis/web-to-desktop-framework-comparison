@@ -9,6 +9,8 @@ function showInfo() {
         <br/><br/>
         <span>server: v${NL_VERSION} . client: v${NL_CVERSION}</span>
         `;
+
+    Neutralino.debug.log('App started and loaded !', 'INFO');
 }
 
 function openDocs() {

@@ -1,8 +1,6 @@
 import { QMainWindow, QWidget, WidgetEventTypes, QLabel, FlexLayout, QPushButton, QIcon } from '@nodegui/nodegui';
 import logo from '../assets/logox200.png';
 
-const initialDate = Date.now();
-
 const win = new QMainWindow();
 win.setWindowTitle("Hello World");
 
@@ -48,7 +46,7 @@ win.setStyleSheet(
 );
 win.show();
 win.addEventListener(WidgetEventTypes.WindowActivate, () => {
-  console.log('Starting time: ' + (Date.now() - initialDate) + 'ms');
+  console.log('App started and loaded !');
 });
 
 (global as any).win = win;
