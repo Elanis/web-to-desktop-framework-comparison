@@ -1,4 +1,4 @@
-import { exec, execSync, spawn } from 'child_process';
+import { exec, spawn } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { readdir, stat } from 'fs/promises';
@@ -74,22 +74,9 @@ async function execBuildProcess(processPath, processExe) {
 				customLog(`child process exited with code ${code}`);
 			}
 
-			let ls = execSync("ls " + processPath + " && ls " + processPath + "/dist"+ " && ls " + processPath + "/dist/01-empty-app");
-			ls.stdout.on('data', (data) => {
-				if(DEBUG_STDOUT) {
-					customLog(`stdout: ${data}`);
-				}
-			});
-
-			ls.stderr.on('data', (data) => {
-				if(DEBUG_STDERR) {
-					console.error(`stderr: ${data}`);
-				}
-			});	
-
-			ls.on('close', () => resolve({
+			resolve({
 				time: performance.now() - startTime
-			}));
+			});
 		});
 	});
 }
