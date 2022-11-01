@@ -58,12 +58,20 @@ async function execBuildProcess(processPath, processExe) {
 		});
 
 		childProcess.stdout.on('data', (data) => {
+			if(data instanceof Buffer) {
+				data = data.toString('utf8');
+			}
+				
 			if(DEBUG_STDOUT) {
 				customLog(`stdout: ${data}`);
 			}
 		});
 
 		childProcess.stderr.on('data', (data) => {
+			if(data instanceof Buffer) {
+				data = data.toString('utf8');
+			}
+				
 			if(DEBUG_STDERR) {
 				console.error(`stderr: ${data}`);
 			}
@@ -76,12 +84,20 @@ async function execBuildProcess(processPath, processExe) {
 
 			let ls = execSync("ls " + processPath + " && ls " + processPath + "/dist"+ " && ls " + processPath + "/dist/01-empty-app");
 			ls.stdout.on('data', (data) => {
+				if(data instanceof Buffer) {
+					data = data.toString('utf8');
+				}
+
 				if(DEBUG_STDOUT) {
 					customLog(`stdout: ${data}`);
 				}
 			});
 
 			ls.stderr.on('data', (data) => {
+				if(data instanceof Buffer) {
+					data = data.toString('utf8');
+				}
+
 				if(DEBUG_STDERR) {
 					console.error(`stderr: ${data}`);
 				}
