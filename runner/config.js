@@ -248,6 +248,12 @@ export const requestedArchitectures = {
 };
 
 export const customMessages = {
+	'01-empty-app': {
+		'DotnetMaui': {
+			key: 1,
+			value: 'Benchmark WIP'
+		}
+	},
 	'02-empty-app-frameless': {
 		'flutter': {
 			key: 1,
