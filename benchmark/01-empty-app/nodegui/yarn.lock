@@ -60,9 +60,9 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.57.2":
-  version "0.57.2"
-  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.57.2.tgz"
+"@nodegui/nodegui@^0.57.3":
+  version "0.57.3"
+  resolved "https://registry.yarnpkg.com/@nodegui/nodegui/-/nodegui-0.57.3.tgz#b1a13e3b7c65c3e38ecfd9155942402c29b4f344"
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
     "@nodegui/qode" "^16.4.3"
