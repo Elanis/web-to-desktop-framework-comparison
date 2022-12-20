@@ -181,7 +181,7 @@ export const libraries = {
 				},
 			}
 		}
-	}
+	},
 	'flutter': {
 		exe: 'flutter run --verbose lib/main.dart',
 		name: 'Flutter',
