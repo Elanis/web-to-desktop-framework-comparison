@@ -56,8 +56,15 @@ jobs:
       # Setup the flutter environment.
       - uses: subosito/flutter-action@v2
 
+      # Setup the go environment
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 'stable'
+
+      # Setup ninja
       - uses: seanmiddleditch/gha-setup-ninja@master
 
+      # Os-specific dependencies
       - if: ${{ runner.os == 'Windows' }}
         name: Install wget
         run: |
@@ -89,6 +96,9 @@ jobs:
         run: |
           cd runner/
           bash preprocess.sh ${{ matrix.app }}
+
+      - name: Install wails
+        run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
 
       - name: Run apps
         run: |

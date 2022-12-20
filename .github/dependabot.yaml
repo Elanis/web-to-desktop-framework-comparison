@@ -30,6 +30,14 @@ updates:
     schedule:
       interval: weekly
   - package-ecosystem: npm
+    directory: "benchmark/01-empty-app/wails/frontend"
+    schedule:
+      interval: weekly
+  - package-ecosystem: gomod
+    directory: "benchmark/01-empty-app/wails"
+    schedule:
+      interval: weekly
+  - package-ecosystem: npm
     directory: "benchmark/02-empty-app-frameless/electron"
     schedule:
       interval: weekly
