@@ -157,6 +157,31 @@ export const libraries = {
 			}
 		}
 	},
+	'wails': {
+		exe: 'wails dev',
+		name: 'Wails',
+		url: 'https://github.com/wailsapp/wails',
+		build: {
+			cmd: 'wails build -windowsconsole',
+			folders: {
+				'win32-x64': {
+					path: '',
+					exe: './build/bin/APPNAME.exe',
+					currentOnly: true
+				},
+				'linux-x64': {
+					path: '',
+					exe: './build/bin/APPNAME',
+					currentOnly: true
+				},
+				'darwin-x64': {
+					path: './build/bin/APPNAME.app/',
+					exe: './Contents/MacOS/APPNAME',
+					currentOnly: true
+				},
+			}
+		}
+	},
 	'flutter': {
 		exe: 'flutter run --verbose lib/main.dart',
 		name: 'Flutter',
