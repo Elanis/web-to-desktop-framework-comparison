@@ -150,8 +150,21 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			// Remove ANSI codes to match string only
 			const cleanData = data.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '');
 
-			// Cargo/Rust compatibility
-			if(cleanData.trim().startsWith('Compiling ') || cleanData.trim().startsWith('Fetch ') || cleanData.trim().startsWith('Building ') || cleanData.trim().startsWith('Blocking ') || cleanData.trim().startsWith('Updating crates.io index')) {
+			// Cargo/Rust/Wails compatibility
+			let trimmedCleanData = cleanData.trim();
+			if(
+				trimmedCleanData.startsWith('Compiling ') ||
+				trimmedCleanData.startsWith('Fetch ') ||
+				trimmedCleanData.startsWith('Building ') ||
+				trimmedCleanData.startsWith('Blocking ') ||
+				trimmedCleanData.startsWith('Updating crates.io index') ||
+				trimmedCleanData.startsWith('Executing: go mod tidy') ||
+				trimmedCleanData.startsWith('Wails CLI') ||
+				trimmedCleanData.includes('Installing frontend dependencies:') ||
+				trimmedCleanData.includes('Compiling frontend:') ||
+				trimmedCleanData.includes('Building application for development...') ||
+				trimmedCleanData.includes('Compiling application: ')
+			) {
 				console.log(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
 				time = -1;
 
@@ -169,7 +182,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			const starTimeLine = lines.find((elt) => elt.includes('App started and loaded !'));
 			if(starTimeLine) {
 				startTime = performance.now() - startTimestamp;
-				if(time < 0) { // Unlock cargo/rust
+				if(time < 0) { // Unlock cargo/rust/wails
 					time = 0;
 					memUsageHistory = [];
 				}
