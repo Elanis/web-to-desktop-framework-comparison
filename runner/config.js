@@ -192,6 +192,11 @@ export const libraries = {
 		name: '.Net MAUI',
 		url: 'https://github.com/dotnet/maui',
 	},
+	'DotnetMauiVue': {
+		exe: 'dotnet run --project DotnetMauiVue/DotnetMauiVue.csproj',
+		name: '.Net MAUI w/ Vue',
+		url: 'https://github.com/dotnet/maui',
+	},
 };
 
 export const architectures = [
@@ -277,6 +282,10 @@ export const customMessages = {
 		'DotnetMaui': {
 			key: 1,
 			value: 'Benchmark WIP'
+		},
+		'DotnetMauiVue': {
+			key: 2,
+			value: 'Benchmark WIP'
 		}
 	},
 	'02-empty-app-frameless': {
@@ -286,6 +295,10 @@ export const customMessages = {
 		},
 		'DotnetMaui': {
 			key: 2,
+			value: 'Frameless mode not working'
+		},
+		'DotnetMauiVue': {
+			key: 3,
 			value: 'Frameless mode not working'
 		}
 	}
