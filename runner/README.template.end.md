@@ -1,13 +1,8 @@
 
 ## Future content
 
-TODO:
-- WebGL Support
-- Build constraints
-- Source code protection
-- Modules support (npm, native, etc.)
+See [Issues](https://github.com/Elanis/web-to-desktop-framework-comparison/issues) and [Pull requests](https://github.com/Elanis/web-to-desktop-framework-comparison/pulls). You can participate by proposing new issues, of filling them !
 
-Benchmarks ideas:
- - BabylonJS scene
- - spreadsheet
- - IDE
+## Contributors
+
+[List of contributors to this repository](https://github.com/Elanis/web-to-desktop-framework-comparison/graphs/contributors)
