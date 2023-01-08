@@ -13,10 +13,10 @@ This repository was made to create an objective comparison of multiple framework
 
 | | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 105.3k | 39.4k | 56.6k | 8.1k | 6.3k | 13.6k | 148.2k | 18k | 18k |
-| **Forks** | 14.2k | 4k | 1.5k | 0.3k | 0.3k | 0.6k | 24.2k | 1.2k | 1.2k |
+| **Github stars** | NaNk | NaNk | NaNk | NaNk | NaNk | NaNk | NaNk | NaNk | NaNk |
+| **Forks** | NaNk | NaNk | NaNk | NaNk | NaNk | NaNk | NaNk | NaNk | NaNk |
 | **Creation date** | 2013 | 2011 | 2019 | 2019 | 2018 | 2019 | 2018 | 2020 |
-| **Last Update** | 1/2023 | 1/2023 | 1/2023 | 1/2023 | 1/2023 | 1/2023 | 1/2023 | 1/2023 | 1/2023 |
+| **Last Update** | NaN/NaN | NaN/NaN | NaN/NaN | NaN/NaN | NaN/NaN | NaN/NaN | NaN/NaN | NaN/NaN | NaN/NaN |
 | **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | Go | C, C++, Dart | C# |
 | **Usage Language - Back** | JS, C++ | JS, C++ | Rust | JS, C++ | JS, C++ | Go | Dart | C# |
 | **Usage Language - Front** | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | Dart | C# |
