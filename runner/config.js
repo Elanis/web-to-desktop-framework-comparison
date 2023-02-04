@@ -166,7 +166,7 @@ export const libraries = {
 			folders: {
 				'win32-x64': {
 					path: '',
-					exe: './build/bin/APPNAME.exe',
+					exe: 'build/bin/APPNAME.exe',
 					currentOnly: true
 				},
 				'linux-x64': {
