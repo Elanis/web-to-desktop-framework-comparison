@@ -11,14 +11,17 @@ function updateDeps() {
 		npx npm-check -y
 		npm audit
 		npm audit fix
-		git add package.json package-lock.json yarn.lock
+		git add package.json
+		git add package-lock.json
+		git add yarn.lock
 		git commit -m "[$benchmark] [$framework] Update npm dependencies"
 	fi
 
 	if [ -f "Cargo.toml" ] | [ -f "Cargo.lock" ]; then
 		echo "Detected cargo files, checking dependencies ..."
 		cargo update
-		git add Cargo.toml Cargo.lock
+		git add Cargo.toml
+		git add Cargo.lock
 		git commit -m "[$benchmark] [$framework] Update tauri dependencies"
 	fi
 
