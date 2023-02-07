@@ -105,9 +105,11 @@ export function killAll(pid, signal='SIGTERM'){
 async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT) {
 	return new Promise((resolve, reject) => {
 		let memUsageHistory = [];
+		let sysMemUsageHistory = [];
 		let startTime = '?';
 		let done = false;
 		let time = 0;
+		let originalFreeMemory = os.freemem();
 
 		// Spawn process
 		const startTimestamp = performance.now();
@@ -133,6 +135,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				if(time < 0) { // Unlock cargo/rust
 					time = 0;
 					memUsageHistory = [];
+					sysMemUsageHistory = [];
 				}
 			}
 		});
@@ -165,7 +168,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				trimmedCleanData.includes('Building application for development...') ||
 				trimmedCleanData.includes('Compiling application: ')
 			) {
-				console.log(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
+				console.log(`[WARNING] Cargo/Rust/Wails/Go action detected. Delaying timer ...`);
 				time = -1;
 
 				for(let i = 0; i <= resetTimeoutId; i++) { clearTimeout(i); }
@@ -173,6 +176,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 					if(time < 0) { // Unlock cargo/rust
 						time = 0;
 						memUsageHistory = [];
+						sysMemUsageHistory = [];
 					}
 				}, 120*1000); // Unlock if going for more than 2 minutes
 			}
@@ -185,6 +189,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				if(time < 0) { // Unlock cargo/rust/wails
 					time = 0;
 					memUsageHistory = [];
+					sysMemUsageHistory = [];
 				}
 			}
 		});
@@ -212,6 +217,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 						}
 					}
 				});
+				sysMemUsageHistory.push(os.freemem() - originalFreeMemory);
 			} catch(e) {
 
 			}
@@ -226,6 +232,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			if(time++ === timeout || childProcess.exitCode !== null || done) {
 				resolve({
 					memoryUsage: memUsageHistory,
+					systemMeasuredMemory: sysMemUsageHistory,
 					startTime
 				});
 				clearInterval(interval);
