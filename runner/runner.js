@@ -416,7 +416,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 					return true;
 				});
 
-			for(const {platformArch, folder, exe} of existingFolders) {
+			for(const {platformArch, folder, exe, additionalFiles} of existingFolders) {
 				const buildSize = await dirSize(folder || exe);
 				const buildTime = buildData.time / existingFolders.length;
 
@@ -428,6 +428,13 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 					if(!benchmarkData[path]) {
 						benchmarkData[path] = {};
 					}
+
+					if(Array.isArray(additionalFiles)) {
+						for(const additionalFile of additionalFiles) {
+							buildSize += await dirSize(additionalFile);
+						}
+					}
+
 					benchmarkData[path].buildSize = buildSize;
 					benchmarkData[path].buildTime = buildTime;
 

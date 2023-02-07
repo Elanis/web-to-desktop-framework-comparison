@@ -140,19 +140,32 @@ export const libraries = {
 			folders: { // TODO: count "resources.neu" size as well
 				'linux-arm64': {
 					path: '',
-					exe: 'dist/APPNAME/APPNAME-linux_arm64'
+					exe: 'dist/APPNAME/APPNAME-linux_arm64',
+					additionalFiles: [
+						'dist/APPNAME/resources.neu'
+					]
 				},
 				'linux-x64': {
 					path: '',
-					exe: 'dist/APPNAME/APPNAME-linux_x64'
+					exe: 'dist/APPNAME/APPNAME-linux_x64',
+					additionalFiles: [
+						'dist/APPNAME/resources.neu'
+					]
 				},
 				'darwin-x64': {
 					path: '',
-					exe: 'dist/APPNAME/APPNAME-mac_x64'
+					exe: 'dist/APPNAME/APPNAME-mac_x64',
+					additionalFiles: [
+						'dist/APPNAME/resources.neu'
+					]
 				},
 				/*'win32-x64': {
 					path: '',
-					exe: 'dist/APPNAME/APPNAME-win_x64.exe', // TODO: count dll size
+					exe: 'dist/APPNAME/APPNAME-win_x64.exe',
+					additionalFiles: [
+						'dist/APPNAME/resources.neu',
+						'WebView2Loader.dll'
+					] // TODO: count dll size
 				},*/
 			}
 		}
