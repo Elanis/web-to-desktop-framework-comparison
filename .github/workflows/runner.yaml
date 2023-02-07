@@ -98,7 +98,9 @@ jobs:
           bash preprocess.sh ${{ matrix.app }}
 
       - name: Install wails
-        run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+        run: |
+          go install github.com/wailsapp/wails/v2/cmd/wails@latest
+          wails doctor
 
       - name: Run apps
         run: |
