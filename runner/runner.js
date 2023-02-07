@@ -114,7 +114,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		const childProcess = spawn(processExe, {
 			cwd: processPath,
 			shell: true,
-			detached: true,
+			detached: os.platform() !== 'win32',
 		});
 
 		childProcess.stdout.on('data', (data) => {
