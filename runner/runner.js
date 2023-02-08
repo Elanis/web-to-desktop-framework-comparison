@@ -251,13 +251,18 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 	});
 }
 
-function processMemoryUsage({ memoryUsage }) {
+function processMemoryUsage({ memoryUsage, systemMeasuredMemory }) {
 	return {
 		min: Math.min(...memoryUsage),
+		sysMin: Math.min(...systemMeasuredMemory),
 		max: Math.max(...memoryUsage),
+		sysMax: Math.max(...systemMeasuredMemory),
 		med: (memoryUsage.sort())[Math.floor(memoryUsage.length / 2)],
+		sysMed: (systemMeasuredMemory.sort())[Math.floor(systemMeasuredMemory.length / 2)],
 		avg: memoryUsage.reduce((a, b) => a + b, 0) / memoryUsage.length,
-		history: memoryUsage
+		sysAvg: systemMeasuredMemory.reduce((a, b) => a + b, 0) / systemMeasuredMemory.length,
+		history: memoryUsage,
+		systemMeasuredMemoryHistory: systemMeasuredMemory
 	};
 }
 
