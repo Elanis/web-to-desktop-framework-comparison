@@ -217,7 +217,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 						}
 					}
 				});
-				sysMemUsageHistory.push(os.freemem() - originalFreeMemory);
+				sysMemUsageHistory.push(originalFreeMemory - os.freemem());
 			} catch(e) {
 
 			}
