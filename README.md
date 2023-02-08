@@ -94,7 +94,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈67MB (Debug) => ≈84MB (Release) | ≈93MB (Debug) => ≈54MB (Release) | ≈44MB (Debug) => ≈25MB (Release) | ≈114MB (Debug) | ≈68MB (Debug) | ≈47MB (Debug) => ≈29MB (Release) | ≈315MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***MacOS (x64)*** | ≈64MB (Debug) => ≈63MB (Release) | ≈96MB (Debug) => ≈79MB (Release) | ≈51MB (Debug) => ≈29MB (Release) | ≈124MB (Debug) | ≈83MB (Debug) => ≈28MB (Release) | ≈64MB (Debug) => ≈32MB (Release) | ≈143MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x64)*** | ≈165MB (Debug) => ≈163MB (Release) | ≈95MB (Debug) => ≈5MB (Release) | ≈110MB (Debug) => ≈83MB (Release) | ≈154MB (Debug) | ≈198MB (Debug) => ≈212MB (Release) | ≈219MB (Debug) => ≈196MB (Release) | ≈378MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈165MB (Debug) => ≈163MB (Release) | ≈95MB (Debug) | ≈110MB (Debug) => ≈83MB (Release) | ≈154MB (Debug) | ≈198MB (Debug) => ≈212MB (Release) | ≈219MB (Debug) => ≈196MB (Release) | ≈378MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 ### Start duration  
 
@@ -148,7 +148,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈67MB (Debug) => ≈82MB (Release) | ≈82MB (Debug) => ≈40MB (Release) | ≈43MB (Debug) => ≈23MB (Release) | ≈103MB (Debug) | ≈58MB (Debug) | ≈48MB (Debug) => ≈29MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***MacOS (x64)*** | ≈66MB (Debug) => ≈63MB (Release) | ≈89MB (Debug) => ≈79MB (Release) | ≈53MB (Debug) => ≈27MB (Release) | ≈132MB (Debug) | ≈72MB (Debug) => ≈27MB (Release) | ≈66MB (Debug) => ≈30MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (x64)*** | ≈162MB (Debug) => ≈162MB (Release) | ≈91MB (Debug) => ≈5MB (Release) | ≈111MB (Debug) => ≈83MB (Release) | ≈149MB (Debug) | ≈196MB (Debug) => ≈213MB (Release) | ≈218MB (Debug) => ≈195MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x64)*** | ≈162MB (Debug) => ≈162MB (Release) | ≈91MB (Debug) | ≈111MB (Debug) => ≈83MB (Release) | ≈149MB (Debug) | ≈196MB (Debug) => ≈213MB (Release) | ≈218MB (Debug) => ≈195MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
 ### Start duration  
 
