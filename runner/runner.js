@@ -102,14 +102,23 @@ export function killAll(pid, signal='SIGTERM'){
 	}
 }
 
+async function sleep(seconds) {
+	return (await new Promise((resolve, _reject) => {
+		setTimeout(resolve, seconds * 1000);
+	}));
+}
+
 async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT) {
-	return new Promise((resolve, reject) => {
+	return new Promise(async(resolve, reject) => {
 		let memUsageHistory = [];
 		let sysMemUsageHistory = [];
 		let startTime = '?';
 		let done = false;
 		let time = 0;
-		let originalFreeMemory = os.freemem();
+
+		await sleep(5);
+		const originalFreeMemory = os.freemem();
+		await sleep(1);
 
 		// Spawn process
 		const startTimestamp = performance.now();
