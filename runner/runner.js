@@ -118,6 +118,8 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 
 		await sleep(5);
 		const originalFreeMemory = os.freemem();
+		console.log('Total memory:', os.totalmem())
+		console.log('Free memory:', originalFreeMemory);
 		await sleep(1);
 
 		// Spawn process
@@ -226,7 +228,12 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 						}
 					}
 				});
-				sysMemUsageHistory.push(originalFreeMemory - os.freemem());
+				const freemem = os.freemem();
+				const delta = originalFreeMemory - delta;
+				sysMemUsageHistory.push(delta);
+				console.log('Total memory: ', os.totalmem())
+				console.log('Free memory: ', freemem);
+				console.log('Delta from start: ', delta);
 			} catch(e) {
 
 			}
