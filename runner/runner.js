@@ -229,7 +229,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 					}
 				});
 				const freemem = os.freemem();
-				const delta = originalFreeMemory - delta;
+				const delta = originalFreeMemory - freemem;
 				sysMemUsageHistory.push(delta);
 				console.log('Total memory: ', os.totalmem())
 				console.log('Free memory: ', freemem);
