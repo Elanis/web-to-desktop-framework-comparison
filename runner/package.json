@@ -14,6 +14,6 @@
     "node-fetch": "^3.3.0",
     "pidtree": "^0.6.0",
     "pidusage": "^3.0.2",
-    "systeminformation": "^5.17.4"
+    "systeminformation": "^5.17.9"
   }
 }
