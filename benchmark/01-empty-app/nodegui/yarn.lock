@@ -58,13 +58,13 @@
     "node-fetch" "^2.6.0"
     "progress" "^2.0.3"
 
-"@nodegui/nodegui@^0.57.3", "@nodegui/nodegui@>=0.15.0":
-  "integrity" "sha512-juZ5z50Z1qQ9HdbUBYpoAqMWtcgLl8NZWxRzOlabRwTnwgKS9CaLkFO4KiClqlkZA2XZV7+aVdURxq7laHNzOw=="
-  "resolved" "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.57.3.tgz"
-  "version" "0.57.3"
+"@nodegui/nodegui@^0.58.0", "@nodegui/nodegui@>=0.15.0":
+  "integrity" "sha512-JWXp+zMMMs6ee/kAOCsjnmQNnTn2ZNJesACuGpkaVTfkybj7pxbwQjw6ol1xJwEBH7JQwSufpPHjTQCEYuXvCQ=="
+  "resolved" "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.58.0.tgz"
+  "version" "0.58.0"
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
-    "@nodegui/qode" "^16.4.3"
+    "@nodegui/qode" "^18.12.1"
     "cmake-js" "^6.2.1"
     "cross-env" "^7.0.3"
     "cuid" "^2.1.8"
@@ -85,10 +85,10 @@
     "fs-extra" "^10.0.0"
     "plist" "^3.0.4"
 
-"@nodegui/qode@^16.4.3":
-  "integrity" "sha512-WllfJVXffr3Rn7BSfo5cubZ5hx4OnQ7iqY/kj+2jwqUepzlRFKCvn9/vAJ/VXmiB0GZGcaCGM0U3rZGADdU5mw=="
-  "resolved" "https://registry.npmjs.org/@nodegui/qode/-/qode-16.4.3.tgz"
-  "version" "16.4.3"
+"@nodegui/qode@^18.12.1":
+  "integrity" "sha512-iJdNwMPif+NkbZeXQPek6IfKmmHt04Iy1dlRGVFaICU5nSpNDsSmzGxHrVdllQWGGzqvre82BOV3CgMxclGZtQ=="
+  "resolved" "https://registry.npmjs.org/@nodegui/qode/-/qode-18.12.1.tgz"
+  "version" "18.12.1"
   dependencies:
     "env-paths" "^2.2.1"
     "make-dir" "^3.1.0"
@@ -135,10 +135,10 @@
   "resolved" "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   "version" "3.0.5"
 
-"@types/node@*", "@types/node@^18.11.19":
-  "integrity" "sha512-YUgMWAQBWLObABqrvx8qKO1enAvBUdjZOAWQ5grBAkp5LQv45jBvYKZ3oFS9iKRCQyFjqw6iuEa1vmFqtxYLZw=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.11.19.tgz"
-  "version" "18.11.19"
+"@types/node@*", "@types/node@^18.14.0":
+  "integrity" "sha512-5EWrvLmglK+imbCJY0+INViFWUHg1AHel1sq4ZVSfdcNqGy9Edv3UB9IIzzg+xPaUcAgZYcfVs2fBcwDeZzU0A=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.14.0.tgz"
+  "version" "18.14.0"
 
 "@webassemblyjs/ast@1.11.1":
   "integrity" "sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw=="
@@ -1168,11 +1168,16 @@
     "yallist" "^3.0.0"
 
 "minipass@^3.0.0":
-  "integrity" "sha512-I9WPbWHCGu8W+6k1ZiGpPu0GkoKBeorkfKNuAFBNS1HNFJvke82sxvI5bzcCNpWPorkOO5QQ+zomzzwRxejXiw=="
-  "resolved" "https://registry.npmjs.org/minipass/-/minipass-3.3.4.tgz"
-  "version" "3.3.4"
+  "integrity" "sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw=="
+  "resolved" "https://registry.npmjs.org/minipass/-/minipass-3.3.6.tgz"
+  "version" "3.3.6"
   dependencies:
     "yallist" "^4.0.0"
+
+"minipass@^4.0.0":
+  "integrity" "sha512-ExlilAIS7zJ2EWUMaVXi14H+FnZ18kr17kFkGemMqBx6jW0m8P6XfqwYVPEG53ENlgsED+alVP9ZxC3JzkK23Q=="
+  "resolved" "https://registry.npmjs.org/minipass/-/minipass-4.2.0.tgz"
+  "version" "4.2.0"
 
 "minizlib@^1.3.3":
   "integrity" "sha512-6ZYMOEnmVsdCeTJVE0W9ZD+pVnE8h9Hma/iOwwRDsdQoePpoX56/8B6z3P9VNwppJuBKNRuFDRNRqRWexT9G9Q=="
@@ -1670,13 +1675,13 @@
     "yallist" "^3.1.1"
 
 "tar@^6.0.1", "tar@^6.1.6":
-  "integrity" "sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA=="
-  "resolved" "https://registry.npmjs.org/tar/-/tar-6.1.11.tgz"
-  "version" "6.1.11"
+  "integrity" "sha512-jdIBIN6LTIe2jqzay/2vtYLlBHa3JF42ot3h1dW8Q0PaAG4v8rm0cvpVePtau5C6OKXGGcgO9q2AMNSWxiLqKw=="
+  "resolved" "https://registry.npmjs.org/tar/-/tar-6.1.13.tgz"
+  "version" "6.1.13"
   dependencies:
     "chownr" "^2.0.0"
     "fs-minipass" "^2.0.0"
-    "minipass" "^3.0.0"
+    "minipass" "^4.0.0"
     "minizlib" "^2.1.1"
     "mkdirp" "^1.0.3"
     "yallist" "^4.0.0"
