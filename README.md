@@ -67,7 +67,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | ***Windows (x64)*** | ≈236MB | ≈334MB | ≈1MB | ≈171MB | ≈2MB | ≈8MB | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***Windows (x86)*** | ≈210MB | ≈301MB | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***Windows (ARM64)*** | ≈237MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***MacOS (x64)*** | ≈375MB | ≈508MB | ≈3MB | ? | ≈1MB | ≈7MB | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***MacOS (x64)*** | ≈376MB | ≈508MB | ≈3MB | ? | ≈1MB | ≈7MB | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***MacOS (arm64)*** | ≈356MB | ? | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***Linux (x64)*** | ≈240MB | ≈442MB | ≈4MB | ≈75MB | ≈1MB | ≈6MB | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***Linux (x86)*** | ? | ≈441MB | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
@@ -78,31 +78,31 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈4960ms | ≈50053ms | ≈308886ms | ≈16290ms | ≈866ms | ≈11689ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Windows (x86)*** | ≈4960ms | ≈50053ms | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Windows (ARM64)*** | ≈4960ms | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***MacOS (x64)*** | ≈3641ms | ≈50053ms | ≈238130ms | ? | ≈973ms | ≈69128ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***MacOS (arm64)*** | ≈3641ms | ? | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x64)*** | ≈2617ms | ≈50053ms | ≈297188ms | ≈9507ms | ≈973ms | ≈32461ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x86)*** | ? | ≈50053ms | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (ARMv7l)*** | ≈2617ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (ARM64)*** | ≈2617ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈973ms | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Windows (x64)*** | ≈4661ms | ≈22742ms | ≈291234ms | ≈15355ms | ≈866ms | ≈11336ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Windows (x86)*** | ≈4661ms | ≈22742ms | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Windows (ARM64)*** | ≈4661ms | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***MacOS (x64)*** | ≈6238ms | ≈22742ms | ≈219436ms | ? | ≈1022ms | ≈66971ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***MacOS (arm64)*** | ≈6238ms | ? | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈2522ms | ≈22742ms | ≈298853ms | ≈9306ms | ≈1022ms | ≈33787ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x86)*** | ? | ≈22742ms | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (ARMv7l)*** | ≈2522ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (ARM64)*** | ≈2522ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈1022ms | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 ### Memory Usage  
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈72MB (Debug) => ≈88MB (Release) | ≈78MB (Debug) => ≈44MB (Release) | ≈43MB (Debug) => ≈25MB (Release) | ≈118MB (Debug) | ≈67MB (Debug) | ≈47MB (Debug) => ≈29MB (Release) | ≈270MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***MacOS (x64)*** | ≈66MB (Debug) => ≈65MB (Release) | ≈87MB (Debug) => ≈81MB (Release) | ≈50MB (Debug) => ≈29MB (Release) | ≈108MB (Debug) | ≈79MB (Debug) => ≈28MB (Release) | ≈65MB (Debug) => ≈32MB (Release) | ≈188MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x64)*** | ≈166MB (Debug) => ≈165MB (Release) | ≈88MB (Debug) | ≈110MB (Debug) => ≈82MB (Release) | ≈165MB (Debug) | ≈199MB (Debug) => ≈216MB (Release) | ≈218MB (Debug) => ≈195MB (Release) | ≈397MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Windows (x64)*** | ≈73MB (Debug) => ≈89MB (Release) | ≈100MB (Debug) => ≈49MB (Release) | ≈43MB (Debug) => ≈25MB (Release) | ≈123MB (Debug) | ≈70MB (Debug) | ≈48MB (Debug) => ≈28MB (Release) | ≈259MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***MacOS (x64)*** | ≈66MB (Debug) => ≈65MB (Release) | ≈73MB (Debug) => ≈80MB (Release) | ≈50MB (Debug) => ≈29MB (Release) | ≈105MB (Debug) | ≈79MB (Debug) => ≈28MB (Release) | ≈65MB (Debug) => ≈32MB (Release) | ≈196MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈166MB (Debug) => ≈165MB (Release) | ≈90MB (Debug) | ≈118MB (Debug) => ≈83MB (Release) | ≈165MB (Debug) | ≈196MB (Debug) => ≈217MB (Release) | ≈219MB (Debug) => ≈194MB (Release) | ≈402MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 ### Start duration  
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈2029ms (Debug) => ≈390ms (Release) | ≈845ms (Release) | ≈4352ms (Debug) => ≈471ms (Release) | ? | ? | ≈15064ms (Debug) => ≈1067ms (Release) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***MacOS (x64)*** | ≈2032ms (Debug) => ≈900ms (Release) | ≈1912ms (Release) | ≈5986ms (Debug) => ≈828ms (Release) | ? | ≈2841ms (Debug) => ≈872ms (Release) | ≈9548ms (Debug) => ≈884ms (Release) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x64)*** | ≈685ms (Debug) => ≈362ms (Release) | ? | ≈38288ms (Debug) | ? | ≈1932ms (Debug) => ≈452ms (Release) | ≈4440ms (Debug) => ≈372ms (Release) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Windows (x64)*** | ≈1987ms (Debug) => ≈384ms (Release) | ≈792ms (Release) | ≈4271ms (Debug) => ≈428ms (Release) | ? | ? | ≈14897ms (Debug) => ≈889ms (Release) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***MacOS (x64)*** | ≈1923ms (Debug) => ≈890ms (Release) | ≈2136ms (Release) | ≈5621ms (Debug) => ≈859ms (Release) | ? | ≈2802ms (Debug) => ≈837ms (Release) | ≈9517ms (Debug) => ≈887ms (Release) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈700ms (Debug) => ≈356ms (Release) | ? | ≈3333ms (Debug) | ? | ≈1920ms (Debug) => ≈440ms (Release) | ≈4334ms (Debug) => ≈366ms (Release) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 **<sup>1</sup>**: Benchmark WIP  
 **<sup>2</sup>**: Benchmark WIP  
@@ -121,7 +121,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 | ***Windows (x64)*** | ≈236MB | ≈334MB | ≈1MB | ≈171MB | ≈2MB | ≈8MB | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***Windows (x86)*** | ≈210MB | ≈301MB | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***Windows (ARM64)*** | ≈237MB | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***MacOS (x64)*** | ≈375MB | ≈508MB | ≈3MB | ? | ≈1MB | ≈7MB | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***MacOS (x64)*** | ≈376MB | ≈508MB | ≈3MB | ? | ≈1MB | ≈7MB | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***MacOS (arm64)*** | ≈356MB | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***Linux (x64)*** | ≈240MB | ≈442MB | ≈4MB | ≈75MB | ≈1MB | ≈6MB | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***Linux (x86)*** | ? | ≈441MB | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
@@ -132,31 +132,31 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈5147ms | ≈57432ms | ≈282394ms | ≈14046ms | ≈643ms | ≈10342ms | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Windows (x86)*** | ≈5147ms | ≈57432ms | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Windows (ARM64)*** | ≈5147ms | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***MacOS (x64)*** | ≈5868ms | ≈57432ms | ≈266463ms | ? | ≈1258ms | ≈85259ms | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***MacOS (arm64)*** | ≈5868ms | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (x64)*** | ≈3040ms | ≈57432ms | ≈340744ms | ≈10435ms | ≈1258ms | ≈34517ms | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (x86)*** | ? | ≈57432ms | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (ARMv7l)*** | ≈3040ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (ARM64)*** | ≈3040ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈1258ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Windows (x64)*** | ≈4087ms | ≈40534ms | ≈257871ms | ≈13779ms | ≈643ms | ≈9965ms | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Windows (x86)*** | ≈4087ms | ≈40534ms | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Windows (ARM64)*** | ≈4087ms | [Requested](https://github.com/nwjs/nw.js/issues/7599) | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***MacOS (x64)*** | ≈4123ms | ≈40534ms | ≈213964ms | ? | ≈866ms | ≈66916ms | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***MacOS (arm64)*** | ≈4123ms | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x64)*** | ≈4861ms | ≈40534ms | ≈367585ms | ≈12548ms | ≈866ms | ≈44077ms | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x86)*** | ? | ≈40534ms | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (ARMv7l)*** | ≈4861ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (ARM64)*** | ≈4861ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈866ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
 ### Memory Usage  
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈70MB (Debug) => ≈86MB (Release) | ≈90MB (Debug) => ≈40MB (Release) | ≈46MB (Debug) => ≈23MB (Release) | ≈100MB (Debug) | ≈58MB (Debug) | ≈55MB (Debug) => ≈29MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***MacOS (x64)*** | ≈67MB (Debug) => ≈64MB (Release) | ≈61MB (Debug) => ≈79MB (Release) | ≈50MB (Debug) => ≈27MB (Release) | ≈118MB (Debug) | ≈72MB (Debug) => ≈27MB (Release) | ≈64MB (Debug) => ≈30MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (x64)*** | ≈163MB (Debug) => ≈162MB (Release) | ≈90MB (Debug) | ≈110MB (Debug) => ≈83MB (Release) | ≈162MB (Debug) | ≈197MB (Debug) => ≈215MB (Release) | ≈221MB (Debug) => ≈196MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Windows (x64)*** | ≈70MB (Debug) => ≈86MB (Release) | ≈61MB (Debug) => ≈48MB (Release) | ≈44MB (Debug) => ≈23MB (Release) | ≈106MB (Debug) | ≈60MB (Debug) | ≈48MB (Debug) => ≈28MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***MacOS (x64)*** | ≈68MB (Debug) => ≈66MB (Release) | ≈64MB (Debug) => ≈81MB (Release) | ≈50MB (Debug) => ≈27MB (Release) | ≈106MB (Debug) | ≈72MB (Debug) => ≈27MB (Release) | ≈65MB (Debug) => ≈30MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x64)*** | ≈163MB (Debug) => ≈161MB (Release) | ≈99MB (Debug) | ≈109MB (Debug) => ≈83MB (Release) | ≈164MB (Debug) | ≈199MB (Debug) => ≈213MB (Release) | ≈218MB (Debug) => ≈194MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
 ### Start duration  
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ***Windows (x64)*** | ≈1755ms (Debug) => ≈332ms (Release) | ≈745ms (Release) | ≈3880ms (Debug) => ≈454ms (Release) | ≈7662ms (Debug) | ? | ≈13233ms (Debug) => ≈906ms (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***MacOS (x64)*** | ≈2415ms (Debug) => ≈1271ms (Release) | ≈2049ms (Release) | ≈6100ms (Debug) => ≈877ms (Release) | ? | ≈3195ms (Debug) => ≈1112ms (Release) | ≈11030ms (Debug) => ≈1643ms (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (x64)*** | ≈752ms (Debug) => ≈396ms (Release) | ? | ≈41685ms (Debug) | ? | ≈1608ms (Debug) => ≈510ms (Release) | ≈4703ms (Debug) => ≈405ms (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Windows (x64)*** | ≈1703ms (Debug) => ≈330ms (Release) | ≈772ms (Release) | ≈3836ms (Debug) => ≈403ms (Release) | ≈7394ms (Debug) | ? | ≈12690ms (Debug) => ≈854ms (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***MacOS (x64)*** | ≈2134ms (Debug) => ≈918ms (Release) | ≈1647ms (Release) | ≈5332ms (Debug) => ≈753ms (Release) | ? | ≈2495ms (Debug) => ≈826ms (Release) | ≈8921ms (Debug) => ≈813ms (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x64)*** | ≈909ms (Debug) => ≈439ms (Release) | ? | ≈41353ms (Debug) | ? | ≈1934ms (Debug) => ≈576ms (Release) | ≈5501ms (Debug) => ≈470ms (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
 **<sup>1</sup>**: Frameless mode not supported yet  
 **<sup>2</sup>**: Frameless mode not working  
