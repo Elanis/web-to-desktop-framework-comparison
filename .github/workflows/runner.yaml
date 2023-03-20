@@ -57,7 +57,7 @@ jobs:
       - uses: subosito/flutter-action@v2
 
       # Setup the go environment
-      - uses: actions/setup-go@v3
+      - uses: actions/setup-go@v4
         with:
           go-version: 'stable'
 
