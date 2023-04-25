@@ -268,13 +268,19 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 }
 
 function processMemoryUsage({ memoryUsage, systemMeasuredMemory }) {
+	let systemMeasuredMemoryCopy = [...systemMeasuredMemory];
+	systemMeasuredMemoryCopy.sort((a, b) => a - b);
+
+	let memoryUsageCopy = [...memoryUsage];
+	memoryUsageCopy.sort((a, b) => a - b);
+
 	return {
 		min: Math.min(...memoryUsage),
 		sysMin: Math.min(...systemMeasuredMemory),
 		max: Math.max(...memoryUsage),
 		sysMax: Math.max(...systemMeasuredMemory),
-		med: (memoryUsage.sort())[Math.floor(memoryUsage.length / 2)],
-		sysMed: (systemMeasuredMemory.sort())[Math.floor(systemMeasuredMemory.length / 2)],
+		med: (memoryUsageCopy.sort())[Math.floor(memoryUsageCopy.length / 2)],
+		sysMed: (systemMeasuredMemoryCopy.sort())[Math.floor(systemMeasuredMemoryCopy.length / 2)],
 		avg: memoryUsage.reduce((a, b) => a + b, 0) / memoryUsage.length,
 		sysAvg: systemMeasuredMemory.reduce((a, b) => a + b, 0) / systemMeasuredMemory.length,
 		history: memoryUsage,
