@@ -88,13 +88,21 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | ***Linux (ARMv7l)*** | ≈2722ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***Linux (ARM64)*** | ≈2722ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈1033ms | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
-### Memory Usage  
+### Memory Usage - (Average of runs) Median used memory for main process and children ones) 
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈72MB (Debug) => ≈89MB (Release) | ≈54MB (Debug) => ≈48MB (Release) | ≈70MB (Debug) => ≈50MB (Release) | ≈122MB (Debug) | ≈69MB (Debug) | ≈82MB (Debug) => ≈76MB (Release) | ≈280MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***MacOS (x64)*** | ≈67MB (Debug) => ≈65MB (Release) | ≈79MB (Debug) => ≈81MB (Release) | ≈53MB (Debug) => ≈29MB (Release) | ≈101MB (Debug) | ≈81MB (Debug) => ≈28MB (Release) | ≈61MB (Debug) => ≈32MB (Release) | ≈130MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***Linux (x64)*** | ≈170MB (Debug) => ≈169MB (Release) | ≈82MB (Debug) | ≈109MB (Debug) => ≈83MB (Release) | ≈159MB (Debug) | ≈197MB (Debug) => ≈214MB (Release) | ≈219MB (Debug) => ≈195MB (Release) | ≈11MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+
+### Memory Usage - (Average of runs) Median differences between system measured free memory before execution and during execution)
+
+|  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| ***Windows (x64)*** | ≈159MB (Debug) => ≈78MB (Release) | ≈219MB (Debug) => ≈158MB (Release) | ≈205MB (Debug) => ≈134MB (Release) | ≈204MB (Debug) | ≈74MB (Debug) | ≈266MB (Debug) => ≈146MB (Release) | ≈649MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***MacOS (x64)*** | ? | ? | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈89MB (Debug) => ≈47MB (Release) | ≈92MB (Debug) => ≈1MB (Release) | ≈67MB (Debug) => ≈18MB (Release) | ≈59MB (Debug) | ≈402MB (Debug) => ≈319MB (Release) | ≈244MB (Debug) => ≈126MB (Release) | ≈1GB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 ### Start duration  
 
@@ -142,13 +150,21 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 | ***Linux (ARMv7l)*** | ≈2743ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***Linux (ARM64)*** | ≈2743ms | [Requested](https://github.com/nwjs/nw.js/issues/1151) | ? | ? | ≈850ms | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
-### Memory Usage  
+### Memory Usage - (Average of runs) Median used memory for main process and children ones) 
 
 |  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈70MB (Debug) => ≈88MB (Release) | ≈88MB (Debug) => ≈40MB (Release) | ≈71MB (Debug) => ≈48MB (Release) | ≈98MB (Debug) | ≈60MB (Debug) | ≈82MB (Debug) => ≈76MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***MacOS (x64)*** | ≈67MB (Debug) => ≈66MB (Release) | ≈96MB (Debug) => ≈81MB (Release) | ≈50MB (Debug) => ≈27MB (Release) | ≈107MB (Debug) | ≈72MB (Debug) => ≈27MB (Release) | ≈61MB (Debug) => ≈30MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***Linux (x64)*** | ≈167MB (Debug) => ≈166MB (Release) | ≈68MB (Debug) | ≈109MB (Debug) => ≈83MB (Release) | ≈159MB (Debug) | ≈199MB (Debug) => ≈214MB (Release) | ≈221MB (Debug) => ≈195MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+
+### Memory Usage - (Average of runs) Median differences between system measured free memory before execution and during execution)
+
+|  | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) | [.Net MAUI w/ Vue](https://github.com/dotnet/maui) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| ***Windows (x64)*** | ? | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***MacOS (x64)*** | ? | ? | ? | ? | ? | ? | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x64)*** | ≈82MB (Debug) => ≈39MB (Release) | ≈53MB (Debug) => ≈1MB (Release) | ≈76MB (Debug) => ≈20MB (Release) | ≈64MB (Debug) | ≈405MB (Debug) => ≈317MB (Release) | ≈245MB (Debug) => ≈131MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
 ### Start duration  
 

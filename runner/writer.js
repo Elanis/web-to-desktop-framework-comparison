@@ -63,7 +63,31 @@ function getMemoryStats(app, architecture) {
 			}
 
 			stats[libraryId + '/' + context] = Math.floor(
-				benchmarkData.benchmarks.map((elt) => elt.memoryUsage.avg).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
+				benchmarkData.benchmarks.map((elt) => elt.memoryUsage.med).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
+			);
+		}
+	}
+
+	return stats;
+}
+
+function getSystemMemoryStats(app, architecture) {
+	if(!data[architecture]) {
+		return {};
+	}
+
+	const stats = {};
+
+	for(const libraryId in libraries) {
+		for(const context of ['Debug', 'Release']) {
+			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
+
+			if(!benchmarkData || !benchmarkData.benchmarks) {
+				continue;
+			}
+
+			stats[libraryId + '/' + context] = Math.floor(
+				benchmarkData.benchmarks.map((elt) => elt.memoryUsage.sysMed).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
 			);
 		}
 	}
@@ -255,12 +279,24 @@ for(const app of apps) {
 	}
 
 	/**
-	 * MEMORY USAGE
+	 * MEMORY USAGE (Main process)
 	 */
-	fileStr += '\n### Memory Usage  ';
+	fileStr += '\n### Memory Usage - (Average of runs) Median of used memory for main process and children ones) ';
 	fileStr += generateHeader();
 	for(const architecture of architectures) {
 		const line = getMarkdownTableLine(app, architecture, getMemoryStats, getUnitFromMemory);
+		if(line) {
+			fileStr += line;
+		}
+	}
+
+	/**
+	 * MEMORY USAGE (System measures)
+	 */
+	fileStr += '\n### Memory Usage - (Average of runs) Median of difference between system measured free memory before execution and during execution)';
+	fileStr += generateHeader();
+	for(const architecture of architectures) {
+		const line = getMarkdownTableLine(app, architecture, getSystemMemoryStats, getUnitFromMemory);
 		if(line) {
 			fileStr += line;
 		}
