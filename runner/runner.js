@@ -116,7 +116,15 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		let done = false;
 		let time = 0;
 
-		await sleep(5);
+		await sleep(2);
+		try {
+		if (global.gc) {global.gc();}
+		} catch (e) {
+			console.log('Error while trying to garbage collect process !');
+			console.log(e);
+		}
+		await sleep(2);
+		
 		const originalFreeMemory = os.freemem();
 		console.log('Total memory:', os.totalmem())
 		console.log('Free memory:', originalFreeMemory);
