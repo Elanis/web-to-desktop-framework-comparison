@@ -21,7 +21,7 @@
     "native-addon-loader": "^2.0.1",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.4",
-    "webpack": "^5.82.1",
+    "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1"
   }
 }
