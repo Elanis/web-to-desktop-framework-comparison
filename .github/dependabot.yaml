@@ -4,64 +4,64 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: monthly
   - package-ecosystem: "nuget"
     directory: "benchmark/01-empty-app/DotnetMaui"
     schedule:
-      interval: "weekly"
+      interval: monthly
   - package-ecosystem: "nuget"
     directory: "benchmark/01-empty-app/DotnetMauiVue"
     schedule:
-      interval: "weekly"
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/01-empty-app/electron"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/01-empty-app/nodegui"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/01-empty-app/nw.js"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/01-empty-app/tauri"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: cargo
     directory: "benchmark/01-empty-app/tauri/src-tauri"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/01-empty-app/wails/frontend"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: gomod
     directory: "benchmark/01-empty-app/wails"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/02-empty-app-frameless/electron"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/02-empty-app-frameless/nodegui"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/02-empty-app-frameless/nw.js"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/02-empty-app-frameless/tauri"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: cargo
     directory: "benchmark/02-empty-app-frameless/tauri/src-tauri"
     schedule:
-      interval: weekly
+      interval: monthly
   - package-ecosystem: npm
     directory: runner
     schedule:
-      interval: weekly
+      interval: monthly
