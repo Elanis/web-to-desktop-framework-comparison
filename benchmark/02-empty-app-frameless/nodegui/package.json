@@ -19,7 +19,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "file-loader": "^6.2.0",
     "native-addon-loader": "^2.0.1",
-    "ts-loader": "^9.4.2",
+    "ts-loader": "^9.4.3",
     "typescript": "^5.0.4",
     "webpack": "^5.82.1",
     "webpack-cli": "^5.1.1"
