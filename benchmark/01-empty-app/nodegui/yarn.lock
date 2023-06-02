@@ -58,10 +58,10 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.59.2", "@nodegui/nodegui@>=0.15.0":
-  version "0.59.2"
-  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.59.2.tgz"
-  integrity sha512-Flglp/NNHmgL5ZxYxAMaUNvW3rDd/VJVYiMlRY2MZEF0MCxKHVCGo2WdkHIPIi97G47AuGvCauZpXRRK5e1BzA==
+"@nodegui/nodegui@^0.60.0", "@nodegui/nodegui@>=0.15.0":
+  version "0.60.0"
+  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.60.0.tgz"
+  integrity sha512-YnUeq68iZd37W83q/fQGb5+eJJj77iG5cHTujlrOiaSennV6kFClp58i1NVKnnpL4OOHNE46b4vEoG1BDi+A+w==
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
     "@nodegui/qode" "^18.12.1"
@@ -135,10 +135,10 @@
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^20.1.2":
-  version "20.1.2"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.1.2.tgz"
-  integrity sha512-CTO/wa8x+rZU626cL2BlbCDzydgnFNgc19h4YvizpTO88MFQxab8wqisxaofQJ/9bLGugRdWIuX/TbIs6VVF6g==
+"@types/node@*", "@types/node@^20.2.5":
+  version "20.2.5"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.2.5.tgz"
+  integrity sha512-JJulVEQXmiY9Px5axXHeYGLSjhkZEnD+MDPDGbCbIAbMslkKwmygtZFy1X6s/075Yo94sf8GuSlFfPzysQrWZQ==
 
 "@webassemblyjs/ast@^1.11.5", "@webassemblyjs/ast@1.11.5":
   version "1.11.5"
@@ -298,10 +298,10 @@
   dependencies:
     "7zip-bin" "^5.1.1"
 
-acorn-import-assertions@^1.7.6:
-  version "1.7.6"
-  resolved "https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.7.6.tgz"
-  integrity sha512-FlVvVFA1TX6l3lp8VjDnYYq7R1nyW6x3svAt4nDgrWQ9SBaSh9CnbwgSUTasgfNfOG5HlM1ehugCvM+hjo56LA==
+acorn-import-assertions@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.9.0.tgz"
+  integrity sha512-cmMwop9x+8KFhxvKrKfPYmN6/pKTYYHBqLa0DfvVZcKMJWNyWLnaqND7dx/qn66R7ewM1UX5XMaDVP5wlVTaVA==
 
 acorn@^8, acorn@^8.5.0, acorn@^8.7.1:
   version "8.7.1"
@@ -657,10 +657,10 @@ emojis-list@^3.0.0:
   resolved "https://registry.npmjs.org/emojis-list/-/emojis-list-3.0.0.tgz"
   integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
 
-enhanced-resolve@^5.0.0, enhanced-resolve@^5.14.0:
-  version "5.14.0"
-  resolved "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.14.0.tgz"
-  integrity sha512-+DCows0XNwLDcUhbFJPdlQEVnT2zXlCv7hPxemTz86/O+B/hCQ+mb7ydkPKiflpVraqLPCAfu7lDy+hBXueojw==
+enhanced-resolve@^5.0.0, enhanced-resolve@^5.14.1:
+  version "5.14.1"
+  resolved "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.14.1.tgz"
+  integrity sha512-Vklwq2vDKtl0y/vtwjSesgJ5MYS7Etuk5txS8VdKL4AOS1aUlD96zqIfsOSLQsdv3xgMRbtkWM8eG9XDfKUPow==
   dependencies:
     graceful-fs "^4.2.4"
     tapable "^2.2.0"
@@ -1717,20 +1717,20 @@ tr46@~0.0.3:
   resolved "https://registry.npmjs.org/traverse/-/traverse-0.3.9.tgz"
   integrity sha1-cXuPIgzAu3tE5AUUwisui7xw2Lk=
 
-ts-loader@^9.4.2:
-  version "9.4.2"
-  resolved "https://registry.npmjs.org/ts-loader/-/ts-loader-9.4.2.tgz"
-  integrity sha512-OmlC4WVmFv5I0PpaxYb+qGeGOdm5giHU7HwDDUjw59emP2UYMHy9fFSDcYgSNoH8sXcj4hGCSEhlDZ9ULeDraA==
+ts-loader@^9.4.3:
+  version "9.4.3"
+  resolved "https://registry.npmjs.org/ts-loader/-/ts-loader-9.4.3.tgz"
+  integrity sha512-n3hBnm6ozJYzwiwt5YRiJZkzktftRpMiBApHaJPoWLA+qetQBAXkHqCLM6nwSdRDimqVtA5ocIkcTRLMTt7yzA==
   dependencies:
     chalk "^4.1.0"
     enhanced-resolve "^5.0.0"
     micromatch "^4.0.0"
     semver "^7.3.4"
 
-typescript@*, typescript@^5.0.4:
-  version "5.0.4"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-5.0.4.tgz"
-  integrity sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==
+typescript@*, typescript@^5.1.3:
+  version "5.1.3"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.1.3.tgz"
+  integrity sha512-XH627E9vkeqhlZFQuL+UsyAXEnibT0kWR2FWONlr4sTjvxyJYnyefgrkyECLzM5NenmKzRAy2rR/OlYLA1HkZw==
 
 universalify@^0.1.0:
   version "0.1.2"
@@ -1819,10 +1819,10 @@ webpack-sources@^3.2.3:
   resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz"
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
 
-"webpack@^4.0.0 || ^5.0.0", webpack@^5.0.0, webpack@^5.1.0, webpack@^5.82.1, "webpack@>=4.0.0 <6.0.0", webpack@5.x.x:
-  version "5.82.1"
-  resolved "https://registry.npmjs.org/webpack/-/webpack-5.82.1.tgz"
-  integrity sha512-C6uiGQJ+Gt4RyHXXYt+v9f+SN1v83x68URwgxNQ98cvH8kxiuywWGP4XeNZ1paOzZ63aY3cTciCEQJNFUljlLw==
+"webpack@^4.0.0 || ^5.0.0", webpack@^5.0.0, webpack@^5.1.0, webpack@^5.85.0, "webpack@>=4.0.0 <6.0.0", webpack@5.x.x:
+  version "5.85.0"
+  resolved "https://registry.npmjs.org/webpack/-/webpack-5.85.0.tgz"
+  integrity sha512-7gazTiYqwo5OSqwH1tigLDL2r3qDeP2dOKYgd+LlXpsUMqDTklg6tOghexqky0/+6QY38kb/R/uRPUleuL43zg==
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^1.0.0"
@@ -1830,10 +1830,10 @@ webpack-sources@^3.2.3:
     "@webassemblyjs/wasm-edit" "^1.11.5"
     "@webassemblyjs/wasm-parser" "^1.11.5"
     acorn "^8.7.1"
-    acorn-import-assertions "^1.7.6"
+    acorn-import-assertions "^1.9.0"
     browserslist "^4.14.5"
     chrome-trace-event "^1.0.2"
-    enhanced-resolve "^5.14.0"
+    enhanced-resolve "^5.14.1"
     es-module-lexer "^1.2.1"
     eslint-scope "5.1.1"
     events "^3.2.0"
