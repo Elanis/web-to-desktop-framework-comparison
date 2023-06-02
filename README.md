@@ -13,10 +13,10 @@ This repository was made to create an objective comparison of multiple framework
 
 | | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 107.5k | 39.6k | 63.7k | 8.4k | 6.7k | 16.1k | 153.6k | 19k | 19k |
+| **Github stars** | 107.6k | 39.6k | 64.1k | 8.4k | 6.7k | 16.2k | 154k | 19k | 19k |
 | **Forks** | 14.7k | 4k | 1.7k | 0.3k | 0.3k | 0.8k | 25.4k | 1.3k | 1.3k |
 | **Creation date** | 2013 | 2011 | 2019 | 2019 | 2018 | 2019 | 2018 | 2020 |
-| **Last Update** | 5/2023 | 5/2023 | 5/2023 | 5/2023 | 5/2023 | 5/2023 | 5/2023 | 5/2023 | 5/2023 |
+| **Last Update** | 6/2023 | 5/2023 | 6/2023 | 5/2023 | 6/2023 | 6/2023 | 6/2023 | 6/2023 | 6/2023 |
 | **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | Go | C, C++, Dart | C# |
 | **Usage Language - Back** | JS, C++ | JS, C++ | Rust | JS, C++ | JS, C++ | Go | Dart | C# |
 | **Usage Language - Front** | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | Dart | C# |
@@ -94,7 +94,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈73MB (Debug) => ≈89MB (Release) | ≈56MB (Debug) => ≈44MB (Release) | ≈74MB (Debug) => ≈52MB (Release) | ≈126MB (Debug) | ≈75MB (Debug) | ≈85MB (Debug) => ≈79MB (Release) | ≈307MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***MacOS (x64)*** | ≈66MB (Debug) => ≈66MB (Release) | ≈55MB (Debug) => ≈78MB (Release) | ≈53MB (Debug) => ≈29MB (Release) | ≈117MB (Debug) | ≈79MB (Debug) => ≈28MB (Release) | ≈61MB (Debug) => ≈32MB (Release) | ≈130MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x64)*** | ≈169MB (Debug) => ≈168MB (Release) | ≈79MB (Debug) => ≈5MB (Release) | ≈117MB (Debug) => ≈83MB (Release) | ≈163MB (Debug) | ≈200MB (Debug) => ≈217MB (Release) | ≈219MB (Debug) => ≈195MB (Release) | ≈14MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈169MB (Debug) => ≈168MB (Release) | ≈79MB (Debug) | ≈117MB (Debug) => ≈83MB (Release) | ≈163MB (Debug) | ≈200MB (Debug) => ≈217MB (Release) | ≈219MB (Debug) => ≈195MB (Release) | ≈14MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 ### Start duration  
 
@@ -148,7 +148,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈71MB (Debug) => ≈87MB (Release) | ≈94MB (Debug) => ≈40MB (Release) | ≈74MB (Debug) => ≈50MB (Release) | ≈104MB (Debug) | ≈62MB (Debug) | ≈85MB (Debug) => ≈79MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***MacOS (x64)*** | ≈67MB (Debug) => ≈66MB (Release) | ≈62MB (Debug) => ≈79MB (Release) | ≈54MB (Debug) => ≈27MB (Release) | ≈113MB (Debug) | ≈71MB (Debug) => ≈27MB (Release) | ≈63MB (Debug) => ≈30MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (x64)*** | ≈167MB (Debug) => ≈166MB (Release) | ≈81MB (Debug) => ≈5MB (Release) | ≈109MB (Debug) => ≈83MB (Release) | ≈162MB (Debug) | ≈203MB (Debug) => ≈217MB (Release) | ≈218MB (Debug) => ≈195MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x64)*** | ≈167MB (Debug) => ≈166MB (Release) | ≈81MB (Debug) | ≈109MB (Debug) => ≈83MB (Release) | ≈162MB (Debug) | ≈203MB (Debug) => ≈217MB (Release) | ≈218MB (Debug) => ≈195MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
 ### Start duration  
 
