@@ -230,11 +230,11 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			try {
 				let pids = [childProcess.pid];
 				try {
-					pids = [childProcess.pid, ...(await pidtree(-childProcess.pid))];
+					pids = [childProcess.pid, ...(await pidtree(childProcess.pid))];
 				} catch(e) {
 					console.error(e);
 					try {
-						pids = [childProcess.pid, ...(await pidtree(childProcess.pid))];
+						pids = [childProcess.pid, ...(await pidtree(-childProcess.pid))];
 					} catch(e) {
 						console.error(e);
 					}
