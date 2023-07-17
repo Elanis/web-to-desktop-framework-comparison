@@ -91,14 +91,18 @@ export function killAll(pid, signal='SIGTERM'){
 			}
 		})
 	}
-	else{
-		// see https://nodejs.org/api/child_process.html#child_process_options_detached
-		// If pid is less than -1, then sig is sent to every process in the process group whose ID is -pid.
+
+	// see https://nodejs.org/api/child_process.html#child_process_options_detached
+	// If pid is less than -1, then sig is sent to every process in the process group whose ID is -pid.
+	try {
 		try {
 			process.kill(-pid, signal);
-		} catch {
+		} catch(e) {
+			console.error(e);
 			process.kill(pid, signal);
 		}
+	} catch(e) {
+		console.error(e);
 	}
 }
 
