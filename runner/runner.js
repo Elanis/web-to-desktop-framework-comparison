@@ -229,18 +229,20 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		const pushStats = async() => {
 			try {
 				let pids = [childProcess.pid];
+				let stats = {};
 				try {
 					pids = [childProcess.pid, ...(await pidtree(childProcess.pid))];
+					stats = await pidusage(pids);
 				} catch(e) {
 					console.error(e);
 					try {
 						pids = [childProcess.pid, ...(await pidtree(-childProcess.pid))];
+						stats = await pidusage(pids);
 					} catch(e) {
 						console.error(e);
+						stats = await pidusage(pids);
 					}
 				}
-
-				const stats = pidusage(pids);
 
 				if(DEBUG_PIDUSAGE) {
 					customLog(processExe, stats);
