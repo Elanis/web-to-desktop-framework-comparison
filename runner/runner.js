@@ -120,14 +120,14 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		let done = false;
 		let time = 0;
 
-		await sleep(2);
+		await sleep(1);
 		try {
 		if (global.gc) {global.gc();}
 		} catch (e) {
 			console.log('Error while trying to garbage collect process !');
 			console.log(e);
 		}
-		await sleep(2);
+		await sleep(3);
 		
 		const originalFreeMemory = os.freemem();
 		console.log('Total memory:', os.totalmem())
@@ -228,26 +228,31 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		// Save stats
 		const pushStats = async() => {
 			try {
-				pidusage([childProcess.pid, ...(await pidtree(childProcess.pid))], function (err, stats) {
-					if(DEBUG_PIDUSAGE) {
-						customLog(processExe, stats);
-					}
+				const stats = pidusage([childProcess.pid, ...(await pidtree(childProcess.pid))]);
 
-					if(stats) {
-						const max = Math.max(0, ...Object.values(stats).filter((elt) => elt !== null && typeof elt !== 'undefined' && elt.memory).map((elt) => elt.memory));
-						if(max > 0) {
-							memUsageHistory.push(max);
+				if(DEBUG_PIDUSAGE) {
+					customLog(processExe, stats);
+				}
+
+				if(Array.isArray(stats)) {
+					const memoryStats = Object.values(stats).filter((elt) => elt !== null && typeof elt !== 'undefined' && elt.memory).map((elt) => elt.memory);
+					if(Array.isArray(memory)) {
+						const total = memoryStats.reduce((a, b) => a + b, 0);
+						if(total > 0) {
+							memUsageHistory.push(total);
 						}
 					}
-				});
+				}
+
 				const freemem = os.freemem();
 				const delta = originalFreeMemory - freemem;
 				sysMemUsageHistory.push(delta);
+				
 				console.log('Total memory: ', os.totalmem())
 				console.log('Free memory: ', freemem);
 				console.log('Delta from start: ', delta);
 			} catch(e) {
-
+				console.error(e);
 			}
 		};
 
@@ -291,8 +296,8 @@ function processMemoryUsage({ memoryUsage, systemMeasuredMemory }) {
 		sysMin: Math.min(...systemMeasuredMemory),
 		max: Math.max(...memoryUsage),
 		sysMax: Math.max(...systemMeasuredMemory),
-		med: (memoryUsageCopy.sort())[Math.floor(memoryUsageCopy.length / 2)],
-		sysMed: (systemMeasuredMemoryCopy.sort())[Math.floor(systemMeasuredMemoryCopy.length / 2)],
+		med: memoryUsageCopy[Math.floor(memoryUsageCopy.length / 2)],
+		sysMed: systemMeasuredMemoryCopy[Math.floor(systemMeasuredMemoryCopy.length / 2)],
 		avg: memoryUsage.reduce((a, b) => a + b, 0) / memoryUsage.length,
 		sysAvg: systemMeasuredMemory.reduce((a, b) => a + b, 0) / systemMeasuredMemory.length,
 		history: memoryUsage,
@@ -516,8 +521,6 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 	}
 
 	console.log('System:', await getSystemData());
-
-	//console.log('Raw benchmark Data:', JSON.stringify(benchmarkData, null, 4));
 
 	writeDataToJsonFile(benchmarkData);
 })();
