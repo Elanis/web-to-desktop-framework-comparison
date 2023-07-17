@@ -133,7 +133,6 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		const originalFreeMemory = os.freemem();
 		console.log('Total memory:', os.totalmem())
 		console.log('Free memory:', originalFreeMemory);
-		await sleep(1);
 
 		// Spawn process
 		const startTimestamp = performance.now();
