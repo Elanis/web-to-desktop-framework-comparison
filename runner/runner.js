@@ -246,7 +246,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 					customLog(processExe, stats);
 				}
 
-				if(Array.isArray(stats)) {
+				if(stats) {
 					const memoryStats = Object.values(stats).filter((elt) => elt !== null && typeof elt !== 'undefined' && elt.memory).map((elt) => elt.memory);
 					if(Array.isArray(memory)) {
 						const total = memoryStats.reduce((a, b) => a + b, 0);
