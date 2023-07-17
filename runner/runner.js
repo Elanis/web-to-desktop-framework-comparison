@@ -122,7 +122,8 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 
 		await sleep(1);
 		try {
-		if (global.gc) {global.gc();}
+			if (global.gc) { global.gc(); }
+			else { console.error('global.gc does\'t exists !'); }
 		} catch (e) {
 			console.log('Error while trying to garbage collect process !');
 			console.log(e);
