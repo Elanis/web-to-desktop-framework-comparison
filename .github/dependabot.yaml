@@ -62,6 +62,14 @@ updates:
     schedule:
       interval: monthly
   - package-ecosystem: npm
+    directory: "benchmark/02-empty-app-frameless/wails/frontend"
+    schedule:
+      interval: monthly
+  - package-ecosystem: gomod
+    directory: "benchmark/02-empty-app-frameless/wails"
+    schedule:
+      interval: monthly
+  - package-ecosystem: npm
     directory: runner
     schedule:
       interval: monthly
