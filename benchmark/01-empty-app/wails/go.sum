@@ -47,8 +47,8 @@ github.com/valyala/fasttemplate v1.2.1 h1:TVEnxayobAdVkhQfrfes2IzOB6o+z4roRkPF52
 github.com/valyala/fasttemplate v1.2.1/go.mod h1:KHLXt3tVN2HBp8eijSv/kGJopbvo7S+qRAEEKiv+SiQ=
 github.com/wailsapp/mimetype v1.4.1 h1:pQN9ycO7uo4vsUUuPeHEYoUkLVkaRntMnHJxVwYhwHs=
 github.com/wailsapp/mimetype v1.4.1/go.mod h1:9aV5k31bBOv5z6u+QP8TltzvNGJPmNJD4XlAL3U+j3o=
-github.com/wailsapp/wails/v2 v2.4.1 h1:Ns7MOKWQM6l0ttBxpd5VcgYrH+GNPOnoDfnsBpbDnzM=
-github.com/wailsapp/wails/v2 v2.4.1/go.mod h1:jbOZbcr/zm79PxXxAjP8UoVlDd9wLW3uDs+isIthDfs=
+github.com/wailsapp/wails/v2 v2.5.1 h1:mfG+2kWqQXYOwdgI43HEILjOZDXbk5woPYI3jP2b+js=
+github.com/wailsapp/wails/v2 v2.5.1/go.mod h1:jbOZbcr/zm79PxXxAjP8UoVlDd9wLW3uDs+isIthDfs=
 golang.org/x/crypto v0.1.0 h1:MDRAIl0xIo9Io2xV565hzXHw3zVseKrJKodhohM5CjU=
 golang.org/x/crypto v0.1.0/go.mod h1:RecgLatLF4+eUMCP1PoPZQb+cVrJcOPbHkTkbkB9sbw=
 golang.org/x/exp v0.0.0-20220303212507-bbda1eaf7a17 h1:3MTrJm4PyNL9NBqvYDSj3DHl46qQakyfqfWo4jgfaEM=
