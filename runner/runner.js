@@ -6,6 +6,7 @@ import pidusage from 'pidusage';
 import pidtree from 'pidtree';
 import os from 'os';
 import systeminformation from 'systeminformation';
+import kill from 'tree-kill';
 
 import {
 	ITERATIONS_PER_PROCESS,
@@ -79,31 +80,6 @@ async function execBuildProcess(processPath, processExe) {
 			});
 		});
 	});
-}
-
-export function killAll(pid, signal='SIGTERM'){
-	if(process.platform == "win32"){
-		exec(`taskkill /PID ${pid} /T /F`, (error, stdout, stderr)=>{
-			console.log("taskkill stdout: " + stdout)
-			console.log("taskkill stderr: " + stderr)
-			if(error){
-				console.log("error: " + error.message)
-			}
-		})
-	}
-
-	// see https://nodejs.org/api/child_process.html#child_process_options_detached
-	// If pid is less than -1, then sig is sent to every process in the process group whose ID is -pid.
-	try {
-		try {
-			process.kill(-pid, signal);
-		} catch(e) {
-			console.error(e);
-			process.kill(pid, signal);
-		}
-	} catch(e) {
-		console.error(e);
-	}
 }
 
 async function sleep(seconds) {
@@ -285,10 +261,10 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				clearInterval(interval);
 
 				if(childProcess.exitCode === null && !done) {
-					killAll(childProcess.pid);
+					kill(childProcess.pid);
 				} else {
 					try {
-						killAll(childProcess.pid);
+						kill(childProcess.pid);
 					} catch {}
 				}
 			}
