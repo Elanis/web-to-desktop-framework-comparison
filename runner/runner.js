@@ -6,6 +6,7 @@ import pidusage from 'pidusage';
 import pidtree from 'pidtree';
 import os from 'os';
 import systeminformation from 'systeminformation';
+import kill from 'tree-kill';
 
 import {
 	ITERATIONS_PER_PROCESS,
@@ -81,33 +82,33 @@ async function execBuildProcess(processPath, processExe) {
 	});
 }
 
-export function killAll(pid, signal='SIGTERM'){
-	if(process.platform == "win32"){
-		exec(`taskkill /PID ${pid} /T /F`, (error, stdout, stderr)=>{
-			console.log("taskkill stdout: " + stdout)
-			console.log("taskkill stderr: " + stderr)
-			if(error){
-				console.log("error: " + error.message)
-			}
-		})
-	}
-	else{
-		// see https://nodejs.org/api/child_process.html#child_process_options_detached
-		// If pid is less than -1, then sig is sent to every process in the process group whose ID is -pid.
-		try {
-			process.kill(-pid, signal);
-		} catch {
-			process.kill(pid, signal);
-		}
-	}
+async function sleep(seconds) {
+	return (await new Promise((resolve, _reject) => {
+		setTimeout(resolve, seconds * 1000);
+	}));
 }
 
 async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT) {
-	return new Promise((resolve, reject) => {
+	return new Promise(async(resolve, reject) => {
 		let memUsageHistory = [];
+		let sysMemUsageHistory = [];
 		let startTime = '?';
 		let done = false;
 		let time = 0;
+
+		await sleep(1);
+		try {
+			if (global.gc) { global.gc(); }
+			else { console.error('global.gc does\'t exists !'); }
+		} catch (e) {
+			console.log('Error while trying to garbage collect process !');
+			console.log(e);
+		}
+		await sleep(3);
+		
+		const originalFreeMemory = os.freemem();
+		console.log('Total memory:', os.totalmem())
+		console.log('Free memory:', originalFreeMemory);
 
 		// Spawn process
 		const startTimestamp = performance.now();
@@ -133,6 +134,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				if(time < 0) { // Unlock cargo/rust
 					time = 0;
 					memUsageHistory = [];
+					sysMemUsageHistory = [];
 				}
 			}
 		});
@@ -165,7 +167,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				trimmedCleanData.includes('Building application for development...') ||
 				trimmedCleanData.includes('Compiling application: ')
 			) {
-				console.log(`[WARNING] Cargo/Rust action detected. Delaying timer ...`);
+				console.log(`[WARNING] Cargo/Rust/Wails/Go action detected. Delaying timer ...`);
 				time = -1;
 
 				for(let i = 0; i <= resetTimeoutId; i++) { clearTimeout(i); }
@@ -173,6 +175,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 					if(time < 0) { // Unlock cargo/rust
 						time = 0;
 						memUsageHistory = [];
+						sysMemUsageHistory = [];
 					}
 				}, 120*1000); // Unlock if going for more than 2 minutes
 			}
@@ -185,6 +188,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				if(time < 0) { // Unlock cargo/rust/wails
 					time = 0;
 					memUsageHistory = [];
+					sysMemUsageHistory = [];
 				}
 			}
 		});
@@ -200,20 +204,45 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		// Save stats
 		const pushStats = async() => {
 			try {
-				pidusage([childProcess.pid, ...(await pidtree(childProcess.pid))], function (err, stats) {
-					if(DEBUG_PIDUSAGE) {
-						customLog(processExe, stats);
+				let pids = [childProcess.pid];
+				let stats = {};
+				try {
+					pids = [childProcess.pid, ...(await pidtree(childProcess.pid))];
+					stats = await pidusage(pids);
+				} catch(e) {
+					console.error(e);
+					try {
+						pids = [childProcess.pid, ...(await pidtree(-childProcess.pid))];
+						stats = await pidusage(pids);
+					} catch(e) {
+						console.error(e);
+						stats = await pidusage(pids);
 					}
+				}
 
-					if(stats) {
-						const max = Math.max(0, ...Object.values(stats).filter((elt) => elt !== null && typeof elt !== 'undefined' && elt.memory).map((elt) => elt.memory));
-						if(max > 0) {
-							memUsageHistory.push(max);
+				if(DEBUG_PIDUSAGE) {
+					customLog(processExe, stats);
+				}
+
+				if(stats) {
+					const memoryStats = Object.values(stats).filter((elt) => elt !== null && typeof elt !== 'undefined' && elt.memory).map((elt) => elt.memory);
+					if(Array.isArray(memoryStats)) {
+						const total = memoryStats.reduce((a, b) => a + b, 0);
+						if(total > 0) {
+							memUsageHistory.push(total);
 						}
 					}
-				});
-			} catch(e) {
+				}
 
+				const freemem = os.freemem();
+				const delta = originalFreeMemory - freemem;
+				sysMemUsageHistory.push(delta);
+				
+				console.log('Total memory: ', os.totalmem())
+				console.log('Free memory: ', freemem);
+				console.log('Delta from start: ', delta);
+			} catch(e) {
+				console.error(e);
 			}
 		};
 
@@ -226,15 +255,16 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			if(time++ === timeout || childProcess.exitCode !== null || done) {
 				resolve({
 					memoryUsage: memUsageHistory,
+					systemMeasuredMemory: sysMemUsageHistory,
 					startTime
 				});
 				clearInterval(interval);
 
 				if(childProcess.exitCode === null && !done) {
-					killAll(childProcess.pid);
+					kill(childProcess.pid);
 				} else {
 					try {
-						killAll(childProcess.pid);
+						kill(childProcess.pid);
 					} catch {}
 				}
 			}
@@ -244,13 +274,24 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 	});
 }
 
-function processMemoryUsage({ memoryUsage }) {
+function processMemoryUsage({ memoryUsage, systemMeasuredMemory }) {
+	let systemMeasuredMemoryCopy = [...systemMeasuredMemory];
+	systemMeasuredMemoryCopy.sort((a, b) => a - b);
+
+	let memoryUsageCopy = [...memoryUsage];
+	memoryUsageCopy.sort((a, b) => a - b);
+
 	return {
 		min: Math.min(...memoryUsage),
+		sysMin: Math.min(...systemMeasuredMemory),
 		max: Math.max(...memoryUsage),
-		med: (memoryUsage.sort())[Math.floor(memoryUsage.length / 2)],
+		sysMax: Math.max(...systemMeasuredMemory),
+		med: memoryUsageCopy[Math.floor(memoryUsageCopy.length / 2)],
+		sysMed: systemMeasuredMemoryCopy[Math.floor(systemMeasuredMemoryCopy.length / 2)],
 		avg: memoryUsage.reduce((a, b) => a + b, 0) / memoryUsage.length,
-		history: memoryUsage
+		sysAvg: systemMeasuredMemory.reduce((a, b) => a + b, 0) / systemMeasuredMemory.length,
+		history: memoryUsage,
+		systemMeasuredMemoryHistory: systemMeasuredMemory
 	};
 }
 
@@ -409,7 +450,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 					return true;
 				});
 
-			for(const {platformArch, folder, exe} of existingFolders) {
+			for(const {platformArch, folder, exe, additionalFiles} of existingFolders) {
 				const buildSize = await dirSize(folder || exe);
 				const buildTime = buildData.time / existingFolders.length;
 
@@ -421,6 +462,13 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 					if(!benchmarkData[path]) {
 						benchmarkData[path] = {};
 					}
+
+					if(Array.isArray(additionalFiles)) {
+						for(const additionalFile of additionalFiles) {
+							buildSize += await dirSize(additionalFile);
+						}
+					}
+
 					benchmarkData[path].buildSize = buildSize;
 					benchmarkData[path].buildTime = buildTime;
 
@@ -463,8 +511,6 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 	}
 
 	console.log('System:', await getSystemData());
-
-	//console.log('Raw benchmark Data:', JSON.stringify(benchmarkData, null, 4));
 
 	writeDataToJsonFile(benchmarkData);
 })();

@@ -34,7 +34,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.6.0
         with:
-          node-version: 16 # Warning: nodegui doesn't support node 18 yet
+          node-version: 18
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
@@ -108,9 +108,9 @@ jobs:
         run: |
           cd runner/
           if [ "$RUNNER_OS" == "Linux" ]; then
-            LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/runner/work/web-to-desktop-framework-comparison/web-to-desktop-framework-comparison/benchmark/01-empty-app/nodegui/node_modules/@nodegui/nodegui/miniqt/5.15.2/gcc_64/lib/" xvfb-run --auto-servernum node runner.js ${{ matrix.app }}
+            LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/runner/work/web-to-desktop-framework-comparison/web-to-desktop-framework-comparison/benchmark/01-empty-app/nodegui/node_modules/@nodegui/nodegui/miniqt/5.15.2/gcc_64/lib/" xvfb-run --auto-servernum node --expose-gc runner.js ${{ matrix.app }}
           else
-            node runner.js ${{ matrix.app }}
+            node --expose-gc runner.js ${{ matrix.app }}
           fi
         shell: bash
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "runner.js",
   "scripts": {
-    "start": "bash preprocess.sh && node runner.js && node writer.js",
+    "start": "bash preprocess.sh && node --expose-gc runner.js && node writer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,7 @@
     "node-fetch": "^3.3.1",
     "pidtree": "^0.6.0",
     "pidusage": "^3.0.2",
-    "systeminformation": "^5.17.16"
+    "systeminformation": "^5.17.16",
+    "tree-kill": "^1.2.2"
   }
 }
