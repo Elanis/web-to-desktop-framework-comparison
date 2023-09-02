@@ -58,10 +58,10 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.61.0", "@nodegui/nodegui@>=0.15.0":
-  version "0.61.0"
-  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.61.0.tgz"
-  integrity sha512-kKkU47sy6hKD5RaRGmyTyyQhRt3CrD1MaLnFKPUZz0MCsAuKDOv3zdEeOhoQ4vhuEB/1iQ6W0QKWhhXb69fAZg==
+"@nodegui/nodegui@^0.62.0", "@nodegui/nodegui@>=0.15.0":
+  version "0.62.0"
+  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.62.0.tgz"
+  integrity sha512-gIqi6LDCyYlFxf5pqCyTl7OKw82H5owhU3f7kwuSHtPYrBebKUzTvXIaM2QrNxyw9V9EXd/Zj7qZE9a2n2iPyg==
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
     "@nodegui/qode" "^18.12.1"
@@ -135,10 +135,10 @@
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^20.4.5":
-  version "20.4.5"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.4.5.tgz"
-  integrity sha512-rt40Nk13II9JwQBdeYqmbn2Q6IVTA5uPhvSO+JVqdXw/6/4glI6oR9ezty/A9Hg5u7JH4OmYmuQ+XvjKm0Datg==
+"@types/node@*", "@types/node@^20.5.8":
+  version "20.5.8"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.5.8.tgz"
+  integrity sha512-eajsR9aeljqNhK028VG0Wuw+OaY5LLxYmxeoXynIoE6jannr9/Ucd1LL0hSSoafk5LTYG+FfqsyGt81Q6Zkybw==
 
 "@webassemblyjs/ast@^1.11.5", "@webassemblyjs/ast@1.11.5":
   version "1.11.5"
@@ -1728,10 +1728,10 @@ ts-loader@^9.4.4:
     micromatch "^4.0.0"
     semver "^7.3.4"
 
-typescript@*, typescript@^5.1.6:
-  version "5.1.6"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-5.1.6.tgz"
-  integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
+typescript@*, typescript@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz"
+  integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
 
 universalify@^0.1.0:
   version "0.1.2"
