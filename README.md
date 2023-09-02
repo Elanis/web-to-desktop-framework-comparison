@@ -94,7 +94,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈382MB (Debug) => ≈242MB (Release) | ≈403MB (Debug) => ≈286MB (Release) | ≈144MB (Debug) => ≈29MB (Release) | ≈221MB (Debug) | ≈84MB (Debug) | ≈196MB (Debug) => ≈33MB (Release) | ≈840MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***MacOS (x64)*** | ≈298MB (Debug) => ≈201MB (Release) | ≈390MB (Debug) => ≈280MB (Release) | ≈150MB (Debug) => ≈31MB (Release) | ≈152MB (Debug) | ≈187MB (Debug) => ≈30MB (Release) | ≈208MB (Debug) => ≈34MB (Release) | ≈193MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x64)*** | ≈666MB (Debug) => ≈544MB (Release) | ≈205MB (Debug) => ≈8MB (Release) | ≈302MB (Debug) => ≈92MB (Release) | ≈295MB (Debug) | ≈854MB (Debug) => ≈742MB (Release) | ≈663MB (Debug) => ≈431MB (Release) | ≈21MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈666MB (Debug) => ≈544MB (Release) | ≈205MB (Debug) | ≈302MB (Debug) => ≈92MB (Release) | ≈295MB (Debug) | ≈854MB (Debug) => ≈742MB (Release) | ≈663MB (Debug) => ≈431MB (Release) | ≈21MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 ### Memory Usage - (Average of runs) Median of difference between system measured free memory before execution and during execution)
 
@@ -102,7 +102,7 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈182MB (Debug) => ≈84MB (Release) | ≈275MB (Debug) => ≈140MB (Release) | ≈211MB (Debug) => ≈134MB (Release) | ≈189MB (Debug) | ≈64MB (Debug) | ≈266MB (Debug) => ≈143MB (Release) | ≈787MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***MacOS (x64)*** | ≈153MB (Debug) => ≈92MB (Release) | ≈237MB (Debug) => ≈159MB (Release) | ≈154MB (Debug) => ≈33MB (Release) | ≈93MB (Debug) | ≈131MB (Debug) => ≈31MB (Release) | ≈204MB (Debug) => ≈36MB (Release) | ≈150MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
-| ***Linux (x64)*** | ≈107MB (Debug) => ≈51MB (Release) | ≈70MB (Debug) => ≈456KB (Release) | ≈80MB (Debug) => ≈11MB (Release) | ≈67MB (Debug) | ≈416MB (Debug) => ≈345MB (Release) | ≈277MB (Debug) => ≈135MB (Release) | ≈12MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
+| ***Linux (x64)*** | ≈107MB (Debug) => ≈51MB (Release) | ≈70MB (Debug) | ≈80MB (Debug) => ≈11MB (Release) | ≈67MB (Debug) | ≈416MB (Debug) => ≈345MB (Release) | ≈277MB (Debug) => ≈135MB (Release) | ≈12MB (Debug) | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
 ### Start duration  
 
@@ -156,7 +156,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈374MB (Debug) => ≈241MB (Release) | ≈84MB (Debug) => ≈280MB (Release) | ≈130MB (Debug) => ≈27MB (Release) | ≈168MB (Debug) | ≈86MB (Debug) | ≈210MB (Debug) => ≈33MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***MacOS (x64)*** | ≈296MB (Debug) => ≈194MB (Release) | ≈114MB (Debug) => ≈271MB (Release) | ≈149MB (Debug) => ≈29MB (Release) | ≈159MB (Debug) | ≈190MB (Debug) => ≈29MB (Release) | ≈208MB (Debug) => ≈32MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (x64)*** | ≈661MB (Debug) => ≈541MB (Release) | ≈167MB (Debug) => ≈8MB (Release) | ≈301MB (Debug) => ≈92MB (Release) | ≈294MB (Debug) | ≈925MB (Debug) => ≈741MB (Release) | ≈653MB (Debug) => ≈429MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x64)*** | ≈661MB (Debug) => ≈541MB (Release) | ≈167MB (Debug) | ≈301MB (Debug) => ≈92MB (Release) | ≈294MB (Debug) | ≈925MB (Debug) => ≈741MB (Release) | ≈653MB (Debug) => ≈429MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
 ### Memory Usage - (Average of runs) Median of difference between system measured free memory before execution and during execution)
 
@@ -164,7 +164,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ***Windows (x64)*** | ≈179MB (Debug) => ≈89MB (Release) | ≈58MB (Debug) => ≈147MB (Release) | ≈199MB (Debug) => ≈134MB (Release) | ≈122MB (Debug) | ≈70MB (Debug) | ≈268MB (Debug) => ≈145MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 | ***MacOS (x64)*** | ≈195MB (Debug) => ≈96MB (Release) | ≈73MB (Debug) => ≈132MB (Release) | ≈133MB (Debug) => ≈32MB (Release) | ≈101MB (Debug) | ≈133MB (Debug) => ≈29MB (Release) | ≈198MB (Debug) => ≈38MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
-| ***Linux (x64)*** | ≈102MB (Debug) => ≈57MB (Release) | ≈32MB (Debug) => ≈1MB (Release) | ≈76MB (Debug) => ≈10MB (Release) | ≈61MB (Debug) | ≈437MB (Debug) => ≈337MB (Release) | ≈249MB (Debug) => ≈128MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
+| ***Linux (x64)*** | ≈102MB (Debug) => ≈57MB (Release) | ≈32MB (Debug) | ≈76MB (Debug) => ≈10MB (Release) | ≈61MB (Debug) | ≈437MB (Debug) => ≈337MB (Release) | ≈249MB (Debug) => ≈128MB (Release) | N/A<sup>1</sup>| N/A<sup>2</sup>| N/A<sup>3</sup>|
 
 ### Start duration  
 
