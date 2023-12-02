@@ -75,7 +75,7 @@ jobs:
       - if: ${{ runner.os == 'Windows' }}
         name:  Install MicrosoftEdgeWebView2RuntimeInstallerX64
         run:   |
-          wget https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/6b5bc093-29c8-47f9-bf2d-384762e6481f/MicrosoftEdgeWebView2RuntimeInstallerX64.exe -O MicrosoftEdgeWebView2RuntimeInstallerX64.exe
+          wget https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/5a00ea81-ccdf-4016-807d-1dc2c67d5574/MicrosoftEdgeWebView2RuntimeInstallerX64.exe -O MicrosoftEdgeWebView2RuntimeInstallerX64.exe
           .\MicrosoftEdgeWebView2RuntimeInstallerX64.exe /silent /install
 
       - if: ${{ runner.os == 'Linux' }}
