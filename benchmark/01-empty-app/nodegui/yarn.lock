@@ -58,10 +58,10 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.62.0", "@nodegui/nodegui@>=0.15.0":
-  version "0.62.0"
-  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.62.0.tgz"
-  integrity sha512-gIqi6LDCyYlFxf5pqCyTl7OKw82H5owhU3f7kwuSHtPYrBebKUzTvXIaM2QrNxyw9V9EXd/Zj7qZE9a2n2iPyg==
+"@nodegui/nodegui@^0.63.0", "@nodegui/nodegui@>=0.15.0":
+  version "0.63.0"
+  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.63.0.tgz"
+  integrity sha512-pSNoO63JQgKZEwDBYM0j/uQgO6OfyoNC9uWtuu7qS8fPtXccAibf4ERhB6lwMCTux29GepbrpVA6pUcyQCU0OQ==
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
     "@nodegui/qode" "^18.12.1"
@@ -135,10 +135,10 @@
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^20.8.10":
-  version "20.8.10"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.8.10.tgz"
-  integrity sha512-TlgT8JntpcbmKUFzjhsyhGfP2fsiz1Mv56im6enJ905xG1DAYesxJaeSbGqQmAw8OWPdhyJGhGSQGKRNJ45u9w==
+"@types/node@*", "@types/node@^20.10.2":
+  version "20.10.2"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.10.2.tgz"
+  integrity sha512-37MXfxkb0vuIlRKHNxwCkb60PNBpR94u4efQuN4JgIAm66zfCDXGSAFCef9XUWFovX2R1ok6Z7MHhtdVXXkkIw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1725,10 +1725,10 @@ tr46@~0.0.3:
   resolved "https://registry.npmjs.org/traverse/-/traverse-0.3.9.tgz"
   integrity sha1-cXuPIgzAu3tE5AUUwisui7xw2Lk=
 
-ts-loader@^9.5.0:
-  version "9.5.0"
-  resolved "https://registry.npmjs.org/ts-loader/-/ts-loader-9.5.0.tgz"
-  integrity sha512-LLlB/pkB4q9mW2yLdFMnK3dEHbrBjeZTYguaaIfusyojBgAGf5kF+O6KcWqiGzWqHk0LBsoolrp4VftEURhybg==
+ts-loader@^9.5.1:
+  version "9.5.1"
+  resolved "https://registry.npmjs.org/ts-loader/-/ts-loader-9.5.1.tgz"
+  integrity sha512-rNH3sK9kGZcH9dYzC7CewQm4NtxJTjSEVRJ2DyBZR7f8/wcta+iV44UPCXc5+nzDzivKtlzV6c9P4e+oFhDLYg==
   dependencies:
     chalk "^4.1.0"
     enhanced-resolve "^5.0.0"
@@ -1736,10 +1736,10 @@ ts-loader@^9.5.0:
     semver "^7.3.4"
     source-map "^0.7.4"
 
-typescript@*, typescript@^5.2.2:
-  version "5.2.2"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz"
-  integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
+typescript@*, typescript@^5.3.2:
+  version "5.3.2"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.3.2.tgz"
+  integrity sha512-6l+RyNy7oAHDfxC4FzSJcz9vnjTKxrLpDG5M2Vu4SHRVNg6xzqZp6LYSR9zjqQTu8DU/f5xwxUdADOkbrIX2gQ==
 
 undici-types@~5.26.4:
   version "5.26.5"
