@@ -39,7 +39,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       # Setup dotnet env
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
 
