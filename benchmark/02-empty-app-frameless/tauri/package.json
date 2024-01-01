@@ -9,6 +9,6 @@
     "@tauri-apps/api": "^1.5.1"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.5.7"
+    "@tauri-apps/cli": "^1.5.9"
   }
 }
