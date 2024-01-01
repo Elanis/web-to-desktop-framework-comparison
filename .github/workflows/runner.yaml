@@ -32,7 +32,7 @@ jobs:
           toolchain: stable
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4.0.0
+        uses: actions/setup-node@v4.0.1
         with:
           node-version: 18
           cache: 'npm'
