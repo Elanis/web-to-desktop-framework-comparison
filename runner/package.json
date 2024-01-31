@@ -11,10 +11,10 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "node-fetch": "^3.3.1",
+    "node-fetch": "^3.3.2",
     "pidtree": "^0.6.0",
     "pidusage": "^3.0.2",
-    "systeminformation": "^5.21.18",
+    "systeminformation": "^5.21.24",
     "tree-kill": "^1.2.2"
   }
 }
