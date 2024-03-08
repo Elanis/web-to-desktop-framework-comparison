@@ -58,10 +58,10 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.63.0", "@nodegui/nodegui@>=0.15.0":
-  version "0.63.0"
-  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.63.0.tgz"
-  integrity sha512-pSNoO63JQgKZEwDBYM0j/uQgO6OfyoNC9uWtuu7qS8fPtXccAibf4ERhB6lwMCTux29GepbrpVA6pUcyQCU0OQ==
+"@nodegui/nodegui@^0.66.0", "@nodegui/nodegui@>=0.15.0":
+  version "0.66.0"
+  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.66.0.tgz"
+  integrity sha512-pzKTrflIuLKETZMs1sJX+32bQwdR9wBUsuBhWsSzzTXdmKvPSUT2LM9TJQdnHkEE59PHX52B0oNGqB7pZW9llQ==
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
     "@nodegui/qode" "^18.12.1"
@@ -135,10 +135,10 @@
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^20.11.14":
-  version "20.11.14"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.11.14.tgz"
-  integrity sha512-w3yWCcwULefjP9DmDDsgUskrMoOy5Z8MiwKHr1FvqGPtx7CvJzQvxD7eKpxNtklQxLruxSXWddyeRtyud0RcXQ==
+"@types/node@*", "@types/node@^20.11.25":
+  version "20.11.25"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.11.25.tgz"
+  integrity sha512-TBHyJxk2b7HceLVGFcpAUjsa5zIdsPWlR6XHfyGzd0SFu+/NFgQgMAl96MSDZgQDvJAvV6BKsFOrt6zIL09JDw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1735,10 +1735,10 @@ ts-loader@^9.5.1:
     semver "^7.3.4"
     source-map "^0.7.4"
 
-typescript@*, typescript@^5.3.3:
-  version "5.3.3"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-5.3.3.tgz"
-  integrity sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==
+typescript@*, typescript@^5.4.2:
+  version "5.4.2"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.4.2.tgz"
+  integrity sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==
 
 undici-types@~5.26.4:
   version "5.26.5"
@@ -1840,10 +1840,10 @@ webpack-sources@^3.2.3:
   resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz"
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
 
-"webpack@^4.0.0 || ^5.0.0", webpack@^5.0.0, webpack@^5.1.0, webpack@^5.90.0, "webpack@>=4.0.0 <6.0.0", webpack@5.x.x:
-  version "5.90.0"
-  resolved "https://registry.npmjs.org/webpack/-/webpack-5.90.0.tgz"
-  integrity sha512-bdmyXRCXeeNIePv6R6tGPyy20aUobw4Zy8r0LUS2EWO+U+Ke/gYDgsCh7bl5rB6jPpr4r0SZa6dPxBxLooDT3w==
+"webpack@^4.0.0 || ^5.0.0", webpack@^5.0.0, webpack@^5.1.0, webpack@^5.90.3, "webpack@>=4.0.0 <6.0.0", webpack@5.x.x:
+  version "5.90.3"
+  resolved "https://registry.npmjs.org/webpack/-/webpack-5.90.3.tgz"
+  integrity sha512-h6uDYlWCctQRuXBs1oYpVe6sFcWedl0dpcVaTf/YF67J9bKvwJajFulMVSYKHrksMB3I/pIagRzDxwxkebuzKA==
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^1.0.5"
