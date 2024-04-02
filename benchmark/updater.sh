@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-npm i -g npm-check
+npm i -g npm-check-updates
 
 function updateDeps() {
 	echo "$PWD"
@@ -8,7 +8,8 @@ function updateDeps() {
 	if [ -f "package.json" ] | [ -f "package-lock.json" ]; then
 		echo "Detected npm files, checking dependencies ..."
 		npm ci
-		npx npm-check -y
+		ncu -u
+		npm i
 		npm audit
 		npm audit fix
 		git add package.json
