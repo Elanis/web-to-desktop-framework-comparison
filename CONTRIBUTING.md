@@ -1,17 +1,17 @@
 # How to contribute
 
-Thanks for wanting to contribute ! Every small help is meaningful !
+Thanks for wanting to contribute! Every small help is meaningful!
 
-Before starting an issue or a pull request, please check that it doesn't already exists.
+Before starting an issue or a pull request, please check that it doesn't already exist.
 
 You can either:
 - Open an [Issue](https://github.com/Elanis/web-to-desktop-framework-comparison/issues/new) on the repository
 - Fork the project, edit it, and create a pull request on this repository
 
-# What "rules" should I follow while contributing ?
+# What "rules" should I follow while contributing?
 
-Well, there's no many rules:
-- If you want to add a new benchmark, follow already existing directory structure
+Well, there are not many rules:
+- If you want to add a new benchmark, follow the already existing directory structure
 ```
 benchmark/
   application-type/
