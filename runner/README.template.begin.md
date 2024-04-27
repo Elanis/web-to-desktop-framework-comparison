@@ -1,6 +1,6 @@
 # Web to Desktop framework comparison
 
-This repository was made to create an objective comparison of multiple frameworks that allow us to "transform" our web apps to desktop applications.
+This repository has been made to create an objective comparison of multiple frameworks that allow us to "transform" our web apps to desktop applications.
 
 ## Table Of Content
 - [Major characteristics](#major-characteristics)
