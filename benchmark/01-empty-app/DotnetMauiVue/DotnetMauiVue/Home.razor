@@ -5,43 +5,34 @@
 @code {
 
     [JSInvokable]
-    public static Task<string> GetFoo()
-    {
+    public static Task<string> GetFoo() {
         return Task.FromResult("this is foo call C# method from js");
     }
 
     [JSInvokable]
-    public static Task<int> Add(AddInput addInput)
-    {
+    public static Task<int> Add(AddInput addInput) {
         return Task.FromResult(addInput.a + addInput.b);
     }
 
-    public async void Post(object o, EventArgs a)
-    {
+    public async void Post(object o, EventArgs a) {
         await JSRuntime.InvokeAsync<string>("postBar", "this is bar call js method from C#");
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
         ((App.Current as App).MainPage as MainPage).OnPostBar += this.Post;
-        try
-        {
-            if (firstRender)
-            {
+        try {
+            if (firstRender) {
                 await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./assets/index.js", new { crossorigin = "anonymous" });
             }
 
 
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             Console.WriteLine(ex);
         }
 
     }
 
-    public void Dispose()
-    {
+    public void Dispose() {
         (Application.Current.MainPage as MainPage).OnPostBar -= this.Post;
     }
 

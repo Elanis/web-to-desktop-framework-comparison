@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DotnetMauiVue"
              x:Class="DotnetMauiVue.MainPage"
-             BackgroundColor="{DynamicResource PageBackgroundColor}">
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+>
     <Grid>
-    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
-        <BlazorWebView.RootComponents>
-            <RootComponent Selector="#blazorapp" ComponentType="{x:Type local:Main}" />
-        </BlazorWebView.RootComponents>
-    </BlazorWebView>
-    <Button Text="Post Bar To WebView" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="40" Clicked="PostBar_Clicked"></Button>
+        <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#blazorapp" ComponentType="{x:Type local:Home}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+        <Button Text="Post Bar To WebView" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="40" Clicked="PostBar_Clicked"></Button>
     </Grid>
 </ContentPage>
