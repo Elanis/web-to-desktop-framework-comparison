@@ -13,6 +13,7 @@ for(const libraryName in libraries) {
 	const updateDate = new Date(json.pushed_at);
 
 	data[libraryName] = {
+		repo,
 		stars: json.stargazers_count,
 		forks: json.forks_count,
 		lastUpdate: (updateDate.getMonth() + 1) + '/' + updateDate.getFullYear()

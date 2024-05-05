@@ -13,10 +13,10 @@ This repository has been made to create an objective comparison of multiple fram
 
 | | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 112k | 40.1k | 77.4k | 8.7k | 7.2k | 22.2k | 161.8k | 21.6k | 21.6k |
+| **Github stars** | 112.1k | 40.1k | 77.6k | 8.7k | 7.3k | 22.3k | 162k | 21.6k | 21.6k |
 | **Forks** | 14.9k | 3.9k | 2.3k | 0.3k | 0.4k | 1.1k | 26.6k | 1.6k | 1.6k |
 | **Creation date** | 2013 | 2011 | 2019 | 2019 | 2018 | 2019 | 2018 | 2020 |
-| **Last Update** | 4/2024 | 4/2024 | 4/2024 | 3/2024 | 4/2024 | 4/2024 | 4/2024 | 4/2024 | 4/2024 |
+| **Last Update** | 5/2024 | 5/2024 | 5/2024 | 3/2024 | 5/2024 | 5/2024 | 5/2024 | 5/2024 | 5/2024 |
 | **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | Go | C, C++, Dart | C# |
 | **Usage Language - Back** | JS, C++ | JS, C++ | Rust | JS, C++ | JS, C++ | Go | Dart | C# |
 | **Usage Language - Front** | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | Dart | C# |
@@ -25,6 +25,8 @@ This repository has been made to create an objective comparison of multiple fram
 | **User Dependencies** | None | None | None | None | None | None | None | None |
 | **Dependencies / modules support** | npm & node.js native addons | npm & node.js native addons | cargo (back), npm (front) | npm & node.js native addons | ❌ | Gomod (back), npm (front) | pub.dev | NuGet |
 | **Engine** | Chromium | Webkit, Chromium | WRY (WebKitGTK for Linux, WebKit for MacOS, Webview2 for Windows) | Qt | WebkitGTK+ | [WebKit2gtk on Linux, Webview2 on Windows and WkWebview on Mac](https://github.com/Elanis/web-to-desktop-framework-comparison/issues/611#issuecomment-1817605354) |  Flutter engine | .NET MAUI |
+
+See [GRAPHS.md](https://github.com/Elanis/web-to-desktop-framework-comparison/blob/main/GRAPHS.md) for stars/forks visualization.
 
 ## Features
 
