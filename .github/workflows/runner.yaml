@@ -119,7 +119,7 @@ jobs:
       - name: Update README
         run: |
           cd runner/
-          node writer.js
+          node write_readme.js
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5

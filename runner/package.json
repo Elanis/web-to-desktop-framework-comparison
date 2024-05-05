@@ -4,7 +4,7 @@
   "description": "",
   "main": "runner.js",
   "scripts": {
-    "start": "bash preprocess.sh && node --expose-gc runner.js && node writer.js",
+    "start": "bash preprocess.sh && node --expose-gc runner.js && node write_readme.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
