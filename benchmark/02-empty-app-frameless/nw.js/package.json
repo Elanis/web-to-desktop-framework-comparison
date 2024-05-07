@@ -1,5 +1,5 @@
 {
-  "name": "01-empty-app",
+  "name": "02-empty-app-frameless",
   "version": "1.0.0",
   "scripts": {
     "start": "node run.js", 

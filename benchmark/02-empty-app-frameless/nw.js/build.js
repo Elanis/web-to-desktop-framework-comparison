@@ -18,7 +18,7 @@ for(const arch of archs) {
 		mode: 'build',
 		version: 'stable',
 		flavor: 'normal',
-		outDir: `./dist/01-empty-app-${os.platform()}-${arch}/`,
+		outDir: `./dist/02-empty-app-frameless-${os.platform()}-${arch}/`,
 		srcDir: './app',
 		arch,
 		glob: false
