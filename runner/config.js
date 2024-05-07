@@ -54,29 +54,33 @@ export const libraries = {
 	'nw.js': {
 		exe: 'npm start',
 		name: 'NW.JS',
-		packageJsonVersionsNeeded: ['nwjs-builder-phoenix'],
+		packageJsonVersionsNeeded: ['nw-builder'],
 		url: 'https://github.com/nwjs/nw.js',
 		build: {
 			cmd: 'npm run build',
 			folders: {
 				'win32-x32': {
-					path: 'dist/APPNAME-1.0.0-win-x86',
+					path: 'dist/APPNAME-win32-ia32',
 					exe: 'APPNAME.exe'
 				},
 				'win32-x64': {
-					path: 'dist/APPNAME-1.0.0-win-x64',
+					path: 'dist/APPNAME-win32-x64',
 					exe: 'APPNAME.exe'
 				},
 				'linux-x32': {
-					path: 'dist/APPNAME-1.0.0-linux-x86',
+					path: 'dist/APPNAME-linux-ia32',
 					exe: './APPNAME'
 				},
 				'linux-x64': {
-					path: 'dist/APPNAME-1.0.0-linux-x64',
+					path: 'dist/APPNAME-linux-x64',
 					exe: './APPNAME'
 				},
 				'darwin-x64': {
-					path: 'dist/APPNAME-1.0.0-mac-x64',
+					path: 'dist/APPNAME-darwin-x64',
+					exe: './APPNAME.app/Contents/MacOS/APPNAME'
+				},
+				'darwin-arm64': {
+					path: 'dist/APPNAME-darwin-arm64',
 					exe: './APPNAME.app/Contents/MacOS/APPNAME'
 				},
 			}

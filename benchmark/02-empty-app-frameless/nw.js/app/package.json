@@ -1,0 +1,10 @@
+{
+  "name": "01-empty-app",
+  "version": "1.0.0",
+  "main": "index.html",
+  "node-main": "main.js",
+  "chromium-args": "--enable-logging=stderr",
+  "window": { 
+    "frame": false 
+  }
+}

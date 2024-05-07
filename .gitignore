@@ -104,3 +104,6 @@ typings/
 .tern-port
 
 .idea/
+benchmark/01-empty-app/nw.js/cache/
+
+benchmark/02-empty-app-frameless/nw.js/cache/
