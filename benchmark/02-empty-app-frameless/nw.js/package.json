@@ -1,20 +1,12 @@
 {
   "name": "02-empty-app-frameless",
   "version": "1.0.0",
-  "main": "index.html",
-  "node-main": "main.js",
-  "chromium-args": "--enable-logging=stderr",
   "scripts": {
-    "start": "run --x64 --mirror https://dl.nwjs.io/ .",
-    "build": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ ."
-  },
+    "start": "node run.js", 
+    "build": "node build.js" 
+  }, 
   "devDependencies": {
-    "nwjs-builder-phoenix": "^1.15.0"
+    "nw-builder": "^4.7.1"
   },
-  "build": {
-    "nwVersion": "0.78.1"
-  },
-  "window": {
-    "frame": false
-  }
+  "type": "module"
 }

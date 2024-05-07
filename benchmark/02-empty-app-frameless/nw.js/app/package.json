@@ -1,0 +1,10 @@
+{
+  "name": "02-empty-app-frameless",
+  "version": "1.0.0",
+  "main": "index.html",
+  "node-main": "main.js",
+  "chromium-args": "--enable-logging=stderr",
+  "window": { 
+    "frame": false 
+  }
+}
