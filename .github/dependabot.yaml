@@ -17,6 +17,10 @@ updates:
     directory: "benchmark/01-empty-app/electron"
     schedule:
       interval: monthly
+  - package-ecosystem: pub
+    directory: "benchmark/01-empty-app/flutter"
+    schedule:
+      interval: monthly
   - package-ecosystem: npm
     directory: "benchmark/01-empty-app/nodegui"
     schedule:
