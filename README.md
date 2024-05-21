@@ -207,6 +207,7 @@ See [Issues](https://github.com/Elanis/web-to-desktop-framework-comparison/issue
 
 ## Contributors
 List of contributors to this repository
+
 <a align="center" href="https://github.com/Elanis/web-to-desktop-framework-comparison/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Elanis/web-to-desktop-framework-comparison" />
 </a>
