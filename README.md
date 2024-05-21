@@ -206,5 +206,7 @@ See source in [benchmark/02-empty-app-frameless](https://github.com/Elanis/web-t
 See [Issues](https://github.com/Elanis/web-to-desktop-framework-comparison/issues) and [Pull requests](https://github.com/Elanis/web-to-desktop-framework-comparison/pulls). You can participate by proposing new issues, or by filling them!
 
 ## Contributors
-
-[List of contributors to this repository](https://github.com/Elanis/web-to-desktop-framework-comparison/graphs/contributors)
+List of contributors to this repository
+<a align="center" href="https://github.com/Elanis/web-to-desktop-framework-comparison/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Elanis/web-to-desktop-framework-comparison" />
+</a>
