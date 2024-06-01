@@ -58,10 +58,10 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.66.0", "@nodegui/nodegui@>=0.15.0":
-  version "0.66.0"
-  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.66.0.tgz"
-  integrity sha512-pzKTrflIuLKETZMs1sJX+32bQwdR9wBUsuBhWsSzzTXdmKvPSUT2LM9TJQdnHkEE59PHX52B0oNGqB7pZW9llQ==
+"@nodegui/nodegui@^0.67.0", "@nodegui/nodegui@>=0.15.0":
+  version "0.67.0"
+  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.67.0.tgz"
+  integrity sha512-igg2d64wcIpcQXx7At1TU8XrlE4FF6+UTDvfQzipwzlcp4VtOfO0KxkgPJJml4mFxDwhZBOamxvF+DtgeVAiVw==
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
     "@nodegui/qode" "^18.12.1"
@@ -135,10 +135,10 @@
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^20.12.10":
-  version "20.12.10"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.12.10.tgz"
-  integrity sha512-Eem5pH9pmWBHoGAT8Dr5fdc5rYA+4NAovdM4EktRPVAAiJhmWWfQrA0cFhAbOsQdSfIHjAud6YdkbL69+zSKjw==
+"@types/node@*", "@types/node@^20.13.0":
+  version "20.13.0"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.13.0.tgz"
+  integrity sha512-FM6AOb3khNkNIXPnHFDYaHerSv8uN22C91z098AnGccVu+Pcdhi+pNUFDi0iLmPIsVE0JBD0KVS7mzUYt4nRzQ==
   dependencies:
     undici-types "~5.26.4"
 
