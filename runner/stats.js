@@ -3,25 +3,25 @@ import fetch from 'node-fetch';
 
 import { libraries } from './config.js';
 
-const data = {};
+const librariesStats = {};
 
 for(const libraryName in libraries) {
-	const repo = libraries[libraryName].url.replace('https://github.com/', '');
-	const res = await fetch('https://api.github.com/repos/' + repo);
-	const json = await res.json();
+	const orgAndRepo = libraries[libraryName].url.replace('https://github.com/', '');
+	const httpResponse = await fetch('https://api.github.com/repos/' + orgAndRepo);
+	const repositoryStats = await httpResponse.json();
 
-	const updateDate = new Date(json.pushed_at);
+	const updateDate = new Date(repositoryStats.pushed_at);
 
-	data[libraryName] = {
-		repo,
-		stars: json.stargazers_count,
-		forks: json.forks_count,
+	librariesStats[libraryName] = {
+		repo: orgAndRepo,
+		stars: repositoryStats.stargazers_count,
+		forks: repositoryStats.forks_count,
 		lastUpdate: (updateDate.getMonth() + 1) + '/' + updateDate.getFullYear()
 	};
 
-	console.log(libraryName);
-	console.log(data[libraryName]);
+	console.log(`Processed "${libraryName}". Results:`);
+	console.log(librariesStats[libraryName]);
 }
 
-fs.writeFileSync('stats.json', JSON.stringify(data));
+fs.writeFileSync('stats.json', JSON.stringify(librariesStats));
 

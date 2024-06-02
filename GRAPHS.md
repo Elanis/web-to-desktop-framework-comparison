@@ -18,7 +18,7 @@ gantt
 
 	
 	section tauri
-	78529 : 0, 78529
+	78530 : 0, 78530
 
 	
 	section nodegui
