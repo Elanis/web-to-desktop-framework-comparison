@@ -298,11 +298,11 @@ export const customMessages = {
 	'01-empty-app': {
 		'DotnetMaui': {
 			key: 1,
-			value: 'Benchmark WIP'
+			value: 'Benchmark WIP (See [#319](https://github.com/Elanis/web-to-desktop-framework-comparison/issues/319))'
 		},
 		'DotnetMauiVue': {
 			key: 2,
-			value: 'Benchmark WIP'
+			value: 'Benchmark WIP (See [#319](https://github.com/Elanis/web-to-desktop-framework-comparison/issues/319))'
 		}
 	},
 	'02-empty-app-frameless': {

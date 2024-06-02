@@ -133,8 +133,8 @@ See source in [benchmark/01-empty-app](https://github.com/Elanis/web-to-desktop-
 | ***MacOS (arm64)*** | ≈583ms (Debug) => ≈239ms (Release) | ? | ≈4091ms (Debug) | ? | ? | ≈6083ms (Debug) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 | ***Linux (x64)*** | ≈482ms (Debug) => ≈306ms (Release) | ≈425ms (Release) | ≈34307ms (Debug) | ? | ≈1203ms (Debug) => ≈326ms (Release) | ≈2947ms (Debug) => ≈240ms (Release) | ? | N/A<sup>1</sup>| N/A<sup>2</sup>|
 
-**<sup>1</sup>**: Benchmark WIP  
-**<sup>2</sup>**: Benchmark WIP  
+**<sup>1</sup>**: Benchmark WIP (See [#319](https://github.com/Elanis/web-to-desktop-framework-comparison/issues/319))  
+**<sup>2</sup>**: Benchmark WIP (See [#319](https://github.com/Elanis/web-to-desktop-framework-comparison/issues/319))  
 
 
 
