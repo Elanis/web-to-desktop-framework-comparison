@@ -1,31 +1,31 @@
 import fs from 'fs';
+import stats from './stats.json' with { type: 'json' };
 
 let stars_text = '';
 let forks_text = '';
-const stats = JSON.parse(fs.readFileSync('stats.json', 'utf8'));
 
-const doneLibs = [];
-for(const exampleId in stats) {
-	const example = stats[exampleId];
-	if(doneLibs.includes(example.repo)) {
+const processedLibraries = [];
+for(const benchmarkExampleId in stats) {
+	const benchmarkExample = stats[benchmarkExampleId];
+	if(processedLibraries.includes(benchmarkExample.repo)) {
 		continue;
 	}
 
-	const repoParts = example.repo.split('/');
+	const repositoryName = benchmarkExample.repo.split('/')[1];
 
 	stars_text += `
-	section ${repoParts[1]}
-	${example.stars} : 0, ${example.stars}
+	section ${repositoryName}
+	${benchmarkExample.stars} : 0, ${benchmarkExample.stars}
 
 	`;
 
 	forks_text += `
-	section ${repoParts[1]}
-	${example.forks} : 0, ${example.forks}
+	section ${repositoryName}
+	${benchmarkExample.forks} : 0, ${benchmarkExample.forks}
 
 	`;
 
-	doneLibs.push(example.repo);
+	processedLibraries.push(benchmarkExample.repo);
 }
 
 
