@@ -7,7 +7,7 @@ const data = JSON.parse(fs.readFileSync('benchmarks.json', 'utf8'));
 /**
  * Stats
  */
-function getBuildSizeStats(app, architecture) {
+function getStat(app, architecture, field, format=((x) => x)) {
 	if(!data[architecture]) {
 		return {};
 	}
@@ -17,17 +17,25 @@ function getBuildSizeStats(app, architecture) {
 	for(const libraryId in libraries) {
 		const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}`];
 
-		if(!benchmarkData || !benchmarkData.buildSize) {
+		if(!benchmarkData || !benchmarkData[field]) {
 			continue;
 		}
 
-		stats[libraryId + '/Release'] = benchmarkData.buildSize;
+		stats[libraryId + '/Release'] = format(benchmarkData[field]);
 	}
 
 	return stats;
 }
 
+function getBuildSizeStats(app, architecture) {
+	return getStat(app, architecture, 'buildSize');
+}
+
 function getBuildTimeStats(app, architecture) {
+	return getStat(app, architecture, 'buildTime', (x) => Math.round(x));
+}
+
+function getStatByTargets(app, architecture, formatFunction) {
 	if(!data[architecture]) {
 		return {};
 	}
@@ -35,90 +43,41 @@ function getBuildTimeStats(app, architecture) {
 	const stats = {};
 
 	for(const libraryId in libraries) {
-		const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}`];
+		for(const context of ['Debug', 'Release']) {
+			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
 
-		if(!benchmarkData || !benchmarkData.buildTime) {
-			continue;
+			if(!benchmarkData || !benchmarkData.benchmarks) {
+				continue;
+			}
+
+			stats[libraryId + '/' + context] = formatFunction(benchmarkData.benchmarks);
 		}
-
-		stats[libraryId + '/Release'] = Math.round(benchmarkData.buildTime);
 	}
 
 	return stats;
 }
 
 function getMemoryStats(app, architecture) {
-	if(!data[architecture]) {
-		return {};
-	}
-
-	const stats = {};
-
-	for(const libraryId in libraries) {
-		for(const context of ['Debug', 'Release']) {
-			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
-
-			if(!benchmarkData || !benchmarkData.benchmarks) {
-				continue;
-			}
-
-			stats[libraryId + '/' + context] = Math.floor(
-				benchmarkData.benchmarks.map((elt) => elt.memoryUsage.med).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
-			);
-		}
-	}
-
-	return stats;
+	return getStatByTargets(app, architecture, (benchmarks) => Math.floor(
+		benchmarks.map((elt) => elt.memoryUsage.med).reduce((a, b) => a + (b || 0), 0) / benchmarks.length
+	));
 }
 
 function getSystemMemoryStats(app, architecture) {
-	if(!data[architecture]) {
-		return {};
-	}
-
-	const stats = {};
-
-	for(const libraryId in libraries) {
-		for(const context of ['Debug', 'Release']) {
-			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
-
-			if(!benchmarkData || !benchmarkData.benchmarks) {
-				continue;
-			}
-
-			stats[libraryId + '/' + context] = Math.floor(
-				benchmarkData.benchmarks.map((elt) => elt.memoryUsage.sysMed).reduce((a, b) => a + (b || 0), 0) / benchmarkData.benchmarks.length
-			);
-		}
-	}
-
-	return stats;
+	return getStatByTargets(app, architecture, (benchmarks) => Math.floor(
+		benchmarks.map((elt) => elt.memoryUsage.sysMed).reduce((a, b) => a + (b || 0), 0) / benchmarks.length
+	));
 }
 
 function getStartTimeStats(app, architecture) {
-	if(!data[architecture]) {
-		return {};
-	}
-
-	const stats = {};
-
-	for(const libraryId in libraries) {
-		for(const context of ['Debug', 'Release']) {
-			const benchmarkData = data[architecture].benchmarkData[`../benchmark/${app}/${libraryId}/${context}`];
-
-			if(!benchmarkData || !benchmarkData.benchmarks) {
-				continue;
-			}
-
-			const startTimes = benchmarkData.benchmarks.map((elt) => elt.startTime).filter(x => typeof x === 'number').sort();
-			if(startTimes.length > 0) {
-				stats[libraryId + '/' + context] = Math.round(startTimes[Math.floor(startTimes.length / 2)]);
-			} else{
-				stats[libraryId + '/' + context] = 0;
-			}
+	return getStatByTargets(app, architecture, (benchmarks) => {
+		const startTimes = benchmarks.map((elt) => elt.startTime).filter(x => typeof x === 'number').sort();
+		if(startTimes.length > 0) {
+			return Math.round(startTimes[Math.floor(startTimes.length / 2)]);
 		}
-	}
-	return stats;
+
+		return 0;
+	});
 }
 
 /**
