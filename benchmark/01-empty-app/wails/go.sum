@@ -60,8 +60,8 @@ github.com/wailsapp/go-webview2 v1.0.10 h1:PP5Hug6pnQEAhfRzLCoOh2jJaPdrqeRgJKZhy
 github.com/wailsapp/go-webview2 v1.0.10/go.mod h1:Uk2BePfCRzttBBjFrBmqKGJd41P6QIHeV9kTgIeOZNo=
 github.com/wailsapp/mimetype v1.4.1 h1:pQN9ycO7uo4vsUUuPeHEYoUkLVkaRntMnHJxVwYhwHs=
 github.com/wailsapp/mimetype v1.4.1/go.mod h1:9aV5k31bBOv5z6u+QP8TltzvNGJPmNJD4XlAL3U+j3o=
-github.com/wailsapp/wails/v2 v2.8.2 h1:rYOn9p+7bJiZuFSi2wDyq8rBLHrIX/FoUxov+RpdUOI=
-github.com/wailsapp/wails/v2 v2.8.2/go.mod h1:5pTURIST4yZ/wRcmqDUtnM0Mk+caNax/oS610hFiy74=
+github.com/wailsapp/wails/v2 v2.9.1 h1:irsXnoQrCpeKzKTYZ2SUVlRRyeMR6I0vCO9Q1cvlEdc=
+github.com/wailsapp/wails/v2 v2.9.1/go.mod h1:7maJV2h+Egl11Ak8QZN/jlGLj2wg05bsQS+ywJPT0gI=
 golang.org/x/crypto v0.23.0 h1:dIJU/v2J8Mdglj/8rJ6UUOM3Zc9zLZxVZwwxMooUSAI=
 golang.org/x/crypto v0.23.0/go.mod h1:CKFgDieR+mRhux2Lsu27y0fO304Db0wZe70UKqHu0v8=
 golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1 h1:k/i9J1pBpvlfR+9QsetwPyERsqu1GIbi967PQMq3Ivc=
