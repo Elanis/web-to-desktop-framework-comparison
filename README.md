@@ -13,10 +13,10 @@ This repository has been made to create an objective comparison of multiple fram
 
 | | [Electron](https://github.com/electron/electron) | [NW.JS](https://github.com/nwjs/nw.js) | [Tauri](https://github.com/tauri-apps/tauri) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Wails](https://github.com/wailsapp/wails) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 112.3k | 40.2k | 78.5k | 8.8k | 7.3k | 22.8k | 162.5k | 21.7k | 21.7k |
-| **Forks** | 15k | 3.9k | 2.3k | 0.3k | 0.4k | 1.1k | 26.7k | 1.6k | 1.6k |
+| **Github stars** | 112.8k | 40.2k | 79.6k | 8.8k | 7.3k | 23.3k | 163.1k | 21.8k | 21.8k |
+| **Forks** | 15.1k | 3.9k | 2.4k | 0.3k | 0.4k | 1.1k | 26.9k | 1.7k | 1.7k |
 | **Creation date** | 2013 | 2011 | 2019 | 2019 | 2018 | 2019 | 2018 | 2020 |
-| **Last Update** | 6/2024 | 5/2024 | 6/2024 | 5/2024 | 6/2024 | 6/2024 | 6/2024 | 6/2024 | 6/2024 |
+| **Last Update** | 7/2024 | 7/2024 | 7/2024 | 7/2024 | 7/2024 | 7/2024 | 7/2024 | 7/2024 | 7/2024 |
 | **Framework Language** | C++, JS, Objective-C, Python | C++ | Rust | C++ | C++ | Go | C, C++, Dart | C# |
 | **Usage Language - Back** | JS, C++ | JS, C++ | Rust | JS, C++ | JS, C++ | Go | Dart | C# |
 | **Usage Language - Front** | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | Dart | C# |
