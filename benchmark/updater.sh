@@ -26,6 +26,14 @@ function updateDeps() {
 		git commit -m "[$benchmark] [$framework] Update tauri dependencies"
 	fi
 
+	if [ -f "bin/neutralino-win_x64.exe" ]; then
+		echo "Detected neutralino files, checking version ..."
+		npm install -g @neutralinojs/neu@latest
+		neu update --latest
+		git add .
+		git commit -m "[$benchmark] [$framework] Updated neutralinojs"
+	fi
+
 	git clean -xdf
 }
 

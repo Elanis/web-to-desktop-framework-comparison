@@ -104,6 +104,10 @@ typings/
 .tern-port
 
 .idea/
-benchmark/01-empty-app/nw.js/cache/
 
+# Lib-specific folders
+benchmark/01-empty-app/nw.js/cache/
 benchmark/02-empty-app-frameless/nw.js/cache/
+
+benchmark/01-empty-app/neutralinojs/.tmp/
+benchmark/02-empty-app-frameless/neutralinojs/.tmp/
