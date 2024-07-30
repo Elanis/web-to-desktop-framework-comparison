@@ -11,28 +11,28 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "pinia": "^2.1.7",
-    "vue": "^3.4.31",
-    "vue-router": "^4.4.0"
+    "pinia": "^2.2.0",
+    "vue": "^3.4.35",
+    "vue-router": "^4.4.1"
   },
   "devDependencies": {
     "@dotnet/jsinterop": "^3.1.31",
-    "@rushstack/eslint-patch": "^1.10.3",
+    "@rushstack/eslint-patch": "^1.10.4",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^20.14.9",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@types/node": "^22.0.2",
+    "@vitejs/plugin-vue": "^5.1.1",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.27.0",
-    "jsdom": "^24.1.0",
+    "jsdom": "^24.1.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.3",
-    "vitest": "^1.6.0",
-    "vue-tsc": "^2.0.26"
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
+    "vitest": "^2.0.5",
+    "vue-tsc": "^2.0.29"
   }
 }
