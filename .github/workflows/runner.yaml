@@ -104,6 +104,9 @@ jobs:
           go install github.com/wailsapp/wails/v2/cmd/wails@latest
           wails doctor
 
+      - name: Install neutralino's neu
+        run: npm i -g @neutralinojs/neu@latest
+
       - name: Run apps
         run: |
           if [ "$(git diff origin/main | grep ${{ matrix.app }})" != "" ]; then
