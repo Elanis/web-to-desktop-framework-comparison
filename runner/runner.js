@@ -152,7 +152,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			// Remove ANSI codes to match string only
 			const cleanData = data.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '');
 
-			// Cargo/Rust/Wails compatibility
+			// Cargo/Rust/Wails/Flutter compatibility
 			let trimmedCleanData = cleanData.trim();
 			if(
 				trimmedCleanData.startsWith('Compiling ') ||
@@ -165,9 +165,12 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				trimmedCleanData.includes('Installing frontend dependencies:') ||
 				trimmedCleanData.includes('Compiling frontend:') ||
 				trimmedCleanData.includes('Building application for development...') ||
-				trimmedCleanData.includes('Compiling application: ')
+				trimmedCleanData.includes('Compiling application: ') ||
+				// Flutter
+				trimmedCleanData.includes('Artifact Instance of') ||
+				trimmedCleanData.includes('Building Windows application...')
 			) {
-				console.log(`[WARNING] Cargo/Rust/Wails/Go action detected. Delaying timer ...`);
+				console.log(`[WARNING] Cargo/Rust/Wails/Go/Flutter action detected. Delaying timer ...`);
 				time = -1;
 
 				for(let i = 0; i <= resetTimeoutId; i++) { clearTimeout(i); }
