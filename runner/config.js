@@ -202,6 +202,16 @@ export const libraries = {
 		exe: 'flutter run --verbose lib/main.dart',
 		name: 'Flutter',
 		url: 'https://github.com/flutter/flutter',
+		build: {
+			cmd: 'flutter build windows --verbose lib/main.dart',
+			folders: {
+				'win32-x64': {
+					path: 'build/windows/x64/runner/Release/',
+					exe: 'empty_app.exe', // TODO: fix exe name
+					currentOnly: true
+				}
+			}
+		}
 	},
 	'DotnetMaui': {
 		exe: 'dotnet run --project DotnetMaui/DotnetMaui.csproj',
