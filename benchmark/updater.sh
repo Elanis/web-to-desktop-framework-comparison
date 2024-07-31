@@ -34,6 +34,14 @@ function updateDeps() {
 		git commit -m "[$benchmark] [$framework] Updated neutralinojs"
 	fi
 
+	if [ -f "pubspec.yaml" ] | [ -f "pubspec.lock" ]; then
+		echo "Detected flutter files, checking dependencies ..."
+		flutter pub upgrade
+		git add pubspec.yaml
+		git add pubspec.lock
+		git commit -m "[$benchmark] [$framework] Update flutter dependencies"
+	fi
+
 	git clean -xdf
 }
 
