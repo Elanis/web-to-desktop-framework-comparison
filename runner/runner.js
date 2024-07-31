@@ -252,7 +252,10 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				return;
 			}
 
-			if(time++ === timeout || childProcess.exitCode !== null || done) {
+			if(
+				(time === timeout && startTime !== '?') ||
+				time === timeout * 4 || // Wait for more if it takes a lot of time to startup
+				childProcess.exitCode !== null || done) {
 				resolve({
 					memoryUsage: memUsageHistory,
 					systemMeasuredMemory: sysMemUsageHistory,
@@ -268,6 +271,8 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 					} catch {}
 				}
 			}
+
+			time++;
 
 			pushStats();
 		}, 1000);
