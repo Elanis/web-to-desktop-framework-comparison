@@ -104,7 +104,7 @@ export const libraries = {
 					exe: './src-tauri/target/release/APPNAME',
 					currentOnly: true
 				},
-				'darwin-x64': {
+				'darwin-arm64': {
 					path: 'src-tauri/target/release/bundle/macos/APPNAME.app/',
 					exe: './Contents/MacOS/APPNAME',
 					currentOnly: true
@@ -156,7 +156,7 @@ export const libraries = {
 						'dist/APPNAME/resources.neu'
 					]
 				},
-				'darwin-x64': {
+				'darwin-arm64': {
 					path: '',
 					exe: 'dist/APPNAME/APPNAME-mac_x64',
 					additionalFiles: [
@@ -190,7 +190,7 @@ export const libraries = {
 					exe: './build/bin/APPNAME',
 					currentOnly: true
 				},
-				'darwin-x64': {
+				'darwin-arm64': {
 					path: './build/bin/APPNAME.app/',
 					exe: './Contents/MacOS/APPNAME',
 					currentOnly: true
