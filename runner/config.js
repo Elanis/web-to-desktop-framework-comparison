@@ -136,12 +136,12 @@ export const libraries = {
 		}
 	},
 	'neutralinojs': {
-		exe: 'npx @neutralinojs/neu run',
+		exe: 'neu run',
 		name: 'Neutralino',
 		url: 'https://github.com/neutralinojs/neutralinojs',
 		build: {
-			cmd: 'npx @neutralinojs/neu build --release',
-			folders: { // TODO: count "resources.neu" size as well
+			cmd: 'neu build --release',
+			folders: {
 				'linux-arm64': {
 					path: '',
 					exe: 'dist/APPNAME/APPNAME-linux_arm64',
@@ -163,14 +163,13 @@ export const libraries = {
 						'dist/APPNAME/resources.neu'
 					]
 				},
-				/*'win32-x64': {
+				'win32-x64': {
 					path: '',
 					exe: 'dist/APPNAME/APPNAME-win_x64.exe',
 					additionalFiles: [
 						'dist/APPNAME/resources.neu',
-						'WebView2Loader.dll'
-					] // TODO: count dll size
-				},*/
+					]
+				},
 			}
 		}
 	},
