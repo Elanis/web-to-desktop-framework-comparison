@@ -87,7 +87,7 @@ jobs:
           sudo apt install -y libxshmfence1 libglu1 libnss3 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libasound2 # Electron
           sudo apt install -y libwebkit2gtk-4.0-dev build-essential curl wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev # Tauri
           sudo apt install -y libwebkit2gtk-4.0-dev libstdc++6 # NeutralinoJS
-          sudo apt install -y pkg-config build-essential cmake make mesa-common-dev libglu1-mesa-dev file libqt5core5a libqt5dbus5 libqt5gui5 libqt5network5 libqt5printsupport5 libqt5svg5 libqt5widgets5 # NodeGUI
+          sudo apt install -y pkg-config build-essential cmake make mesa-common-dev libglu1-mesa-dev file libqt5core5a libqt5dbus5 libqt5gui5 libqt5network5 libqt5printsupport5 libqt5svg5 libqt5widgets5 libxcb-xkb-dev libxcb-cursor0 libopengl0 # NodeGUI
 
       - name: Install runner tools
         run: |
