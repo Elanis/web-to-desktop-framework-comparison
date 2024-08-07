@@ -415,6 +415,8 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 				memoryUsage: processMemoryUsage(res),
 				startTime: res.startTime
 			});
+
+			await sleep(1);
 		}
 
 		// Release
@@ -512,6 +514,8 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 						memoryUsage: processMemoryUsage(res),
 						startTime: res.startTime
 					});
+
+					await sleep(1);
 				}
 			}
 		}
