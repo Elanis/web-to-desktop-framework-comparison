@@ -27,10 +27,6 @@ jobs:
       - name: Git pull # Needed for sequential run
         run: git pull
 
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.3
         with:
