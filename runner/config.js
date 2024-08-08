@@ -51,6 +51,32 @@ export const libraries = {
 			}
 		}
 	},
+	'tauri': {
+		exe: 'npm start',
+		name: 'Tauri',
+		packageJsonVersionsNeeded: ['@tauri-apps/cli', '@tauri-apps/api'],
+		url: 'https://github.com/tauri-apps/tauri',
+		build: {
+			cmd: 'npm run build',
+			folders: {
+				'win32-x64': {
+					path: '',
+					exe: 'src-tauri/target/release/APPNAME.exe',
+					currentOnly: true
+				},
+				'linux-x64': {
+					path: '',
+					exe: './src-tauri/target/release/APPNAME',
+					currentOnly: true
+				},
+				'darwin-arm64': {
+					path: 'src-tauri/target/release/bundle/macos/APPNAME.app/',
+					exe: './Contents/MacOS/APPNAME',
+					currentOnly: true
+				},
+			}
+		}
+	},
 	'nw.js': {
 		exe: 'npm start',
 		name: 'NW.JS',
@@ -86,26 +112,25 @@ export const libraries = {
 			}
 		}
 	},
-	'tauri': {
-		exe: 'npm start',
-		name: 'Tauri',
-		packageJsonVersionsNeeded: ['@tauri-apps/cli', '@tauri-apps/api'],
-		url: 'https://github.com/tauri-apps/tauri',
+	'wails': {
+		exe: 'wails dev',
+		name: 'Wails',
+		url: 'https://github.com/wailsapp/wails',
 		build: {
-			cmd: 'npm run build',
+			cmd: 'wails build -windowsconsole',
 			folders: {
 				'win32-x64': {
 					path: '',
-					exe: 'src-tauri/target/release/APPNAME.exe',
+					exe: 'build/bin/APPNAME.exe',
 					currentOnly: true
 				},
 				'linux-x64': {
 					path: '',
-					exe: './src-tauri/target/release/APPNAME',
+					exe: './build/bin/APPNAME',
 					currentOnly: true
 				},
 				'darwin-arm64': {
-					path: 'src-tauri/target/release/bundle/macos/APPNAME.app/',
+					path: './build/bin/APPNAME.app/',
 					exe: './Contents/MacOS/APPNAME',
 					currentOnly: true
 				},
@@ -169,31 +194,6 @@ export const libraries = {
 					additionalFiles: [
 						'dist/APPNAME/resources.neu',
 					]
-				},
-			}
-		}
-	},
-	'wails': {
-		exe: 'wails dev',
-		name: 'Wails',
-		url: 'https://github.com/wailsapp/wails',
-		build: {
-			cmd: 'wails build -windowsconsole',
-			folders: {
-				'win32-x64': {
-					path: '',
-					exe: 'build/bin/APPNAME.exe',
-					currentOnly: true
-				},
-				'linux-x64': {
-					path: '',
-					exe: './build/bin/APPNAME',
-					currentOnly: true
-				},
-				'darwin-arm64': {
-					path: './build/bin/APPNAME.app/',
-					exe: './Contents/MacOS/APPNAME',
-					currentOnly: true
 				},
 			}
 		}
