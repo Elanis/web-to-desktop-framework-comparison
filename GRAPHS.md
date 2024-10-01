@@ -10,7 +10,7 @@ gantt
 
 
 	section electron
-	113813 : 0, 113813
+	113812 : 0, 113812
 
 	
 	section tauri
