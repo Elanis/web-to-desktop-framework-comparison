@@ -1,4 +1,4 @@
-// Type definitions for Neutralino 5.3.0
+// Type definitions for Neutralino 5.4.0
 // Project: https://github.com/neutralinojs
 // Definitions project: https://github.com/neutralinojs/neutralino.js
 
@@ -95,30 +95,30 @@ namespace os {
     }
     //clipboard
     enum ClipboardFormat {
-        unknown = 0,
-        text = 1,
-        image = 2
+        unknown = "unknown",
+        text = "text",
+        image = "image"
     }
     // NL_GLOBALS
     enum Mode {
-        window = 0,
-        browser = 1,
-        cloud = 2,
-        chrome = 3
+        window = "window",
+        browser = "browser",
+        cloud = "cloud",
+        chrome = "chrome"
     }
     enum OperatingSystem {
-        Linux = 0,
-        Windows = 1,
-        Darwin = 2,
-        FreeBSD = 3,
-        Unknown = 4
+        Linux = "Linux",
+        Windows = "Windows",
+        Darwin = "Darwin",
+        FreeBSD = "FreeBSD",
+        Unknown = "Unknown"
     }
     enum Architecture {
-        x64 = 0,
-        arm = 1,
-        itanium = 2,
-        ia32 = 3,
-        unknown = 4
+        x64 = "x64",
+        arm = "arm",
+        itanium = "itanium",
+        ia32 = "ia32",
+        unknown = "unknown"
     }
     interface ExecCommandOptions {
         stdIn?: string;
@@ -262,30 +262,30 @@ namespace debug {
     }
     //clipboard
     enum ClipboardFormat {
-        unknown = 0,
-        text = 1,
-        image = 2
+        unknown = "unknown",
+        text = "text",
+        image = "image"
     }
     // NL_GLOBALS
     enum Mode {
-        window = 0,
-        browser = 1,
-        cloud = 2,
-        chrome = 3
+        window = "window",
+        browser = "browser",
+        cloud = "cloud",
+        chrome = "chrome"
     }
     enum OperatingSystem {
-        Linux = 0,
-        Windows = 1,
-        Darwin = 2,
-        FreeBSD = 3,
-        Unknown = 4
+        Linux = "Linux",
+        Windows = "Windows",
+        Darwin = "Darwin",
+        FreeBSD = "FreeBSD",
+        Unknown = "Unknown"
     }
     enum Architecture {
-        x64 = 0,
-        arm = 1,
-        itanium = 2,
-        ia32 = 3,
-        unknown = 4
+        x64 = "x64",
+        arm = "arm",
+        itanium = "itanium",
+        ia32 = "ia32",
+        unknown = "unknown"
     }
     function log(message: string, type?: LoggerType): Promise<void>;
 }
@@ -340,6 +340,8 @@ namespace window {
     function unmaximize(): Promise<void>;
     function isMaximized(): Promise<boolean>;
     function minimize(): Promise<void>;
+    function unminimize(): Promise<void>;
+    function isMinimized(): Promise<boolean>;
     function setFullScreen(): Promise<void>;
     function exitFullScreen(): Promise<void>;
     function isFullScreen(): Promise<boolean>;
@@ -350,8 +352,30 @@ namespace window {
     function setIcon(icon: string): Promise<void>;
     function move(x: number, y: number): Promise<void>;
     function center(): Promise<void>;
-    function setDraggableRegion(domElementOrId: string | HTMLElement): Promise<void>;
-    function unsetDraggableRegion(domElementOrId: string | HTMLElement): Promise<void>;
+    type DraggableRegionOptions = {
+        /**
+         * If set to `true`, the region will always capture the pointer,
+         * ensuring dragging doesn't break on fast pointer movement.
+         * Note that it prevents child elements from receiving any pointer events.
+         * Defaults to `false`.
+         */
+        alwaysCapture?: boolean;
+        /**
+         * Minimum distance between cursor's starting and current position
+         * after which dragging is started. This helps prevent accidental dragging
+         * while interacting with child elements.
+         * Defaults to `10`. (In pixels.)
+         */
+        dragMinDistance?: number;
+    };
+    function setDraggableRegion(domElementOrId: string | HTMLElement, options?: DraggableRegionOptions): Promise<{
+        success: true;
+        message: string;
+    }>;
+    function unsetDraggableRegion(domElementOrId: string | HTMLElement): Promise<{
+        success: true;
+        message: string;
+    }>;
     function setSize(options: WindowSizeOptions): Promise<void>;
     function getSize(): Promise<WindowSizeOptions>;
     function getPosition(): Promise<WindowPosOptions>;
@@ -424,30 +448,30 @@ namespace clipboard {
     }
     //clipboard
     enum ClipboardFormat {
-        unknown = 0,
-        text = 1,
-        image = 2
+        unknown = "unknown",
+        text = "text",
+        image = "image"
     }
     // NL_GLOBALS
     enum Mode {
-        window = 0,
-        browser = 1,
-        cloud = 2,
-        chrome = 3
+        window = "window",
+        browser = "browser",
+        cloud = "cloud",
+        chrome = "chrome"
     }
     enum OperatingSystem {
-        Linux = 0,
-        Windows = 1,
-        Darwin = 2,
-        FreeBSD = 3,
-        Unknown = 4
+        Linux = "Linux",
+        Windows = "Windows",
+        Darwin = "Darwin",
+        FreeBSD = "FreeBSD",
+        Unknown = "Unknown"
     }
     enum Architecture {
-        x64 = 0,
-        arm = 1,
-        itanium = 2,
-        ia32 = 3,
-        unknown = 4
+        x64 = "x64",
+        arm = "arm",
+        itanium = "itanium",
+        ia32 = "ia32",
+        unknown = "unknown"
     }
     function getFormat(): Promise<ClipboardFormat>;
     function readText(): Promise<string>;
@@ -455,6 +479,12 @@ namespace clipboard {
     function writeText(data: string): Promise<void>;
     function writeImage(image: ClipboardImage): Promise<void>;
     function clear(): Promise<void>;
+}
+namespace resources {
+    function getFiles(): Promise<string[]>;
+    function extractFile(path: string, destination: string): Promise<void>;
+    function readFile(path: string): Promise<string>;
+    function readBinaryFile(path: string): Promise<ArrayBuffer>;
 }
 namespace custom {
     function getMethods(): Promise<string[]>;
@@ -666,21 +696,21 @@ type Builtin = "ready" | "trayMenuItemClicked" | "windowClose" | "serverOffline"
 }
 
 // debug
-export enum LoggerType {
+enum LoggerType {
     WARNING = 'WARNING',
     ERROR = 'ERROR',
     INFO = 'INFO'
   }
 
 // os
-export enum Icon {
+enum Icon {
     WARNING = 'WARNING',
     ERROR = 'ERROR',
     INFO = 'INFO',
     QUESTION = 'QUESTION'
 }
 
-export enum MessageBoxChoice {
+enum MessageBoxChoice {
     OK = 'OK',
     OK_CANCEL = 'OK_CANCEL',
     YES_NO = 'YES_NO',
@@ -690,43 +720,43 @@ export enum MessageBoxChoice {
 }
 
 //clipboard
-export enum ClipboardFormat {
-    unknown,
-    text,
-    image
+enum ClipboardFormat {
+    unknown = 'unknown',
+    text = 'text',
+    image = 'image'
 }
 
 // NL_GLOBALS
-export enum Mode {
-    window,
-    browser,
-    cloud,
-    chrome
+enum Mode {
+    window = 'window',
+    browser = 'browser',
+    cloud = 'cloud',
+    chrome = 'chrome'
 }
 
-export enum OperatingSystem {
-    Linux,
-    Windows,
-    Darwin,
-    FreeBSD,
-    Unknown
+enum OperatingSystem {
+    Linux = 'Linux',
+    Windows = 'Windows',
+    Darwin = 'Darwin',
+    FreeBSD = 'FreeBSD',
+    Unknown = 'Unknown'
 }
 
-export enum Architecture {
-    x64,
-    arm,
-    itanium,
-    ia32,
-    unknown
+enum Architecture {
+    x64 = 'x64',
+    arm = 'arm',
+    itanium = 'itanium',
+    ia32 = 'ia32',
+    unknown = 'unknown'
 }
 
 
-export interface Response {
+interface Response {
     success: boolean;
     message: string;
   }
   
-  export type Builtin =
+  type Builtin =
       'ready' |
       'trayMenuItemClicked' |
       'windowClose' |
