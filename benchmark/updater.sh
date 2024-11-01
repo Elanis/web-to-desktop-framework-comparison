@@ -8,7 +8,7 @@ function updateDeps() {
 	if [ -f "package.json" ] | [ -f "package-lock.json" ]; then
 		echo "Detected npm files, checking dependencies ..."
 		npm ci
-		ncu -x eslint -u # Temporarily exclude eslint to prevent "DotnetMauiVue/vue-project" being wrongly updated
+		ncu -u
 		npm i
 		npm audit
 		npm audit fix
