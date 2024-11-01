@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@nodegui/packer": "^1.5.0",
-    "@types/node": "^22.7.4",
+    "@types/node": "^22.8.6",
     "clean-webpack-plugin": "^4.0.0",
     "file-loader": "^6.2.0",
     "native-addon-loader": "^2.0.1",
