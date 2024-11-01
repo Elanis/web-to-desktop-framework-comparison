@@ -10,23 +10,23 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
-    "pinia": "^2.2.4",
-    "vue": "^3.5.10",
+    "pinia": "^2.2.5",
+    "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@dotnet/jsinterop": "^3.1.31",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.7.4",
+    "@types/node": "^22.8.6",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
     "jsdom": "^25.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.8",
-    "vitest": "^2.1.1",
-    "vue-tsc": "^2.1.6"
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4",
+    "vue-tsc": "^2.1.10"
   }
 }
