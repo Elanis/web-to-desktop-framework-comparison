@@ -9,7 +9,14 @@
     <p>This is an empty app</p>
     <script>
       window.addEventListener('load', () => {
-        window.__TAURI__.event.emit('load');
+        const intervalId = setInterval(() => {
+          if(!window.__TAURI__) {
+            return;
+          }
+
+          clearInterval(intervalId);
+          window.__TAURI__.event.emit('load');
+        }, 30);
       });
     </script>
   </body>
