@@ -1,1 +1,50 @@
-{"electron":{"repo":"electron/electron","stars":114283,"forks":15406,"lastUpdate":"11/2024"},"tauri":{"repo":"tauri-apps/tauri","stars":84341,"forks":2535,"lastUpdate":"11/2024"},"nw.js":{"repo":"nwjs/nw.js","stars":40377,"forks":3885,"lastUpdate":"10/2024"},"wails":{"repo":"wailsapp/wails","stars":25187,"forks":1212,"lastUpdate":"11/2024"},"nodegui":{"repo":"nodegui/nodegui","stars":8907,"forks":294,"lastUpdate":"10/2024"},"neutralinojs":{"repo":"neutralinojs/neutralinojs","stars":7459,"forks":376,"lastUpdate":"11/2024"},"flutter":{"repo":"flutter/flutter","stars":166121,"forks":27430,"lastUpdate":"11/2024"},"DotnetMaui":{"repo":"dotnet/maui","stars":22207,"forks":1744,"lastUpdate":"11/2024"},"DotnetMauiVue":{"repo":"dotnet/maui","stars":22207,"forks":1744,"lastUpdate":"11/2024"}}
+{
+    "electron": {
+        "repo": "electron/electron",
+        "stars": 114283,
+        "forks": 15406,
+        "lastUpdate": "11/2024"
+    },
+    "tauri": {
+        "repo": "tauri-apps/tauri",
+        "stars": 84341,
+        "forks": 2535,
+        "lastUpdate": "11/2024"
+    },
+    "nw.js": {
+        "repo": "nwjs/nw.js",
+        "stars": 40377,
+        "forks": 3885,
+        "lastUpdate": "10/2024"
+    },
+    "wails": {
+        "repo": "wailsapp/wails",
+        "stars": 25187,
+        "forks": 1212,
+        "lastUpdate": "11/2024"
+    },
+    "nodegui": {
+        "repo": "nodegui/nodegui",
+        "stars": 8907,
+        "forks": 294,
+        "lastUpdate": "10/2024"
+    },
+    "neutralinojs": {
+        "repo": "neutralinojs/neutralinojs",
+        "stars": 7459,
+        "forks": 376,
+        "lastUpdate": "11/2024"
+    },
+    "flutter": {
+        "repo": "flutter/flutter",
+        "stars": 166121,
+        "forks": 27430,
+        "lastUpdate": "11/2024"
+    },
+    "DotnetMauiVue": {
+        "repo": "dotnet/maui",
+        "stars": 22207,
+        "forks": 1744,
+        "lastUpdate": "11/2024"
+    }
+}

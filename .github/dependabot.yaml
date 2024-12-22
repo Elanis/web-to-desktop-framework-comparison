@@ -6,10 +6,6 @@ updates:
     schedule:
       interval: monthly
   - package-ecosystem: "nuget"
-    directory: "benchmark/01-empty-app/DotnetMaui"
-    schedule:
-      interval: monthly
-  - package-ecosystem: "nuget"
     directory: "benchmark/01-empty-app/DotnetMauiVue"
     schedule:
       interval: monthly

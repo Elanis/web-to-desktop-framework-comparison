@@ -213,11 +213,6 @@ export const libraries = {
 			}
 		}
 	},
-	'DotnetMaui': {
-		exe: 'dotnet run --project DotnetMaui/DotnetMaui.csproj',
-		name: '.Net MAUI',
-		url: 'https://github.com/dotnet/maui',
-	},
 	'DotnetMauiVue': {
 		exe: 'dotnet run --project DotnetMauiVue/DotnetMauiVue.csproj',
 		name: '.Net MAUI w/ Vue',
@@ -305,12 +300,8 @@ export const requestedArchitectures = {
 
 export const customMessages = {
 	'01-empty-app': {
-		'DotnetMaui': {
-			key: 1,
-			value: 'Benchmark WIP (See [#319](https://github.com/Elanis/web-to-desktop-framework-comparison/issues/319))'
-		},
 		'DotnetMauiVue': {
-			key: 2,
+			key: 1,
 			value: 'Benchmark WIP (See [#319](https://github.com/Elanis/web-to-desktop-framework-comparison/issues/319))'
 		}
 	},
@@ -319,12 +310,8 @@ export const customMessages = {
 			key: 1,
 			value: 'Frameless mode not supported yet'
 		},
-		'DotnetMaui': {
-			key: 2,
-			value: 'Frameless mode not working'
-		},
 		'DotnetMauiVue': {
-			key: 3,
+			key: 2,
 			value: 'Frameless mode not working'
 		}
 	}
