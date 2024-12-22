@@ -42,6 +42,15 @@ function updateDeps() {
 		git commit -m "[$benchmark] [$framework] Update flutter dependencies"
 	fi
 
+	if [ -f "go.mod" ] | [ -f "go.sum" ]; then
+		echo "Detected go files, checking dependencies ..."
+		go get -u
+		go mod tidy
+		git add go.mod
+		git add go.sum
+		git commit -m "[$benchmark] [$framework] Update flutter dependencies"
+	fi
+
 	git clean -xdf
 }
 
