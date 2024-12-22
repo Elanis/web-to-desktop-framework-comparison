@@ -10,6 +10,10 @@ updates:
     schedule:
       interval: monthly
   - package-ecosystem: npm
+    directory: "benchmark/01-empty-app/DotnetMauiVue/vue-project"
+    schedule:
+      interval: monthly
+  - package-ecosystem: npm
     directory: "benchmark/01-empty-app/electron"
     schedule:
       interval: monthly
