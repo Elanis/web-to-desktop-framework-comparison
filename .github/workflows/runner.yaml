@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.1.0
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
