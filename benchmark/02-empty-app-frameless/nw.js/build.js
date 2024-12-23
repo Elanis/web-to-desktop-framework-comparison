@@ -24,7 +24,8 @@ for(const arch of archs) {
 		glob: false,
 		app: {
 			'icon': './app/icon.ico',
-			'name': '02-empty-app-frameless'
+			'name': '02-empty-app-frameless',
+			'LSApplicationCategoryType': 'public.app-category.utilities',
 		}
 	});
 	console.log(`Building for ${arch} ... Done!`);
