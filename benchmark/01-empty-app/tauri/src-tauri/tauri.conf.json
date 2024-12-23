@@ -57,7 +57,14 @@
       }
     ],
     "security": {
-      "csp": null
+      "capabilities": [
+        {
+          "identifier": "events",
+          "description": "call events",
+          "windows": ["*"],
+          "permissions": ["core:event:default"]
+        }
+      ]
     }
   }
 }
