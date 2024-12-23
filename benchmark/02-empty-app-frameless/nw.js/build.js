@@ -21,7 +21,11 @@ for(const arch of archs) {
 		outDir: `./dist/02-empty-app-frameless-${os.platform()}-${arch}/`,
 		srcDir: './app',
 		arch,
-		glob: false
+		glob: false,
+		app: {
+			'icon': './app/icon.ico',
+			'name': '02-empty-app-frameless'
+		}
 	});
 	console.log(`Building for ${arch} ... Done!`);
 }
