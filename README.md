@@ -14,10 +14,10 @@ This repository has been made to create an objective comparison of multiple fram
 
 | | [Electron](https://github.com/electron/electron) | [Tauri](https://github.com/tauri-apps/tauri) | [NW.JS](https://github.com/nwjs/nw.js) | [Wails](https://github.com/wailsapp/wails) | [NodeGui](https://github.com/nodegui/nodegui) | [Neutralino](https://github.com/neutralinojs/neutralinojs) | [Flutter](https://github.com/flutter/flutter) | [.Net MAUI](https://github.com/dotnet/maui) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Github stars** | 114.3k | 84.3k | 40.4k | 25.2k | 8.9k | 7.5k | 166.1k | 22.2k |
-| **Forks** | 15.4k | 2.5k | 3.9k | 1.2k | 0.3k | 0.4k | 27.4k | 1.7k |
+| **Github stars** | 114.9k | 87.5k | 40.4k | 26k | 8.9k | 7.5k | 167.4k | 22.3k |
+| **Forks** | 15.7k | 2.7k | 3.9k | 1.3k | 0.3k | 0.4k | 27.8k | 1.8k |
 | **Creation date** | 2013 | 2019 | 2011 | 2019 | 2019 | 2018 | 2018 | 2020 |
-| **Last Update** | 11/2024 | 11/2024 | 10/2024 | 11/2024 | 10/2024 | 11/2024 | 11/2024 | 11/2024 |
+| **Last Update** | 12/2024 | 12/2024 | 12/2024 | 12/2024 | 11/2024 | 12/2024 | 12/2024 | 12/2024 |
 | **Framework Language** | C++, JS, Objective-C, Python | Rust | C++ | Go | C++ | C++ | C, C++, Dart | C# |
 | **Usage Language - Back** | JS, C++ | Rust | JS, C++ | Go | JS, C++ | JS, C++ | Dart | C# |
 | **Usage Language - Front** | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | HTML, CSS, JS | Dart | C# |
@@ -63,10 +63,9 @@ See [GRAPHS.md](https://github.com/Elanis/web-to-desktop-framework-comparison/bl
 | | ***Android*** | ❌ | ✔️ | [Requested](https://github.com/nwjs/nw.js/issues/94) | [Requested](https://github.com/wailsapp/wails/issues/1481)| ❌ | ❌  | ✔️ | ✔️ |
 | | ***iOS*** | ❌ | ✔️ | ❌ | [Requested](https://github.com/wailsapp/wails/issues/1482) | ❌ | ❌ | ✔️ | ✔️ |
 | | ***tvOS*** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️ |
-| | ***Web*** | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️<sup>3</sup> | ✔️ | ❌ |
+| | ***Web*** | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ | ❌ |
 
 **<sup>1</sup>**: Linux 32-bit support dropped  
-**<sup>2</sup>**: https://github.com/tauri-apps/tauri#platforms  
 **<sup>3</sup>**: Uses [modes](https://neutralino.js.org/docs/configuration/modes/) to generate web apps  
 
 ## Benchmarks
