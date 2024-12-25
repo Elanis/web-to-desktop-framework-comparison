@@ -1,4 +1,4 @@
-// Type definitions for Neutralino 5.4.0
+// Type definitions for Neutralino 5.5.0
 // Project: https://github.com/neutralinojs
 // Definitions project: https://github.com/neutralinojs/neutralino.js
 
@@ -319,6 +319,9 @@ namespace window {
         useSavedState?: boolean;
         exitProcessOnClose?: boolean;
         extendUserAgentWith?: string;
+        injectGlobals?: boolean;
+        injectClientLibrary?: boolean;
+        injectScript?: string;
         processArgs?: string;
     }
     interface WindowSizeOptions {
@@ -672,6 +675,9 @@ interface WindowOptions extends WindowSizeOptions, WindowPosOptions {
     useSavedState?: boolean;
     exitProcessOnClose?: boolean;
     extendUserAgentWith?: string;
+    injectGlobals?: boolean;
+    injectClientLibrary?: boolean;
+    injectScript?: string;
     processArgs?: string;
 }
 interface WindowSizeOptions {
@@ -788,8 +794,14 @@ declare const NL_APPID: string;
 declare const NL_APPVERSION: string;
 /** Application path */
 declare const NL_PATH: string;
+/** Application data path */
+declare const NL_DATAPATH: string;
 /** Returns true if extensions are enabled */
 declare const NL_EXTENABLED: boolean;
+/** Returns true if the client library is injected */
+declare const NL_GINJECTED: boolean;
+/** Returns true if globals are injected */
+declare const NL_CINJECTED: boolean;
 /** Operating system name: Linux, Windows, Darwin, FreeBSD, or Uknown */
 declare const NL_OS: OperatingSystem;
 /** CPU architecture: x64, arm, itanium, ia32, or unknown */

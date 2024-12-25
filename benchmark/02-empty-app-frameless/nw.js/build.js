@@ -21,7 +21,12 @@ for(const arch of archs) {
 		outDir: `./dist/02-empty-app-frameless-${os.platform()}-${arch}/`,
 		srcDir: './app',
 		arch,
-		glob: false
+		glob: false,
+		app: {
+			'icon': './app/icon.ico',
+			'name': '02-empty-app-frameless',
+			'LSApplicationCategoryType': 'public.app-category.utilities',
+		}
 	});
 	console.log(`Building for ${arch} ... Done!`);
 }

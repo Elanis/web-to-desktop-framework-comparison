@@ -6,11 +6,11 @@ updates:
     schedule:
       interval: monthly
   - package-ecosystem: "nuget"
-    directory: "benchmark/01-empty-app/DotnetMaui"
+    directory: "benchmark/01-empty-app/DotnetMauiVue"
     schedule:
       interval: monthly
-  - package-ecosystem: "nuget"
-    directory: "benchmark/01-empty-app/DotnetMauiVue"
+  - package-ecosystem: npm
+    directory: "benchmark/01-empty-app/DotnetMauiVue/vue-project"
     schedule:
       interval: monthly
   - package-ecosystem: npm
