@@ -6,7 +6,7 @@
     "build": "node build.js" 
   }, 
   "devDependencies": {
-    "nw-builder": "^4.13.7"
+    "nw-builder": "^4.13.8"
   },
   "type": "module"
 }
