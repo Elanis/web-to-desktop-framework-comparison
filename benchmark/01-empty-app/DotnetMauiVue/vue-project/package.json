@@ -17,7 +17,7 @@
   "devDependencies": {
     "@dotnet/jsinterop": "^3.1.31",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
@@ -25,8 +25,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
-    "vite": "^6.0.5",
+    "vite": "^6.0.7",
     "vitest": "^2.1.8",
-    "vue-tsc": "^2.1.10"
+    "vue-tsc": "^2.2.0"
   }
 }
