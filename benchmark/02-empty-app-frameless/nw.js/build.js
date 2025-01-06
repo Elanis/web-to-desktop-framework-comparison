@@ -26,6 +26,8 @@ for(const arch of archs) {
 			'icon': './app/icon.ico',
 			'name': '02-empty-app-frameless',
 			'LSApplicationCategoryType': 'public.app-category.utilities',
+			'NSHumanReadableCopyright': 'See LICENSE.md - MIT',
+			'NSLocalNetworkUsageDescription': 'N/A',
 		}
 	});
 	console.log(`Building for ${arch} ... Done!`);
