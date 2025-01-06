@@ -14,7 +14,7 @@ gantt
 
 	
 	section tauri
-	88023 : 0, 88023
+	88024 : 0, 88024
 
 	
 	section nw.js
@@ -52,7 +52,7 @@ gantt
 
 
 	section electron
-	15684 : 0, 15684
+	15685 : 0, 15685
 
 	
 	section tauri
