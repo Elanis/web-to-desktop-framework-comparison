@@ -1,4 +1,4 @@
-// Type definitions for Neutralino 5.5.0
+// Type definitions for Neutralino 5.6.0
 // Project: https://github.com/neutralinojs
 // Definitions project: https://github.com/neutralinojs/neutralino.js
 
@@ -384,6 +384,7 @@ namespace window {
     function getPosition(): Promise<WindowPosOptions>;
     function setAlwaysOnTop(onTop: boolean): Promise<void>;
     function create(url: string, options?: WindowOptions): Promise<void>;
+    function snapshot(path: string): Promise<void>;
 }
 namespace events {
     interface Response {
@@ -478,16 +479,28 @@ namespace clipboard {
     }
     function getFormat(): Promise<ClipboardFormat>;
     function readText(): Promise<string>;
-    function readImage(): Promise<ClipboardImage | null>;
+    function readImage(format?: string): Promise<ClipboardImage | null>;
     function writeText(data: string): Promise<void>;
     function writeImage(image: ClipboardImage): Promise<void>;
     function clear(): Promise<void>;
 }
 namespace resources {
+    interface Stats {
+        size: number;
+        isFile: boolean;
+        isDirectory: boolean;
+    }
     function getFiles(): Promise<string[]>;
+    function getStats(path: string): Promise<Stats>;
     function extractFile(path: string, destination: string): Promise<void>;
+    function extractDirectory(path: string, destination: string): Promise<void>;
     function readFile(path: string): Promise<string>;
     function readBinaryFile(path: string): Promise<ArrayBuffer>;
+}
+namespace server {
+    function mount(path: string, target: string): Promise<void>;
+    function unmount(path: string): Promise<void>;
+    function getMounts(): Promise<void>;
 }
 namespace custom {
     function getMethods(): Promise<string[]>;
