@@ -1,4 +1,4 @@
-// Type definitions for Neutralino 5.6.0
+// Type definitions for Neutralino 6.0.0
 // Project: https://github.com/neutralinojs
 // Definitions project: https://github.com/neutralinojs/neutralino.js
 
@@ -49,6 +49,22 @@ namespace filesystem {
         stem: string;
         extension: string;
     }
+    interface Permissions {
+        all: boolean;
+        ownerAll: boolean;
+        ownerRead: boolean;
+        ownerWrite: boolean;
+        ownerExec: boolean;
+        groupAll: boolean;
+        groupRead: boolean;
+        groupWrite: boolean;
+        groupExec: boolean;
+        othersAll: boolean;
+        othersRead: boolean;
+        othersWrite: boolean;
+        othersExec: boolean;
+    }
+    type PermissionsMode = "ADD" | "REPLACE" | "REMOVE";
     function createDirectory(path: string): Promise<void>;
     function remove(path: string): Promise<void>;
     function writeFile(path: string, data: string): Promise<void>;
@@ -70,6 +86,8 @@ namespace filesystem {
     function getAbsolutePath(path: string): Promise<string>;
     function getRelativePath(path: string, base?: string): Promise<string>;
     function getPathParts(path: string): Promise<PathParts>;
+    function getPermissions(path: string): Promise<Permissions>;
+    function setPermissions(path: string, permissions: Permissions, mode: PermissionsMode): Promise<void>;
 }
 namespace os {
     // debug
@@ -135,6 +153,10 @@ namespace os {
         id: number;
         pid: number;
     }
+    interface SpawnedProcessOptions {
+        cwd?: string;
+        envs?: Record<string, string>;
+    }
     interface Envs {
         [key: string]: string;
     }
@@ -167,7 +189,7 @@ namespace os {
     }
     type KnownPath = "config" | "data" | "cache" | "documents" | "pictures" | "music" | "video" | "downloads" | "savedGames1" | "savedGames2" | "temp";
     function execCommand(command: string, options?: ExecCommandOptions): Promise<ExecCommandResult>;
-    function spawnProcess(command: string, cwd?: string): Promise<SpawnedProcess>;
+    function spawnProcess(command: string, options?: SpawnedProcessOptions): Promise<SpawnedProcess>;
     function updateSpawnedProcess(id: number, event: string, data?: any): Promise<void>;
     function getSpawnedProcesses(): Promise<SpawnedProcess[]>;
     function getEnv(key: string): Promise<string>;
@@ -482,6 +504,8 @@ namespace clipboard {
     function readImage(format?: string): Promise<ClipboardImage | null>;
     function writeText(data: string): Promise<void>;
     function writeImage(image: ClipboardImage): Promise<void>;
+    function readHTML(): Promise<string>;
+    function writeHTML(data: string): Promise<void>;
     function clear(): Promise<void>;
 }
 namespace resources {
@@ -624,6 +648,22 @@ interface PathParts {
     stem: string;
     extension: string;
 }
+interface Permissions {
+    all: boolean;
+    ownerAll: boolean;
+    ownerRead: boolean;
+    ownerWrite: boolean;
+    ownerExec: boolean;
+    groupAll: boolean;
+    groupRead: boolean;
+    groupWrite: boolean;
+    groupExec: boolean;
+    othersAll: boolean;
+    othersRead: boolean;
+    othersWrite: boolean;
+    othersExec: boolean;
+}
+type PermissionsMode = "ADD" | "REPLACE" | "REMOVE";
 interface ExecCommandOptions {
     stdIn?: string;
     background?: boolean;
@@ -638,6 +678,10 @@ interface ExecCommandResult {
 interface SpawnedProcess {
     id: number;
     pid: number;
+}
+interface SpawnedProcessOptions {
+    cwd?: string;
+    envs?: Record<string, string>;
 }
 interface Envs {
     [key: string]: string;
