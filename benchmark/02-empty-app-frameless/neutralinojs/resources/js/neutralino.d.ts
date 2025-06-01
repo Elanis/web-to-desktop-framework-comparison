@@ -1,4 +1,4 @@
-// Type definitions for Neutralino 6.0.0
+// Type definitions for Neutralino 6.1.0
 // Project: https://github.com/neutralinojs
 // Definitions project: https://github.com/neutralinojs/neutralino.js
 
@@ -359,6 +359,15 @@ namespace window {
         x: number;
         y: number;
     }
+    interface WindowMenu extends Array<WindowMenuItem> {
+    }
+    interface WindowMenuItem {
+        id?: string;
+        text: string;
+        isDisabled?: boolean;
+        isChecked?: boolean;
+        menuItems?: WindowMenuItem[];
+    }
     function setTitle(title: string): Promise<void>;
     function getTitle(): Promise<string>;
     function maximize(): Promise<void>;
@@ -407,6 +416,7 @@ namespace window {
     function setAlwaysOnTop(onTop: boolean): Promise<void>;
     function create(url: string, options?: WindowOptions): Promise<void>;
     function snapshot(path: string): Promise<void>;
+    function setMainMenu(options: WindowMenu): Promise<void>;
 }
 namespace events {
     interface Response {
@@ -749,6 +759,15 @@ interface WindowSizeOptions {
 interface WindowPosOptions {
     x: number;
     y: number;
+}
+interface WindowMenu extends Array<WindowMenuItem> {
+}
+interface WindowMenuItem {
+    id?: string;
+    text: string;
+    isDisabled?: boolean;
+    isChecked?: boolean;
+    menuItems?: WindowMenuItem[];
 }
 interface Response {
     success: boolean;
