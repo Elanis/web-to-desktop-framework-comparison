@@ -1,4 +1,4 @@
-// Type definitions for Neutralino 6.1.0
+// Type definitions for Neutralino 6.2.0
 // Project: https://github.com/neutralinojs
 // Definitions project: https://github.com/neutralinojs/neutralino.js
 
@@ -88,6 +88,9 @@ namespace filesystem {
     function getPathParts(path: string): Promise<PathParts>;
     function getPermissions(path: string): Promise<Permissions>;
     function setPermissions(path: string, permissions: Permissions, mode: PermissionsMode): Promise<void>;
+    function getJoinedPath(...paths: string[]): Promise<string>;
+    function getNormalizedPath(path: string): Promise<string>;
+    function getUnnormalizedPath(path: string): Promise<string>;
 }
 namespace os {
     // debug
@@ -386,27 +389,19 @@ namespace window {
     function setIcon(icon: string): Promise<void>;
     function move(x: number, y: number): Promise<void>;
     function center(): Promise<void>;
-    type DraggableRegionOptions = {
-        /**
-         * If set to `true`, the region will always capture the pointer,
-         * ensuring dragging doesn't break on fast pointer movement.
-         * Note that it prevents child elements from receiving any pointer events.
-         * Defaults to `false`.
-         */
-        alwaysCapture?: boolean;
-        /**
-         * Minimum distance between cursor's starting and current position
-         * after which dragging is started. This helps prevent accidental dragging
-         * while interacting with child elements.
-         * Defaults to `10`. (In pixels.)
-         */
-        dragMinDistance?: number;
-    };
-    function setDraggableRegion(domElementOrId: string | HTMLElement, options?: DraggableRegionOptions): Promise<{
+    function beginDrag(screenX?: number, screenY?: number): Promise<void>;
+    function setDraggableRegion(DOMElementOrId: string | HTMLElement, options?: {
+        exclude?: Array<string | HTMLElement>;
+    }): Promise<{
         success: true;
         message: string;
+        exclusions: {
+            add(elements: Array<string | HTMLElement>): void;
+            remove(elements: Array<string | HTMLElement>): void;
+            removeAll(): void;
+        };
     }>;
-    function unsetDraggableRegion(domElementOrId: string | HTMLElement): Promise<{
+    function unsetDraggableRegion(DOMElementOrId: string | HTMLElement): Promise<{
         success: true;
         message: string;
     }>;
@@ -417,6 +412,7 @@ namespace window {
     function create(url: string, options?: WindowOptions): Promise<void>;
     function snapshot(path: string): Promise<void>;
     function setMainMenu(options: WindowMenu): Promise<void>;
+    function print(): Promise<void>;
 }
 namespace events {
     interface Response {
