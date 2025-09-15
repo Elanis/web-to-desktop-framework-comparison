@@ -22,7 +22,7 @@ gantt
 
 	
 	section wails
-	30076 : 0, 30076
+	30075 : 0, 30075
 
 	
 	section nodegui
