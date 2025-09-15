@@ -18,7 +18,7 @@ gantt
 
 	
 	section nw.js
-	41173 : 0, 41173
+	41174 : 0, 41174
 
 	
 	section wails
