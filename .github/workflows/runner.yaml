@@ -55,7 +55,7 @@ jobs:
           flutter-version: '3.x'      
 
       # Setup the go environment
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version: 'stable'
 
