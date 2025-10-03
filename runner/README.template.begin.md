@@ -66,7 +66,7 @@ See [GRAPHS.md](https://github.com/Elanis/web-to-desktop-framework-comparison/bl
 | | ***Web*** | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ | ❌ |
 
 **<sup>1</sup>**: Linux 32-bit support dropped  
-**<sup>3</sup>**: Uses [modes](https://neutralino.js.org/docs/configuration/modes/) to generate web apps  
+**<sup>2</sup>**: Uses [modes](https://neutralino.js.org/docs/configuration/modes/) to generate web apps  
 
 ## Benchmarks
 
