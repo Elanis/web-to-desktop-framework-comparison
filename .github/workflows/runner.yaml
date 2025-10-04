@@ -28,14 +28,14 @@ jobs:
         run: git pull
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@v5.0.0
         with:
           node-version: 22
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
       # Setup dotnet env
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '9.0.x'
 
@@ -55,7 +55,7 @@ jobs:
           flutter-version: '3.x'      
 
       # Setup the go environment
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version: 'stable'
 
