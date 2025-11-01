@@ -38,7 +38,7 @@ jobs:
           node write_graphsdotmd.js
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Update stars & Fork"
           file_pattern: runner/stats.json README.md GRAPHS.md

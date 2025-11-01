@@ -121,7 +121,7 @@ jobs:
           node write_readme.js
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Update benchmark for ${{ matrix.app }} on ${{ matrix.os }}
           file_pattern: runner/benchmarks.json README.md
