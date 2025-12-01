@@ -6,7 +6,7 @@
     "build": "tauri build"
   },
   "dependencies": {
-    "@tauri-apps/api": "^2.9.0"
+    "@tauri-apps/api": "^2.9.1"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.9.2"
