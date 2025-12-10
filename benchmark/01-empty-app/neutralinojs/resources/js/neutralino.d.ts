@@ -242,9 +242,11 @@ declare function getOSInfo(): Promise<OSInfo>;
 declare function getCPUInfo(): Promise<CPUInfo>;
 declare function getDisplays(): Promise<Display[]>;
 declare function getMousePosition(): Promise<MousePosition>;
-declare function setData(key: string, data: string): Promise<void>;
+declare function setData(key: string, data: string | null): Promise<void>;
 declare function getData(key: string): Promise<string>;
+declare function removeData(key: string): Promise<void>;
 declare function getKeys(): Promise<string[]>;
+declare function clear(): Promise<void>;
 declare function log(message: string, type?: LoggerType): Promise<void>;
 export interface OpenActionOptions {
 	url: string;
@@ -296,6 +298,8 @@ export interface WindowMenu extends Array<WindowMenuItem> {
 export interface WindowMenuItem {
 	id?: string;
 	text: string;
+	action?: string;
+	shortcut?: string;
 	isDisabled?: boolean;
 	isChecked?: boolean;
 	menuItems?: WindowMenuItem[];
@@ -385,7 +389,7 @@ declare function writeText(data: string): Promise<void>;
 declare function writeImage(image: ClipboardImage): Promise<void>;
 declare function readHTML(): Promise<string>;
 declare function writeHTML(data: string): Promise<void>;
-declare function clear(): Promise<void>;
+declare function clear$1(): Promise<void>;
 interface Stats$1 {
 	size: number;
 	isFile: boolean;
@@ -470,7 +474,7 @@ declare namespace computer {
 	export { getArch, getCPUInfo, getDisplays, getKernelInfo, getMemoryInfo, getMousePosition, getOSInfo };
 }
 declare namespace storage {
-	export { getData, getKeys, setData };
+	export { clear, getData, getKeys, removeData, setData };
 }
 declare namespace debug {
 	export { log };
@@ -491,7 +495,7 @@ declare namespace updater {
 	export { checkForUpdates, install };
 }
 declare namespace clipboard {
-	export { clear, getFormat, readHTML, readImage, readText, writeHTML, writeImage, writeText };
+	export { clear$1 as clear, getFormat, readHTML, readImage, readText, writeHTML, writeImage, writeText };
 }
 declare namespace resources {
 	export { extractDirectory, extractFile, getFiles, getStats$2 as getStats, readBinaryFile$1 as readBinaryFile, readFile$1 as readFile };
