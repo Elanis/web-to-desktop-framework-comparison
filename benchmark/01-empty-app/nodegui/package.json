@@ -15,13 +15,13 @@
   },
   "devDependencies": {
     "@nodegui/packer": "^1.5.0",
-    "@types/node": "^24.10.2",
+    "@types/node": "^25.0.3",
     "clean-webpack-plugin": "^4.0.0",
     "file-loader": "^6.2.0",
     "native-addon-loader": "^2.0.1",
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.3",
-    "webpack": "^5.103.0",
+    "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1"
   }
 }
