@@ -2,11 +2,11 @@
   "name": "01-empty-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "node run.js", 
-    "build": "node build.js" 
-  }, 
+    "start": "node run.js",
+    "build": "node build.js"
+  },
   "devDependencies": {
-    "nw-builder": "^4.17.2"
+    "nw-builder": "^4.16.2"
   },
   "type": "module"
 }
