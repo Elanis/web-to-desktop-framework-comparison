@@ -36,7 +36,17 @@ async function dirSize(directory) {
 	const stats = files.map(async file => {
 		const currentItem = path.join(directory, file);
 
-		if(fs.lstatSync(currentItem).isDirectory()) {
+		const currentItemStats = fs.lstatSync(currentItem);
+
+		// Don't follow symlinks. The folder structure of
+		// Chromium-based bundles always includes internal 
+		// symlinks. Following them would be counting the same 
+		// files twice.
+		if(currentItemStats.isSymbolicLink()) {
+			return 0;
+		}
+
+		if(currentItemStats.isDirectory()) {
 			return await dirSize(currentItem);
 		} else {
 			const fileStats = await stat(currentItem);
