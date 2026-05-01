@@ -42,6 +42,11 @@ export declare enum Architecture {
 	ia32 = "ia32",
 	unknown = "unknown"
 }
+export declare enum SendKeyState {
+	press = "press",
+	down = "down",
+	up = "up"
+}
 export interface DirectoryEntry {
 	entry: string;
 	path: string;
@@ -170,6 +175,7 @@ export interface Filter {
 export interface TrayOptions {
 	icon: string;
 	menuItems: TrayMenuItem[];
+	useTemplateIcon?: boolean;
 }
 export interface TrayMenuItem {
 	id?: string;
@@ -242,6 +248,9 @@ declare function getOSInfo(): Promise<OSInfo>;
 declare function getCPUInfo(): Promise<CPUInfo>;
 declare function getDisplays(): Promise<Display[]>;
 declare function getMousePosition(): Promise<MousePosition>;
+declare function setMousePosition(x: number, y: number): Promise<void>;
+declare function setMouseGrabbing(grabbing: boolean): Promise<void>;
+declare function sendKey(key: number, state: SendKeyState): Promise<void>;
 declare function setData(key: string, data: string | null): Promise<void>;
 declare function getData(key: string): Promise<string>;
 declare function removeData(key: string): Promise<void>;
@@ -473,7 +482,7 @@ declare namespace os {
 	export { execCommand, getEnv, getEnvs, getPath, getSpawnedProcesses, open$1 as open, setTray, showFolderDialog, showMessageBox, showNotification, showOpenDialog, showSaveDialog, spawnProcess, updateSpawnedProcess };
 }
 declare namespace computer {
-	export { getArch, getCPUInfo, getDisplays, getKernelInfo, getMemoryInfo, getMousePosition, getOSInfo };
+	export { getArch, getCPUInfo, getDisplays, getKernelInfo, getMemoryInfo, getMousePosition, getOSInfo, sendKey, setMouseGrabbing, setMousePosition };
 }
 declare namespace storage {
 	export { clear, getData, getKeys, removeData, setData };
