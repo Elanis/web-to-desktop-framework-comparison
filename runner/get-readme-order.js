@@ -5,7 +5,7 @@ let stats = JSON.parse(fs.readFileSync('stats.json', 'utf8'));
 stats = Object.values(stats);
 
 function getScore(app) {
-	return app.stars + app.forks * 10;
+  return app.stars + app.forks * 10;
 }
 
 stats.sort((a, b) => getScore(b) - getScore(a));

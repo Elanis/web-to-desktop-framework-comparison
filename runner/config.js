@@ -321,13 +321,13 @@ console.log('process.argv', process.argv)
 console.log('process.argv[2]', process.argv[2])
 
 const processesTmp = [];
-for(const app of apps) {
-	if(app !== process.argv[2]) {
+for (const app of apps) {
+	if (app !== process.argv[2]) {
 		continue;
 	}
 
-	for(const libraryName in libraries) {
-		if(customMessages[app] && customMessages[app][libraryName]) {
+	for (const libraryName in libraries) {
+		if (customMessages[app] && customMessages[app][libraryName]) {
 			continue;
 		}
 
