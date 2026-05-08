@@ -149,7 +149,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout =
 			}
 		});
 
-		let resetTimeoutId = -1;
+		let resetTimeoutIds = [];
 		childProcess.stderr.on('data', (data) => {
 			if (DEBUG_STDERR) {
 				console.error(`[ERROR] stderr: ${data}`);
@@ -183,14 +183,19 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout =
 				console.log(`[WARNING] Cargo/Rust/Wails/Go/Flutter action detected. Delaying timer ...`);
 				time = -1;
 
-				for (let i = 0; i <= resetTimeoutId; i++) { clearTimeout(i); }
-				resetTimeoutId = setTimeout(() => {
+				for (const id of resetTimeoutIds) {
+					clearTimeout(id);
+				}
+				resetTimeoutIds = [];
+
+				const timeoutId = setTimeout(() => {
 					if (time < 0) { // Unlock cargo/rust
 						time = 0;
 						memUsageHistory = [];
 						sysMemUsageHistory = [];
 					}
 				}, 120 * 1000); // Unlock if going for more than 2 minutes
+				resetTimeoutIds.push(timeoutId);
 			}
 
 			// If started event if logged to stderr
