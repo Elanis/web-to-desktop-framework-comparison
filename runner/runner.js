@@ -59,36 +59,41 @@ async function dirSize(directory) {
 
 async function execBuildProcess(processPath, processExe) {
 	return new Promise((resolve, reject) => {
-		const startTime = performance.now();
+		try {
+			const startTime = performance.now();
 
-		// Spawn process
-		const childProcess = spawn(processExe, {
-			cwd: processPath,
-			shell: true,
-			detached: true,
-		});
-
-		childProcess.stdout.on('data', (data) => {
-			if (DEBUG_STDOUT) {
-				customLog(`stdout: ${data}`);
-			}
-		});
-
-		childProcess.stderr.on('data', (data) => {
-			if (DEBUG_STDERR) {
-				console.error(`stderr: ${data}`);
-			}
-		});
-
-		childProcess.on('close', (code) => {
-			if (DEBUG_STDOUT || DEBUG_STDERR) {
-				customLog(`child process exited with code ${code}`);
-			}
-
-			resolve({
-				time: performance.now() - startTime
+			// Spawn process
+			const childProcess = spawn(processExe, {
+				cwd: processPath,
+				shell: true,
+				detached: true,
 			});
-		});
+
+			childProcess.stdout.on('data', (data) => {
+				if (DEBUG_STDOUT) {
+					customLog(`stdout: ${data}`);
+				}
+			});
+
+			childProcess.stderr.on('data', (data) => {
+				if (DEBUG_STDERR) {
+					console.error(`stderr: ${data}`);
+				}
+			});
+
+			childProcess.on('close', (code) => {
+				if (DEBUG_STDOUT || DEBUG_STDERR) {
+					customLog(`child process exited with code ${code}`);
+				}
+
+				resolve({
+					time: performance.now() - startTime
+				});
+			});
+		} catch (e) {
+			console.error(e);
+			reject(e);
+		}
 	});
 }
 
@@ -209,6 +214,15 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout =
 					sysMemUsageHistory = [];
 				}
 			}
+		});	
+
+		childProcess.on('error', (err) => {
+			if (DEBUG_STDOUT || DEBUG_STDERR) {
+				customLog(`child process error: ${err}`);
+				console.log(err);
+			}
+
+			throw new Error(err);
 		});
 
 		childProcess.on('close', (code) => {
@@ -305,7 +319,7 @@ async function getProcessStats(childProcess) {
 			}
 		}
 	}
-	
+
 	return stats;
 }
 
