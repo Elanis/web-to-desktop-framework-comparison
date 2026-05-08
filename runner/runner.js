@@ -472,7 +472,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 				});
 
 			for (const { platformArch, folder, exe, additionalFiles } of existingFolders) {
-				const buildSize = await dirSize(folder || exe.split(' ')[0]);
+				let buildSize = await dirSize(folder || exe.split(' ')[0]);
 				const buildTime = buildData.time / existingFolders.length;
 
 				if (buildSize === null) {
