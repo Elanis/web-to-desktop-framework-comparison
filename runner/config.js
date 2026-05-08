@@ -89,12 +89,16 @@ export const libraries = {
 					path: 'dist/APPNAME-win32-ia32',
 					exe: 'APPNAME.exe'
 				},
+				'win32-arm64': {
+					path: 'dist/APPNAME-win32-arm64',
+					exe: 'APPNAME.exe'
+				},
 				'win32-x64': {
 					path: 'dist/APPNAME-win32-x64',
 					exe: 'APPNAME.exe'
 				},
-				'linux-x32': {
-					path: 'dist/APPNAME-linux-ia32',
+				'linux-arm64': {
+					path: 'dist/APPNAME-linux-arm64',
 					exe: './APPNAME'
 				},
 				'linux-x64': {
@@ -284,13 +288,7 @@ export const architectures = [
 ];
 
 export const requestedArchitectures = {
-	'win32-arm64': {
-		'nw.js': 'https://github.com/nwjs/nw.js/issues/7599',
-	},
 	'linux-arm': {
-		'nw.js': 'https://github.com/nwjs/nw.js/issues/1151',
-	},
-	'linux-arm64': {
 		'nw.js': 'https://github.com/nwjs/nw.js/issues/1151',
 	},
 	'android': {

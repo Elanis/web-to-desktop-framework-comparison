@@ -2,17 +2,17 @@ import os from 'node:os';
 import nwbuild from 'nw-builder';
 
 let archs = [];
-if(os.platform() === 'win32') {
-	archs = ['ia32', 'x64'];
-} else if(os.platform() === 'darwin') {
+if (os.platform() === 'win32') {
+	archs = ['ia32', 'x64', 'arm64'];
+} else if (os.platform() === 'darwin') {
 	archs = ['x64', 'arm64'];
-} else if(os.platform() === 'linux') {
-	archs = ['ia32', 'x64'];
+} else if (os.platform() === 'linux') {
+	archs = ['x64', 'arm64'];
 } else {
 	throw new Error('Unsupported platform !');
 }
 
-for(const arch of archs) {
+for (const arch of archs) {
 	console.log(`Building for ${arch} ...`);
 	await nwbuild({
 		mode: 'build',
