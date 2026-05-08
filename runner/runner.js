@@ -500,7 +500,7 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 
 					console.log('Current platform data, buildSize:', buildSize, ', buildTime:', buildTime);
 				} else {
-					setBuildData(path, platformArch, buildSize, buildData.time / existingFolders.length);
+					await setBuildData(path, platformArch, buildSize, buildData.time / existingFolders.length);
 				}
 			}
 
