@@ -342,7 +342,7 @@ function getPackageJsonVersions(appPath, packageJsonVersionsNeeded) {
 }
 
 function getCurrentPlatformArch() {
-	return os.platform + '-' + os.arch();
+	return os.platform() + '-' + os.arch();
 }
 
 async function writeDataToJsonFile(benchmarkData) {
