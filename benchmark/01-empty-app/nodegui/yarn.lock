@@ -41,6 +41,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@noble/hashes@^2.0.1":
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-2.2.0.tgz"
+  integrity sha512-IYqDGiTXab6FniAgnSdZwgWbomxpy9FtYvLKs7wCUs2a8RkITG+DFGO1DM9cr+E3/RgADRpFjrKVaJ1z6sjtEg==
+
 "@nodegui/artifact-installer@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@nodegui/artifact-installer/-/artifact-installer-1.1.0.tgz"
@@ -52,16 +57,16 @@
     node-fetch "^2.6.0"
     progress "^2.0.3"
 
-"@nodegui/nodegui@^0.74.1", "@nodegui/nodegui@>=0.15.0":
-  version "0.74.1"
-  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.74.1.tgz"
-  integrity sha512-O8ey8puPP/4GRDIG0v2Fh8GYATo+jXWesVqeGuj/CQbrA1mCwzcFwMcFecnrOEEZ9E3jns0RCyWyJtZUn+it8g==
+"@nodegui/nodegui@^0.74.2", "@nodegui/nodegui@>=0.15.0":
+  version "0.74.2"
+  resolved "https://registry.npmjs.org/@nodegui/nodegui/-/nodegui-0.74.2.tgz"
+  integrity sha512-YrKMXF+RZOCRo0z5UWtmVfWW9xLdQC82jewjyD4Jdb4Wbcez7YP+k4I6nL+bH0fflvvDOTFJmuvvxUM765xaqg==
   dependencies:
     "@nodegui/artifact-installer" "^1.1.0"
     "@nodegui/qode" "24.12.0-rc19"
+    "@paralleldrive/cuid2" "^3.3.0"
     cmake-js "^7.4.0"
     cross-env "^7.0.3"
-    cuid "^2.1.8"
     manage-path "^2.0.0"
     memoize-one "^5.2.1"
     mkdirp "^3.0.1"
@@ -90,6 +95,15 @@
     node-fetch "^2.6.1"
     progress "^2.0.3"
     tar "^6.1.6"
+
+"@paralleldrive/cuid2@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.npmjs.org/@paralleldrive/cuid2/-/cuid2-3.3.0.tgz"
+  integrity sha512-OqiFvSOF0dBSesELYY2CAMa4YINvlLpvKOz/rv6NeZEqiyttlHgv98Juwv4Ch+GrEV7IZ8jfI2VcEoYUjXXCjw==
+  dependencies:
+    "@noble/hashes" "^2.0.1"
+    bignumber.js "^9.3.1"
+    error-causes "^3.0.2"
 
 "@types/eslint-scope@^3.7.7":
   version "3.7.7"
@@ -130,10 +144,10 @@
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^25.6.0":
-  version "25.6.0"
-  resolved "https://registry.npmjs.org/@types/node/-/node-25.6.0.tgz"
-  integrity sha512-+qIYRKdNYJwY3vRCZMdJbPLJAtGjQBudzZzdzwQYkEPQd+PJGixUL5QfvCLDaULoLv+RhT3LDkwEfKaAkgSmNQ==
+"@types/node@*", "@types/node@^25.6.2":
+  version "25.6.2"
+  resolved "https://registry.npmjs.org/@types/node/-/node-25.6.2.tgz"
+  integrity sha512-sokuT28dxf9JT5Kady1fsXOvI4HVpjZa95NKT5y9PNTIrs2AsobR4GFAA90ZG8M+nxVRLysCXsVj6eGC7Vbrlw==
   dependencies:
     undici-types "~7.19.0"
 
@@ -410,6 +424,11 @@ big.js@^5.2.2:
   resolved "https://registry.npmjs.org/big.js/-/big.js-5.2.2.tgz"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
+bignumber.js@^9.3.1:
+  version "9.3.1"
+  resolved "https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.3.1.tgz"
+  integrity sha512-Ko0uX15oIUS7wJ3Rb30Fs6SkVbLmPBAKdlm7q9+ak9bbIeFf0MwuBsQV6z7+X768/cHsfg+WlysDWJcmthjsjQ==
+
 brace-expansion@^1.1.7:
   version "1.1.13"
   resolved "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.13.tgz"
@@ -580,11 +599,6 @@ cross-spawn@^7.0.1, cross-spawn@^7.0.6:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-cuid@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.npmjs.org/cuid/-/cuid-2.1.8.tgz"
-  integrity sha512-xiEMER6E7TlTPnDxrM4eRiC6TRgjNX9xzEZ5U/Se2YJKr7Mq4pJn/2XEHjl3STcSh96GmkHPcBXLES8M29wyyg==
-
 debug@^4:
   version "4.4.3"
   resolved "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz"
@@ -661,6 +675,11 @@ envinfo@^7.14.0:
   version "7.14.0"
   resolved "https://registry.npmjs.org/envinfo/-/envinfo-7.14.0.tgz"
   integrity sha512-CO40UI41xDQzhLB1hWyqUKgFhs250pNcGbyGKe1l/e4FSaI/+YE4IMG76GDt0In67WLPACIITC+sOi08x4wIvg==
+
+error-causes@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.npmjs.org/error-causes/-/error-causes-3.0.2.tgz"
+  integrity sha512-i0B8zq1dHL6mM85FGoxaJnVtx6LD5nL2v0hlpGdntg5FOSyzQ46c9lmz5qx0xRS2+PWHGOHcYxGIBC5Le2dRMw==
 
 es-define-property@^1.0.1:
   version "1.0.1"
