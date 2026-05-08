@@ -257,10 +257,10 @@ export const architectures = [
 		id: 'linux-x64',
 		name: 'Linux (x64)'
 	},
-	{
+	/*{
 		id: 'linux-x32',
 		name: 'Linux (x86)'
-	},
+	},*/
 	{
 		id: 'linux-arm',
 		name: 'Linux (ARMv7l)'
