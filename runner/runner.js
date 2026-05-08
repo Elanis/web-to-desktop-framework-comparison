@@ -222,21 +222,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout =
 		// Save stats
 		const pushStats = async () => {
 			try {
-				let pids = [childProcess.pid];
-				let stats = {};
-				try {
-					pids = [childProcess.pid, ...(await pidtree(childProcess.pid))];
-					stats = await pidusage(pids);
-				} catch (e) {
-					console.error(e);
-					try {
-						pids = [childProcess.pid, ...(await pidtree(-childProcess.pid))];
-						stats = await pidusage(pids);
-					} catch (e) {
-						console.error(e);
-						stats = await pidusage(pids);
-					}
-				}
+				let stats = await getProcessStats(childProcess);
 
 				if (DEBUG_PIDUSAGE) {
 					customLog(processExe, stats);
@@ -295,6 +281,32 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout =
 			pushStats();
 		}, 1000);
 	});
+}
+
+async function getProcessStats(childProcess) {
+	let pids = [childProcess.pid];
+	let stats = {};
+
+	try {
+		pids = [childProcess.pid, ...(await pidtree(childProcess.pid))];
+		stats = await pidusage(pids);
+	} catch (e) {
+		console.warn(e);
+		try {
+			pids = [childProcess.pid, ...(await pidtree(-childProcess.pid))];
+			stats = await pidusage(pids);
+		} catch (e) {
+			console.warn(e);
+			try {
+				pids = [childProcess.pid];
+				stats = await pidusage(pids);
+			} catch (e) {
+				console.warn(e);
+			}
+		}
+	}
+	
+	return stats;
 }
 
 function processMemoryUsage({ memoryUsage, systemMeasuredMemory }) {
