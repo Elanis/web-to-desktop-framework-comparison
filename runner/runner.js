@@ -1,19 +1,19 @@
-import { exec, spawn } from 'child_process';
+import { spawn } from 'child_process';
 import fs from 'fs';
-import path from 'path';
 import { readdir, stat } from 'fs/promises';
-import pidusage from 'pidusage';
-import pidtree from 'pidtree';
 import os from 'os';
+import path from 'path';
+import pidtree from 'pidtree';
+import pidusage from 'pidusage';
 import systeminformation from 'systeminformation';
 import kill from 'tree-kill';
 
 import {
-	ITERATIONS_PER_PROCESS,
-	DEFAULT_TIMEOUT,
-	DEBUG_STDOUT,
-	DEBUG_STDERR,
 	DEBUG_PIDUSAGE,
+	DEBUG_STDERR,
+	DEBUG_STDOUT,
+	DEFAULT_TIMEOUT,
+	ITERATIONS_PER_PROCESS,
 	processes,
 } from './config.js';
 
@@ -23,11 +23,11 @@ let customLog = console.log;
  * Methods
  */
 async function dirSize(directory) {
-	if(!fs.existsSync(directory)) {
+	if (!fs.existsSync(directory)) {
 		return null;
 	}
 
-	if(!fs.lstatSync(directory).isDirectory()) {
+	if (!fs.lstatSync(directory).isDirectory()) {
 		const fileStats = await stat(directory);
 		return fileStats.size;
 	}
@@ -42,11 +42,11 @@ async function dirSize(directory) {
 		// Chromium-based bundles always includes internal 
 		// symlinks. Following them would be counting the same 
 		// files twice.
-		if(currentItemStats.isSymbolicLink()) {
+		if (currentItemStats.isSymbolicLink()) {
 			return 0;
 		}
 
-		if(currentItemStats.isDirectory()) {
+		if (currentItemStats.isDirectory()) {
 			return await dirSize(currentItem);
 		} else {
 			const fileStats = await stat(currentItem);
@@ -59,36 +59,41 @@ async function dirSize(directory) {
 
 async function execBuildProcess(processPath, processExe) {
 	return new Promise((resolve, reject) => {
-		const startTime = performance.now();
+		try {
+			const startTime = performance.now();
 
-		// Spawn process
-		const childProcess = spawn(processExe, {
-			cwd: processPath,
-			shell: true,
-			detached: true,
-		});
-
-		childProcess.stdout.on('data', (data) => {
-			if(DEBUG_STDOUT) {
-				customLog(`stdout: ${data}`);
-			}
-		});
-
-		childProcess.stderr.on('data', (data) => {
-			if(DEBUG_STDERR) {
-				console.error(`stderr: ${data}`);
-			}
-		});
-
-		childProcess.on('close', (code) => {
-			if(DEBUG_STDOUT || DEBUG_STDERR) {
-				customLog(`child process exited with code ${code}`);
-			}
-
-			resolve({
-				time: performance.now() - startTime
+			// Spawn process
+			const childProcess = spawn(processExe, {
+				cwd: processPath,
+				shell: true,
+				detached: true,
 			});
-		});
+
+			childProcess.stdout.on('data', (data) => {
+				if (DEBUG_STDOUT) {
+					customLog(`stdout: ${data}`);
+				}
+			});
+
+			childProcess.stderr.on('data', (data) => {
+				if (DEBUG_STDERR) {
+					console.error(`stderr: ${data}`);
+				}
+			});
+
+			childProcess.on('close', (code) => {
+				if (DEBUG_STDOUT || DEBUG_STDERR) {
+					customLog(`child process exited with code ${code}`);
+				}
+
+				resolve({
+					time: performance.now() - startTime
+				});
+			});
+		} catch (e) {
+			console.error(e);
+			reject(e);
+		}
 	});
 }
 
@@ -98,8 +103,8 @@ async function sleep(seconds) {
 	}));
 }
 
-async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=DEFAULT_TIMEOUT) {
-	return new Promise(async(resolve, reject) => {
+async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout = DEFAULT_TIMEOUT) {
+	return new Promise(async (resolve, reject) => {
 		let memUsageHistory = [];
 		let sysMemUsageHistory = [];
 		let startTime = '?';
@@ -129,19 +134,19 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		});
 
 		childProcess.stdout.on('data', (data) => {
-			if(DEBUG_STDOUT) {
+			if (DEBUG_STDOUT) {
 				customLog(`stdout: ${data}`);
 			}
 
-			if(data instanceof Buffer) {
+			if (data instanceof Buffer) {
 				data = data.toString('utf8');
 			}
 
 			const lines = data.split('\n');
 			const starTimeLine = lines.find((elt) => elt.includes('App started and loaded !'));
-			if(starTimeLine) {
+			if (starTimeLine) {
 				startTime = performance.now() - startTimestamp;
-				if(time < 0) { // Unlock cargo/rust
+				if (time < 0) { // Unlock cargo/rust
 					time = 0;
 					memUsageHistory = [];
 					sysMemUsageHistory = [];
@@ -149,13 +154,13 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			}
 		});
 
-		let resetTimeoutId = -1;
+		let resetTimeoutIds = [];
 		childProcess.stderr.on('data', (data) => {
-			if(DEBUG_STDERR) {
+			if (DEBUG_STDERR) {
 				console.error(`[ERROR] stderr: ${data}`);
 			}
 
-			if(data instanceof Buffer) {
+			if (data instanceof Buffer) {
 				data = data.toString('utf8');
 			}
 
@@ -164,7 +169,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 
 			// Cargo/Rust/Wails/Flutter compatibility
 			let trimmedCleanData = cleanData.trim();
-			if(
+			if (
 				trimmedCleanData.startsWith('Compiling ') ||
 				trimmedCleanData.startsWith('Fetch ') ||
 				trimmedCleanData.startsWith('Building ') ||
@@ -183,31 +188,45 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				console.log(`[WARNING] Cargo/Rust/Wails/Go/Flutter action detected. Delaying timer ...`);
 				time = -1;
 
-				for(let i = 0; i <= resetTimeoutId; i++) { clearTimeout(i); }
-				resetTimeoutId = setTimeout(() => {
-					if(time < 0) { // Unlock cargo/rust
+				for (const id of resetTimeoutIds) {
+					clearTimeout(id);
+				}
+				resetTimeoutIds = [];
+
+				const timeoutId = setTimeout(() => {
+					if (time < 0) { // Unlock cargo/rust
 						time = 0;
 						memUsageHistory = [];
 						sysMemUsageHistory = [];
 					}
-				}, 120*1000); // Unlock if going for more than 2 minutes
+				}, 120 * 1000); // Unlock if going for more than 2 minutes
+				resetTimeoutIds.push(timeoutId);
 			}
 
 			// If started event if logged to stderr
 			const lines = cleanData.split('\n');
 			const starTimeLine = lines.find((elt) => elt.includes('App started and loaded !'));
-			if(starTimeLine) {
+			if (starTimeLine) {
 				startTime = performance.now() - startTimestamp;
-				if(time < 0) { // Unlock cargo/rust/wails
+				if (time < 0) { // Unlock cargo/rust/wails
 					time = 0;
 					memUsageHistory = [];
 					sysMemUsageHistory = [];
 				}
 			}
+		});	
+
+		childProcess.on('error', (err) => {
+			if (DEBUG_STDOUT || DEBUG_STDERR) {
+				customLog(`child process error: ${err}`);
+				console.log(err);
+			}
+
+			throw new Error(err);
 		});
 
 		childProcess.on('close', (code) => {
-			if(DEBUG_STDOUT || DEBUG_STDERR) {
+			if (DEBUG_STDOUT || DEBUG_STDERR) {
 				customLog(`child process exited with code ${code}`);
 			}
 
@@ -215,33 +234,19 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 		});
 
 		// Save stats
-		const pushStats = async() => {
+		const pushStats = async () => {
 			try {
-				let pids = [childProcess.pid];
-				let stats = {};
-				try {
-					pids = [childProcess.pid, ...(await pidtree(childProcess.pid))];
-					stats = await pidusage(pids);
-				} catch(e) {
-					console.error(e);
-					try {
-						pids = [childProcess.pid, ...(await pidtree(-childProcess.pid))];
-						stats = await pidusage(pids);
-					} catch(e) {
-						console.error(e);
-						stats = await pidusage(pids);
-					}
-				}
+				let stats = await getProcessStats(childProcess);
 
-				if(DEBUG_PIDUSAGE) {
+				if (DEBUG_PIDUSAGE) {
 					customLog(processExe, stats);
 				}
 
-				if(stats) {
+				if (stats) {
 					const memoryStats = Object.values(stats).filter((elt) => elt !== null && typeof elt !== 'undefined' && elt.memory).map((elt) => elt.memory);
-					if(Array.isArray(memoryStats)) {
+					if (Array.isArray(memoryStats)) {
 						const total = memoryStats.reduce((a, b) => a + b, 0);
-						if(total > 0) {
+						if (total > 0) {
 							memUsageHistory.push(total);
 						}
 					}
@@ -254,18 +259,18 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				console.log('Total memory: ', os.totalmem())
 				console.log('Free memory: ', freemem);
 				console.log('Delta from start: ', delta);
-			} catch(e) {
+			} catch (e) {
 				console.error(e);
 			}
 		};
 
 		pushStats();
 		const interval = setInterval(() => {
-			if(time < 0) {
+			if (time < 0) {
 				return;
 			}
 
-			if(
+			if (
 				(time === timeout && startTime !== '?') ||
 				time === timeout * 4 || // Wait for more if it takes a lot of time to startup
 				childProcess.exitCode !== null || done) {
@@ -276,7 +281,7 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 				});
 				clearInterval(interval);
 
-				if(childProcess.exitCode === null && !done) {
+				if (childProcess.exitCode === null && !done) {
 					kill(childProcess.pid);
 				} else {
 					try {
@@ -290,6 +295,32 @@ async function getMemoryUsageHistoryOfProcess(processPath, processExe, timeout=D
 			pushStats();
 		}, 1000);
 	});
+}
+
+async function getProcessStats(childProcess) {
+	let pids = [childProcess.pid];
+	let stats = {};
+
+	try {
+		pids = [childProcess.pid, ...(await pidtree(childProcess.pid))];
+		stats = await pidusage(pids);
+	} catch (e) {
+		console.warn(e);
+		try {
+			pids = [childProcess.pid, ...(await pidtree(-childProcess.pid))];
+			stats = await pidusage(pids);
+		} catch (e) {
+			console.warn(e);
+			try {
+				pids = [childProcess.pid];
+				stats = await pidusage(pids);
+			} catch (e) {
+				console.warn(e);
+			}
+		}
+	}
+
+	return stats;
 }
 
 function processMemoryUsage({ memoryUsage, systemMeasuredMemory }) {
@@ -324,16 +355,16 @@ async function getSystemData() {
 }
 
 function getPackageJsonVersions(appPath, packageJsonVersionsNeeded) {
-	if(!packageJsonVersionsNeeded) {
+	if (!packageJsonVersionsNeeded) {
 		return {};
 	}
 
 	const packageJsonObj = JSON.parse(fs.readFileSync(appPath + '/package.json', 'utf-8'));
 	const versions = {};
-	for(const packageName of packageJsonVersionsNeeded) {
-		if(packageJsonObj.dependencies && packageJsonObj.dependencies[packageName]) {
+	for (const packageName of packageJsonVersionsNeeded) {
+		if (packageJsonObj.dependencies && packageJsonObj.dependencies[packageName]) {
 			versions[packageName] = packageJsonObj.dependencies[packageName];
-		} else if(packageJsonObj.devDependencies && packageJsonObj.devDependencies[packageName]) {
+		} else if (packageJsonObj.devDependencies && packageJsonObj.devDependencies[packageName]) {
 			versions[packageName] = packageJsonObj.devDependencies[packageName];
 		}
 	}
@@ -342,7 +373,7 @@ function getPackageJsonVersions(appPath, packageJsonVersionsNeeded) {
 }
 
 function getCurrentPlatformArch() {
-	return os.platform + '-' + os.arch();
+	return os.platform() + '-' + os.arch();
 }
 
 async function writeDataToJsonFile(benchmarkData) {
@@ -358,8 +389,6 @@ async function writeDataToJsonFile(benchmarkData) {
 	fs.writeFileSync('benchmarks.json', JSON.stringify(data, null, 4));
 
 	console.log('Writing to benchmark.json ... Done !');
-
-	process.exit();
 }
 
 async function setBuildData(processPath, platformArch, buildSize, buildTime) {
@@ -372,15 +401,15 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 
 	const data = JSON.parse(fs.readFileSync('benchmarks.json'));
 
-	if(!data[platformArch]) {
+	if (!data[platformArch]) {
 		data[platformArch] = {};
 	}
 
-	if(!data[platformArch].benchmarkData) {
+	if (!data[platformArch].benchmarkData) {
 		data[platformArch].benchmarkData = {};
 	}
 
-	if(!data[platformArch].benchmarkData[processPath]) {
+	if (!data[platformArch].benchmarkData[processPath]) {
 		data[platformArch].benchmarkData[processPath] = {};
 	}
 
@@ -395,145 +424,143 @@ async function setBuildData(processPath, platformArch, buildSize, buildTime) {
 /**
  * Run
  */
-(async() => {
-	let processId = 0;
-	const currPlatformData = JSON.parse(fs.readFileSync('benchmarks.json'))[getCurrentPlatformArch()] || { benchmarkData: {} };
-	const benchmarkData = currPlatformData.benchmarkData;
+let processId = 0;
+const currPlatformData = JSON.parse(fs.readFileSync('benchmarks.json'))[getCurrentPlatformArch()] || { benchmarkData: {} };
+const benchmarkData = currPlatformData.benchmarkData;
 
-	for(const { app, path, exe, packageJsonVersionsNeeded, build } of processes) {
-		if(exe === 'TODO') {
-			continue;
-		}
+for (const { app, path, exe, packageJsonVersionsNeeded, build } of processes) {
+	if (exe === 'TODO') {
+		continue;
+	}
 
-		// Debug
-		benchmarkData[path + '/Debug'] = {
+	// Debug
+	benchmarkData[path + '/Debug'] = {
+		versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
+		benchmarks: [],
+	};
+
+	for (let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
+		customLog = (...args) => console.log('[Debug] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
+
+		customLog('Processing', path, exe);
+
+		const res = await getMemoryUsageHistoryOfProcess(path, exe);
+
+		customLog(path, exe, '\n', processMemoryUsage(res));
+		customLog(path, exe, '\n', 'Start time:', res.startTime);
+
+		benchmarkData[path + '/Debug'].benchmarks.push({
+			memoryUsage: processMemoryUsage(res),
+			startTime: res.startTime
+		});
+
+		await sleep(1);
+	}
+
+	// Release
+	if (build) {
+		customLog = (...args) => console.log('[Build] [Process #' + processId.toString().padStart(3, '0') + ']', ...args);
+
+		const buildData = await execBuildProcess(path, build.cmd);
+
+		customLog(buildData.time);
+
+		benchmarkData[path + '/Release'] = {
 			versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
 			benchmarks: [],
 		};
 
-		for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
-			customLog = (...args) => console.log('[Debug] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
+		let buildPath = build.folders[getCurrentPlatformArch()];
+		const existingFolders = Object.keys(build.folders)
+			.map((platformArch) => {
+				let folder = '';
+				let exe = '';
 
-			customLog('Processing', path, exe);
+				if (build.folders[platformArch].path !== '') {
+					folder = path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app);
+					exe = build.folders[platformArch].exe.replaceAll('APPNAME', app);
+				} else {
+					folder = null;
+					exe = path + '/' + build.folders[platformArch].exe.replaceAll('APPNAME', app);
+				}
 
-			const res = await getMemoryUsageHistoryOfProcess(path, exe);
+				return { platformArch, folder, exe };
+			}).filter(({ platformArch, folder }) => {
+				if (folder !== null && !fs.existsSync(folder)) {
+					console.log(`Warning: ${folder} doesn't exists !`)
+					return false;
+				}
 
-			customLog(path, exe, '\n', processMemoryUsage(res));
-			customLog(path, exe, '\n', 'Start time:', res.startTime);
+				// This parameter is used if multiple architecture build in the same folder
+				if (build.folders[platformArch].currentOnly && platformArch !== getCurrentPlatformArch()) {
+					return false;
+				}
 
-			benchmarkData[path + '/Debug'].benchmarks.push({
-				memoryUsage: processMemoryUsage(res),
-				startTime: res.startTime
+				return true;
 			});
 
-			await sleep(1);
+		for (const { platformArch, folder, exe, additionalFiles } of existingFolders) {
+			let buildSize = await dirSize(folder || exe.split(' ')[0]);
+			const buildTime = buildData.time / existingFolders.length;
+
+			if (buildSize === null) {
+				continue;
+			}
+				
+			if (platformArch === getCurrentPlatformArch()) {
+				if (!benchmarkData[path]) {
+					benchmarkData[path] = {};
+				}
+
+				if (Array.isArray(additionalFiles)) {
+					for (const additionalFile of additionalFiles) {
+						buildSize += await dirSize(additionalFile);
+					}
+				}
+
+				benchmarkData[path].buildSize = buildSize;
+				benchmarkData[path].buildTime = buildTime;
+
+				console.log('Current platform data, buildSize:', buildSize, ', buildTime:', buildTime);
+			} else {
+				await setBuildData(path, platformArch, buildSize, buildData.time / existingFolders.length);
+			}
 		}
 
-		// Release
-		if(build) {
-			customLog = (...args) => console.log('[Build] [Process #' + processId.toString().padStart(3, '0') + ']', ...args);
+		if (buildPath && !buildPath.doNotRun) {
+			let releasePath = path + '/' + buildPath.path.replaceAll('APPNAME', app);
+			let releaseExe = buildPath.exe.replaceAll('APPNAME', app);
 
-			const buildData = await execBuildProcess(path, build.cmd);
+			if (buildPath.path === '' && os.platform() === 'win32') {
+				const parts = releaseExe.split('/');
+				releaseExe = parts[parts.length - 1];
+				parts.pop();
+				releasePath = path + '/' + parts.join('/');
+			}
 
-			customLog(buildData.time);
+			for (let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
+				customLog = (...args) => console.log('[Release] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
 
-			benchmarkData[path + '/Release'] = {
-				versions: getPackageJsonVersions(path, packageJsonVersionsNeeded),
-				benchmarks: [],
-			};
+				customLog('Processing', releasePath, releaseExe);
 
-			let buildPath = build.folders[getCurrentPlatformArch()];
-			const existingFolders = Object.keys(build.folders)
-				.map((platformArch) => {
-					let folder = '';
-					let exe = '';
+				const res = await getMemoryUsageHistoryOfProcess(releasePath, releaseExe);
 
-					if(build.folders[platformArch].path !== '') {
-						folder = path + '/' + build.folders[platformArch].path.replaceAll('APPNAME', app);
-						exe = build.folders[platformArch].exe.replaceAll('APPNAME', app);
-					} else {
-						folder = null;
-						exe = path + '/' + build.folders[platformArch].exe.replaceAll('APPNAME', app);
-					}
+				customLog(releasePath, releaseExe, '\n', processMemoryUsage(res));
+				customLog(releasePath, releaseExe, '\n', 'Start time:', res.startTime);
 
-					return { platformArch, folder, exe };
-				}).filter(({platformArch, folder}) => {
-					if(folder !== null && !fs.existsSync(folder)) {
-						console.log(`Warning: ${folder} doesn't exists !`)
-						return false;
-					}
-
-					// This parameter is used if multiple architecture build in the same folder
-					if(build.folders[platformArch].currentOnly && platformArch !== getCurrentPlatformArch()) {
-						return false;
-					}
-
-					return true;
+				benchmarkData[path + '/Release'].benchmarks.push({
+					memoryUsage: processMemoryUsage(res),
+					startTime: res.startTime
 				});
 
-			for(const {platformArch, folder, exe, additionalFiles} of existingFolders) {
-				const buildSize = await dirSize(folder || exe);
-				const buildTime = buildData.time / existingFolders.length;
-
-				if(buildSize === null) {
-					continue;
-				}
-				
-				if(platformArch === getCurrentPlatformArch()) {
-					if(!benchmarkData[path]) {
-						benchmarkData[path] = {};
-					}
-
-					if(Array.isArray(additionalFiles)) {
-						for(const additionalFile of additionalFiles) {
-							buildSize += await dirSize(additionalFile);
-						}
-					}
-
-					benchmarkData[path].buildSize = buildSize;
-					benchmarkData[path].buildTime = buildTime;
-
-					console.log('Current platform data, buildSize:', buildSize, ', buildTime:', buildTime);
-				} else {
-					setBuildData(path, platformArch, buildSize, buildData.time / existingFolders.length);
-				}
-			}
-
-			if(buildPath && !buildPath.doNotRun) {
-				let releasePath = path + '/' + buildPath.path.replaceAll('APPNAME', app);
-				let releaseExe = buildPath.exe.replaceAll('APPNAME', app);
-
-				if(buildPath.path === '' && os.platform() === 'win32') {
-					const parts = releaseExe.split('/');
-					releaseExe = parts[parts.length - 1];
-					parts.pop();
-					releasePath = path + '/' + parts.join('/');
-				}
-
-				for(let iteration = 0; iteration < ITERATIONS_PER_PROCESS; iteration++) {
-					customLog = (...args) => console.log('[Release] [Process #' + processId.toString().padStart(3, '0') + '/ Iteration #' + iteration + ']', ...args);
-
-					customLog('Processing', releasePath, releaseExe);
-
-					const res = await getMemoryUsageHistoryOfProcess(releasePath, releaseExe);
-
-					customLog(releasePath, releaseExe, '\n', processMemoryUsage(res));
-					customLog(releasePath, releaseExe, '\n', 'Start time:', res.startTime);
-
-					benchmarkData[path + '/Release'].benchmarks.push({
-						memoryUsage: processMemoryUsage(res),
-						startTime: res.startTime
-					});
-
-					await sleep(1);
-				}
+				await sleep(1);
 			}
 		}
-
-		processId++;
 	}
 
-	console.log('System:', await getSystemData());
+	processId++;
+}
 
-	writeDataToJsonFile(benchmarkData);
-})();
+console.log('System:', await getSystemData());
+
+writeDataToJsonFile(benchmarkData);

@@ -5,9 +5,9 @@ let stars_text = '';
 let forks_text = '';
 
 const processedLibraries = [];
-for(const benchmarkExampleId in stats) {
+for (const benchmarkExampleId in stats) {
 	const benchmarkExample = stats[benchmarkExampleId];
-	if(processedLibraries.includes(benchmarkExample.repo)) {
+	if (processedLibraries.includes(benchmarkExample.repo)) {
 		continue;
 	}
 

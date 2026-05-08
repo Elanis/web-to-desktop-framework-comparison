@@ -5,7 +5,7 @@ import { libraries } from './config.js';
 
 const librariesStats = {};
 
-for(const libraryName in libraries) {
+for (const libraryName in libraries) {
 	const orgAndRepo = libraries[libraryName].url.replace('https://github.com/', '');
 	const httpResponse = await fetch('https://api.github.com/repos/' + orgAndRepo);
 	const repositoryStats = await httpResponse.json();

@@ -89,12 +89,16 @@ export const libraries = {
 					path: 'dist/APPNAME-win32-ia32',
 					exe: 'APPNAME.exe'
 				},
+				'win32-arm64': {
+					path: 'dist/APPNAME-win32-arm64',
+					exe: 'APPNAME.exe'
+				},
 				'win32-x64': {
 					path: 'dist/APPNAME-win32-x64',
 					exe: 'APPNAME.exe'
 				},
-				'linux-x32': {
-					path: 'dist/APPNAME-linux-ia32',
+				'linux-arm64': {
+					path: 'dist/APPNAME-linux-arm64',
 					exe: './APPNAME'
 				},
 				'linux-x64': {
@@ -253,10 +257,10 @@ export const architectures = [
 		id: 'linux-x64',
 		name: 'Linux (x64)'
 	},
-	{
+	/*{
 		id: 'linux-x32',
 		name: 'Linux (x86)'
-	},
+	},*/
 	{
 		id: 'linux-arm',
 		name: 'Linux (ARMv7l)'
@@ -284,13 +288,7 @@ export const architectures = [
 ];
 
 export const requestedArchitectures = {
-	'win32-arm64': {
-		'nw.js': 'https://github.com/nwjs/nw.js/issues/7599',
-	},
 	'linux-arm': {
-		'nw.js': 'https://github.com/nwjs/nw.js/issues/1151',
-	},
-	'linux-arm64': {
 		'nw.js': 'https://github.com/nwjs/nw.js/issues/1151',
 	},
 	'android': {
@@ -321,13 +319,13 @@ console.log('process.argv', process.argv)
 console.log('process.argv[2]', process.argv[2])
 
 const processesTmp = [];
-for(const app of apps) {
-	if(app !== process.argv[2]) {
+for (const app of apps) {
+	if (app !== process.argv[2]) {
 		continue;
 	}
 
-	for(const libraryName in libraries) {
-		if(customMessages[app] && customMessages[app][libraryName]) {
+	for (const libraryName in libraries) {
+		if (customMessages[app] && customMessages[app][libraryName]) {
 			continue;
 		}
 
