@@ -47,6 +47,16 @@ export declare enum SendKeyState {
 	down = "down",
 	up = "up"
 }
+export declare enum NetworkFamily {
+	ipv4 = "ipv4",
+	ipv6 = "ipv6"
+}
+export declare enum AccessMode {
+	F_OK = 0,
+	R_OK = 4,
+	W_OK = 2,
+	X_OK = 1
+}
 export interface DirectoryEntry {
 	entry: string;
 	path: string;
@@ -133,6 +143,9 @@ declare function setPermissions(path: string, permissions: Permissions$1, mode: 
 declare function getJoinedPath(...paths: string[]): Promise<string>;
 declare function getNormalizedPath(path: string): Promise<string>;
 declare function getUnnormalizedPath(path: string): Promise<string>;
+declare function access(path: string, mode?: number): Promise<string>;
+declare function chmod(path: string, mode: number): Promise<string>;
+declare function chown(path: string, uid: number, gid: number): Promise<string>;
 export interface ExecCommandOptions {
 	stdIn?: string;
 	background?: boolean;
@@ -198,6 +211,7 @@ declare function showMessageBox(title: string, content: string, choice?: Message
 declare function setTray(options: TrayOptions): Promise<void>;
 declare function open$1(url: string): Promise<void>;
 declare function getPath(name: KnownPath): Promise<string>;
+declare function trashItem(path: string): Promise<string>;
 export interface MemoryInfo {
 	physical: {
 		total: number;
@@ -241,16 +255,27 @@ export interface MousePosition {
 	x: number;
 	y: number;
 }
+export interface NetworkInterfaceAddress {
+	address: string;
+	mac: string;
+	isInternal: boolean;
+	family: NetworkFamily;
+}
+export interface NetworkInterfaceInfo {
+	[key: string]: NetworkInterfaceAddress;
+}
 declare function getMemoryInfo(): Promise<MemoryInfo>;
 declare function getArch(): Promise<string>;
 declare function getKernelInfo(): Promise<KernelInfo>;
 declare function getOSInfo(): Promise<OSInfo>;
 declare function getCPUInfo(): Promise<CPUInfo>;
 declare function getDisplays(): Promise<Display[]>;
+declare function getHostname(): Promise<string>;
 declare function getMousePosition(): Promise<MousePosition>;
 declare function setMousePosition(x: number, y: number): Promise<void>;
 declare function setMouseGrabbing(grabbing: boolean): Promise<void>;
 declare function sendKey(key: number, state: SendKeyState): Promise<void>;
+declare function getNetworkInterfaces(): Promise<NetworkInterfaceInfo>;
 declare function setData(key: string, data: string | null): Promise<void>;
 declare function getData(key: string): Promise<string>;
 declare function removeData(key: string): Promise<void>;
@@ -476,13 +501,13 @@ declare namespace custom {
 	export { getMethods };
 }
 declare namespace filesystem {
-	export { appendBinaryFile, appendFile, copy, createDirectory, createWatcher, getAbsolutePath, getJoinedPath, getNormalizedPath, getOpenedFileInfo, getPathParts, getPermissions, getRelativePath, getStats, getUnnormalizedPath, getWatchers, move, openFile, readBinaryFile, readDirectory, readFile, remove, removeWatcher, setPermissions, updateOpenedFile, writeBinaryFile, writeFile };
+	export { access, appendBinaryFile, appendFile, chmod, chown, copy, createDirectory, createWatcher, getAbsolutePath, getJoinedPath, getNormalizedPath, getOpenedFileInfo, getPathParts, getPermissions, getRelativePath, getStats, getUnnormalizedPath, getWatchers, move, openFile, readBinaryFile, readDirectory, readFile, remove, removeWatcher, setPermissions, updateOpenedFile, writeBinaryFile, writeFile };
 }
 declare namespace os {
-	export { execCommand, getEnv, getEnvs, getPath, getSpawnedProcesses, open$1 as open, setTray, showFolderDialog, showMessageBox, showNotification, showOpenDialog, showSaveDialog, spawnProcess, updateSpawnedProcess };
+	export { execCommand, getEnv, getEnvs, getPath, getSpawnedProcesses, open$1 as open, setTray, showFolderDialog, showMessageBox, showNotification, showOpenDialog, showSaveDialog, spawnProcess, trashItem, updateSpawnedProcess };
 }
 declare namespace computer {
-	export { getArch, getCPUInfo, getDisplays, getKernelInfo, getMemoryInfo, getMousePosition, getOSInfo, sendKey, setMouseGrabbing, setMousePosition };
+	export { getArch, getCPUInfo, getDisplays, getHostname, getKernelInfo, getMemoryInfo, getMousePosition, getNetworkInterfaces, getOSInfo, sendKey, setMouseGrabbing, setMousePosition };
 }
 declare namespace storage {
 	export { clear, getData, getKeys, removeData, setData };
