@@ -14,7 +14,7 @@ gantt
 
 	
 	section tauri
-	108677 : 0, 108677
+	108678 : 0, 108678
 
 	
 	section nw.js
@@ -22,7 +22,7 @@ gantt
 
 	
 	section wails
-	35067 : 0, 35067
+	35068 : 0, 35068
 
 	
 	section nodegui
