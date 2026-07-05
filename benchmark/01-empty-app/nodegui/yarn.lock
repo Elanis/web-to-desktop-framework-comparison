@@ -128,10 +128,10 @@
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^26.0.1":
-  version "26.0.1"
-  resolved "https://registry.npmjs.org/@types/node/-/node-26.0.1.tgz"
-  integrity sha512-fc3KiUoBt6kie0N9bIW3E47vZsuaMf0PM2AaUpLCLT0s/LvX1nxAim6Fc049cNxODPpGm6qRAuUOB86SkRuPQw==
+"@types/node@*", "@types/node@^26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmjs.org/@types/node/-/node-26.1.0.tgz"
+  integrity sha512-O0A1G3xPGy4w7AgQdAQYUlQ+BKk2Oovw8eRpofyp5KdBZULnbe+WqaOVNrm705SHphCiG4XHsACrSmPu1f+Kgw==
   dependencies:
     undici-types "~8.3.0"
 
@@ -1712,10 +1712,10 @@ webpack-sources@^3.5.0:
   resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.5.0.tgz"
   integrity sha512-HPuy+uuoTCaaoEoI1LQ3JN9+vrPBvEesnnX1jADHy728cHSMlq4wUc4afYqahq2B1mhQVZxCXOkNTnXltr+2vQ==
 
-"webpack@^4.0.0 || ^5.0.0", webpack@^5.1.0, webpack@^5.101.0, webpack@^5.108.1, "webpack@>=4.0.0 <6.0.0":
-  version "5.108.1"
-  resolved "https://registry.npmjs.org/webpack/-/webpack-5.108.1.tgz"
-  integrity sha512-UUCihHQK3O7483Woa0SulNLDeAiOhHI2PN2PAPU4fVWJqbzhv04EJ8FaWtB9WWh3i8fRt28543U7VfuJTOrpgQ==
+"webpack@^4.0.0 || ^5.0.0", webpack@^5.1.0, webpack@^5.101.0, webpack@^5.108.3, "webpack@>=4.0.0 <6.0.0":
+  version "5.108.3"
+  resolved "https://registry.npmjs.org/webpack/-/webpack-5.108.3.tgz"
+  integrity sha512-hOpaCHmQVVY66IVTjofnH14IgSdmod2aquSGHGuYig/OIdWge01Hk2Wt988DZcwXumFUT4+FvJY5N+ikl8o/ww==
   dependencies:
     "@types/estree" "^1.0.8"
     "@types/json-schema" "^7.0.15"
