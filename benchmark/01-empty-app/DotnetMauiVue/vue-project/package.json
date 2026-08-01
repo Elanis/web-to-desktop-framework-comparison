@@ -18,7 +18,7 @@
     "@dotnet/jsinterop": "^3.1.31",
     "@types/jsdom": "^28.0.3",
     "@types/node": "^26.1.0",
-    "@vitejs/plugin-vue": "^6.0.7",
+    "@vitejs/plugin-vue": "^6.0.8",
     "@vue/test-utils": "^2.4.11",
     "@vue/tsconfig": "^0.9.1",
     "jsdom": "^29.1.1",
