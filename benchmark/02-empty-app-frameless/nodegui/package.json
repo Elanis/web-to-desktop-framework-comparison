@@ -23,5 +23,10 @@
     "typescript": "^7.0.2",
     "webpack": "^5.109.2",
     "webpack-cli": "^7.2.2"
+  },
+  "allowScripts": {
+    "@nodegui/packer@1.5.0": true,
+    "@nodegui/nodegui@0.74.2": true,
+    "@nodegui/qode@24.12.0-rc19": true
   }
 }
