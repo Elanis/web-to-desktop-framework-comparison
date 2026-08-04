@@ -101,7 +101,7 @@ jobs:
           wails doctor
 
       - name: Install neutralino's neu
-        run: npm i -g @neutralinojs/neu@latest
+        run: npm i -g @neutralinojs/neu@latest --allow-scripts=bufferutil,es5-ext,utf-8-validate
 
       - name: Run apps
         run: |
