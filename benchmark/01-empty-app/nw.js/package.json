@@ -6,7 +6,10 @@
     "build": "node build.js"
   },
   "devDependencies": {
-    "nw-builder": "^4.17.13"
+    "nw-builder": "^4.18.0"
   },
-  "type": "module"
+  "type": "module",
+  "allowScripts": {
+    "nw-builder@4.18.0": true
+  }
 }

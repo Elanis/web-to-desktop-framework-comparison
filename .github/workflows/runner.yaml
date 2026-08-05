@@ -28,14 +28,14 @@ jobs:
         run: git pull
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v6.4.0
+        uses: actions/setup-node@v7.0.0
         with:
           node-version: 22
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
       # Setup dotnet env
-      - uses: actions/setup-dotnet@v5
+      - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '9.0.x'
 
@@ -44,7 +44,7 @@ jobs:
         shell: bash
 
       # Setup Java environment in order to build the Android app.
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v5.6.0
         with:
           distribution: 'temurin'
           java-version: '18.x'
@@ -55,7 +55,7 @@ jobs:
           flutter-version: '3.x'      
 
       # Setup the go environment
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
         with:
           go-version: 'stable'
 
@@ -101,7 +101,7 @@ jobs:
           wails doctor
 
       - name: Install neutralino's neu
-        run: npm i -g @neutralinojs/neu@latest
+        run: npm i -g @neutralinojs/neu@latest --allow-scripts=bufferutil,es5-ext,utf-8-validate
 
       - name: Run apps
         run: |
