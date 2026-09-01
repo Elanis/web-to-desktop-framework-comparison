@@ -17,6 +17,6 @@
     "electron": "^43.2.0"
   },
   "dependencies": {
-    "@electron/packager": "^20.0.4"
+    "@electron/packager": "^20.3.0"
   }
 }
