@@ -12,7 +12,7 @@
   "dependencies": {
     "pinia": "^4.0.3",
     "vue": "^3.5.42",
-    "vue-router": "^5.3.0"
+    "vue-router": "^5.3.1"
   },
   "devDependencies": {
     "@dotnet/jsinterop": "^3.1.31",
