@@ -21,10 +21,10 @@ packages:
     dependency: "direct main"
     description:
       name: cupertino_icons
-      sha256: "41e005c33bd814be4d3096aff55b1908d419fde52ca656c8c47719ec745873cd"
+      sha256: b7cc2390aac296c083bea762859413eb1cf5b630c70e0c7e4d831018f762a8b2
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.9"
+    version: "2.0.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -42,10 +42,10 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: "1741988757a65eb6b36abe716829688cf01910bbf91c34354ff7ec1c3de2b349"
+      sha256: "307249ce4ff29d58a18e97f6345f539382eb9c9c29ecda628900f31de0443dd9"
       url: "https://pub.dev"
     source: hosted
-    version: "1.18.0"
+    version: "1.19.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -55,9 +55,9 @@ packages:
     dependency: transitive
     description:
       name: vector_math
-      sha256: d530bd74fea330e6e364cda7a85019c434070188383e1cd8d9777ee586914c5b
+      sha256: fa49e1674cb84acb900141714e6c6e1f9ae099827c24d141430ff6819db4e1bc
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.0"
+    version: "2.4.4"
 sdks:
   dart: ">=3.10.0-0 <4.0.0"
