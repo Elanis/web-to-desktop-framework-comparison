@@ -13,8 +13,8 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "pidtree": "^1.0.0",
-    "pidusage": "^4.0.1",
-    "systeminformation": "^5.33.14",
+    "pidusage": "^4.1.0",
+    "systeminformation": "^5.33.19",
     "tree-kill": "^1.2.2"
   }
 }
