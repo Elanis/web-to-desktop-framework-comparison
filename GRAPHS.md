@@ -10,35 +10,35 @@ gantt
 
 
 	section electron
-	123374 : 0, 123374
+	123711 : 0, 123711
 
 	
 	section tauri
-	111539 : 0, 111539
+	112435 : 0, 112435
 
 	
 	section nw.js
-	41148 : 0, 41148
+	41147 : 0, 41147
 
 	
 	section wails
-	36415 : 0, 36415
+	36916 : 0, 36916
 
 	
 	section nodegui
-	9232 : 0, 9232
+	9236 : 0, 9236
 
 	
 	section neutralinojs
-	8662 : 0, 8662
+	8684 : 0, 8684
 
 	
 	section flutter
-	179239 : 0, 179239
+	181018 : 0, 181018
 
 	
 	section maui
-	23321 : 0, 23321
+	23330 : 0, 23330
 
 	
 ```
@@ -52,19 +52,19 @@ gantt
 
 
 	section electron
-	17573 : 0, 17573
+	17916 : 0, 17916
 
 	
 	section tauri
-	4035 : 0, 4035
+	4153 : 0, 4153
 
 	
 	section nw.js
-	3848 : 0, 3848
+	3846 : 0, 3846
 
 	
 	section wails
-	1874 : 0, 1874
+	1919 : 0, 1919
 
 	
 	section nodegui
@@ -72,15 +72,15 @@ gantt
 
 	
 	section neutralinojs
-	547 : 0, 547
+	546 : 0, 546
 
 	
 	section flutter
-	32752 : 0, 32752
+	32868 : 0, 32868
 
 	
 	section maui
-	1986 : 0, 1986
+	1998 : 0, 1998
 
 	
 ```
