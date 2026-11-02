@@ -247,6 +247,14 @@ export interface CPUInfo {
 	physicalCores: number;
 	physicalUnits: number;
 }
+export interface GPUInfo {
+	id: number;
+	vendor: string;
+	name: string;
+	memorySize: number;
+	cacheSize: number;
+	maxFrequency: number;
+}
 export interface Display {
 	id: number;
 	resolution: Resolution;
@@ -284,6 +292,7 @@ declare function getArch(): Promise<string>;
 declare function getKernelInfo(): Promise<KernelInfo>;
 declare function getOSInfo(): Promise<OSInfo>;
 declare function getCPUInfo(): Promise<CPUInfo>;
+declare function getGPUs(): Promise<GPUInfo[]>;
 declare function getDisplays(): Promise<Display[]>;
 declare function getDisks(): Promise<Disk>;
 declare function getHostname(): Promise<string>;
@@ -559,7 +568,7 @@ declare namespace os {
 	export { execCommand, getEnv, getEnvs, getLocaleInfo, getPath, getSpawnedProcesses, open$1 as open, setEnv, setTray, showFolderDialog, showMessageBox, showNotification, showOpenDialog, showSaveDialog, spawnProcess, trashItem, updateSpawnedProcess };
 }
 declare namespace computer {
-	export { getArch, getCPUInfo, getDisks, getDisplays, getHostname, getKernelInfo, getMachineId, getMemoryInfo, getMousePosition, getNetworkInterfaces, getOSInfo, sendKey, setMouseGrabbing, setMousePosition };
+	export { getArch, getCPUInfo, getDisks, getDisplays, getGPUs, getHostname, getKernelInfo, getMachineId, getMemoryInfo, getMousePosition, getNetworkInterfaces, getOSInfo, sendKey, setMouseGrabbing, setMousePosition };
 }
 declare namespace storage {
 	export { clear, getData, getKeys, removeData, setData };
